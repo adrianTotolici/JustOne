@@ -20,8 +20,8 @@ function scr_camera_control(){
 		}
 	}
 	
-	var monitor_size_w=display_get_width();
-	var monitor_size_h=display_get_height();
+	var _monitor_size_w=display_get_width();
+	var _monitor_size_h=display_get_height();
 	width_step=128;
 	height_step=72;
 	
@@ -45,5 +45,5 @@ function scr_camera_control(){
 		}
 		
 	}
-	window_set_position(monitor_size_w/2-window_size_w/2,monitor_size_h/2-window_size_h/2);
+	window_set_position(_monitor_size_w/2-window_size_w/2,_monitor_size_h/2-window_size_h/2);
 }

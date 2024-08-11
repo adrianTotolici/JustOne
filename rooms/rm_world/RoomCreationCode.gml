@@ -1,4 +1,4 @@
-enum player_state {
-	controls,
-	quick_inventory,
+enum PLAYER_STATE {
+	CONTROLS,
+	QUICK_INVENTORY,
 }

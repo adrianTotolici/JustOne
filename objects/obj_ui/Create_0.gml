@@ -3,13 +3,13 @@ depth =-5;
 sprite_size=30;
 x_size_ui=640;
 y_size_ui=360;
-var nr_of_boxes=5;
+var _nr_of_boxes=5;
 
 display_set_gui_size(x_size_ui,y_size_ui);
 
-slotList = array_create(nr_of_boxes, noone);
-slotSelectedList = array_create(nr_of_boxes, false);
+slot_list = array_create(_nr_of_boxes, noone);
+slot_selected_list = array_create(_nr_of_boxes, false);
 
-slotList[0]=spr_rock;
-slotList[1]=spr_stick;
+slot_list[0]=spr_rock;
+slot_list[1]=spr_stick;
 slot_selected=noone;

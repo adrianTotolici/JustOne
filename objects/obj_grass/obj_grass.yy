@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"Sprite9",
-    "path":"sprites/Sprite9/Sprite9.yy",
+    "name":"spr_grass",
+    "path":"sprites/spr_grass/spr_grass.yy",
   },
   "spriteMaskId":null,
   "visible":true,

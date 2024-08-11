@@ -9,7 +9,7 @@ camera_set_view_pos(view_camera[0],x-640/2,y-360/2);
 my_speed=2;
 
 //technical
-state=player_state.controls;
+state=PLAYER_STATE.CONTROLS;
 anim_idle=spr_player_stand_front;
 anim_walk_left=spr_player_left;
 anim_walk_right=spr_player_right;
