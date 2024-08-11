@@ -1,0 +1,38 @@
+Copyright License Agreement
+
+This Copyright License Agreement (“Agreement”) is made and entered into as of [Date], by and between [Your Name/Company Name], with its principal place of business at [Your Address] (“Licensor”), and [Licensee Name], with its principal place of business at [Licensee Address] (“Licensee”).
+
+1. Grant of License
+Licensor hereby grants to Licensee a non-exclusive, non-transferable, revocable license to use, reproduce, distribute, and display the game “JustOne” (“Game”) solely for the purposes set forth in this Agreement.
+
+2. Ownership
+Licensee acknowledges that Licensor retains all rights, title, and interest in and to the Game, including all copyrights and other intellectual property rights. Licensee shall not acquire any ownership rights in the Game.
+
+3. Permitted Uses
+Licensee may use the Game for the following purposes:
+a. Personal use
+b. Educational purposes
+c. Non-commercial distribution
+
+4. Restrictions
+Licensee shall not:
+a. Modify, adapt, or create derivative works based on the Game without the prior written consent of Licensor.
+b. Use the Game for any commercial purposes without obtaining a separate commercial license from Licensor.
+c. Remove or alter any copyright notices or proprietary legends contained in the Game.
+
+5. Term and Termination
+This Agreement shall commence on the date first written above and shall continue until terminated by either party. Either party may terminate this Agreement at any time upon written notice to the other party. Upon termination, Licensee shall cease all use of the Game and destroy all copies in its possession.
+
+6. Disclaimer of Warranties
+The Game is provided “as is” without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. Licensor does not warrant that the Game will be error-free or that any errors will be corrected.
+
+7. Limitation of Liability
+In no event shall Licensor be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with this Agreement or the use of the Game, even if Licensor has been advised of the possibility of such damages.
+
+8. Governing Law
+This Agreement shall be governed by and construed in accordance with the laws of [Your Jurisdiction], without regard to its conflict of law principles.
+
+9. Entire Agreement
+This Agreement constitutes the entire agreement between the parties with respect to the subject matter hereof and supersedes all prior or contemporaneous understandings or agreements, whether written or oral, regarding such subject matter.
+
+IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the date first above written.
