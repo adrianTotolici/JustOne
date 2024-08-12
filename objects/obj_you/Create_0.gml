@@ -7,6 +7,7 @@ camera_set_view_pos(view_camera[0],x-window_get_width()/2,y-window_get_height()/
 
 //stats
 my_speed=2;
+equipped=noone;
 
 //technical
 state=PLAYER_STATE.CONTROLS;

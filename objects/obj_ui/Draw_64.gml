@@ -13,11 +13,11 @@ for(var _i=0;_i<array_length(slot_list);_i++){
 }
 
 for (var _i=0;_i<array_length(slot_list);_i++){
-	if (slot_list[_i]!=noone){
+	if (slot_list[_i] !=noone){
 		if (slot_selected_list[_i] == false){
-			draw_sprite(slot_list[_i],0,x_size_ui/2+(sprite_size*(_i-_middle_box)),y_size_ui);
+			draw_sprite(object_get_sprite(slot_list[_i]),0,x_size_ui/2+(sprite_size*(_i-_middle_box)),y_size_ui);
 		}else{
-			draw_sprite(slot_list[_i],0,_mx,_my);
+			draw_sprite(object_get_sprite(slot_list[_i]),0,_mx,_my);
 		}
 	}
 }

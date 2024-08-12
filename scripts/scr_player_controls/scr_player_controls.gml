@@ -23,5 +23,5 @@ function scr_player_control(){
 		y=y+_travel_y;
 		sprite_index=anim_idle;
 	}
-	mp_potential_step(x+_travel_x,y+_travel_y,my_speed,true);
+	mp_linear_step(x+_travel_x,y+_travel_y,my_speed,false);
 }
