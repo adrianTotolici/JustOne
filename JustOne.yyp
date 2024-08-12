@@ -34,6 +34,7 @@
   },
   "name":"JustOne",
   "resources":[
+    {"id":{"name":"fnt_info_text","path":"fonts/fnt_info_text/fnt_info_text.yy",},},
     {"id":{"name":"obj_control","path":"objects/obj_control/obj_control.yy",},},
     {"id":{"name":"obj_grass","path":"objects/obj_grass/obj_grass.yy",},},
     {"id":{"name":"obj_land","path":"objects/obj_land/obj_land.yy",},},
