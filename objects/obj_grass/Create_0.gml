@@ -10,3 +10,8 @@
 //		}
 //	}
 //}
+
+depth=-y;
+required = TOOL_TYPE.ROCK;
+hp=10;
+shake=false;

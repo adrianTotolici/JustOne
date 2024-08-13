@@ -4,7 +4,6 @@ function scr_draw_tool(){
 	var _owner = obj_you;
 	var img=ceil(_owner.image_index)-1;
 	var _scale_equipment=0.5;
-	depth=_owner.depth-10;
 	x=_owner.x;
 	y=_owner.y;
 	switch(_owner.sprite_index){
@@ -53,6 +52,14 @@ function scr_draw_tool(){
 				draw_sprite_ext(sprite_index, image_index, _owner.x+2*_owner.image_xscale, _owner.y-13, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
 			}else if (img==2){
 				draw_sprite_ext(sprite_index, image_index, _owner.x-8*_owner.image_xscale, _owner.y-15, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}
+			break;
+			
+		case obj_you.anim_harvest:
+			if (img==0){
+				draw_sprite_ext(sprite_index, image_index, _owner.x-7*_owner.image_xscale, _owner.y-15, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}else if (img==1){
+				draw_sprite_ext(sprite_index, image_index, _owner.x-4*_owner.image_xscale, _owner.y-16, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
 			}
 			break;
 	}

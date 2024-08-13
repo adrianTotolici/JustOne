@@ -16,5 +16,6 @@ anim_walk_left=spr_player_left;
 anim_walk_right=spr_player_right;
 anim_walk_up=spr_player_up;
 anim_walk_down=spr_player_down;
+anim_harvest=spr_player_harvest;
 
 instance_create_layer(x,y,"Instances",obj_ui);
