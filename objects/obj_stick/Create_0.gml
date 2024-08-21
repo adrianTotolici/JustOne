@@ -1,3 +1,3 @@
 /// @description vars
-depth = obj_you.depth-1;
+event_inherited();
 type=TOOL_TYPE.STICK;

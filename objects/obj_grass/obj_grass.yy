@@ -9,12 +9,12 @@
   "name":"obj_grass",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"resourcess",
+    "path":"folders/Objects/resourcess.yy",
   },
   "parentObjectId":{
-    "name":"obj_resource",
-    "path":"objects/obj_resource/obj_resource.yy",
+    "name":"obj_par_resource",
+    "path":"objects/obj_par_resource/obj_par_resource.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

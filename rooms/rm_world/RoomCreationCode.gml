@@ -6,5 +6,5 @@ enum PLAYER_STATE {
 
 enum TOOL_TYPE {
 	ROCK,
-	STICK	
+	STICK
 }

@@ -1,4 +1,5 @@
 /// @description Vars
+randomize();
 gpu_set_tex_filter(false);
 game_set_speed(60, gamespeed_fps);
 view_x=camera_get_view_x(view_camera[0]);

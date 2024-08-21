@@ -2,7 +2,7 @@
 var _mx=device_mouse_x_to_gui(0);
 var _my=device_mouse_y_to_gui(0);
 var _middle_box = (array_length(slot_list)-1) div 2;
-var _text_to_display = "Just One v0.0.1";
+var _text_to_display = "Just One v0.0.2";
 
 draw_set_font(fnt_info_text);
 draw_set_color(c_black);

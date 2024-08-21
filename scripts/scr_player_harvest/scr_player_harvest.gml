@@ -2,7 +2,7 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_player_harvest(){
 	if (mouse_check_button(mb_left)){
-		var resources = instance_position(mouse_x, mouse_y, obj_resource);
+		var resources = instance_position(mouse_x, mouse_y, obj_par_resource);
 		if (instance_exists(resources)){
 			if (sprite_index!=anim_harvest){
 				sprite_index=anim_harvest;
@@ -19,7 +19,7 @@ function scr_player_harvest(){
 				sprite_index=anim_idle;
 				image_index=0;
 			}
-			with (obj_resource){
+			with (obj_par_resource){
 				shake=false;
 			}
 			state=PLAYER_STATE.CONTROLS;
@@ -29,7 +29,7 @@ function scr_player_harvest(){
 			sprite_index=anim_idle;
 			image_index=0;
 		}
-		with (obj_resource){
+		with (obj_par_resource){
 			shake=false;
 		}
 		state=PLAYER_STATE.CONTROLS;

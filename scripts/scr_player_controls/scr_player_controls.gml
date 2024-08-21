@@ -4,22 +4,18 @@ function scr_player_control(){
 	var _travel_y=0;
 
 	if (mouse_check_button(mb_left)){
-		if (instance_position(mouse_x, mouse_y, obj_resource)){
+		if (instance_position(mouse_x, mouse_y, obj_par_resource)){
 			if (equipped!=noone){
-				var resources = instance_position(mouse_x, mouse_y, obj_resource);
+				var resources = instance_position(mouse_x, mouse_y, obj_par_resource);
 				if(equipped.type==resources.required){
-					if (resources.x =x){
+					if (resources.x >= x-10) {
+						image_xscale=-1;
+						state=PLAYER_STATE.HARVEST;
+						sprite_index=anim_harvest;
+					} else if (resources.x <= x+10) {
 						image_xscale=1;
-						mp_linear_step(resources.x-50,resources.y,my_speed,false);
-						if (x==resources.x-50 && y==resources.y){
-							state=PLAYER_STATE.HARVEST;
-						}
-					}else{
-						image_xscale=1;
-						mp_linear_step(resources.x+50,resources.y,my_speed,false);
-						if (x==resources.x+50 && y==resources.y){
-							state=PLAYER_STATE.HARVEST;
-						}
+						state=PLAYER_STATE.HARVEST;
+						sprite_index=anim_harvest;
 					}
 				}
 			}
@@ -34,10 +30,12 @@ function scr_player_control(){
 		_travel_y=+20;
 	}
 	if (keyboard_check(ord("A"))) {
+		image_xscale = 1;
 		sprite_index=anim_walk_left;
 		_travel_x=-20;
 	}
 	else if (keyboard_check(ord("D"))) {
+		image_xscale = 1;
 		sprite_index=anim_walk_right;
 		_travel_x=+20;
 	}

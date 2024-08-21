@@ -18,7 +18,7 @@ if (keyboard_check(vk_anykey)){
 			if (obj_you.equipped!=slot_list[0]){
 				if (slot_list[0]!=noone){
 					obj_you.equipped=slot_list[0];
-					with (obj_equiped) {
+					with (obj_par_equipment) {
 						instance_destroy();
 					}
 					instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[0]);
@@ -30,7 +30,7 @@ if (keyboard_check(vk_anykey)){
 			if (obj_you.equipped!=slot_list[1]){
 				if (slot_list[1]!=noone){
 					obj_you.equipped=slot_list[1];
-					with (obj_equiped) {
+					with (obj_par_equipment) {
 						instance_destroy();
 					}
 					instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[1]);
@@ -42,7 +42,7 @@ if (keyboard_check(vk_anykey)){
 			if (obj_you.equipped!=slot_list[2]){
 				if (slot_list[2]!=noone){
 					obj_you.equipped=slot_list[2];
-					with (obj_equiped) {
+					with (obj_par_equipment) {
 						instance_destroy();
 					}
 					instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[2]);
@@ -54,7 +54,7 @@ if (keyboard_check(vk_anykey)){
 			if (obj_you.equipped!=slot_list[3]){
 				if (slot_list[3]!=noone){
 					obj_you.equipped=slot_list[3];
-					with (obj_equiped) {
+					with (obj_par_equipment) {
 						instance_destroy();
 					}
 					instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[3]);
@@ -66,7 +66,7 @@ if (keyboard_check(vk_anykey)){
 			if (obj_you.equipped!=slot_list[4]){
 				if (slot_list[4]!=noone){
 					obj_you.equipped=slot_list[4];
-					with (obj_equiped) {
+					with (obj_par_equipment) {
 						instance_destroy();
 					}
 					instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[4]);

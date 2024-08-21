@@ -9,12 +9,12 @@
   "name":"obj_rock",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"equipment",
+    "path":"folders/Objects/equipment.yy",
   },
   "parentObjectId":{
-    "name":"obj_equiped",
-    "path":"objects/obj_equiped/obj_equiped.yy",
+    "name":"obj_par_equipment",
+    "path":"objects/obj_par_equipment/obj_par_equipment.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
