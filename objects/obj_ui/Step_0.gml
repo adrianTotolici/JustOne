@@ -1,13 +1,29 @@
-/// @description Player UI
+/// @description Player UI && show inventory
 x=obj_you.x;
 y=obj_you.y;
 
 var _mx=device_mouse_x_to_gui(0);
 var _my=device_mouse_y_to_gui(0);
 
-if (_my>=y_size_ui-sprite_size){
-	if (_mx>=x_size_ui/2-sprite_size*2-16 && _mx<=x_size_ui/2+sprite_size*2+16){
-		obj_you.state=PLAYER_STATE.QUICK_INVENTORY;
+if (keyboard_check_released(ord("I"))){
+	switch (show_inv){
+		case false:
+			show_inv=true;
+			obj_you.state=PLAYER_STATE.INVENTORY;
+			break;
+		case true:
+			show_inv=false;
+			inv_selected=noone;
+			obj_you.state=PLAYER_STATE.CONTROLS;
+			break;
+	}
+}
+
+if (show_inv == false){
+	if (_my>=y_size_ui-sprite_size){
+		if (_mx>=x_size_ui/2-sprite_size*2-16 && _mx<=x_size_ui/2+sprite_size*2+16){
+			obj_you.state=PLAYER_STATE.QUICK_INVENTORY;
+		}
 	}
 }
 

@@ -6,13 +6,13 @@ function scr_player_control(){
 	if (mouse_check_button(mb_left)){
 		if (instance_position(mouse_x, mouse_y, obj_par_resource)){
 			if (equipped!=noone){
-				var resources = instance_position(mouse_x, mouse_y, obj_par_resource);
-				if(equipped.type==resources.required){
-					if (resources.x >= x-10) {
+				var _resources = instance_position(mouse_x, mouse_y, obj_par_resource);
+				if(equipped.type==_resources.required){
+					if (_resources.x >= x-10) {
 						image_xscale=-1;
 						state=PLAYER_STATE.HARVEST;
 						sprite_index=anim_harvest;
-					} else if (resources.x <= x+10) {
+					} else if (_resources.x <= x+10) {
 						image_xscale=1;
 						state=PLAYER_STATE.HARVEST;
 						sprite_index=anim_harvest;

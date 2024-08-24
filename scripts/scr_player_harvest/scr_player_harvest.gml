@@ -2,16 +2,24 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_player_harvest(){
 	if (mouse_check_button(mb_left)){
-		var resources = instance_position(mouse_x, mouse_y, obj_par_resource);
-		if (instance_exists(resources)){
+		var _resources = instance_position(mouse_x, mouse_y, obj_par_resource);
+		var _player = obj_you;
+		
+		x_min=obj_you.x-15;
+		x_max=obj_you.x+15;
+		
+		y_min=obj_you.y-15;
+		y_max=obj_you.y+15;
+		
+		if (instance_exists(_resources) && (x_min<=_resources.x && _resources.x<=x_max) && (y_min<=_resources.y && _resources.y<=y_max)){
 			if (sprite_index!=anim_harvest){
 				sprite_index=anim_harvest;
 				image_index=0;
 			}
 			if (image_index>=image_number-1){
-				resources.hp-=5;
-				if (resources.shake!=true){
-					resources.shake=true;
+				_resources.hp-=5;
+				if (_resources.shake!=true){
+					_resources.shake=true;
 				}
 			}
 		}else{

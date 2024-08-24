@@ -1,15 +1,8 @@
 /// @description shandows and shake
 event_inherited();
 if(hp<1){
-	var ran_loot =irandom(2);
-	for (i=0;i<ran_loot;i++){
+	for (var _i=0;_i<max_mud_drop;_i++){
 		instance_create_layer(x,y,"Instances",obj_mud_loot);
 	}
 	instance_destroy();
-	//for (i=0;i<array_length(obj_ui.slot_list);i++){
-	//	if (obj_ui.slot_list[i] == noone){
-	//		obj_ui.slot_list[i]=obj_grass;
-	//		break;
-	//	}
-	//}
 }
