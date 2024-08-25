@@ -31,61 +31,76 @@ if (keyboard_check(vk_anykey)){
 	var _key_pressed = keyboard_lastkey;
 	switch(_key_pressed){
 		case ord("1"):
-			if (obj_you.equipped!=slot_list[0]){
-				if (slot_list[0]!=noone){
-					obj_you.equipped=slot_list[0];
-					with (obj_par_equipment) {
-						instance_destroy();
+			if (slot_list[0] != noone){
+				var par=object_get_parent(slot_list[0]);
+				if (obj_you.equipped!=slot_list[0]){
+					if (par==obj_par_equipment){
+						obj_you.equipped=slot_list[0];
+						with (obj_par_equipment) {
+							instance_destroy();
+						}
+						instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[0]);
 					}
-					instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[0]);
 				}
 			}
 			break;
 
 		case ord("2"):
-			if (obj_you.equipped!=slot_list[1]){
-				if (slot_list[1]!=noone){
-					obj_you.equipped=slot_list[1];
-					with (obj_par_equipment) {
-						instance_destroy();
+			if (slot_list[1] != noone){
+				var par=object_get_parent(slot_list[1]);
+				if (obj_you.equipped!=slot_list[1]){
+					if (par==obj_par_equipment){
+						obj_you.equipped=slot_list[1];
+						with (obj_par_equipment) {
+							instance_destroy();
+						}
+						instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[1]);
 					}
-					instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[1]);
 				}
 			}
 			break;
 			
 		case ord("3"):
-			if (obj_you.equipped!=slot_list[2]){
-				if (slot_list[2]!=noone){
-					obj_you.equipped=slot_list[2];
-					with (obj_par_equipment) {
-						instance_destroy();
+			if (slot_list[2]!=noone){
+				var par=object_get_parent(slot_list[2]);
+				if (obj_you.equipped!=slot_list[2]){
+					if (par==obj_par_equipment){
+						obj_you.equipped=slot_list[2];
+						with (obj_par_equipment) {
+							instance_destroy();
+						}
+						instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[2]);
 					}
-					instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[2]);
 				}
 			}
 			break;
 			
 		case ord("4"):
-			if (obj_you.equipped!=slot_list[3]){
-				if (slot_list[3]!=noone){
-					obj_you.equipped=slot_list[3];
-					with (obj_par_equipment) {
-						instance_destroy();
+			if (slot_list[3]!=noone){
+				var par=object_get_parent(slot_list[3]);
+				if (obj_you.equipped!=slot_list[3]){
+					if (par==obj_par_equipment){
+						obj_you.equipped=slot_list[3];
+						with (obj_par_equipment) {
+							instance_destroy();
+						}
+						instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[3]);
 					}
-					instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[3]);
 				}
 			}
 			break;
 			
 		case ord("5"):
-			if (obj_you.equipped!=slot_list[4]){
-				if (slot_list[4]!=noone){
-					obj_you.equipped=slot_list[4];
-					with (obj_par_equipment) {
-						instance_destroy();
+			if (slot_list[4] != noone){
+				var par=object_get_parent(slot_list[4]);
+				if (obj_you.equipped!=slot_list[4]){
+					if (par=obj_par_equipment){
+						obj_you.equipped=slot_list[4];
+						with (obj_par_equipment) {
+							instance_destroy();
+						}
+						instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[4]);
 					}
-					instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[4]);
 				}
 			}
 			break;

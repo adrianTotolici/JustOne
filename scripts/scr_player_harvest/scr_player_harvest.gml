@@ -5,11 +5,11 @@ function scr_player_harvest(){
 		var _resources = instance_position(mouse_x, mouse_y, obj_par_resource);
 		var _player = obj_you;
 		
-		x_min=obj_you.x-15;
-		x_max=obj_you.x+15;
+		x_min=obj_you.x-35;
+		x_max=obj_you.x+35;
 		
-		y_min=obj_you.y-15;
-		y_max=obj_you.y+15;
+		y_min=obj_you.y-35;
+		y_max=obj_you.y+35;
 		
 		if (instance_exists(_resources) && (x_min<=_resources.x && _resources.x<=x_max) && (y_min<=_resources.y && _resources.y<=y_max)){
 			if (sprite_index!=anim_harvest){

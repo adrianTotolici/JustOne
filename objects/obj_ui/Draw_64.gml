@@ -1,10 +1,15 @@
 /// @description Draw Quick Invetory
+draw_sprite(spr_health,0,20,60);
+draw_sprite(spr_hunger,0,20,90);
+draw_healthbar(40,30,250,50,obj_you.hp,c_black,c_red,c_red,0,true,true);
+draw_healthbar(40,60,250,80,obj_you.hunger, c_black, c_green, c_green,0,true,true);
+
 var _mx=device_mouse_x_to_gui(0);
 var _my=device_mouse_y_to_gui(0);
 
 draw_set_font(fnt_info_text);
 draw_set_color(c_black);
-draw_text(0, 0,_text_to_display);
+draw_text(20, 0,_text_to_display);
 
 if (show_inv){
 	draw_sprite(spr_inventory,0,x_size_ui/2,y_size_ui-_heigh_diff_inventory);

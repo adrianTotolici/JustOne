@@ -4,8 +4,8 @@ function scr_inventory_add(){
 	
 	for (i=0;i<16;i++){
 		if (_ui.inventory_list[i]==object_index){
-			if (_ui.inventory_num[i]<max_stack){
-				_ui.inventory_num[i]+=1;
+			if (_ui.inventory_num[i]+my_stack<max_stack){
+				_ui.inventory_num[i]+=my_stack;
 				_stored=true;
 				instance_destroy();
 				break;
@@ -16,7 +16,7 @@ function scr_inventory_add(){
 		for (i=0;i<16;i++){
 			if (_ui.inventory_list[i]==noone){
 				_ui.inventory_list[i]=object_index;
-				_ui.inventory_num[i]=+1;
+				_ui.inventory_num[i]=my_stack;
 				_stored=true;
 				instance_destroy();
 				break;

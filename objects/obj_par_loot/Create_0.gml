@@ -17,3 +17,5 @@ path_start(my_path,20,0,0);
 alarm[0]=300*speed;
 
 max_stack=20;
+my_stack=1;
+on_floor=false;
