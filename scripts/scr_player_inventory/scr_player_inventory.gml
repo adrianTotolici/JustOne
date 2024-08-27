@@ -37,11 +37,11 @@ function scr_player_inventory(){
 									var _num=_ui.inventory_num[a];
 									_ui.inventory_num[a]=_ui.inventory_num[_j*_ui._inv_nr_columns+_i];
 									_ui.inventory_num[_j*_ui._inv_nr_columns+_i]=_num;
+									break;
 								}
 							}
 							_ui.inventory_list[_j*_ui._inv_nr_columns+_i]=_ui.inv_selected;
 							_ui.inv_selected=noone;
-							break;
 						}
 					}
 				}

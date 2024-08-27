@@ -2,8 +2,8 @@
 depth=-y;
 shadow_y=y;
 initialize=false;
-image_xscale=image_xscale*0.75;
-image_yscale=image_yscale*0.75;
+image_xscale=image_xscale*0.9;
+image_yscale=image_yscale*0.9;
 
 var _ran_x=irandom_range(-50,50);
 my_path=path_add();

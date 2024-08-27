@@ -9,7 +9,31 @@ var _my=device_mouse_y_to_gui(0);
 
 draw_set_font(fnt_info_text);
 draw_set_color(c_black);
-draw_text(20, 0,_text_to_display);
+draw_text(40, 0,_text_to_display);
+
+draw_sprite(spr_help,0,x_size_ui-button_width,0);
+draw_sprite(spr_craft_ui,0,x_size_ui-button_width*2,0);
+
+switch (show_crafting){
+	case true:
+		draw_sprite_stretched(spr_craft_ui_menu,0,x_size_ui-craft_menu_width,button_height,craft_menu_width,craft_menu_height);
+		draw_sprite(spr_equipment_ui,0,x_size_ui-craft_menu_width+6,button_height+9);
+		draw_sprite(spr_tools_ui,0,x_size_ui-craft_menu_width+6,button_height*2+12);
+}
+
+switch (show_equipment){
+	case true:
+		draw_sprite(spr_straw_armor, 0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10)
+		draw_sprite(spr_straw_hat, 0, x_size_ui-craft_menu_width+button_width+32,button_height*3+10)
+		draw_sprite(spr_straw_pants, 0, x_size_ui-craft_menu_width+button_width+32,button_height*4+10)
+		draw_sprite(spr_straw_sock, 0, x_size_ui-craft_menu_width+button_width+32,button_height*5+10)
+}
+
+switch (show_tools){
+	case true:
+		draw_sprite(spr_stick,0, x_size_ui-craft_menu_width+61,button_height*2+5);
+		draw_sprite(spr_rock,0,x_size_ui-craft_menu_width+61,button_height*3);
+}
 
 if (show_inv){
 	draw_sprite(spr_inventory,0,x_size_ui/2,y_size_ui-_heigh_diff_inventory);

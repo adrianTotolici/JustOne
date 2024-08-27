@@ -1,8 +1,12 @@
 /// @description State Controls
 depth=-y;
-hunger-=0.001;
+if (hunger>0){
+	hunger-=0.001;
+}
 if (hunger<5){
-	hp-=0.005;
+	if (hp >0){
+		hp-=0.005;
+	}
 }
 
 switch(state)
@@ -15,3 +19,4 @@ switch(state)
 		scr_player_quick_inventory();
 		break; 
 }
+scr_crafting();

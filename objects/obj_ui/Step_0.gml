@@ -5,6 +5,49 @@ y=obj_you.y;
 var _mx=device_mouse_x_to_gui(0);
 var _my=device_mouse_y_to_gui(0);
 
+if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_height && _mx>=x_size_ui-(button_width*2) && _mx<=x_size_ui-button_height){
+	
+	switch (show_crafting){
+		case false:{
+			show_crafting=true;
+		}
+		break;
+		case true:
+		show_crafting=false;
+		show_tools=false;
+		show_equipment=false;
+		break;
+	}
+}
+
+if (mouse_check_button_pressed(mb_left) && _my>=button_height+9 && _my<=(button_height*2)+9 && _mx>=x_size_ui-craft_menu_width+6 && _mx<=x_size_ui-craft_menu_width+6+button_width && show_crafting){
+	switch (show_equipment){
+		case false:{
+			show_equipment=true;
+			show_tools=false;
+		}
+		break;
+		case true:{
+			show_equipment=false;
+		}
+		break;
+	}
+}
+
+if (mouse_check_button_pressed(mb_left) && _my>=(button_height*2)+12 && _my<=(button_height*3)+12 && _mx>=x_size_ui-craft_menu_width+6 && _mx<=x_size_ui-craft_menu_width+6+button_width && show_crafting){
+	switch (show_tools){
+		case false:{
+			show_tools=true;
+			show_equipment=false;
+		}
+		break;
+		case true:{
+			show_tools=false;
+		}
+		break;
+	}
+}
+
 if (keyboard_check_released(ord("I"))){
 	switch (show_inv){
 		case false:
