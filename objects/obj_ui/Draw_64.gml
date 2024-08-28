@@ -36,7 +36,8 @@ switch (show_tools){
 }
 
 if (show_inv){
-	draw_sprite(spr_inventory,0,x_size_ui/2,y_size_ui-_heigh_diff_inventory);
+	//draw_sprite(spr_inventory,0,x_size_ui/2,y_size_ui-_heigh_diff_inventory);
+	draw_sprite_ext(spr_inventory,0,x_size_ui/2,y_size_ui-_heigh_diff_inventory,1.5,1.5,0,c_white,1);
 	if (inv_selected!=noone){
 		draw_sprite_ext(object_get_sprite(inv_selected),0,_mx,_my,1,1,0,c_white,0.5);
 	}
@@ -50,11 +51,12 @@ if (show_inv){
 		}
 		if (inventory_list[_i] != noone){
 			var _xpos=x_size_ui/2+((inventory_sprite_size/_inv_nr_columns)*(_a-_middle_box_inv))+((inventory_sprite_size/_inv_nr_columns)/2);
-			var _ypos=y_size_ui-(_heigh_diff_inventory+(inventory_sprite_size/2)-((inventory_sprite_size/_inv_nr_columns)/2)-5)+((inventory_sprite_size/_inv_nr_columns)*_j);
+			var _ypos=y_size_ui-(_heigh_diff_inventory+(inventory_sprite_size/2)-((inventory_sprite_size/_inv_nr_columns)/2)-8)+((inventory_sprite_size/_inv_nr_columns)*_j);
 			
-			draw_sprite(object_get_sprite(inventory_list[_i]),0,_xpos,_ypos);
+			//draw_sprite(object_get_sprite(inventory_list[_i]),0,_xpos,_ypos);
+			draw_sprite_ext(object_get_sprite(inventory_list[_i]),0,_xpos, _ypos, 1,1,0,c_white,1);
 			draw_set_halign(fa_center);
-			draw_text(_xpos,_ypos-2,inventory_num[_i]);
+			draw_text(_xpos,_ypos,inventory_num[_i]);
 		}
 		_a+=1;
 	}

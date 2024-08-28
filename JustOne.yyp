@@ -63,6 +63,7 @@
     {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},},
     {"id":{"name":"obj_stick","path":"objects/obj_stick/obj_stick.yy",},},
     {"id":{"name":"obj_straw_armor","path":"objects/obj_straw_armor/obj_straw_armor.yy",},},
+    {"id":{"name":"obj_straw_hat","path":"objects/obj_straw_hat/obj_straw_hat.yy",},},
     {"id":{"name":"obj_ui","path":"objects/obj_ui/obj_ui.yy",},},
     {"id":{"name":"obj_you","path":"objects/obj_you/obj_you.yy",},},
     {"id":{"name":"rm_world","path":"rooms/rm_world/rm_world.yy",},},

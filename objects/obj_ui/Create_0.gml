@@ -1,13 +1,13 @@
 /// @description Vars
 depth =-5;
 sprite_size=30;
-inventory_sprite_size=128;
+inventory_sprite_size=128*1.5;
 x_size_ui=window_get_width();
 y_size_ui=window_get_height();
 _nr_of_boxes=5;
 _middle_box_inv = 2;
 _inv_nr_columns = 4;
-_heigh_diff_inventory = 105;
+_heigh_diff_inventory = 155;
 _text_to_display = "Just One v0.0.4";
 
 
