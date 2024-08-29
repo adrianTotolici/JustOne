@@ -10,6 +10,7 @@ my_speed=2;
 equipped=noone;
 hp=100;
 hunger=100;
+thirst=100;
 
 //technical
 state=PLAYER_STATE.CONTROLS;

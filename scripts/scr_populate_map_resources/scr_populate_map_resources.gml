@@ -18,6 +18,10 @@ function scr_populate_map_resources(_sprite_size){
 					instance_create_layer(i*_sprite_size+_sprite_size/2,j*_sprite_size+_sprite_size/2,"Instances",obj_fruit_bush);
 					global.resource_matrix[i][j] = true;
 				}
+				if (resource_freq>30 && resource_freq<=31){
+					instance_create_layer(i*_sprite_size+_sprite_size/2,j*_sprite_size+_sprite_size/2,"Instances",obj_water_pot);
+					global.resource_matrix[i][j] = true;	
+				}
 			}
 		}
 	}

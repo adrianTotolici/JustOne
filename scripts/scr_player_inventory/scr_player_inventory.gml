@@ -88,6 +88,7 @@ function scr_player_inventory(){
 							my_max=_ui.y_size_ui-(_ui._heigh_diff_inventory+(_ui.inventory_sprite_size/2))+((_ui.inventory_sprite_size/_ui._inv_nr_columns)*(_j+1));
 							if (_my>=my_min && _my<=my_max){
 								b = _j*_ui._inv_nr_columns+_i;
+								// eat food
 								if (_ui.inventory_list[b]!=noone && object_get_parent(_ui.inventory_list[b])==obj_par_food){
 									hunger+=5;
 									_ui.inventory_num[b]-=1;
@@ -95,6 +96,17 @@ function scr_player_inventory(){
 										_ui.inventory_list[b]=noone;
 									}
 								}
+								if (_ui.inventory_list[b]!=noone && object_get_parent(_ui.inventory_list[b])==obj_par_drink){
+									thirst+=5;
+									_ui.inventory_num[b]-=1;
+									if (_ui.inventory_num[b]<1){
+										_ui.inventory_list[b]=noone;
+									}
+								}
+								// equip armmor
+								//if (_ui.inventory_list[b]!=noone && object_get_parent(_ui.inventory_list[b])==obj_par_equipment){
+									
+								//}
 							}
 						}
 					}

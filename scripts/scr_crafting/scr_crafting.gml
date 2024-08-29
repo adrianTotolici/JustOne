@@ -13,42 +13,35 @@ function scr_crafting(){
 			}
 		}
 		
-	if (_ui.show_equipment==true){
-		// craft straw armor
-		if (_my>=_ui.button_height+10 && _my<=(_ui.button_height*2)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
-			var ing_need = 4;
-			if (ing_need<=_straw_own){
-				for (j=0;j<array_length(_ui.inventory_list); j++){
-					if (_ui.inventory_list[j]==noone){
-						_ui.inventory_list[j]=obj_straw_armor;
-						_ui.inventory_num[j]+=1;
-						for (i=0; i<array_length(_ui.inventory_list); i++){
-							if (_ui.inventory_list[i]=obj_grass_loot){
-								if (_ui.inventory_num[i]>ing_need){
-									_ui.inventory_num[i]-=ing_need;
-								}else{
-									ing_need-=_ui.inventory_num[i];
-									_ui.inventory_list[i]=noone;
-									_ui.inventory_num[i]=0;
-									if (ing_need==0){
-										break;
-									}
-								}
-							}
-						}
-						break;
-					}
-				}
+		if (_ui.show_equipment==true){
+			// craft straw armor
+			if (_my>=_ui.button_height+10 && _my<=(_ui.button_height*2)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+				create_object(obj_straw_armor, obj_grass_loot, 4, _straw_own);
+			}
+			
+			// craft straw hat
+			if (_my>=_ui.button_height+10+_ui.button_height && _my<=(_ui.button_height*3)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+				create_object(obj_straw_hat, obj_grass_loot, 2, _straw_own);
+			}
+			
+			// craft straw pants
+			if (_my>=_ui.button_height+10+(_ui.button_height*2) && _my<=(_ui.button_height*4)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+				create_object(obj_straw_pants, obj_grass_loot, 4, _straw_own);
+			}
+			
+			// craft straw footware
+			if (_my>=_ui.button_height+10+(_ui.button_height*3) && _my<=(_ui.button_height*5)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+				create_object(obj_straw_footwear, obj_grass_loot, 2, _straw_own);
 			}
 		}
-			
-		// craft straw hat
-		if (_my>=_ui.button_height+10+_ui.button_height && _my<=(_ui.button_height*3)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
-			create_object(obj_straw_hat, obj_grass_loot, 2, _straw_own);
+		
+		if (_ui.show_tools==true){
+			// craft straw mug
+			if (_my>=_ui.button_height+10+(_ui.button_height*2) && _my<=(_ui.button_height*4)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+				create_object(obj_straw_mug, obj_grass_loot, 1, _straw_own);
 			}
 		}
 	}
-
 }
 
 function create_object(obj_created, obj_resources, resource_need, resource_own){

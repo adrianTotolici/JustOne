@@ -1,8 +1,11 @@
 /// @description Draw Quick Invetory
 draw_sprite(spr_health,0,20,60);
 draw_sprite(spr_hunger,0,20,90);
+draw_sprite(spr_thirst_ui,0,20,120);
 draw_healthbar(40,30,250,50,obj_you.hp,c_black,c_red,c_red,0,true,true);
 draw_healthbar(40,60,250,80,obj_you.hunger, c_black, c_green, c_green,0,true,true);
+draw_healthbar(40,90,250,110,obj_you.thirst, c_black, c_blue, c_blue,0,true,true);
+
 
 var _mx=device_mouse_x_to_gui(0);
 var _my=device_mouse_y_to_gui(0);
@@ -31,8 +34,9 @@ switch (show_equipment){
 
 switch (show_tools){
 	case true:
-		draw_sprite(spr_stick,0, x_size_ui-craft_menu_width+61,button_height*2+5);
-		draw_sprite(spr_rock,0,x_size_ui-craft_menu_width+61,button_height*3);
+		draw_sprite(spr_stick,0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10);
+		draw_sprite(spr_rock,0,x_size_ui-craft_menu_width+button_width+32,button_height*3+10);
+		draw_sprite(spr_straw_mug,0,x_size_ui-craft_menu_width+button_width+32,button_height*4+10);
 }
 
 if (show_inv){

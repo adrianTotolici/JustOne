@@ -3,7 +3,12 @@ depth=-y;
 if (hunger>0){
 	hunger-=0.001;
 }
-if (hunger<5){
+
+if (thirst>0){
+	thirst-=0.001;
+}
+
+if (hunger<5) || (thirst<5){
 	if (hp >0){
 		hp-=0.005;
 	}
