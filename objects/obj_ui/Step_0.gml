@@ -5,6 +5,22 @@ y=obj_you.y;
 var _mx=device_mouse_x_to_gui(0);
 var _my=device_mouse_y_to_gui(0);
 
+//press help button
+if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_height && _mx>=x_size_ui-button_width && _mx<=x_size_ui){
+	switch (show_help){
+		case false:{
+			show_help=true;
+		}
+		break;
+	}
+}
+
+if (keyboard_check_released(vk_escape)){
+	show_help=false;
+}
+
+
+// press crafting button
 if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_height && _mx>=x_size_ui-(button_width*2) && _mx<=x_size_ui-button_height){
 	
 	switch (show_crafting){
@@ -20,6 +36,7 @@ if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_heigh
 	}
 }
 
+//press equipmewnt crafting button
 if (mouse_check_button_pressed(mb_left) && _my>=button_height+9 && _my<=(button_height*2)+9 && _mx>=x_size_ui-craft_menu_width+6 && _mx<=x_size_ui-craft_menu_width+6+button_width && show_crafting){
 	switch (show_equipment){
 		case false:{
@@ -34,6 +51,7 @@ if (mouse_check_button_pressed(mb_left) && _my>=button_height+9 && _my<=(button_
 	}
 }
 
+//press tool crafting button
 if (mouse_check_button_pressed(mb_left) && _my>=(button_height*2)+12 && _my<=(button_height*3)+12 && _mx>=x_size_ui-craft_menu_width+6 && _mx<=x_size_ui-craft_menu_width+6+button_width && show_crafting){
 	switch (show_tools){
 		case false:{

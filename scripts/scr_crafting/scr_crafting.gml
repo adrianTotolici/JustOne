@@ -26,7 +26,7 @@ function scr_crafting(){
 			
 			// craft straw pants
 			if (_my>=_ui.button_height+10+(_ui.button_height*2) && _my<=(_ui.button_height*4)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
-				create_object(obj_straw_pants, obj_grass_loot, 4, _straw_own);
+				create_object(obj_straw_pants, obj_grass_loot, 3, _straw_own);
 			}
 			
 			// craft straw footware

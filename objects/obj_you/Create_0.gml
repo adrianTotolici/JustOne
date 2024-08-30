@@ -20,5 +20,6 @@ anim_walk_right=spr_player_right;
 anim_walk_up=spr_player_up;
 anim_walk_down=spr_player_down;
 anim_harvest=spr_player_harvest;
+show_end_game=false;
 
 instance_create_layer(x,y,"Instances",obj_ui);

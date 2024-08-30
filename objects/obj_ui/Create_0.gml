@@ -40,9 +40,21 @@ show_equipment=false;
 //ui craft menu
 craft_menu_width=128+32;
 craft_menu_height=256;
-
+text_straw_armor_rec="4x "
+text_straw_pants_rec="3x "
+text_straw_hat_rec="2x "
+text_straw_footware_rec="2x "
+text_straw_mug="1x "
 
 
 // screen menu buttons
 button_height=32;
 button_width=32;
+
+// ui help
+show_help=false;
+help_move_text="Move around using the W, A, S, and D keys!"
+help_quick_inventory="Press 1 to 5 to quickly equip tools from the inventory at the bottom."
+help_inventory= "Press 'I' to open your inventory."
+help_crafting = "Click the 'C' button on the screen to open the crafting menu."
+help_ui_close = "Press ESC to close the help menu."

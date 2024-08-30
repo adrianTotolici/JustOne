@@ -25,3 +25,14 @@ switch(state)
 		break; 
 }
 scr_crafting();
+
+if (hp<=0){
+	show_end_game=true;
+	if (keyboard_check_released(vk_anykey) || mouse_check_button_pressed(mb_any)){
+		room_goto(rm_menu);
+	}
+}
+
+if (keyboard_check(vk_f1)){
+	room_goto(rm_menu);
+}
