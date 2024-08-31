@@ -33,6 +33,6 @@ if (hp<=0){
 	}
 }
 
-if (keyboard_check(vk_f1)){
+if (keyboard_check(vk_escape)){
 	room_goto(rm_menu);
 }

@@ -6,17 +6,17 @@ var _mx=device_mouse_x_to_gui(0);
 var _my=device_mouse_y_to_gui(0);
 
 //press help button
-if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_height && _mx>=x_size_ui-button_width && _mx<=x_size_ui){
+if ((mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_height && _mx>=x_size_ui-button_width && _mx<=x_size_ui) || keyboard_check_released(vk_f1)){
 	switch (show_help){
 		case false:{
 			show_help=true;
 		}
 		break;
+		case true:{
+			show_help=false;	
+		}
+		break;
 	}
-}
-
-if (keyboard_check_released(vk_escape)){
-	show_help=false;
 }
 
 

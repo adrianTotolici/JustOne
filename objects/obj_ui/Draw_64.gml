@@ -96,6 +96,7 @@ if (show_help){
 	draw_text(x_size_ui/2-(x_size_ui/2/2), 36*2, help_quick_inventory);
 	draw_text(x_size_ui/2-(x_size_ui/2/2), 36*3, help_crafting);
 	draw_text(x_size_ui/2-(x_size_ui/2/2), 36*4, help_ui_close);
+	draw_text(x_size_ui/2-(x_size_ui/2/2), 36*5, help_exit_main_menu);
 }
 
 for(var _i=0;_i<array_length(slot_list);_i++){
