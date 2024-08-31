@@ -60,7 +60,6 @@ function scr_player_inventory(){
 			if (_my <= _ui.y_size_ui-_ui.sprite_size+2 && _ui.inv_selected!=noone){
 				mx_min=_ui.x_size_ui/2+(_ui.inventory_sprite_size/_ui._inv_nr_columns);
 				mx_max=_ui.x_size_ui/2+((_ui.inventory_sprite_size/_ui._inv_nr_columns)*(_ui._inv_nr_columns-_ui._middle_box_inv));
-				//if (_mx>=_ui.x_size_ui/2+_ui.inventory_sprite_size/2 || _mx <=_ui.x_size_ui/2+_ui.inventory_sprite_size/2){
 				if (_mx>=mx_min || _mx <=mx_max){
 					var item=instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inv_selected);
 					item.on_floor=true;
@@ -88,16 +87,9 @@ function scr_player_inventory(){
 							my_max=_ui.y_size_ui-(_ui._heigh_diff_inventory+(_ui.inventory_sprite_size/2))+((_ui.inventory_sprite_size/_ui._inv_nr_columns)*(_j+1));
 							if (_my>=my_min && _my<=my_max){
 								b = _j*_ui._inv_nr_columns+_i;
-								// eat food
-								if (_ui.inventory_list[b]!=noone && object_get_parent(_ui.inventory_list[b])==obj_par_food){
-									hunger+=5;
-									_ui.inventory_num[b]-=1;
-									if (_ui.inventory_num[b]<1){
-										_ui.inventory_list[b]=noone;
-									}
-								}
-								if (_ui.inventory_list[b]!=noone && object_get_parent(_ui.inventory_list[b])==obj_par_drink){
-									thirst+=5;
+								// eat food and drink
+								if (_ui.inventory_list[b]!=noone && (object_get_parent(_ui.inventory_list[b])==obj_par_food) || object_get_parent(_ui.inventory_list[b])==obj_par_drink){
+									eat_and_drink(_ui.inventory_list[b]);
 									_ui.inventory_num[b]-=1;
 									if (_ui.inventory_num[b]<1){
 										_ui.inventory_list[b]=noone;
@@ -113,5 +105,24 @@ function scr_player_inventory(){
 				}
 			}
 		}
+	}
+}
+
+function eat_and_drink(object){
+	var obj_fw=object;
+	var obj = noone;
+	switch (obj_fw){
+		case obj_coacaze_loot:
+			obj = obj_coacaze_loot;
+			break;
+		case obj_water_loot:
+			obj = obj_water_loot;
+			break;
+		default:
+			break;
+	}
+	if (obj != noone){
+		hunger+=obj.food;
+		thirst+=obj.water;
 	}
 }
