@@ -11,7 +11,7 @@ function scr_player_harvest(){
 		y_min=obj_you.y-35;
 		y_max=obj_you.y+35;
 		
-		if (instance_exists(_resources) && (x_min<=_resources.x && _resources.x<=x_max) && (y_min<=_resources.y && _resources.y<=y_max)){
+		if (instance_exists(_resources) && (x_min<=_resources.x && _resources.x<=x_max) && (y_min<=_resources.y && _resources.y<=y_max) && _resources.no_resources==false){
 			if (sprite_index!=anim_harvest){
 				sprite_index=anim_harvest;
 				image_index=0;

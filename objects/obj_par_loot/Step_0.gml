@@ -9,7 +9,7 @@ if (initialize==true){
 	}else{
 		if (mouse_check_button_pressed(mb_left)){
 			var inst = instance_position(mouse_x, mouse_y, all);
-			if (inst != noone) {
+			if (inst != noone && inst.loot && inst.on_floor) {
 				with (inst) {
 					x = mouse_x;
 					y = mouse_y;

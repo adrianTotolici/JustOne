@@ -19,3 +19,4 @@ alarm[0]=600*speed;
 max_stack=20;
 my_stack=1;
 on_floor=false;
+loot=true;

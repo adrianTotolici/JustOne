@@ -89,7 +89,7 @@ function scr_player_inventory(){
 								b = _j*_ui._inv_nr_columns+_i;
 								// eat food and drink
 								if (_ui.inventory_list[b]!=noone){
-									if (object_get_parent(_ui.inventory_list[b])==obj_par_food) || (object_get_parent(_ui.inventory_list[b])==obj_par_drink){
+									if (object_get_parent(_ui.inventory_list[b])=obj_par_food){
 										eat_and_drink(_ui.inventory_list[b]);
 										_ui.inventory_num[b]-=1;
 										if (_ui.inventory_num[b]<1){
@@ -119,18 +119,24 @@ function eat_and_drink(object){
 	var obj = noone;
 	switch (obj_fw){
 		case obj_coacaze_loot:
-			//obj = instance_create_depth(mouse_x, mouse_y, depth, obj_coacaze_loot);
 			obj = instance_find(obj_coacaze_loot, 0);
 			break;
 		case obj_water_loot:
-			//obj = instance_create_depth(mouse_x,mouse_y,depth,obj_water_loot);
 			obj = instance_find(obj_water_loot, 0);
 			break;
 		default:
 			break;
 	}
 	if (obj != noone){
-		hunger+=obj.food;
-		thirst+=obj.water;
+		if (hunger+obj.food >= 100){
+			hunger = 100;
+		}else{ 
+			hunger+=obj.food;
+		}
+		if (thirst+obj.water >= 100) {
+			thirst = 100;
+		} else {
+			thirst+=obj.water;
+		}
 	}
 }
