@@ -93,9 +93,9 @@ if (keyboard_check(vk_anykey)){
 	switch(_key_pressed){
 		case ord("1"):
 			if (slot_list[0] != noone){
-				var par=object_get_parent(slot_list[0]);
+				var _par=object_get_parent(slot_list[0]);
 				if (obj_you.equipped!=slot_list[0]){
-					if (par==obj_par_equipment){
+					if (_par==obj_par_equipment){
 						obj_you.equipped=slot_list[0];
 						with (obj_par_equipment) {
 							instance_destroy();
@@ -108,9 +108,9 @@ if (keyboard_check(vk_anykey)){
 
 		case ord("2"):
 			if (slot_list[1] != noone){
-				var par=object_get_parent(slot_list[1]);
+				var _par=object_get_parent(slot_list[1]);
 				if (obj_you.equipped!=slot_list[1]){
-					if (par==obj_par_equipment){
+					if (_par==obj_par_equipment){
 						obj_you.equipped=slot_list[1];
 						with (obj_par_equipment) {
 							instance_destroy();
@@ -123,9 +123,9 @@ if (keyboard_check(vk_anykey)){
 			
 		case ord("3"):
 			if (slot_list[2]!=noone){
-				var par=object_get_parent(slot_list[2]);
+				var _par=object_get_parent(slot_list[2]);
 				if (obj_you.equipped!=slot_list[2]){
-					if (par==obj_par_equipment){
+					if (_par==obj_par_equipment){
 						obj_you.equipped=slot_list[2];
 						with (obj_par_equipment) {
 							instance_destroy();
@@ -138,9 +138,9 @@ if (keyboard_check(vk_anykey)){
 			
 		case ord("4"):
 			if (slot_list[3]!=noone){
-				var par=object_get_parent(slot_list[3]);
+				var _par=object_get_parent(slot_list[3]);
 				if (obj_you.equipped!=slot_list[3]){
-					if (par==obj_par_equipment){
+					if (_par==obj_par_equipment){
 						obj_you.equipped=slot_list[3];
 						with (obj_par_equipment) {
 							instance_destroy();
@@ -153,9 +153,9 @@ if (keyboard_check(vk_anykey)){
 			
 		case ord("5"):
 			if (slot_list[4] != noone){
-				var par=object_get_parent(slot_list[4]);
+				var _par=object_get_parent(slot_list[4]);
 				if (obj_you.equipped!=slot_list[4]){
-					if (par=obj_par_equipment){
+					if (_par=obj_par_equipment){
 						obj_you.equipped=slot_list[4];
 						with (obj_par_equipment) {
 							instance_destroy();

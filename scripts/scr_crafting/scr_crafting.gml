@@ -44,22 +44,22 @@ function scr_crafting(){
 	}
 }
 
-function create_object(obj_created, obj_resources, resource_need, resource_own){
+function create_object(_obj_created, _obj_resources, _resource_need, _resource_own){
 	var _ui=obj_ui;
-	if (resource_need<=resource_own){
+	if (_resource_need<=_resource_own){
 		for (j=0;j<array_length(_ui.inventory_list); j++){
 			if (_ui.inventory_list[j]==noone){
-				_ui.inventory_list[j]=obj_created;
+				_ui.inventory_list[j]=_obj_created;
 				_ui.inventory_num[j]+=1;
 				for (i=0; i<array_length(_ui.inventory_list); i++){
-					if (_ui.inventory_list[i]=obj_resources){
-						if (_ui.inventory_num[i]>resource_need){
-							_ui.inventory_num[i]-=resource_need;
+					if (_ui.inventory_list[i]=_obj_resources){
+						if (_ui.inventory_num[i]>_resource_need){
+							_ui.inventory_num[i]-=_resource_need;
 						}else{
-							resource_need-=_ui.inventory_num[i];
+							_resource_need-=_ui.inventory_num[i];
 							_ui.inventory_list[i]=noone;
 							_ui.inventory_num[i]=0;
-							if (resource_need==0){
+							if (_resource_need==0){
 								break;
 							}
 						}

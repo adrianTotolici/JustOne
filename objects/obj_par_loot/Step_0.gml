@@ -8,9 +8,9 @@ if (initialize==true){
 		move_outside_all(irandom(360),2);
 	}else{
 		if (mouse_check_button_pressed(mb_left)){
-			var inst = instance_position(mouse_x, mouse_y, all);
-			if (inst != noone && inst.loot && inst.on_floor) {
-				with (inst) {
+			var _inst = instance_position(mouse_x, mouse_y, all);
+			if (_inst != noone && _inst.loot && _inst.on_floor) {
+				with (_inst) {
 					x = mouse_x;
 					y = mouse_y;
 					scr_inventory_add();

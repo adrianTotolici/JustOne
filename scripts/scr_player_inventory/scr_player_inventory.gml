@@ -61,12 +61,12 @@ function scr_player_inventory(){
 				mx_min=_ui.x_size_ui/2+(_ui.inventory_sprite_size/_ui._inv_nr_columns);
 				mx_max=_ui.x_size_ui/2+((_ui.inventory_sprite_size/_ui._inv_nr_columns)*(_ui._inv_nr_columns-_ui._middle_box_inv));
 				if (_mx>=mx_min || _mx <=mx_max){
-					var item=instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inv_selected);
-					item.on_floor=true;
+					var _item=instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inv_selected);
+					_item.on_floor=true;
 					for (i=0; i<array_length(_ui.inventory_list);i++){
 						if (_ui.inv_selected==_ui.inventory_list[i]){
 							_ui.inventory_list[i]=noone;
-							item.my_stack=_ui.inventory_num[i];
+							_item.my_stack=_ui.inventory_num[i];
 							_ui.inventory_num[i]=0;
 							break;
 						}
@@ -114,29 +114,29 @@ function scr_player_inventory(){
 	}
 }
 
-function eat_and_drink(object){
-	var obj_fw=object;
-	var obj = noone;
-	switch (obj_fw){
+function eat_and_drink(_object){
+	var _obj_fw=_object;
+	var _obj = noone;
+	switch (_obj_fw){
 		case obj_coacaze_loot:
-			obj = instance_find(obj_coacaze_loot, 0);
+			_obj = instance_find(obj_coacaze_loot, 0);
 			break;
 		case obj_water_loot:
-			obj = instance_find(obj_water_loot, 0);
+			_obj = instance_find(obj_water_loot, 0);
 			break;
 		default:
 			break;
 	}
-	if (obj != noone){
-		if (hunger+obj.food >= 100){
+	if (_obj != noone){
+		if (hunger+_obj.food >= 100){
 			hunger = 100;
 		}else{ 
-			hunger+=obj.food;
+			hunger+=_obj.food;
 		}
-		if (thirst+obj.water >= 100) {
+		if (thirst+_obj.water >= 100) {
 			thirst = 100;
 		} else {
-			thirst+=obj.water;
+			thirst+=_obj.water;
 		}
 	}
 }
