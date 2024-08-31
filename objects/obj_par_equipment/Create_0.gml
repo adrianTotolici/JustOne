@@ -13,4 +13,4 @@ path_set_precision(my_path,8);
 path_set_closed(my_path,false);
 path_start(my_path,20,0,0);
 
-alarm[0]=300*speed;
+alarm[0]=600*speed;
