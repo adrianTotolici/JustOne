@@ -19,10 +19,8 @@ if ((mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_heig
 	}
 }
 
-
 // press crafting button
 if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_height && _mx>=x_size_ui-(button_width*2) && _mx<=x_size_ui-button_height){
-	
 	switch (show_crafting){
 		case false:{
 			show_crafting=true;
@@ -36,7 +34,20 @@ if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_heigh
 	}
 }
 
-//press equipmewnt crafting button
+//press player equipment button
+if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_height && _mx>=x_size_ui-(button_width*3) && _mx<=x_size_ui-button_height){
+	switch (show_player_equipment){
+		case false:{
+			show_player_equipment=true;
+		}
+		break;
+		case true:
+		show_player_equipment=false;
+		break;
+	}
+}
+
+//press equipment crafting button
 if (mouse_check_button_pressed(mb_left) && _my>=button_height+9 && _my<=(button_height*2)+9 && _mx>=x_size_ui-craft_menu_width+6 && _mx<=x_size_ui-craft_menu_width+6+button_width && show_crafting){
 	switch (show_equipment){
 		case false:{

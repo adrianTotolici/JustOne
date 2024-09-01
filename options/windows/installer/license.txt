@@ -1,42 +1,34 @@
-This Application was made using GameMaker. GameMaker is the intellectual property of YoYo Games Ltd, a company of the United Kingdom.
+Copyright License Agreement
 
-THIS END USER LICENSE AGREEMENT APPLIES TO ALL USE OF THIS APPLICATION.
+This Copyright License Agreement (“Agreement”) is made and entered into as of 2024, by and between Adrian T and END USER.
 
-Scope
------
-You may:
+1. Grant of License
+Licensor hereby grants to Licensee a non-exclusive, non-transferable, revocable license to use, reproduce, distribute, and display the game “JustOne” (“Game”) solely for the purposes set forth in this Agreement.
 
-Install and use this Application for personal, or commercial use [provided you have paid any license fee, if this applies];
+2. Ownership
+Licensee acknowledges that Licensor retains all rights, title, and interest in and to the Game, including all copyrights and other intellectual property rights. Licensee shall not acquire any ownership rights in the Game.
 
-You must not:
+3. Permitted Uses
+Licensee may use the Game for the following purposes:
+a. Personal use
+b. Non-commercial distribution
 
-use, copy, transfer, distribute modify, adapt, merge, translate, decompile, disassemble, or reverse engineer the Application or part of it except as expressly permitted by this Licence;
-remove, modify, or tamper with any copyright, trademark or other notice;
-use the Application for any illegal, unlawful or immoral purposes.
+4. Restrictions
+Licensee shall not:
+a. Modify, adapt, or create derivative works based on the Game without the prior written consent of Licensor.
+b. Use the Game for any commercial purposes without obtaining a separate commercial license from Licensor.
+c. Remove or alter any copyright notices or proprietary legends contained in the Game.
 
+5. Term and Termination
+This Agreement shall commence on the date first written above and shall continue until terminated by either party. Either party may terminate this Agreement at any time upon written notice to the other party. Upon termination, Licensee shall cease all use of the Game and destroy all copies in its possession.
 
-Term
-----
-This License will end automatically if you breach any of the terms.
-When this License ends you must stop all use of the Application and destroy and erase any copies you have.
+6. Disclaimer of Warranties
+The Game is provided “as is” without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose, and non-infringement. Licensor does not warrant that the Game will be error-free or that any errors will be corrected.
 
+7. Limitation of Liability
+In no event shall Licensor be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with this Agreement or the use of the Game, even if Licensor has been advised of the possibility of such damages.
 
-Liability
----------
+9. Entire Agreement
+This Agreement constitutes the entire agreement between the parties with respect to the subject matter hereof and supersedes all prior or contemporaneous understandings or agreements, whether written or oral, regarding such subject matter.
 
-YoYo Games Limited ("YoYo Games") is not involved in the creation of this Application except only that it was made using GameMaker. YoYo Games warrants only that GameMaker will function satisfactorily if used properly and on the correct operating system.
-YoYo Games does not warrant that the operation of the Application will be uninterrupted or error free or that errors can be corrected. You install and use the Application at your own risk and in no event will YoYo Games be liable to you for any loss or damage of any kind (except personal injury or death arising from YoYo Games' negligence) including lost profits or other consequential loss arising from the use of or inability to use the Application or from errors or deficiencies in it whether caused by negligence or otherwise.
-To the maximum extent permitted by law, YoYo Games Limited excludes liability for all warranties, conditions and other terms which but for this notice would have effect.
-
-
-General
--------
-
-All copyright and other intellectual property rights in GameMaker and parts of it included in the Application belong to and vest in YoYo Games. All rights of YoYo Games are hereby asserted and reserved.
-All trade marks are the property of their respective owners and YoYo Games makes no warranty or representation in respect of and has no responsibility and excludes all liability for any trade mark or third party content.
-The rights granted in this license are non-exclusive.
-This license does not affect your statutory rights as a consumer.
-This License is governed by English Law and the parties submit to the exclusive jurisdiction of the English Courts.
-If you have a problem with this Application please contact the person who made it, not YoYo Games.
-
-Click "ACCEPT" and accept these terms to install and use this Application. If you do not accept them terms you may not continue with the installation and you must not install, use or run this software on this or any other computer.
+IN WITNESS WHEREOF, the parties hereto have executed this Agreement as of the date first above written.

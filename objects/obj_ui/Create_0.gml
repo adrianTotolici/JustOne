@@ -8,7 +8,7 @@ _nr_of_boxes=5;
 _middle_box_inv = 2;
 _inv_nr_columns = 4;
 _heigh_diff_inventory = 155;
-_text_to_display = "Just One v0.0.4";
+_text_to_display = "Just One v0.0.5";
 
 
 display_set_gui_size(x_size_ui,y_size_ui);
@@ -36,6 +36,7 @@ inventory_num[1]=1;
 show_crafting=false;
 show_tools=false;
 show_equipment=false;
+show_player_equipment=false;
 
 //ui craft menu
 craft_menu_width=128+32;

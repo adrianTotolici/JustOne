@@ -16,6 +16,7 @@ draw_text(40, 0,_text_to_display);
 
 draw_sprite(spr_help,0,x_size_ui-button_width,0);
 draw_sprite(spr_craft_ui,0,x_size_ui-button_width*2,0);
+draw_sprite(spr_equipment_ui, 0, x_size_ui-button_width*3,0);
 
 switch (show_crafting){
 	case true:
@@ -97,6 +98,10 @@ if (show_help){
 	draw_text(x_size_ui/2-(x_size_ui/2/2), 36*3, help_crafting);
 	draw_text(x_size_ui/2-(x_size_ui/2/2), 36*4, help_ui_close);
 	draw_text(x_size_ui/2-(x_size_ui/2/2), 36*5, help_exit_main_menu);
+}
+
+if (show_player_equipment){
+	draw_sprite(spr_player_equipment_ui,0,20,y_size_ui/2);
 }
 
 for(var _i=0;_i<array_length(slot_list);_i++){
