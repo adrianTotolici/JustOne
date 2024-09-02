@@ -35,7 +35,7 @@ if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_heigh
 }
 
 //press player equipment button
-if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_height && _mx>=x_size_ui-(button_width*3) && _mx<=x_size_ui-button_height){
+if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=y_size_ui+button_height && _mx>=x_size_ui-(button_width*3) && _mx<=x_size_ui-button_height*2){
 	switch (show_player_equipment){
 		case false:{
 			show_player_equipment=true;

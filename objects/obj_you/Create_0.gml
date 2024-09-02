@@ -11,6 +11,11 @@ equipped=noone;
 hp=100;
 hunger=100;
 thirst=100;
+head_armor=0;
+body_armor=0;
+leg_armor=0;
+hand_armor=0;
+feet_armor=0;
 
 //technical
 state=PLAYER_STATE.CONTROLS;
@@ -21,5 +26,13 @@ anim_walk_up=spr_player_up;
 anim_walk_down=spr_player_down;
 anim_harvest=spr_player_harvest;
 show_end_game=false;
+
+head_equipment=noone;
+body_equipment=noone;
+left_hand_equipment=noone;
+right_hand_equipment=noone;
+leg_equipment=noone;
+left_foot_equipment=noone;
+right_foot_equipment=noone;
 
 instance_create_layer(x,y,"Instances",obj_ui);

@@ -97,6 +97,9 @@ function scr_player_inventory(){
 										}
 										break;
 									}
+									if (object_get_parent(_ui.inventory_list[b])=obj_par_equipment){
+										equip(_ui.inventory_list[b]);
+									}
 								}else{
 									break;
 								}
@@ -115,9 +118,8 @@ function scr_player_inventory(){
 }
 
 function eat_and_drink(_object){
-	var _obj_fw=_object;
 	var _obj = noone;
-	switch (_obj_fw){
+	switch (_object){
 		case obj_coacaze_loot:
 			_obj = instance_find(obj_coacaze_loot, 0);
 			break;
@@ -138,5 +140,44 @@ function eat_and_drink(_object){
 		} else {
 			thirst+=_obj.water;
 		}
+	}
+}
+
+function equip(_object){
+	switch(_object){
+		case obj_straw_hat:
+			if (obj_you.head_armor > 0){
+				obj_you.head_armor = 0;
+			}
+			obj_you.head_equipment = obj_straw_hat;
+			obj_you.head_armor = 1;
+			break;
+		case obj_straw_armor:
+			if (obj_you.body_armor > 0){
+				obj_you.body_armor = 0;
+			}
+			obj_you.body_equipment = obj_straw_armor;
+			obj_you.body_armor = 3;
+			break;
+		case obj_straw_pants:
+			if (obj_you.leg_armor > 0){
+				obj_you.leg_armor=0;
+			}
+			obj_you.leg_equipment = obj_straw_pants;
+			obj_you.leg_armor = 2;
+			break;
+		case obj_straw_footwear:
+			if (obj_you.feet_armor > 0 && obj_you.left_foot_equipment != noone && obj_you.right_foot_equipment != noone){
+				obj_you.feet_armor = 0;
+			}
+			obj_you.feet_armor += 1;
+			if (obj_you.left_foot_equipment == noone){
+				obj_you.left_foot_equipment = obj_straw_footwear;
+				break;
+			}
+			if (obj_you.right_foot_equipment == noone){
+				obj_you.right_foot_equipment = obj_straw_footwear;
+				break;
+			}	
 	}
 }

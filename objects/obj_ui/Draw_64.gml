@@ -5,6 +5,10 @@ draw_sprite(spr_thirst_ui,0,20,120);
 draw_healthbar(40,30,250,50,obj_you.hp,c_black,c_red,c_red,0,true,true);
 draw_healthbar(40,60,250,80,obj_you.hunger, c_black, c_green, c_green,0,true,true);
 draw_healthbar(40,90,250,110,obj_you.thirst, c_black, c_blue, c_blue,0,true,true);
+total_armor= obj_you.head_armor+obj_you.body_armor+obj_you.leg_armor+obj_you.hand_armor+obj_you.feet_armor;
+if (total_armor > 0){
+	draw_healthbar(40,120,250,140,total_armor, c_black, c_grey, c_grey,0,true,true);
+}
 
 
 var _mx=device_mouse_x_to_gui(0);
@@ -102,6 +106,82 @@ if (show_help){
 
 if (show_player_equipment){
 	draw_sprite(spr_player_equipment_ui,0,20,y_size_ui/2);
+	
+	// check if headware is equiped
+	if (obj_you.head_equipment!=noone){
+		x_pos=40;
+		y_pos=y_size_ui/2-70;
+		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos+4,0.7,0.7,0,c_white,1);
+		switch (obj_you.head_equipment){
+			case obj_straw_hat:
+				draw_sprite_ext(spr_straw_hat,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite(spr_player_equipment_straw_hat,0,20,y_size_ui/2);
+				break;
+			default:
+				break;
+		}	
+	}
+	
+	//check if bodyeware is equiped
+	if (obj_you.body_equipment!=noone){
+		x_pos=128;
+		y_pos=y_size_ui/2-10;
+		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos,0.7,0.7,0,c_white,1);
+		switch (obj_you.body_equipment){
+			case obj_straw_armor:
+				draw_sprite_ext(spr_straw_armor,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite(spr_player_equipment_straw_armor,0,20,y_size_ui/2);
+				break;
+			default:
+				break;
+		}
+	}
+	
+	// check if legware is equiped
+	if (obj_you.leg_equipment!=noone){
+		x_pos=120;
+		y_pos=y_size_ui/2+53;
+		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos,0.7,0.7,0,c_white,1);
+		switch (obj_you.leg_equipment){
+			case obj_straw_pants:
+				draw_sprite_ext(spr_straw_pants,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite(spr_player_equipment_straw_legware,0,20,y_size_ui/2);
+				break;
+			default:
+				break;
+		}
+	}
+	
+	// check if footware left is equiped
+	if (obj_you.left_foot_equipment!=noone){
+		y_pos=y_size_ui/2+90;
+		x_pos=63;
+		
+		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos,0.7,0.7,0,c_white,1);
+		switch (obj_you.left_foot_equipment){
+			case obj_straw_footwear:
+				draw_sprite_ext(spr_straw_sock,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite(spr_player_equipment_straw_left_foot,0,20,y_size_ui/2);
+				break;
+			default:
+				break;
+		}
+	}
+	
+	// check if footware right is equiped
+	if (obj_you.right_foot_equipment!=noone){
+		y_pos=y_size_ui/2+90;
+		x_pos=92;
+		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos,0.7,0.7,0,c_white,1);
+		switch (obj_you.right_foot_equipment){
+			case obj_straw_footwear:
+				draw_sprite_ext(spr_straw_sock,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite(spr_player_equipment_straw_right_foot,0,20,y_size_ui/2);
+				break;
+			default:
+				break;
+		}
+	}
 }
 
 for(var _i=0;_i<array_length(slot_list);_i++){
