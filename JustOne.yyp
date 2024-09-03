@@ -133,6 +133,7 @@
     {"id":{"name":"spr_player_up","path":"sprites/spr_player_up/spr_player_up.yy",},},
     {"id":{"name":"spr_quickinventory","path":"sprites/spr_quickinventory/spr_quickinventory.yy",},},
     {"id":{"name":"spr_rock","path":"sprites/spr_rock/spr_rock.yy",},},
+    {"id":{"name":"spr_selected_equipment","path":"sprites/spr_selected_equipment/spr_selected_equipment.yy",},},
     {"id":{"name":"spr_stick","path":"sprites/spr_stick/spr_stick.yy",},},
     {"id":{"name":"spr_straw_armor","path":"sprites/spr_straw_armor/spr_straw_armor.yy",},},
     {"id":{"name":"spr_straw_hat","path":"sprites/spr_straw_hat/spr_straw_hat.yy",},},

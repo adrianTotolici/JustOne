@@ -17,7 +17,7 @@ function scr_player_harvest(){
 				image_index=0;
 			}
 			if (image_index>=image_number-1){
-				_resources.hp-=5;
+				_resources.hp-=_player.attack;
 				if (_resources.shake!=true){
 					_resources.shake=true;
 				}

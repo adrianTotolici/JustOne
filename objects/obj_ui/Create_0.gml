@@ -23,15 +23,16 @@ _middle_box = (array_length(slot_list)-1) div 2;
 show_inv=false;
 inventory_list = array_create(16, noone);
 inventory_num = array_create(16, 0);
+inventory_equiped = array_create(16, false);
 inv_selected=noone;
 
 // add test items
 slot_list[0]=obj_rock;
 slot_list[1]=obj_stick;
 slot_list[2]=obj_straw_hat;
-inventory_list[0]=slot_list[0];
-inventory_list[1]=slot_list[1];
-inventory_list[2]=slot_list[2];
+inventory_list[0]=obj_rock;
+inventory_list[1]=obj_stick;
+inventory_list[2]=obj_straw_hat;
 inventory_list[3]=obj_straw_armor;
 inventory_list[4]=obj_straw_pants;
 inventory_list[5]=obj_straw_footwear;
@@ -48,6 +49,9 @@ show_crafting=false;
 show_tools=false;
 show_equipment=false;
 show_player_equipment=false;
+
+//ui equiped
+
 
 //ui craft menu
 craft_menu_width=128+32;

@@ -16,6 +16,7 @@ body_armor=0;
 leg_armor=0;
 hand_armor=0;
 feet_armor=0;
+attack=0.5;
 
 //technical
 state=PLAYER_STATE.CONTROLS;

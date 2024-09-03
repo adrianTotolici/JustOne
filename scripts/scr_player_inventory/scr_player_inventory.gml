@@ -98,15 +98,17 @@ function scr_player_inventory(){
 										break;
 									}
 									if (object_get_parent(_ui.inventory_list[b])=obj_par_equipment){
-										equip(_ui.inventory_list[b]);
+										if (_ui.inventory_equiped[b] == false){
+											equip(_ui.inventory_list[b]);
+											_ui.inventory_equiped[b]=true;
+										}else{
+											unequip(_ui.inventory_list[b]);
+											_ui.inventory_equiped[b]=false;
+										}
 									}
 								}else{
 									break;
 								}
-								// equip armmor
-								//if (_ui.inventory_list[b]!=noone && object_get_parent(_ui.inventory_list[b])==obj_par_equipment){
-									
-								//}
 							}
 						}
 						break;
@@ -178,6 +180,48 @@ function equip(_object){
 			if (obj_you.right_foot_equipment == noone){
 				obj_you.right_foot_equipment = obj_straw_footwear;
 				break;
-			}	
+			}
+		case obj_rock:
+			obj_you.equipped = obj_rock;
+			obj_you.attack += 3.0;
+			break;
+		case obj_stick:
+			obj_you.equipped = obj_stick;
+			obj_you.attack += 1.0;
+			break;
+	}
+}
+
+function unequip(_object){
+	switch(_object){
+		case obj_straw_hat:
+			obj_you.head_armor = 0;
+			obj_you.head_equipment = noone;
+			break;
+		case obj_straw_armor:
+			obj_you.body_armor = 0;
+			obj_you.body_equipment = noone;
+			break;
+		case obj_straw_pants:
+			obj_you.leg_armor=0;
+			obj_you.leg_equipment = noone;
+			break;
+		case obj_straw_footwear:
+			if (obj_you.left_foot_equipment != noone){
+				obj_you.left_foot_equipment = noone;
+				obj_you.feet_armor -=1;
+			}else if (obj_you.right_foot_equipment != noone){
+				obj_you.right_foot_equipment = noone;
+				obj_you.feet_armor -=1;
+			}
+			break;
+		case obj_rock:
+			obj_you.equipped=noone;
+			obj_you.attack -= 3;
+			break;
+		case obj_stick:
+			obj_you.equipped=noone;
+			obj_you.attack -= 1;
+			break;
 	}
 }

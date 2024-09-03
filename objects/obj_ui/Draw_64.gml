@@ -84,10 +84,21 @@ if (show_inv){
 			var _xpos=x_size_ui/2+((inventory_sprite_size/_inv_nr_columns)*(_a-_middle_box_inv))+((inventory_sprite_size/_inv_nr_columns)/2);
 			var _ypos=y_size_ui-(_heigh_diff_inventory+(inventory_sprite_size/2)-((inventory_sprite_size/_inv_nr_columns)/2)-8)+((inventory_sprite_size/_inv_nr_columns)*_j);
 			
-			//draw_sprite(object_get_sprite(inventory_list[_i]),0,_xpos,_ypos);
 			draw_sprite_ext(object_get_sprite(inventory_list[_i]),0,_xpos, _ypos, 1,1,0,c_white,1);
 			draw_set_halign(fa_center);
 			draw_text(_xpos,_ypos,inventory_num[_i]);
+			
+			//if (inventory_equiped[_i] == true){
+			//	draw_sprite_ext(spr_selected_equipment,0,_xpos,_ypos-10, 1.2, 1.2,0,c_white,1);
+			//	var _par=object_get_parent(inventory_list[_i]);
+			//	if (_par==obj_par_equipment){
+			//		obj_you.equipped=inventory_list[_i];
+			//		with (obj_par_equipment) {
+			//			instance_destroy();
+			//		}
+			//		instance_create_layer(obj_you.x, obj_you.y, "Player", inventory_list[_i]);
+			//	}
+			//}
 		}
 		_a+=1;
 	}
@@ -178,6 +189,24 @@ if (show_player_equipment){
 				draw_sprite_ext(spr_straw_sock,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_right_foot,0,20,y_size_ui/2);
 				break;
+			default:
+				break;
+		}
+	}
+	
+	//check if weapon is equiped
+	if (obj_you.equipped != noone){
+		y_pos=y_size_ui/2-20;
+		x_pos=34;
+		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos,0.7,0.7,0,c_white,1);
+		switch (obj_you.equipped){
+			case obj_rock:
+				draw_sprite_ext(spr_rock,0,x_pos+2,y_pos-5,0.85,0.85,0,c_white,1);
+				//draw_sprite(spr_player_equipment_straw_legware,0,20,y_size_ui/2);
+				break;
+			case obj_stick:
+				draw_sprite_ext(spr_stick,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				//draw_sprite(spr_player_equipment_straw_legware,0,20,y_size_ui/2);
 			default:
 				break;
 		}
