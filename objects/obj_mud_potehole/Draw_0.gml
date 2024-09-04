@@ -6,4 +6,5 @@ if(hp<1){
 		_inst.on_floor = true;
 	}
 	instance_destroy();
+	instance_create_layer(x,y,"Instances", obj_insect_mud_bug);
 }

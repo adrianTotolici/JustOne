@@ -5,6 +5,7 @@ if(hp<1 && no_resources == false){
 		var _inst = instance_create_layer(x,y,"Instances",obj_coacaze_loot);
 		_inst.on_floor=true;
 	}
+	instance_create_layer(x,y,"Instances", obj_insect_buterffly);
 	sprite_index = spr_fruit_bush_empty;
 	no_resources = true;
 	alarm[0]=600*speed;

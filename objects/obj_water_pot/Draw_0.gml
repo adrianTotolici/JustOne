@@ -5,6 +5,7 @@ if(hp<1 && no_resources == false){
 		var _inst = instance_create_layer(x,y,"Instances",obj_water_loot);
 		_inst.on_floor = true;
 	}
+	instance_create_layer(x,y,"Instances", obj_insect_mud_bug);
 	sprite_index = spr_water_pot_empty;
 	no_resources = true;
 }
