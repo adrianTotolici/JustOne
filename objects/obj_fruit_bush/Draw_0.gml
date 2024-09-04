@@ -7,4 +7,9 @@ if(hp<1 && no_resources == false){
 	}
 	sprite_index = spr_fruit_bush_empty;
 	no_resources = true;
+	alarm[0]=600*speed;
+}
+
+if (hp>1 && no_resources == false){
+	sprite_index = spr_fruit_bush;
 }

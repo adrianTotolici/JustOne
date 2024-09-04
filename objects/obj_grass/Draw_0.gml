@@ -8,3 +8,7 @@ if(hp<1 && no_resources == false){
 	sprite_index = spr_grass_cut;
 	no_resources = true;
 }
+
+if (hp>1 && no_resources == false){
+	sprite_index = spr_grass;
+}

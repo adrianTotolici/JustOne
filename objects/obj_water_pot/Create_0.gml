@@ -1,4 +1,4 @@
-/// @description coacaze bush
+/// @description water pothole
 // You can write your code in this editor
 event_inherited();
 required = TOOL_TYPE.MUG;

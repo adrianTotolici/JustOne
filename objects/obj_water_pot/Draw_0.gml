@@ -8,3 +8,7 @@ if(hp<1 && no_resources == false){
 	sprite_index = spr_water_pot_empty;
 	no_resources = true;
 }
+
+if (hp>1 && no_resources == false){
+	sprite_index = spr_water_pot;
+}

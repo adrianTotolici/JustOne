@@ -3,3 +3,4 @@
 event_inherited();
 required = TOOL_TYPE.STICK;
 hp=50;
+
