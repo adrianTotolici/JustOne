@@ -1,0 +1,66 @@
+// Script assets have changed for v2.3.0 see
+// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
+function scr_draw_armor(){
+	var _owner = obj_you;
+	var _img=ceil(_owner.image_index)-1;
+	var _scale_equipment=1;
+	x=_owner.x;
+	y=_owner.y;
+	switch(_owner.sprite_index){
+		case obj_you.anim_idle:
+			if (_img==0 || _img==1){
+				draw_sprite_ext(spr_player_stand_front_straw_hat, 0, _owner.x*_owner.image_xscale, _owner.y*_owner.image_yscale*_scale_equipment, _owner.image_xscale*_scale_equipment, _owner.image_yscale,0,c_white,1);
+			}
+			break;
+		
+		case obj_you.anim_walk_down:
+			if (_img==0){
+				draw_sprite_ext(sprite_index, image_index, _owner.x-9*_owner.image_xscale, _owner.y-13, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}else if (_img==1 || _img == 3){
+				draw_sprite_ext(sprite_index, image_index, _owner.x-9*_owner.image_xscale, _owner.y-15, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}else if (_img==2){
+				draw_sprite_ext(sprite_index, image_index, _owner.x-10*_owner.image_xscale, _owner.y-17, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}
+			break;
+		
+		case obj_you.anim_walk_up:
+			if (_img==0){
+				draw_sprite_ext(sprite_index, image_index, _owner.x+10*_owner.image_xscale, _owner.y-19, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}else if (_img==1 || _img == 3){
+				draw_sprite_ext(sprite_index, image_index, _owner.x+10*_owner.image_xscale, _owner.y-16, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}else if (_img==2){
+				draw_sprite_ext(sprite_index, image_index, _owner.x+9*_owner.image_xscale, _owner.y-14, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}
+			break;
+			
+		case obj_you.anim_walk_left:
+			if (_img==0){
+				draw_sprite_ext(sprite_index, image_index, _owner.x+7*_owner.image_xscale, _owner.y-15, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}else if (_img==1 || _img == 3){
+				depth=_owner.depth+12;
+				draw_sprite_ext(sprite_index, image_index, _owner.x-1*_owner.image_xscale, _owner.y-13, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}else if (_img==2){
+				depth=_owner.depth+12;
+				draw_sprite_ext(sprite_index, image_index, _owner.x-9*_owner.image_xscale, _owner.y-15, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}
+			break;
+			
+		case obj_you.anim_walk_right:
+			if (_img==0){
+				draw_sprite_ext(sprite_index, image_index, _owner.x+6*_owner.image_xscale, _owner.y-14, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}else if (_img==1 || _img == 3){
+				draw_sprite_ext(sprite_index, image_index, _owner.x+2*_owner.image_xscale, _owner.y-13, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}else if (_img==2){
+				draw_sprite_ext(sprite_index, image_index, _owner.x-8*_owner.image_xscale, _owner.y-15, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}
+			break;
+			
+		case obj_you.anim_harvest:
+			if (_img==0){
+				draw_sprite_ext(sprite_index, image_index, _owner.x-7*_owner.image_xscale, _owner.y-15, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}else if (_img==1){
+				draw_sprite_ext(sprite_index, image_index, _owner.x-4*_owner.image_xscale, _owner.y-16, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
+			}
+			break;
+	}
+}

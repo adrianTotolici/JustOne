@@ -88,17 +88,17 @@ if (show_inv){
 			draw_set_halign(fa_center);
 			draw_text(_xpos,_ypos,inventory_num[_i]);
 			
-			//if (inventory_equiped[_i] == true){
-			//	draw_sprite_ext(spr_selected_equipment,0,_xpos,_ypos-10, 1.2, 1.2,0,c_white,1);
-			//	var _par=object_get_parent(inventory_list[_i]);
-			//	if (_par==obj_par_equipment){
-			//		obj_you.equipped=inventory_list[_i];
-			//		with (obj_par_equipment) {
-			//			instance_destroy();
-			//		}
-			//		instance_create_layer(obj_you.x, obj_you.y, "Player", inventory_list[_i]);
-			//	}
-			//}
+			if (inventory_equiped[_i] == true){
+				draw_sprite_ext(spr_selected_equipment,0,_xpos,_ypos-10, 1.2, 1.2,0,c_white,1);
+				var _par=object_get_parent(object_get_parent(inventory_list[_i]));
+				if (_par==obj_par_equipment){
+					obj_you.equipped=inventory_list[_i];
+					with (obj_par_equipment) {
+						instance_destroy();
+					}
+					instance_create_layer(obj_you.x, obj_you.y, "Player", inventory_list[_i]);
+				}
+			}
 		}
 		_a+=1;
 	}

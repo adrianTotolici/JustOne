@@ -14,8 +14,8 @@
     "path":"folders/Objects/equipment.yy",
   },
   "parentObjectId":{
-    "name":"obj_par_equipment",
-    "path":"objects/obj_par_equipment/obj_par_equipment.yy",
+    "name":"obj_par_wepons",
+    "path":"objects/obj_par_wepons/obj_par_wepons.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

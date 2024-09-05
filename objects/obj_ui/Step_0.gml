@@ -106,7 +106,7 @@ if (keyboard_check(vk_anykey)){
 			if (slot_list[0] != noone){
 				var _par=object_get_parent(slot_list[0]);
 				if (obj_you.equipped!=slot_list[0]){
-					if (_par==obj_par_equipment){
+					if (_par==obj_par_wepons || _par==obj_par_items){
 						obj_you.equipped=slot_list[0];
 						with (obj_par_equipment) {
 							instance_destroy();
@@ -121,7 +121,7 @@ if (keyboard_check(vk_anykey)){
 			if (slot_list[1] != noone){
 				var _par=object_get_parent(slot_list[1]);
 				if (obj_you.equipped!=slot_list[1]){
-					if (_par==obj_par_equipment){
+					if (_par==obj_par_wepons || _par==obj_par_items){
 						obj_you.equipped=slot_list[1];
 						with (obj_par_equipment) {
 							instance_destroy();
@@ -136,7 +136,7 @@ if (keyboard_check(vk_anykey)){
 			if (slot_list[2]!=noone){
 				var _par=object_get_parent(slot_list[2]);
 				if (obj_you.equipped!=slot_list[2]){
-					if (_par==obj_par_equipment){
+					if (_par==obj_par_wepons || _par==obj_par_items){
 						obj_you.equipped=slot_list[2];
 						with (obj_par_equipment) {
 							instance_destroy();
@@ -151,7 +151,7 @@ if (keyboard_check(vk_anykey)){
 			if (slot_list[3]!=noone){
 				var _par=object_get_parent(slot_list[3]);
 				if (obj_you.equipped!=slot_list[3]){
-					if (_par==obj_par_equipment){
+					if (_par==obj_par_wepons || _par==obj_par_items){
 						obj_you.equipped=slot_list[3];
 						with (obj_par_equipment) {
 							instance_destroy();
@@ -166,7 +166,7 @@ if (keyboard_check(vk_anykey)){
 			if (slot_list[4] != noone){
 				var _par=object_get_parent(slot_list[4]);
 				if (obj_you.equipped!=slot_list[4]){
-					if (_par=obj_par_equipment){
+					if (_par==obj_par_wepons || _par==obj_par_items){
 						obj_you.equipped=slot_list[4];
 						with (obj_par_equipment) {
 							instance_destroy();

@@ -97,7 +97,7 @@ function scr_player_inventory(){
 										}
 										break;
 									}
-									if (object_get_parent(_ui.inventory_list[b])=obj_par_equipment){
+									if ( object_get_parent(object_get_parent(_ui.inventory_list[b]))=obj_par_equipment){
 										if (_ui.inventory_equiped[b] == false){
 											equip(_ui.inventory_list[b]);
 											_ui.inventory_equiped[b]=true;
