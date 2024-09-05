@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"player_equiped",
-    "path":"folders/Sprites/player_equiped.yy",
+    "name":"head",
+    "path":"folders/Sprites/player_equiped/head.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

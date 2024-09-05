@@ -29,7 +29,7 @@ inv_selected=noone;
 // add test items
 slot_list[0]=obj_rock;
 slot_list[1]=obj_stick;
-slot_list[2]=obj_straw_hat;
+slot_list[2]=obj_straw_mug;
 inventory_list[0]=obj_rock;
 inventory_list[1]=obj_stick;
 inventory_list[2]=obj_straw_hat;
@@ -37,6 +37,7 @@ inventory_list[3]=obj_straw_armor;
 inventory_list[4]=obj_straw_pants;
 inventory_list[5]=obj_straw_footwear;
 inventory_list[6]=obj_straw_footwear;
+inventory_list[7]=obj_straw_mug;
 inventory_num[0]=1;
 inventory_num[1]=1;
 inventory_num[2]=1;
@@ -44,6 +45,7 @@ inventory_num[3]=1;
 inventory_num[4]=1;
 inventory_num[5]=1;
 inventory_num[6]=1;
+inventory_num[7]=1;
 
 show_crafting=false;
 show_tools=false;

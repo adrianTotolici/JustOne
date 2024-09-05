@@ -108,7 +108,7 @@ if (keyboard_check(vk_anykey)){
 				if (obj_you.equipped!=slot_list[0]){
 					if (_par==obj_par_wepons || _par==obj_par_items){
 						obj_you.equipped=slot_list[0];
-						with (obj_par_equipment) {
+						with (obj_par_wepons || obj_par_items) {
 							instance_destroy();
 						}
 						instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[0]);
@@ -123,7 +123,7 @@ if (keyboard_check(vk_anykey)){
 				if (obj_you.equipped!=slot_list[1]){
 					if (_par==obj_par_wepons || _par==obj_par_items){
 						obj_you.equipped=slot_list[1];
-						with (obj_par_equipment) {
+						with (obj_par_wepons || obj_par_items) {
 							instance_destroy();
 						}
 						instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[1]);
@@ -138,7 +138,7 @@ if (keyboard_check(vk_anykey)){
 				if (obj_you.equipped!=slot_list[2]){
 					if (_par==obj_par_wepons || _par==obj_par_items){
 						obj_you.equipped=slot_list[2];
-						with (obj_par_equipment) {
+						with (obj_par_wepons || obj_par_items) {
 							instance_destroy();
 						}
 						instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[2]);
@@ -153,7 +153,7 @@ if (keyboard_check(vk_anykey)){
 				if (obj_you.equipped!=slot_list[3]){
 					if (_par==obj_par_wepons || _par==obj_par_items){
 						obj_you.equipped=slot_list[3];
-						with (obj_par_equipment) {
+						with (obj_par_wepons || obj_par_items) {
 							instance_destroy();
 						}
 						instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[3]);
@@ -168,7 +168,7 @@ if (keyboard_check(vk_anykey)){
 				if (obj_you.equipped!=slot_list[4]){
 					if (_par==obj_par_wepons || _par==obj_par_items){
 						obj_you.equipped=slot_list[4];
-						with (obj_par_equipment) {
+						with (obj_par_wepons || obj_par_items) {
 							instance_destroy();
 						}
 						instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[4]);
