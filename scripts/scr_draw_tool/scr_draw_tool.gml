@@ -6,6 +6,7 @@ function scr_draw_tool(){
 	var _scale_equipment=0.5;
 	x=_owner.x;
 	y=_owner.y;
+	//depth = _owner.depth-1;
 	switch(_owner.sprite_index){
 		case obj_you.anim_idle:
 			if (_img==0 || _img==1){
@@ -37,10 +38,10 @@ function scr_draw_tool(){
 			if (_img==0){
 				draw_sprite_ext(sprite_index, image_index, _owner.x+7*_owner.image_xscale, _owner.y-15, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
 			}else if (_img==1 || _img == 3){
-				depth=_owner.depth+12;
+				//depth=_owner.depth+12;
 				draw_sprite_ext(sprite_index, image_index, _owner.x-1*_owner.image_xscale, _owner.y-13, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
 			}else if (_img==2){
-				depth=_owner.depth+12;
+				//depth=_owner.depth+12;
 				draw_sprite_ext(sprite_index, image_index, _owner.x-9*_owner.image_xscale, _owner.y-15, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
 			}
 			break;

@@ -1,5 +1,4 @@
 /// @description State Controls
-depth=-y;
 if (hunger>0){
 	hunger-=0.001;
 }

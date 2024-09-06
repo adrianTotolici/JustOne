@@ -97,7 +97,7 @@ function scr_player_inventory(){
 										}
 										break;
 									}
-									if ( object_get_parent(object_get_parent(_ui.inventory_list[b]))=obj_par_equipment){
+									if (object_get_parent(_ui.inventory_list[b])=obj_par_armors){
 										if (_ui.inventory_equiped[b] == false){
 											equip(_ui.inventory_list[b]);
 											_ui.inventory_equiped[b]=true;
@@ -105,6 +105,23 @@ function scr_player_inventory(){
 											unequip(_ui.inventory_list[b]);
 											_ui.inventory_equiped[b]=false;
 										}
+										break;
+									}
+									if (object_get_parent(_ui.inventory_list[b])=obj_par_wepons || object_get_parent(_ui.inventory_list[b])=obj_par_items){
+										if (_ui.inventory_equiped[b] == false){
+											with (obj_par_wepons) {instance_destroy();}
+										    with (obj_par_items){instance_destroy();}
+											equip(_ui.inventory_list[b]);
+											remove_old_weapon_item_selection(b);
+											_ui.inventory_equiped[b] = true;
+											instance_create_layer(obj_you.x, obj_you.y, "Player", _ui.inventory_list[b]);
+										}else{
+											unequip(_ui.inventory_list[b]);
+											_ui.inventory_equiped[b] = false;
+											with (obj_par_wepons) {instance_destroy();}
+											with (obj_par_items){instance_destroy();}
+										}
+										break;
 									}
 								}else{
 									break;
@@ -183,11 +200,17 @@ function equip(_object){
 			}
 		case obj_rock:
 			obj_you.equipped = obj_rock;
-			obj_you.attack += 3.0;
+			obj_you.attack += 5.0;
 			break;
 		case obj_stick:
 			obj_you.equipped = obj_stick;
-			obj_you.attack += 1.0;
+			obj_you.attack += 3.0;
+			break;
+		case obj_straw_mug:
+			obj_you.equipped = obj_straw_mug;
+			obj_you.attack += 0.1;
+			break;
+		default:
 			break;
 	}
 }
@@ -217,11 +240,27 @@ function unequip(_object){
 			break;
 		case obj_rock:
 			obj_you.equipped=noone;
-			obj_you.attack -= 3;
+			obj_you.attack -= 5;
 			break;
 		case obj_stick:
 			obj_you.equipped=noone;
-			obj_you.attack -= 1;
+			obj_you.attack -= 3;
 			break;
+		case obj_straw_mug:
+			obj_you.equipped = obj_straw_mug;
+			obj_you.attack -= 0.1;
+			break;
+		default:
+			break;
+	}
+}
+	
+function remove_old_weapon_item_selection(_new_pos_obj){
+	for (var _a=0; _a<array_length(obj_ui.inventory_list); ++_a){
+		if (obj_ui.inventory_list[_a] != noone){
+			if (object_get_parent(obj_ui.inventory_list[_a])=obj_par_wepons || object_get_parent(obj_ui.inventory_list[_a])=obj_par_items){
+				obj_ui.inventory_equiped[_a] = false;
+			}
+		}
 	}
 }

@@ -1,15 +1,15 @@
 /// @description Draw Quick Invetory
-draw_sprite(spr_health,0,20,60);
-draw_sprite(spr_hunger,0,20,90);
-draw_sprite(spr_thirst_ui,0,20,120);
+draw_sprite(spr_health,0,20,55);
+draw_sprite(spr_hunger,0,20,85);
+draw_sprite(spr_thirst_ui,0,20,115);
 draw_healthbar(40,30,250,50,obj_you.hp,c_black,c_red,c_red,0,true,true);
 draw_healthbar(40,60,250,80,obj_you.hunger, c_black, c_green, c_green,0,true,true);
 draw_healthbar(40,90,250,110,obj_you.thirst, c_black, c_blue, c_blue,0,true,true);
 total_armor= obj_you.head_armor+obj_you.body_armor+obj_you.leg_armor+obj_you.hand_armor+obj_you.feet_armor;
 if (total_armor > 0){
+	draw_sprite(spr_armor_ui,0,20,145);
 	draw_healthbar(40,120,250,140,total_armor, c_black, c_grey, c_grey,0,true,true);
 }
-
 
 var _mx=device_mouse_x_to_gui(0);
 var _my=device_mouse_y_to_gui(0);
@@ -55,11 +55,9 @@ switch (show_tools){
 		draw_set_font(fnt_info_crafting);
 		draw_sprite(spr_stick,0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10);
 		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, "N/A");
-		//draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5);
 		
 		draw_sprite(spr_rock,0,x_size_ui-craft_menu_width+button_width+32,button_height*3+10);
 		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*3-10, "N/A");
-		//draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*3+5);
 		
 		draw_sprite(spr_straw_mug,0,x_size_ui-craft_menu_width+button_width+32,button_height*4+10);
 		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*4-10, text_straw_mug);
@@ -67,7 +65,6 @@ switch (show_tools){
 }
 
 if (show_inv){
-	//draw_sprite(spr_inventory,0,x_size_ui/2,y_size_ui-_heigh_diff_inventory);
 	draw_sprite_ext(spr_inventory,0,x_size_ui/2,y_size_ui-_heigh_diff_inventory,1.5,1.5,0,c_white,1);
 	if (inv_selected!=noone){
 		draw_sprite_ext(object_get_sprite(inv_selected),0,_mx,_my,1,1,0,c_white,0.5);
@@ -90,12 +87,17 @@ if (show_inv){
 			
 			if (inventory_equiped[_i] == true){
 				draw_sprite_ext(spr_selected_equipment,0,_xpos,_ypos-10, 1.2, 1.2,0,c_white,1);
-				var _par=object_get_parent(object_get_parent(inventory_list[_i]));
-				if (_par==obj_par_equipment){
+				var _par=object_get_parent(inventory_list[_i]);
+				if (_par==obj_par_items || _par==obj_par_wepons){
 					obj_you.equipped=inventory_list[_i];
-					with (obj_par_equipment) {
-						instance_destroy();
-					}
+					// equip weappon or item in hand
+					if (_par==obj_par_items){with (obj_par_items) {instance_destroy();}}
+					else{ if (_par==obj_par_wepons){with (obj_par_wepons) {instance_destroy();}}}
+					instance_create_layer(obj_you.x, obj_you.y, "Player", inventory_list[_i]);
+				}
+				if (_par==obj_par_armors){
+					// obj_you.equipped=inventory_list[_i];
+					// equip weappon or item in hand
 					instance_create_layer(obj_you.x, obj_you.y, "Player", inventory_list[_i]);
 				}
 			}
@@ -133,7 +135,7 @@ if (show_player_equipment){
 		}	
 	}
 	
-	//check if bodyeware is equiped
+	//check if bodyware is equiped
 	if (obj_you.body_equipment!=noone){
 		x_pos=128;
 		y_pos=y_size_ui/2-10;
@@ -167,7 +169,6 @@ if (show_player_equipment){
 	if (obj_you.left_foot_equipment!=noone){
 		y_pos=y_size_ui/2+90;
 		x_pos=63;
-		
 		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos,0.7,0.7,0,c_white,1);
 		switch (obj_you.left_foot_equipment){
 			case obj_straw_footwear:
@@ -202,11 +203,12 @@ if (show_player_equipment){
 		switch (obj_you.equipped){
 			case obj_rock:
 				draw_sprite_ext(spr_rock,0,x_pos+2,y_pos-5,0.85,0.85,0,c_white,1);
-				//draw_sprite(spr_player_equipment_straw_legware,0,20,y_size_ui/2);
 				break;
 			case obj_stick:
 				draw_sprite_ext(spr_stick,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
-				//draw_sprite(spr_player_equipment_straw_legware,0,20,y_size_ui/2);
+				break;
+			case obj_straw_mug:
+				draw_sprite_ext(spr_straw_mug,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
 			default:
 				break;
 		}

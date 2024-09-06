@@ -106,6 +106,7 @@
     {"id":{"name":"scr_player_inventory","path":"scripts/scr_player_inventory/scr_player_inventory.yy",},},
     {"id":{"name":"scr_player_quick_inventory","path":"scripts/scr_player_quick_inventory/scr_player_quick_inventory.yy",},},
     {"id":{"name":"scr_populate_map_resources","path":"scripts/scr_populate_map_resources/scr_populate_map_resources.yy",},},
+    {"id":{"name":"spr_armor_ui","path":"sprites/spr_armor_ui/spr_armor_ui.yy",},},
     {"id":{"name":"spr_backgorud_equiped","path":"sprites/spr_backgorud_equiped/spr_backgorud_equiped.yy",},},
     {"id":{"name":"spr_bush_butterfly_side","path":"sprites/spr_bush_butterfly_side/spr_bush_butterfly_side.yy",},},
     {"id":{"name":"spr_bush_butterfly_up","path":"sprites/spr_bush_butterfly_up/spr_bush_butterfly_up.yy",},},

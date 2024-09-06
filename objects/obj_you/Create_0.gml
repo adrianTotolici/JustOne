@@ -1,6 +1,6 @@
 /// @description vars
 image_speed=0.4;
-depth=-1;
+depth=-y;
 x=room_width/2;
 y=room_height/2;
 camera_set_view_pos(view_camera[0],x-window_get_width()/2,y-window_get_height()/2);
