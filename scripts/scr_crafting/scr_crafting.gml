@@ -41,6 +41,12 @@ function scr_crafting(){
 				create_object(obj_straw_mug, obj_grass_loot, 1, _straw_own);
 			}
 		}
+		
+		if (_ui.show_build==true){
+			if (_my>=_ui.button_height+10 && _my<=(_ui.button_height*2)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+				build_object(obj_grass_house, obj_grass_loot, 10, _straw_own);
+			}
+		}
 	}
 }
 
@@ -66,6 +72,28 @@ function create_object(_obj_created, _obj_resources, _resource_need, _resource_o
 					}
 				}
 				break;
+			}
+		}
+	}
+}
+
+function build_object(_obj_created, _obj_resources, _resource_need, _resource_own){
+	var _ui=obj_ui;
+	if (_resource_need<=_resource_own){
+		_ui.inv_selected = _obj_created;
+		for (i=0; i<array_length(_ui.inventory_list); i++){
+			if (_ui.inventory_list[i]=_obj_resources){
+				if (_ui.inventory_num[i]>_resource_need){
+					_ui.inventory_num[i]-=_resource_need;
+					break;
+				}else{
+					_resource_need-=_ui.inventory_num[i];
+					_ui.inventory_list[i]=noone;
+					_ui.inventory_num[i]=0;
+					if (_resource_need==0){
+						break;
+					}
+				}
 			}
 		}
 	}

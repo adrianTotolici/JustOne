@@ -5,10 +5,10 @@ draw_sprite(spr_thirst_ui,0,20,115);
 draw_healthbar(40,30,250,50,obj_you.hp,c_black,c_red,c_red,0,true,true);
 draw_healthbar(40,60,250,80,obj_you.hunger, c_black, c_green, c_green,0,true,true);
 draw_healthbar(40,90,250,110,obj_you.thirst, c_black, c_blue, c_blue,0,true,true);
-total_armor= obj_you.head_armor+obj_you.body_armor+obj_you.leg_armor+obj_you.hand_armor+obj_you.feet_armor;
-if (total_armor > 0){
+var _total_armor= obj_you.head_armor+obj_you.body_armor+obj_you.leg_armor+obj_you.hand_armor+obj_you.feet_armor;
+if (_total_armor > 0){
 	draw_sprite(spr_armor_ui,0,20,145);
-	draw_healthbar(40,120,250,140,total_armor, c_black, c_grey, c_grey,0,true,true);
+	draw_healthbar(40,120,250,140,_total_armor, c_black, c_grey, c_grey,0,true,true);
 }
 
 var _mx=device_mouse_x_to_gui(0);
@@ -21,6 +21,7 @@ draw_text(40, 0,_text_to_display);
 draw_sprite(spr_help,0,x_size_ui-button_width,0);
 draw_sprite(spr_craft_ui,0,x_size_ui-button_width*2,0);
 draw_sprite(spr_equipment_ui, 0, x_size_ui-button_width*3,0);
+draw_sprite(spr_build_ui, 0, x_size_ui-button_width*4,0);
 
 switch (show_crafting){
 	case true:
@@ -62,6 +63,16 @@ switch (show_tools){
 		draw_sprite(spr_straw_mug,0,x_size_ui-craft_menu_width+button_width+32,button_height*4+10);
 		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*4-10, text_straw_mug);
 		draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5);
+}
+
+switch (show_build){
+	case true:
+		draw_sprite_stretched(spr_craft_ui_menu,0,x_size_ui-craft_menu_width,button_height,craft_menu_width,craft_menu_height);
+	
+		draw_set_font(fnt_info_crafting);
+		draw_sprite_ext(spr_grass_house, 0, x_size_ui-craft_menu_width+button_width+32, button_height*2+10, 0.5, 0.5,0,c_white,1);
+		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_straw_house);
+		draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5);
 }
 
 if (show_inv){
@@ -122,12 +133,12 @@ if (show_player_equipment){
 	
 	// check if headware is equiped
 	if (obj_you.head_equipment!=noone){
-		x_pos=40;
-		y_pos=y_size_ui/2-70;
-		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos+4,0.7,0.7,0,c_white,1);
+		var _x_pos=40;
+		var _y_pos=y_size_ui/2-70;
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos+4,0.7,0.7,0,c_white,1);
 		switch (obj_you.head_equipment){
 			case obj_straw_hat:
-				draw_sprite_ext(spr_straw_hat,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_hat,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_hat,0,20,y_size_ui/2);
 				break;
 			default:
@@ -137,12 +148,12 @@ if (show_player_equipment){
 	
 	//check if bodyware is equiped
 	if (obj_you.body_equipment!=noone){
-		x_pos=128;
-		y_pos=y_size_ui/2-10;
-		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos,0.7,0.7,0,c_white,1);
+		var _x_pos=128;
+		var _y_pos=y_size_ui/2-10;
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,0.7,0.7,0,c_white,1);
 		switch (obj_you.body_equipment){
 			case obj_straw_armor:
-				draw_sprite_ext(spr_straw_armor,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_armor,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_armor,0,20,y_size_ui/2);
 				break;
 			default:
@@ -152,12 +163,12 @@ if (show_player_equipment){
 	
 	// check if legware is equiped
 	if (obj_you.leg_equipment!=noone){
-		x_pos=120;
-		y_pos=y_size_ui/2+53;
-		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos,0.7,0.7,0,c_white,1);
+		var _x_pos=120;
+		var _y_pos=y_size_ui/2+53;
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,0.7,0.7,0,c_white,1);
 		switch (obj_you.leg_equipment){
 			case obj_straw_pants:
-				draw_sprite_ext(spr_straw_pants,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_pants,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_legware,0,20,y_size_ui/2);
 				break;
 			default:
@@ -167,12 +178,12 @@ if (show_player_equipment){
 	
 	// check if footware left is equiped
 	if (obj_you.left_foot_equipment!=noone){
-		y_pos=y_size_ui/2+90;
-		x_pos=63;
-		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos,0.7,0.7,0,c_white,1);
+		var _y_pos=y_size_ui/2+90;
+		var _x_pos=63;
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,0.7,0.7,0,c_white,1);
 		switch (obj_you.left_foot_equipment){
 			case obj_straw_footwear:
-				draw_sprite_ext(spr_straw_sock,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_left_foot,0,20,y_size_ui/2);
 				break;
 			default:
@@ -182,12 +193,12 @@ if (show_player_equipment){
 	
 	// check if footware right is equiped
 	if (obj_you.right_foot_equipment!=noone){
-		y_pos=y_size_ui/2+90;
-		x_pos=92;
-		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos,0.7,0.7,0,c_white,1);
+		var _y_pos=y_size_ui/2+90;
+		var _x_pos=92;
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,0.7,0.7,0,c_white,1);
 		switch (obj_you.right_foot_equipment){
 			case obj_straw_footwear:
-				draw_sprite_ext(spr_straw_sock,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_right_foot,0,20,y_size_ui/2);
 				break;
 			default:
@@ -197,18 +208,18 @@ if (show_player_equipment){
 	
 	//check if weapon is equiped
 	if (obj_you.equipped != noone){
-		y_pos=y_size_ui/2-20;
-		x_pos=34;
-		draw_sprite_ext(spr_backgorud_equiped,0,x_pos+2,y_pos,0.7,0.7,0,c_white,1);
+		var _y_pos=y_size_ui/2-20;
+		var _x_pos=34;
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,0.7,0.7,0,c_white,1);
 		switch (obj_you.equipped){
 			case obj_rock:
-				draw_sprite_ext(spr_rock,0,x_pos+2,y_pos-5,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_rock,0,_x_pos+2,_y_pos-5,0.85,0.85,0,c_white,1);
 				break;
 			case obj_stick:
-				draw_sprite_ext(spr_stick,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_stick,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
 				break;
 			case obj_straw_mug:
-				draw_sprite_ext(spr_straw_mug,0,x_pos,y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_mug,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
 			default:
 				break;
 		}

@@ -32,6 +32,7 @@ inv_selected=noone;
 //slot_list[2]=obj_straw_mug;
 inventory_list[0]=obj_rock;
 inventory_list[1]=obj_stick;
+inventory_list[2]=obj_grass_loot;
 //inventory_list[2]=obj_straw_hat;
 //inventory_list[3]=obj_straw_armor;
 //inventory_list[4]=obj_straw_pants;
@@ -40,6 +41,7 @@ inventory_list[1]=obj_stick;
 //inventory_list[7]=obj_straw_mug;
 inventory_num[0]=1;
 inventory_num[1]=1;
+inventory_num[2]=15;
 //inventory_num[2]=1;
 //inventory_num[3]=1;
 //inventory_num[4]=1;
@@ -51,8 +53,10 @@ show_crafting=false;
 show_tools=false;
 show_equipment=false;
 show_player_equipment=false;
+show_build=false;
 
-//ui equiped
+//ui build
+text_straw_house="10x"
 
 
 //ui craft menu
