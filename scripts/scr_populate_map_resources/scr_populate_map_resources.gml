@@ -25,6 +25,4 @@ function scr_populate_map_resources(_sprite_size){
 			}
 		}
 	}
-	
-//	instance_create_layer(obj_you.x+50,obj_you.y,"Instances",obj_grass);
 }

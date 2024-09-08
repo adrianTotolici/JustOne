@@ -1,5 +1,5 @@
 /// @description Vars
-depth =-5;
+depth =obj_land.depth-4;
 sprite_size=30;
 inventory_sprite_size=128*1.5;
 x_size_ui=window_get_width();

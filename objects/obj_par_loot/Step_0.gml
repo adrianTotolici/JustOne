@@ -1,5 +1,5 @@
 /// @description Main
-depth=-y;
+depth=obj_land.depth-2;
 if (path_index==-1){
 	initialize=true;
 }

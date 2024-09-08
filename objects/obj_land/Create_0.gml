@@ -1,6 +1,7 @@
 /// @description Map Tile
 global.ground_layer=layer_create(-1);
 global.ground_tilemap_grass=layer_tilemap_create(global.ground_layer,0,0,ts_grass,room_width,room_height);
+depth=obj_you.depth+3;
 
 var _freq_nr=20
 var _ran_data=0;
