@@ -1,5 +1,5 @@
 /// @description Initialize
-depth=-y;
+depth=obj_you.depth+1;
 shadow_y=y;
 initialize=false;
 image_xscale=image_xscale*0.9;

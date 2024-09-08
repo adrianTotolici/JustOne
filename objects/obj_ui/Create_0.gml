@@ -8,7 +8,7 @@ _nr_of_boxes=5;
 _middle_box_inv = 2;
 _inv_nr_columns = 4;
 _heigh_diff_inventory = 155;
-_text_to_display = "Just One v0.0.5";
+_text_to_display = "Just One v0.0.6";
 
 
 display_set_gui_size(x_size_ui,y_size_ui);
@@ -32,7 +32,7 @@ inv_selected=noone;
 //slot_list[2]=obj_straw_mug;
 inventory_list[0]=obj_rock;
 inventory_list[1]=obj_stick;
-inventory_list[2]=obj_grass_loot;
+//inventory_list[2]=obj_grass_loot;
 //inventory_list[2]=obj_straw_hat;
 //inventory_list[3]=obj_straw_armor;
 //inventory_list[4]=obj_straw_pants;
@@ -41,7 +41,7 @@ inventory_list[2]=obj_grass_loot;
 //inventory_list[7]=obj_straw_mug;
 inventory_num[0]=1;
 inventory_num[1]=1;
-inventory_num[2]=15;
+//inventory_num[2]=15;
 //inventory_num[2]=1;
 //inventory_num[3]=1;
 //inventory_num[4]=1;
