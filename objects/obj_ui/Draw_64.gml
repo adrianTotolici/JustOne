@@ -73,6 +73,10 @@ switch (show_build){
 		draw_sprite_ext(spr_grass_house, 0, x_size_ui-craft_menu_width+button_width+32, button_height*2+10, 0.5, 0.5,0,c_white,1);
 		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_straw_house);
 		draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5);
+		
+		if (inv_selected!=noone){
+			draw_sprite_ext(object_get_sprite(inv_selected),0,_mx,_my,1,1,0,c_white,0.5);
+		}
 }
 
 if (show_inv){
