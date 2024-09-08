@@ -23,60 +23,56 @@ draw_sprite(spr_craft_ui,0,x_size_ui-button_width*2,0);
 draw_sprite(spr_equipment_ui, 0, x_size_ui-button_width*3,0);
 draw_sprite(spr_build_ui, 0, x_size_ui-button_width*4,0);
 
-switch (show_crafting){
-	case true:
-		draw_sprite_stretched(spr_craft_ui_menu,0,x_size_ui-craft_menu_width,button_height,craft_menu_width,craft_menu_height);
-		draw_sprite(spr_equipment_ui,0,x_size_ui-craft_menu_width+6,button_height+9);
-		draw_sprite(spr_tools_ui,0,x_size_ui-craft_menu_width+6,button_height*2+12);
+if (show_crafting){
+	draw_sprite_stretched(spr_craft_ui_menu,0,x_size_ui-craft_menu_width,button_height,craft_menu_width,craft_menu_height);
+	draw_sprite(spr_equipment_ui,0,x_size_ui-craft_menu_width+6,button_height+9);
+	draw_sprite(spr_tools_ui,0,x_size_ui-craft_menu_width+6,button_height*2+12);
 }
 
-switch (show_equipment){
-	case true:
-		draw_set_font(fnt_info_crafting);
+if (show_equipment){
+	draw_set_font(fnt_info_crafting);
 		
-		draw_sprite(spr_straw_armor, 0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10);
-		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_straw_armor_rec);
-		draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5);
+	draw_sprite(spr_straw_armor, 0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_straw_armor_rec);
+	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5);
 		
-		draw_sprite(spr_straw_hat, 0, x_size_ui-craft_menu_width+button_width+32,button_height*3+10);
-		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*3-10, text_straw_hat_rec);
-		draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*3+5);
+	draw_sprite(spr_straw_hat, 0, x_size_ui-craft_menu_width+button_width+32,button_height*3+10);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*3-10, text_straw_hat_rec);
+	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*3+5);
 		
-		draw_sprite(spr_straw_pants, 0, x_size_ui-craft_menu_width+button_width+32,button_height*4+10);
-		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*4-10, text_straw_pants_rec);
-		draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5);
+	draw_sprite(spr_straw_pants, 0, x_size_ui-craft_menu_width+button_width+32,button_height*4+10);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*4-10, text_straw_pants_rec);
+	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5);
 		
-		draw_sprite(spr_straw_sock, 0, x_size_ui-craft_menu_width+button_width+32,button_height*5+10);
-		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5-10, text_straw_footware_rec);
-		draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+5);
+	draw_sprite(spr_straw_sock, 0, x_size_ui-craft_menu_width+button_width+32,button_height*5+10);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5-10, text_straw_footware_rec);
+	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+5);
 }
 
-switch (show_tools){
-	case true:
-		draw_set_font(fnt_info_crafting);
-		draw_sprite(spr_stick,0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10);
-		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, "N/A");
+if (show_tools){
+	draw_set_font(fnt_info_crafting);
+	draw_sprite(spr_stick,0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, "N/A");
 		
-		draw_sprite(spr_rock,0,x_size_ui-craft_menu_width+button_width+32,button_height*3+10);
-		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*3-10, "N/A");
+	draw_sprite(spr_rock,0,x_size_ui-craft_menu_width+button_width+32,button_height*3+10);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*3-10, "N/A");
 		
-		draw_sprite(spr_straw_mug,0,x_size_ui-craft_menu_width+button_width+32,button_height*4+10);
-		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*4-10, text_straw_mug);
-		draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5);
+	draw_sprite(spr_straw_mug,0,x_size_ui-craft_menu_width+button_width+32,button_height*4+10);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*4-10, text_straw_mug);
+	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5);
 }
 
-switch (show_build){
-	case true:
-		draw_sprite_stretched(spr_craft_ui_menu,0,x_size_ui-craft_menu_width,button_height,craft_menu_width,craft_menu_height);
+if (show_build){
+	draw_sprite_stretched(spr_craft_ui_menu,0,x_size_ui-craft_menu_width,button_height,craft_menu_width,craft_menu_height);
 	
-		draw_set_font(fnt_info_crafting);
-		draw_sprite_ext(spr_grass_house, 0, x_size_ui-craft_menu_width+button_width+32, button_height*2+10, 0.5, 0.5,0,c_white,1);
-		draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_straw_house);
-		draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5);
+	draw_set_font(fnt_info_crafting);
+	draw_sprite_ext(spr_grass_house, 0, x_size_ui-craft_menu_width+button_width+32, button_height*2+10, 0.5, 0.5,0,c_white,1);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_straw_house);
+	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5);
 		
-		if (inv_selected!=noone){
-			draw_sprite_ext(object_get_sprite(inv_selected),0,_mx,_my,1,1,0,c_white,0.5);
-		}
+	if (inv_selected!=noone){
+		draw_sprite_ext(object_get_sprite(inv_selected),0,_mx,_my,1,1,0,c_white,0.5);
+	}
 }
 
 if (show_inv){

@@ -50,8 +50,10 @@ function scr_crafting(){
 			}
 		}else{
 			//Build 
-			instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inv_selected);
-			_ui.inv_selected=noone;
+			if (_ui.show_build && object_get_parent(_ui.inv_selected)=obj_par_buildings ){
+				instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inv_selected);
+				_ui.inv_selected=noone;
+			}
 		}
 	}
 }

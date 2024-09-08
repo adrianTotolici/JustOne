@@ -63,14 +63,12 @@ function scr_player_inventory(){
 				if (_mx>=mx_min || _mx <=mx_max){
 					var _item=instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inv_selected);
 					_item.on_floor=true;
-					if (not _ui.show_build){
-						for (i=0; i<array_length(_ui.inventory_list);i++){
-							if (_ui.inv_selected==_ui.inventory_list[i]){
-								_ui.inventory_list[i]=noone;
-								_item.my_stack=_ui.inventory_num[i];
-								_ui.inventory_num[i]=0;
-								break;
-							}
+					for (i=0; i<array_length(_ui.inventory_list);i++){
+						if (_ui.inv_selected==_ui.inventory_list[i]){
+							_ui.inventory_list[i]=noone;
+							_item.my_stack=_ui.inventory_num[i];
+							_ui.inventory_num[i]=0;
+							break;
 						}
 					}
 					_ui.inv_selected=noone;
