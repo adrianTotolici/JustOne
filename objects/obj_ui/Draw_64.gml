@@ -17,6 +17,7 @@ var _my=device_mouse_y_to_gui(0);
 draw_set_font(fnt_info_text);
 draw_set_color(c_black);
 draw_text(40, 0,_text_to_display);
+draw_text(40, 10, "FPS = " + string(fps));
 
 draw_sprite(spr_help,0,x_size_ui-button_width,0);
 draw_sprite(spr_craft_ui,0,x_size_ui-button_width*2,0);

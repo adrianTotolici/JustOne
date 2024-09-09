@@ -158,7 +158,11 @@ function equip_head_player_anim_walk_right(){
 function equip_head_player_anim_walk_harvest(){
 	switch(obj_you.head_equipment){
 		case obj_straw_hat:
-			draw_sprite_ext(spr_player_harvest_straw_hat, 0, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+			if (mouse_x>obj_you.x){
+				draw_sprite_ext(spr_player_harvest_straw_hat, 0, obj_you.x, obj_you.y, -1, 1,0,c_white,1);
+			}else{
+				draw_sprite_ext(spr_player_harvest_straw_hat, 0, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+			}
 			break;
 	}
 }
@@ -219,7 +223,11 @@ function equip_armor_player_anim_walk_right(_img){
 function equip_armor_player_anim_walk_harvest(_img){
 	switch(obj_you.body_equipment){
 		case obj_straw_armor:
-			draw_sprite_ext(spr_player_harvest_straw_armor, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+			if (mouse_x > obj_you.x){
+				draw_sprite_ext(spr_player_harvest_straw_armor, _img, obj_you.x, obj_you.y, -1, 1,0,c_white,1);
+			}else{
+				draw_sprite_ext(spr_player_harvest_straw_armor, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+			}
 			break;
 	}
 }
@@ -292,7 +300,11 @@ function equip_legware_player_anim_walk_right(_img){
 function equip_legware_player_anim_walk_harvest(_img){
 	switch(obj_you.leg_equipment){
 		case obj_straw_pants:
-			draw_sprite_ext(spr_player_harvest_straw_legware, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+			if (mouse_x > obj_you.x){
+				draw_sprite_ext(spr_player_harvest_straw_legware, _img, obj_you.x, obj_you.y, -1, 1,0,c_white,1);
+			}else{
+				draw_sprite_ext(spr_player_harvest_straw_legware, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+			}
 			break;
 	}
 }
@@ -436,7 +448,11 @@ function equip_footware_player_anim_walk_harvest(_left_foot, _right_foot, _img){
 	if (_left_foot){
 		switch(obj_you.left_foot_equipment){
 			case obj_straw_footwear:
-				draw_sprite_ext(spr_player_harvest_straw_foot, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+				if (mouse_x > obj_you.x){
+					draw_sprite_ext(spr_player_harvest_straw_foot, _img, obj_you.x, obj_you.y, -1, 1,0,c_white,1);
+				}else{
+					draw_sprite_ext(spr_player_harvest_straw_foot, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+				}
 				break;
 		}
 	}
@@ -444,7 +460,11 @@ function equip_footware_player_anim_walk_harvest(_left_foot, _right_foot, _img){
 	if (_right_foot){
 		switch(obj_you.right_foot_equipment){
 			case obj_straw_footwear:
-				draw_sprite_ext(spr_player_harvest_straw_foot, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+				if (mouse_x>obj_you.x){
+					draw_sprite_ext(spr_player_harvest_straw_foot, _img, obj_you.x, obj_you.y, -1, 1,0,c_white,1);
+				}else{
+					draw_sprite_ext(spr_player_harvest_straw_foot, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+				}
 				break;
 		}
 	}
