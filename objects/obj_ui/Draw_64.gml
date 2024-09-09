@@ -121,12 +121,13 @@ if (show_inv){
 if (show_help){
 	draw_set_font(fnt_help_text);
 	draw_set_color(c_black);
-	draw_text(x_size_ui/2-(x_size_ui/2/2), 0, help_move_text);
-	draw_text(x_size_ui/2-(x_size_ui/2/2), 36, help_inventory);
-	draw_text(x_size_ui/2-(x_size_ui/2/2), 36*2, help_quick_inventory);
-	draw_text(x_size_ui/2-(x_size_ui/2/2), 36*3, help_crafting);
-	draw_text(x_size_ui/2-(x_size_ui/2/2), 36*4, help_ui_close);
-	draw_text(x_size_ui/2-(x_size_ui/2/2), 36*5, help_exit_main_menu);
+	help_pos_x=(x_size_ui/2)-((x_size_ui/2)/2);
+	draw_text(help_pos_x, 0, help_move_text);
+	draw_text(help_pos_x, 36, help_inventory);
+	draw_text(help_pos_x, 36*2, help_quick_inventory);
+	draw_text(help_pos_x, 36*3, help_crafting);
+	draw_text(help_pos_x, 36*4, help_ui_close);
+	draw_text(help_pos_x, 36*5, help_exit_main_menu);
 }
 
 if (show_player_equipment){
