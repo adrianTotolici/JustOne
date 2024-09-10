@@ -34,8 +34,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_stone_harvest",
-    "path":"sprites/spr_stone_harvest/spr_stone_harvest.yy",
+    "name":"spr_stone_pile",
+    "path":"sprites/spr_stone_pile/spr_stone_pile.yy",
   },
   "spriteMaskId":null,
   "visible":true,
