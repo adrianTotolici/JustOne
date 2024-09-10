@@ -5,12 +5,20 @@ function scr_crafting(){
 	var _my=device_mouse_y_to_gui(0);
 	var _ui=obj_ui;
 	var _straw_own=0;
+	var _branch_own=0;
+	var _rock_own=0;
 	
 	if (mouse_check_button_pressed(mb_left)){
 		if (_ui.inv_selected==noone){
 			for (i=0;i<array_length(_ui.inventory_list); i++){
 				if (_ui.inventory_list[i]=obj_grass_loot){
 					_straw_own+=_ui.inventory_num[i];
+				}
+				if (_ui.inventory_list[i]=obj_branch_loot){
+					_branch_own+=_ui.inventory_num[i];
+				}
+				if (_ui.inventory_list[i]=obj_stone_pebles_loot){
+					_rock_own+=_ui.inventory_num[i];
 				}
 			}
 		
@@ -37,10 +45,22 @@ function scr_crafting(){
 			}
 		
 			if (_ui.show_tools==true){
+				// craft stick
+				if (_my>=_ui.button_height+10 && _my<=(_ui.button_height*2)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+					create_object(obj_stick, obj_branch_loot, 4, _branch_own);
+				}
+				
+				// craft stone
+				if (_my>=_ui.button_height+10+_ui.button_height && _my<=(_ui.button_height*3)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+					create_object(obj_rock, obj_stone_pebles_loot, 5, _rock_own);
+				}
+				
 				// craft straw mug
 				if (_my>=_ui.button_height+10+(_ui.button_height*2) && _my<=(_ui.button_height*4)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
 					create_object(obj_straw_mug, obj_grass_loot, 1, _straw_own);
 				}
+				
+
 			}
 		
 			if (_ui.show_build==true){

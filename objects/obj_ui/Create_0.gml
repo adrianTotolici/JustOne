@@ -62,11 +62,13 @@ text_straw_house="10x"
 //ui craft menu
 craft_menu_width=128+32;
 craft_menu_height=256;
-text_straw_armor_rec="4x "
-text_straw_pants_rec="3x "
-text_straw_hat_rec="2x "
-text_straw_footware_rec="2x "
-text_straw_mug="1x "
+text_straw_armor_rec="4x ";
+text_straw_pants_rec="3x ";
+text_straw_hat_rec="2x ";
+text_straw_footware_rec="2x ";
+text_straw_mug="1x ";
+text_rock="5x ";
+text_stick="4x ";
 
 
 // screen menu buttons
