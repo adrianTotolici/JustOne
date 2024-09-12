@@ -119,6 +119,7 @@
     {"id":{"name":"scr_populate_map_resources","path":"scripts/scr_populate_map_resources/scr_populate_map_resources.yy",},},
     {"id":{"name":"spr_armor_ui","path":"sprites/spr_armor_ui/spr_armor_ui.yy",},},
     {"id":{"name":"spr_backgorud_equiped","path":"sprites/spr_backgorud_equiped/spr_backgorud_equiped.yy",},},
+    {"id":{"name":"spr_backgorund","path":"sprites/spr_backgorund/spr_backgorund.yy",},},
     {"id":{"name":"spr_branch_loot","path":"sprites/spr_branch_loot/spr_branch_loot.yy",},},
     {"id":{"name":"spr_branch_pile_empty","path":"sprites/spr_branch_pile_empty/spr_branch_pile_empty.yy",},},
     {"id":{"name":"spr_branch_pile","path":"sprites/spr_branch_pile/spr_branch_pile.yy",},},
