@@ -1,18 +1,29 @@
 /// @description Draw Quick Invetory
+draw_set_font(fnt_info_bars);
+draw_set_color(c_white);
+
 draw_sprite(spr_health,0,20,55);
-draw_sprite(spr_hunger,0,20,85);
-draw_sprite(spr_thirst_ui,0,20,115);
 draw_healthbar(40,30,250,50,obj_you.hp,c_black,c_red,c_red,0,true,true);
+draw_text(120,33,string(floor(obj_you.hp)) + "/100");
+
+draw_sprite(spr_hunger,0,20,85);
 draw_healthbar(40,60,250,80,obj_you.hunger, c_black, c_green, c_green,0,true,true);
+draw_text(120,63,string(floor(obj_you.hunger)) + "/100");
+
+draw_sprite(spr_thirst_ui,0,20,115);
 draw_healthbar(40,90,250,110,obj_you.thirst, c_black, c_blue, c_blue,0,true,true);
+draw_text(120,93,string(floor(obj_you.thirst)) + "/100");
+
 var _total_armor= obj_you.head_armor+obj_you.body_armor+obj_you.leg_armor+obj_you.hand_armor+obj_you.feet_armor;
 if (_total_armor > 0){
 	draw_sprite(spr_armor_ui,0,20,145);
 	draw_healthbar(40,120,250,140,_total_armor, c_black, c_grey, c_grey,0,true,true);
+	draw_text(120,123,string(floor(_total_armor)) + "/100");
 }
 
 var _mx=device_mouse_x_to_gui(0);
 var _my=device_mouse_y_to_gui(0);
+
 
 draw_set_font(fnt_info_text);
 draw_set_color(c_black);

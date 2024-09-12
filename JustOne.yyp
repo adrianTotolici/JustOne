@@ -61,6 +61,7 @@
   "name":"JustOne",
   "resources":[
     {"id":{"name":"fnt_help_text","path":"fonts/fnt_help_text/fnt_help_text.yy",},},
+    {"id":{"name":"fnt_info_bars","path":"fonts/fnt_info_bars/fnt_info_bars.yy",},},
     {"id":{"name":"fnt_info_crafting","path":"fonts/fnt_info_crafting/fnt_info_crafting.yy",},},
     {"id":{"name":"fnt_info_text","path":"fonts/fnt_info_text/fnt_info_text.yy",},},
     {"id":{"name":"fnt_lost_game","path":"fonts/fnt_lost_game/fnt_lost_game.yy",},},
