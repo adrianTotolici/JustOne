@@ -35,8 +35,8 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"spr_water_pot",
-    "path":"sprites/spr_water_pot/spr_water_pot.yy",
+    "name":"spr_water_pot_1",
+    "path":"sprites/spr_water_pot_1/spr_water_pot_1.yy",
   },
   "spriteMaskId":null,
   "visible":true,

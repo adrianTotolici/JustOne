@@ -123,7 +123,7 @@ if (show_inv){
 if (show_help){
 	draw_set_font(fnt_help_text);
 	draw_set_color(c_black);
-	help_pos_x=(x_size_ui/2)-((x_size_ui/2)/2);
+	var _help_pos_x=(x_size_ui/2)-((x_size_ui/2)/2);
 	draw_text(help_pos_x, 0, help_move_text);
 	draw_text(help_pos_x, 36, help_inventory);
 	draw_text(help_pos_x, 36*2, help_quick_inventory);

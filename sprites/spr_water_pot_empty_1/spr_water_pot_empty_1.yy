@@ -1,6 +1,6 @@
 {
   "$GMSprite":"",
-  "%Name":"spr_water_pot",
+  "%Name":"spr_water_pot_empty_1",
   "bboxMode":2,
   "bbox_bottom":28,
   "bbox_left":3,
@@ -13,9 +13,6 @@
   "For3D":false,
   "frames":[
     {"$GMSpriteFrame":"","%Name":"c1b4e113-954c-47cd-a4a7-4470a92fc2db","name":"c1b4e113-954c-47cd-a4a7-4470a92fc2db","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"96881bbe-8c32-4cda-98f7-d1ad8e72cc26","name":"96881bbe-8c32-4cda-98f7-d1ad8e72cc26","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"bfcfb98b-8da0-497c-a5a9-2b03284a469a","name":"bfcfb98b-8da0-497c-a5a9-2b03284a469a","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d1c1160f-2cd1-40f8-b047-b8091006d38c","name":"d1c1160f-2cd1-40f8-b047-b8091006d38c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -24,19 +21,19 @@
   "layers":[
     {"$GMImageLayer":"","%Name":"da4ad693-415a-4814-b8e6-9df8cfc0cd42","blendMode":0,"displayName":"default","isLocked":false,"name":"da4ad693-415a-4814-b8e6-9df8cfc0cd42","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
   ],
-  "name":"spr_water_pot",
+  "name":"spr_water_pot_empty_1",
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"resources",
-    "path":"folders/Sprites/resources.yy",
+    "name":"spr_water_pot",
+    "path":"folders/Sprites/resources/spr_water_pot.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
   "resourceVersion":"2.0",
   "sequence":{
     "$GMSequence":"",
-    "%Name":"spr_water_pot",
+    "%Name":"spr_water_pot_empty_1",
     "autoRecord":true,
     "backdropHeight":768,
     "backdropImageOpacity":0.5,
@@ -52,7 +49,7 @@
     },
     "eventStubScript":null,
     "eventToFunction":{},
-    "length":4.0,
+    "length":1.0,
     "lockOrigin":false,
     "moments":{
       "$KeyframeStore<MomentsEventKeyframe>":"",
@@ -60,9 +57,9 @@
       "resourceType":"KeyframeStore<MomentsEventKeyframe>",
       "resourceVersion":"2.0",
     },
-    "name":"spr_water_pot",
+    "name":"spr_water_pot_empty_1",
     "playback":1,
-    "playbackSpeed":4.0,
+    "playbackSpeed":0.0,
     "playbackSpeedType":0,
     "resourceType":"GMSequence",
     "resourceVersion":"2.0",
@@ -72,17 +69,8 @@
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
             {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c1b4e113-954c-47cd-a4a7-4470a92fc2db","path":"sprites/spr_water_pot/spr_water_pot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c1b4e113-954c-47cd-a4a7-4470a92fc2db","path":"sprites/spr_water_pot_empty_1/spr_water_pot_empty_1.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
               },"Disabled":false,"id":"e5234ad9-1f59-4cec-a6d4-2389582b7384","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"96881bbe-8c32-4cda-98f7-d1ad8e72cc26","path":"sprites/spr_water_pot/spr_water_pot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"1abaf5e5-b55c-478a-9b39-c63980d77cc7","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bfcfb98b-8da0-497c-a5a9-2b03284a469a","path":"sprites/spr_water_pot/spr_water_pot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"01081f3d-a52c-4e02-a0d2-450eafd252be","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d1c1160f-2cd1-40f8-b047-b8091006d38c","path":"sprites/spr_water_pot/spr_water_pot.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"9b763e46-78fc-4586-85b1-28e2a2b1356b","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

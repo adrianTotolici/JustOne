@@ -3,3 +3,5 @@
 event_inherited();
 required = TOOL_TYPE.MUG;
 hp=10;
+
+spr_number = irandom_range(1,3);
