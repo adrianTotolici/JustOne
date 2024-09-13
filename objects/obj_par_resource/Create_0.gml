@@ -9,5 +9,6 @@ max_pebels_drop=irandom(3);
 max_brench_drop=irandom(3);
 no_resources = false;
 loot=false
+tool_required = true;
 
 alarm[0] = 30;
