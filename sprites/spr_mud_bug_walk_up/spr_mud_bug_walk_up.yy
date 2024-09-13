@@ -23,7 +23,7 @@
   ],
   "name":"spr_mud_bug_walk_up",
   "nineSlice":null,
-  "origin":4,
+  "origin":9,
   "parent":{
     "name":"creatures",
     "path":"folders/Sprites/creatures.yy",
@@ -76,7 +76,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":16,
-    "yorigin":16,
+    "yorigin":26,
   },
   "swatchColours":null,
   "swfPrecision":0.5,
