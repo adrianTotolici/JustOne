@@ -11,8 +11,8 @@ var _y_sprites=room_height div _sprite_size;
 
 global.resource_matrix= [];
 
-for (a=0;a<_y_sprites;a++){
-	global.resource_matrix[a] = array_create(_x_sprites,false);
+for (a=0;a<_x_sprites;a++){
+	global.resource_matrix[a] = array_create(_y_sprites,false);
 }
 
 

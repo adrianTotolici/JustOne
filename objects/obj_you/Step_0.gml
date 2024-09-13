@@ -17,22 +17,19 @@ switch(state)
 {
 	case PLAYER_STATE.CONTROLS:
 		scr_player_control();
-		scr_draw_armor();
 		break;
 	case PLAYER_STATE.QUICK_INVENTORY: 
 		scr_player_quick_inventory();
-		scr_draw_armor();
 		break;
 	case PLAYER_STATE.HARVEST: 
 		scr_player_harvest();
-		scr_draw_armor();
 		break;
 	case PLAYER_STATE.INVENTORY: 
 		scr_player_inventory();
 		scr_player_quick_inventory();
-		scr_draw_armor();
 		break; 
 }
+scr_draw_armor();
 scr_crafting();
 
 if (hp<=0){
