@@ -1,11 +1,11 @@
 {
   "$GMSprite":"",
   "%Name":"spr_player_side",
-  "bboxMode":0,
+  "bboxMode":2,
   "bbox_bottom":63,
   "bbox_left":15,
   "bbox_right":45,
-  "bbox_top":4,
+  "bbox_top":53,
   "collisionKind":1,
   "collisionTolerance":0,
   "DynamicTexturePage":false,

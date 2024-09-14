@@ -61,39 +61,21 @@ function scr_draw_armor(){
 			}
 			break;
 			
-		case obj_you.anim_walk_left:
+		case obj_you.anim_walk_side:
 			if (obj_you.head_equipment != noone){
-				equip_head_player_anim_walk_left();
+				equip_head_player_anim_walk_side();
 			}
 			if (obj_you.body_equipment != noone){
-				equip_armor_player_anim_walk_left(_img);
+				equip_armor_player_anim_walk_side(_img);
 			}
 			if (obj_you.leg_equipment != noone){
-				equip_legware_player_anim_walk_left(_img);
+				equip_legware_player_anim_walk_side(_img);
 			}
 			if (obj_you.left_foot_equipment != noone){
-				equip_footware_player_anim_walk_left(true, false, _img);
+				equip_footware_player_anim_walk_side(true, false, _img);
 			}
 			if (obj_you.right_foot_equipment != noone){
-				equip_footware_player_anim_walk_left(false, true, _img);
-			}
-			break;
-			
-		case obj_you.anim_walk_right:
-			if (obj_you.head_equipment != noone){
-				equip_head_player_anim_walk_right();
-			}
-			if (obj_you.body_equipment != noone){
-				equip_armor_player_anim_walk_right(_img);
-			}
-			if (obj_you.leg_equipment != noone){
-				equip_legware_player_anim_walk_right(_img);
-			}
-			if (obj_you.left_foot_equipment != noone){
-				equip_footware_player_anim_walk_right(true, false, _img);
-			}
-			if (obj_you.right_foot_equipment != noone){
-				equip_footware_player_anim_walk_right(false, true, _img);
+				equip_footware_player_anim_walk_side(false, true, _img);
 			}
 			break;
 			
@@ -139,15 +121,7 @@ function equip_head_player_anim_walk_up(){
 	}
 }
 
-function equip_head_player_anim_walk_left(){
-	switch(obj_you.head_equipment){
-		case obj_straw_hat:
-			draw_sprite_ext(spr_player_side_headware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-			break;
-	}
-}
-
-function equip_head_player_anim_walk_right(){
+function equip_head_player_anim_walk_side(){
 	switch(obj_you.head_equipment){
 		case obj_straw_hat:
 			draw_sprite_ext(spr_player_side_headware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
@@ -192,25 +166,7 @@ function equip_armor_player_anim_walk_up(){
 	}
 }
 
-function equip_armor_player_anim_walk_left(_img){
-	switch(obj_you.body_equipment){
-		case obj_straw_armor:
-			if (_img==0 || _img==4){
-				draw_sprite_ext(spr_player_side_straw_armor, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-			} else if (_img==1 || _img==3){
-				draw_sprite_ext(spr_player_side_straw_armor, 1, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-			} else if (_img==2){
-				draw_sprite_ext(spr_player_side_straw_armor, 2, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-			} else if (_img==5 || _img==7){
-				draw_sprite_ext(spr_player_side_straw_armor, 5, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-			} else if (_img==6){
-				draw_sprite_ext(spr_player_side_straw_armor, 6, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-			}
-			break;
-	}
-}
-
-function equip_armor_player_anim_walk_right(_img){
+function equip_armor_player_anim_walk_side(_img){
 	switch(obj_you.body_equipment){
 		case obj_straw_armor:
 			if (_img==0 || _img==4){
@@ -232,9 +188,9 @@ function equip_armor_player_anim_walk_harvest(_img){
 	switch(obj_you.body_equipment){
 		case obj_straw_armor:
 			if (mouse_x > obj_you.x){
-				draw_sprite_ext(spr_player_harvest_straw_armor, _img, obj_you.x, obj_you.y, -1, 1,0,c_white,1);
+				draw_sprite_ext(spr_player_harvest_straw_armor, _img, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
 			}else{
-				draw_sprite_ext(spr_player_harvest_straw_armor, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+				draw_sprite_ext(spr_player_harvest_straw_armor, _img, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
 			}
 			break;
 	}
@@ -244,7 +200,7 @@ function equip_armor_player_anim_walk_harvest(_img){
 function equip_legware_player_anim_idle(){
 	switch(obj_you.leg_equipment){
 		case obj_straw_pants:
-			draw_sprite_ext(spr_player_stand_front_straw_legware, 0, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+			draw_sprite_ext(spr_player_front_legware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 			break;
 	}
 }
@@ -252,13 +208,7 @@ function equip_legware_player_anim_idle(){
 function equip_legware_player_anim_walk_down(_img){
 	switch(obj_you.leg_equipment){
 		case obj_straw_pants:
-			if (_img==0){
-				draw_sprite_ext(spr_player_down_straw_legware, 0, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
-			} else if (_img==1 || _img==3){
-				draw_sprite_ext(spr_player_down_straw_legware, 1, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
-			} else if (_img==2){
-				draw_sprite_ext(spr_player_down_straw_legware, 2, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
-			}
+			draw_sprite_ext(spr_player_front_legware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 			break;
 	}
 }
@@ -266,40 +216,22 @@ function equip_legware_player_anim_walk_down(_img){
 function equip_legware_player_anim_walk_up(_img){
 	switch(obj_you.leg_equipment){
 		case obj_straw_pants:
-			if (_img==0){
-				draw_sprite_ext(spr_player_up_straw_legware, 0, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
-			} else if (_img==1 || _img==3){
-				draw_sprite_ext(spr_player_up_straw_legware, 1, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
-			} else if (_img==2){
-				draw_sprite_ext(spr_player_up_straw_legware, 2, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
-			}
+			draw_sprite_ext(spr_player_down_legware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 			break;
 	}
 }
 
-function equip_legware_player_anim_walk_left(_img){
+function equip_legware_player_anim_walk_side(_img){
 	switch(obj_you.leg_equipment){
 		case obj_straw_pants:
-			if (_img==0){
-				draw_sprite_ext(spr_player_left_straw_legware, 0, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
-			} else if (_img==1 || _img==3){
-				draw_sprite_ext(spr_player_left_straw_legware, 1, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
-			} else if (_img==2){
-				draw_sprite_ext(spr_player_left_straw_legware, 2, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
-			}
-			break;
-	}
-}
-
-function equip_legware_player_anim_walk_right(_img){
-	switch(obj_you.leg_equipment){
-		case obj_straw_pants:
-			if (_img==0){
-				draw_sprite_ext(spr_player_right_straw_legware, 0, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
-			}else if (_img==1 || _img==3){
-				draw_sprite_ext(spr_player_right_straw_legware, 1, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
-			}else if (_img==2){
-				draw_sprite_ext(spr_player_right_straw_legware, 2, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+			if (_img==4 || _img==0){
+				draw_sprite_ext(spr_player_side_legware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
+			} else if (_img==7 || _img==5){
+				draw_sprite_ext(spr_player_side_legware_straw, 4, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
+			} else if (_img==6){
+				draw_sprite_ext(spr_player_side_legware_straw, 5, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
+			} else {
+				draw_sprite_ext(spr_player_side_legware_straw, _img, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
 			}
 			break;
 	}
@@ -309,9 +241,9 @@ function equip_legware_player_anim_walk_harvest(_img){
 	switch(obj_you.leg_equipment){
 		case obj_straw_pants:
 			if (mouse_x > obj_you.x){
-				draw_sprite_ext(spr_player_harvest_straw_legware, _img, obj_you.x, obj_you.y, -1, 1,0,c_white,1);
+				draw_sprite_ext(spr_player_harvest_legware_straw, _img, obj_you.x, obj_you.y, -1, 1,0,c_white,1);
 			}else{
-				draw_sprite_ext(spr_player_harvest_straw_legware, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
+				draw_sprite_ext(spr_player_harvest_legware_straw, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
 			}
 			break;
 	}
@@ -340,12 +272,12 @@ function equip_footware_player_anim_walk_down(_left_foot, _right_foot, _img){
 	if (_left_foot){
 		switch(obj_you.left_foot_equipment){
 			case obj_straw_footwear:
-				if (_img==0){
-					draw_sprite_ext(spr_player_down_left_straw_foot, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				} else if (_img==1 || _img==3){
+				if (_img==5 || _img==7){
 					draw_sprite_ext(spr_player_down_left_straw_foot, 1, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				} else if (_img==2){
+				} else if (_img==6){
 					draw_sprite_ext(spr_player_down_left_straw_foot, 2, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
+				} else {
+					draw_sprite_ext(spr_player_down_left_straw_foot, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
 				break;
 		}
@@ -354,12 +286,12 @@ function equip_footware_player_anim_walk_down(_left_foot, _right_foot, _img){
 	if (_right_foot){
 		switch(obj_you.right_foot_equipment){
 			case obj_straw_footwear:
-				if (_img==0){
-					draw_sprite_ext(spr_player_down_right_straw_foot, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				} else if (_img==1 || _img==3){
+				if (_img==1 || _img==3 ){
 					draw_sprite_ext(spr_player_down_right_straw_foot, 1, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				} else if (_img==2){
 					draw_sprite_ext(spr_player_down_right_straw_foot, 2, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
+				} else {
+					draw_sprite_ext(spr_player_down_right_straw_foot, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
 				break;
 		}
@@ -370,12 +302,12 @@ function equip_footware_player_anim_walk_up(_left_foot, _right_foot, _img){
 	if (_left_foot){
 		switch(obj_you.left_foot_equipment){
 			case obj_straw_footwear:
-				if (_img==0){
-					draw_sprite_ext(spr_player_up_left_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				} else if (_img==1 || _img==3){
+				if (_img==5 || _img==7){
 					draw_sprite_ext(spr_player_up_left_foot_straw, 1, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				} else if (_img==2){
+				} else if (_img==6){
 					draw_sprite_ext(spr_player_up_left_foot_straw, 2, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
+				} else {
+					draw_sprite_ext(spr_player_up_left_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
 				break;
 		}
@@ -384,28 +316,32 @@ function equip_footware_player_anim_walk_up(_left_foot, _right_foot, _img){
 	if (_right_foot){
 		switch(obj_you.right_foot_equipment){
 			case obj_straw_footwear:
-				if (_img==0){
-					draw_sprite_ext(spr_player_up_right_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				} else if (_img==1 || _img==3){
+				if (_img==1 || _img==3 ){
 					draw_sprite_ext(spr_player_up_right_foot_straw, 1, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				} else if (_img==2){
 					draw_sprite_ext(spr_player_up_right_foot_straw, 2, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
+				} else {
+					draw_sprite_ext(spr_player_up_right_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
 				break;
 		}
 	}
 }
 
-function equip_footware_player_anim_walk_left(_left_foot, _right_foot, _img){
+function equip_footware_player_anim_walk_side(_left_foot, _right_foot, _img){
 	if (_left_foot){
 		switch(obj_you.left_foot_equipment){
 			case obj_straw_footwear:
-				if (_img==0){
+				if (_img==0 || _img==4){
 					draw_sprite_ext(spr_player_side_left_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				} else if (_img==1 || _img==3){
 					draw_sprite_ext(spr_player_side_left_foot_straw, 1, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				} else if (_img==2){
 					draw_sprite_ext(spr_player_side_left_foot_straw, 2, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
+				} else if (_img==5 || _img==7){
+					draw_sprite_ext(spr_player_side_left_foot_straw, 3, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
+				} else if (_img==6){
+					draw_sprite_ext(spr_player_side_left_foot_straw, 4, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
 				break;
 		}
@@ -414,38 +350,14 @@ function equip_footware_player_anim_walk_left(_left_foot, _right_foot, _img){
 	if (_right_foot){
 		switch(obj_you.right_foot_equipment){
 			case obj_straw_footwear:
-				if (_img==0){
+				if (_img==1 || _img==3){
 					draw_sprite_ext(spr_player_side_right_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				} else if (_img==2){
 					draw_sprite_ext(spr_player_side_right_foot_straw, 1, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				}
-				break;
-		}
-	}
-}
-
-function equip_footware_player_anim_walk_right(_left_foot, _right_foot, _img){
-	if (_left_foot){
-		switch(obj_you.left_foot_equipment){
-			case obj_straw_footwear:
-				if (_img==0){
-					draw_sprite_ext(spr_player_side_left_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				} else if (_img==2){
-					draw_sprite_ext(spr_player_side_left_foot_straw, 1, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				}
-				break;
-		}
-	}
-	
-	if (_right_foot){
-		switch(obj_you.right_foot_equipment){
-			case obj_straw_footwear:
-				if (_img==0){
-					draw_sprite_ext(spr_player_side_right_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				} else if (_img==1 || _img==3){
-					draw_sprite_ext(spr_player_side_right_foot_straw, 1, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				} else if (_img==2){
+				} else if (_img==5 || _img==7){
 					draw_sprite_ext(spr_player_side_right_foot_straw, 2, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
+				} else if (_img==6){
+					draw_sprite_ext(spr_player_side_right_foot_straw, 3, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
 				break;
 		}
@@ -457,21 +369,7 @@ function equip_footware_player_anim_walk_harvest(_left_foot, _right_foot, _img){
 		switch(obj_you.left_foot_equipment){
 			case obj_straw_footwear:
 				if (mouse_x > obj_you.x){
-					draw_sprite_ext(spr_player_side_right_foot_straw, _img, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				}else{
-					draw_sprite_ext(spr_player_side_right_foot_straw, _img, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				}
-				break;
-		}
-	}
-	
-	if (_right_foot){
-		switch(obj_you.right_foot_equipment){
-			case obj_straw_footwear:
-				if (mouse_x>obj_you.x){
-					draw_sprite_ext(spr_player_side_right_foot_straw, _img, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-				}else{
-					draw_sprite_ext(spr_player_side_right_foot_straw, _img, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
+					draw_sprite_ext(spr_player_side_left_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
 				break;
 		}

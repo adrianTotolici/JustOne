@@ -29,12 +29,12 @@ function scr_player_control(){
 	}
 	if (keyboard_check(ord("A"))) {
 		image_xscale = 1;
-		sprite_index=anim_walk_left;
+		sprite_index=anim_walk_side
 		_travel_x=-20;
 	}
 	else if (keyboard_check(ord("D"))) {
 		image_xscale = -1;
-		sprite_index=anim_walk_right;
+		sprite_index=anim_walk_side
 		_travel_x=+20;
 	}
 	if (keyboard_check(vk_nokey)){
