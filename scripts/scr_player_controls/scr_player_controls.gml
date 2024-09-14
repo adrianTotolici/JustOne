@@ -33,7 +33,7 @@ function scr_player_control(){
 		_travel_x=-20;
 	}
 	else if (keyboard_check(ord("D"))) {
-		image_xscale = 1;
+		image_xscale = -1;
 		sprite_index=anim_walk_right;
 		_travel_x=+20;
 	}

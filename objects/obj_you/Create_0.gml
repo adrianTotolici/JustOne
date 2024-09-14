@@ -20,11 +20,11 @@ attack=0.5;
 
 //technical
 state=PLAYER_STATE.CONTROLS;
-anim_idle=spr_player_stand_front;
-anim_walk_left=spr_player_left;
-anim_walk_right=spr_player_right;
-anim_walk_up=spr_player_up;
-anim_walk_down=spr_player_down;
+anim_idle=spr_player_stand;
+anim_walk_right=spr_player_side;
+anim_walk_left=spr_player_side;
+anim_walk_up=spr_player_down;
+anim_walk_down=spr_player_up;
 anim_harvest=spr_player_harvest;
 show_end_game=false;
 

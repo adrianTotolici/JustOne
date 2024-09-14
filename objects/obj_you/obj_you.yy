@@ -38,8 +38,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_player_stand_front",
-    "path":"sprites/spr_player_stand_front/spr_player_stand_front.yy",
+    "name":"spr_player_stand",
+    "path":"sprites/spr_player_stand/spr_player_stand.yy",
   },
   "spriteMaskId":null,
   "visible":true,
