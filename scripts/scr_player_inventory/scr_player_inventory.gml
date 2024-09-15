@@ -148,16 +148,16 @@ function eat_and_drink(_object){
 		default:
 			break;
 	}
-	if (_obj != noone){
-		if (hunger+_obj.food >= 100){
+	if (_object != noone){
+		if (hunger+_object.food >= 100){
 			hunger = 100;
 		}else{ 
-			hunger+=_obj.food;
+			hunger+=_object.food;
 		}
-		if (thirst+_obj.water >= 100) {
+		if (thirst+_object.water >= 100) {
 			thirst = 100;
 		} else {
-			thirst+=_obj.water;
+			thirst+=_object.water;
 		}
 	}
 }
