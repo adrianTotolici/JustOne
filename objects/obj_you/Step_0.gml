@@ -44,4 +44,8 @@ if (keyboard_check(vk_escape)){
 }
 
 
+// Clamp the player's position
+x = clamp(x, 96, room_width-96);
+y = clamp(y, 96, room_height-96);
+
 //show_debug_message("yview= "+ view_yview[0]);

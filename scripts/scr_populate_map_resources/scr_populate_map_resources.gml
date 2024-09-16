@@ -2,8 +2,8 @@
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_populate_map_resources(_sprite_size){
 	
-	for (i=0;i<array_length(global.resource_matrix);i++){
-		for (j=0;j<array_length(global.resource_matrix[i]);j++){
+	for (i=2;i<array_length(global.resource_matrix)-2;i++){
+		for (j=2;j<array_length(global.resource_matrix[i])-2;j++){
 			if (global.resource_matrix[i][j] != true){
 				resource_freq=random_range(1,100);
 				if (resource_freq>0 && resource_freq<=5){

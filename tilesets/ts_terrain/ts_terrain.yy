@@ -1,14 +1,14 @@
 {
   "$GMTileSet":"v1",
-  "%Name":"ts_grass",
+  "%Name":"ts_terrain",
   "autoTileSets":[],
   "macroPageTiles":{
     "SerialiseHeight":0,
     "SerialiseWidth":0,
     "TileSerialiseData":[],
   },
-  "name":"ts_grass",
-  "out_columns":4,
+  "name":"ts_terrain",
+  "out_columns":5,
   "out_tilehborder":2,
   "out_tilevborder":2,
   "parent":{
@@ -18,8 +18,8 @@
   "resourceType":"GMTileSet",
   "resourceVersion":"2.0",
   "spriteId":{
-    "name":"spr_terrain",
-    "path":"sprites/spr_terrain/spr_terrain.yy",
+    "name":"spr_coast_terrain",
+    "path":"sprites/spr_coast_terrain/spr_coast_terrain.yy",
   },
   "spriteNoExport":false,
   "textureGroupId":{
@@ -34,5 +34,5 @@
   "tileWidth":64,
   "tilexoff":0,
   "tileyoff":0,
-  "tile_count":16,
+  "tile_count":25,
 }
