@@ -32,19 +32,19 @@ function scr_player_control(){
 		}
 	}
 	
-	if (keyboard_check(ord("W"))) {
+	if (keyboard_check(ord("W")) || keyboard_check(vk_up)) {
 		sprite_index=anim_walk_up;
 		_travel_y=-20;
-	} else if (keyboard_check(ord("S"))) {
+	} else if (keyboard_check(ord("S")) || keyboard_check(vk_down)) {
 		sprite_index=anim_walk_down;
 		_travel_y=+20;
 	}
-	if (keyboard_check(ord("A"))) {
+	if (keyboard_check(ord("A")) || keyboard_check(vk_left)) {
 		image_xscale = 1;
 		sprite_index=anim_walk_side
 		_travel_x=-20;
 	}
-	else if (keyboard_check(ord("D"))) {
+	else if (keyboard_check(ord("D")) || keyboard_check(vk_right)) {
 		image_xscale = -1;
 		sprite_index=anim_walk_side
 		_travel_x=+20;
