@@ -18,6 +18,7 @@ function scr_player_harvest(){
 			}
 			if (image_index>=image_number-1){
 				_resources.hp-=_player.attack;
+				_resources.show_healthbar=true;
 				if (_resources.shake!=true){
 					_resources.shake=true;
 				}

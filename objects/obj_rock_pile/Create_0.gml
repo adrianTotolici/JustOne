@@ -1,5 +1,6 @@
 /// @description mud
 // You can write your code in this editor
 event_inherited();
-hp=10;
+max_hp=50;
+hp=max_hp;
 tool_required = false;

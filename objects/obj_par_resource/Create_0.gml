@@ -10,6 +10,10 @@ max_brench_drop=irandom(3);
 no_resources = false;
 loot=false
 tool_required = true;
+hp=100;
+max_hp=100;
+show_healthbar=false;
 
 alarm[0] = 30;
 alarm[1] = 300;
+alarm[2] = 10;

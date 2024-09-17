@@ -2,4 +2,5 @@
 // You can write your code in this editor
 event_inherited();
 required = TOOL_TYPE.STICK;
-hp=20;
+max_hp=50;
+hp=max_hp;

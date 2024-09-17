@@ -13,3 +13,17 @@ if (shake==true) {
 }else{
 	draw_self();
 }
+
+if (show_healthbar && hp > 1) {
+	var health_percentage = hp / max_hp;
+	var bar_width = 100;
+	var bar_height = 10;
+	var bar_x = x - bar_width / 2;
+	var bar_y = y - 50;
+
+	draw_set_color(c_black);
+	draw_rectangle(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, false);
+
+	draw_set_color(c_red);
+	draw_rectangle(bar_x, bar_y, bar_x + (bar_width * health_percentage), bar_y + bar_height, false);
+}

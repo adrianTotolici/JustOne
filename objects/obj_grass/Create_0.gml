@@ -1,4 +1,5 @@
 /// @description grass
 event_inherited();
 required = TOOL_TYPE.ROCK;
-hp=50;
+max_hp=50;
+hp=max_hp;
