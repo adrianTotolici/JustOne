@@ -16,4 +16,4 @@ show_healthbar=false;
 
 alarm[0] = 30;
 alarm[1] = 300;
-alarm[2] = 10;
+alarm[2] = 100;

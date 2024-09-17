@@ -18,6 +18,18 @@ function scr_player_control(){
 				}
 			}
 		}
+		if (instance_position(mouse_x, mouse_y, obj_creature_parent)){
+			var _creatures = instance_position(mouse_x, mouse_y, obj_creature_parent);
+			if (_creatures.x >= x-10) {
+				image_xscale=-1;
+				state=PLAYER_STATE.ATTACK;
+				sprite_index=anim_harvest;
+			} else if (_creatures.x <= x+10) {
+				image_xscale=1;
+				state=PLAYER_STATE.ATTACK;
+				sprite_index=anim_harvest;
+			}
+		}
 	}
 	
 	if (keyboard_check(ord("W"))) {

@@ -1,5 +1,4 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Draw object in camera view
 
 if not (x >= obj_you.x-window_get_width()/2 && x <= obj_you.x+window_get_width()/2 && y >= obj_you.y-window_get_height()/2 && y<= obj_you.y+window_get_height()/2){
 	instance_deactivate_object(self);

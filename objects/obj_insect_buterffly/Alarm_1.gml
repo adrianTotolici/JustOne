@@ -1,3 +1,6 @@
 /// @description Insert description here
 // You can write your code in this editor
-alarm[2]=10;
+
+// Inherit the parent event
+event_inherited();
+

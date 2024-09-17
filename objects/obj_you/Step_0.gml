@@ -28,6 +28,10 @@ switch(state)
 		scr_player_inventory();
 		scr_player_quick_inventory();
 		break; 
+	case PLAYER_STATE.ATTACK:
+		scr_player_control();
+		scr_player_attack();
+		break;
 }
 scr_draw_armor();
 scr_crafting();

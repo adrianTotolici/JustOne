@@ -3,8 +3,8 @@
 
 // Inherit the parent event
 event_inherited();
-
-hp = 10;
+max_health=10;
+hp = max_health;
 speed=1;
 image_xscale=0.5;
 image_yscale=0.5;

@@ -112,6 +112,7 @@
     {"id":{"name":"scr_draw_armor","path":"scripts/scr_draw_armor/scr_draw_armor.yy",},},
     {"id":{"name":"scr_draw_tool","path":"scripts/scr_draw_tool/scr_draw_tool.yy",},},
     {"id":{"name":"scr_inventory_add","path":"scripts/scr_inventory_add/scr_inventory_add.yy",},},
+    {"id":{"name":"scr_player_attack","path":"scripts/scr_player_attack/scr_player_attack.yy",},},
     {"id":{"name":"scr_player_controls","path":"scripts/scr_player_controls/scr_player_controls.yy",},},
     {"id":{"name":"scr_player_harvest","path":"scripts/scr_player_harvest/scr_player_harvest.yy",},},
     {"id":{"name":"scr_player_inventory","path":"scripts/scr_player_inventory/scr_player_inventory.yy",},},
