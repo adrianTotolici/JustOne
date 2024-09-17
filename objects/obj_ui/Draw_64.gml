@@ -30,15 +30,15 @@ draw_set_color(c_black);
 draw_text(40, 0,_text_to_display);
 draw_text(40, 10, "FPS = " + string(fps));
 
-draw_sprite(spr_help,0,x_size_ui-button_width,0);
-draw_sprite(spr_craft_ui,0,x_size_ui-button_width*2,0);
-draw_sprite(spr_equipment_ui, 0, x_size_ui-button_width*3,0);
-draw_sprite(spr_build_ui, 0, x_size_ui-button_width*4,0);
+draw_sprite_ext(spr_help,0,x_size_ui-button_width,0,0.5,0.5,0,c_white,1);
+draw_sprite_ext(spr_craft_ui,0,x_size_ui-button_width*2,0,0.5,0.5,0,c_white,1);
+draw_sprite_ext(spr_equipment_ui, 0, x_size_ui-button_width*3,0,0.5,0.5,0,c_white,1);
+draw_sprite_ext(spr_build_ui, 0, x_size_ui-button_width*4,0,0.5,0.5,0,c_white,1);
 
 if (show_crafting){
 	draw_sprite_stretched(spr_craft_ui_menu,0,x_size_ui-craft_menu_width,button_height,craft_menu_width,craft_menu_height);
-	draw_sprite(spr_equipment_ui,0,x_size_ui-craft_menu_width+6,button_height+9);
-	draw_sprite(spr_tools_ui,0,x_size_ui-craft_menu_width+6,button_height*2+12);
+	draw_sprite_ext(spr_equipment_ui,0,x_size_ui-craft_menu_width+6,button_height+9,0.5,0.5,0,c_white,1);
+	draw_sprite_ext(spr_tools_ui,0,x_size_ui-craft_menu_width+6,button_height*2+12,0.5,0.5,0,c_white,1);
 }
 
 if (show_equipment){
