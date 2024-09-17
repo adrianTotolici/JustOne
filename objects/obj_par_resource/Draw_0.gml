@@ -16,8 +16,8 @@ if (shake==true) {
 
 if (show_healthbar && hp > 1) {
 	var health_percentage = hp / max_hp;
-	var bar_width = 100;
-	var bar_height = 10;
+	var bar_width = 25;
+	var bar_height = 5;
 	var bar_x = x - bar_width / 2;
 	var bar_y = y - 50;
 
