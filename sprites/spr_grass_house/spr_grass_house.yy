@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"buildings",
-    "path":"folders/Sprites/buildings.yy",
+    "name":"grass_house",
+    "path":"folders/Sprites/buildings/grass_house.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
