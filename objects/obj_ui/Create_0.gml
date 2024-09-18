@@ -69,6 +69,8 @@ text_straw_footware_rec="2x ";
 text_straw_mug="1x ";
 text_rock="5x ";
 text_stick="4x ";
+text_no_resources="";
+show_text_no_resources=false;
 
 
 // screen menu buttons

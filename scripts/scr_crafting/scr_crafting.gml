@@ -103,6 +103,11 @@ function create_object(_obj_created, _obj_resources, _resource_need, _resource_o
 				break;
 			}
 		}
+	}else{
+		_ui.show_text_no_resources=true;
+		missing_resources=_resource_need-_resource_own;
+		_ui.text_no_resources="Need "+string(missing_resources)+" more resources";
+		alarm[0]=60;
 	}
 }
 

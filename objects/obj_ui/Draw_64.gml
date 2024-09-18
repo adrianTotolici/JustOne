@@ -134,7 +134,7 @@ if (show_inv){
 if (show_help){
 	draw_set_font(fnt_help_text);
 	draw_set_color(c_black);
-	var _help_pos_x=(x_size_ui/2)-((x_size_ui/2)/2);
+	var _help_pos_x=(window_get_width()/2)-((window_get_width()/2)/2);
 	draw_text(_help_pos_x, 0, help_move_text);
 	draw_text(_help_pos_x, 36, help_inventory);
 	draw_text(_help_pos_x, 36*2, help_quick_inventory);
@@ -255,3 +255,8 @@ for (var _i=0;_i<array_length(slot_list);_i++){
 	}
 }
 
+if (show_text_no_resources){
+	draw_set_font(fnt_help_text);
+	draw_set_color(c_red);
+	draw_text(window_get_width()/2-130, window_get_height()/2,text_no_resources);
+}
