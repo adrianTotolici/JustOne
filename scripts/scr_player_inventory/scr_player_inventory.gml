@@ -100,15 +100,16 @@ function scr_player_inventory(){
 									}
 									if (object_get_parent(_ui.inventory_list[b])=obj_par_wepons || object_get_parent(_ui.inventory_list[b])=obj_par_items){
 										if (_ui.inventory_equiped[b] == false){
-											with (obj_par_wepons) {instance_destroy();}
-										    with (obj_par_items){instance_destroy();}
-											equip(_ui.inventory_list[b]);
 											remove_old_weapon_item_selection(b);
+											with (obj_par_wepons) {instance_destroy();}
+											with (obj_par_items){instance_destroy();}
+											equip(_ui.inventory_list[b]);
 											_ui.inventory_equiped[b] = true;
 											instance_create_layer(obj_you.x, obj_you.y, "Player", _ui.inventory_list[b]);
 										}else{
 											unequip(_ui.inventory_list[b]);
 											_ui.inventory_equiped[b] = false;
+											remove_old_weapon_item_selection(b);
 											with (obj_par_wepons) {instance_destroy();}
 											with (obj_par_items){instance_destroy();}
 										}

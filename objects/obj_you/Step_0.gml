@@ -28,6 +28,8 @@ switch(state)
 		scr_player_control();
 		scr_player_attack();
 		break;
+	default:
+		break;
 }
 scr_draw_armor();
 scr_crafting();

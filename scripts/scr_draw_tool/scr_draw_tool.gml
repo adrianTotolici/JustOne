@@ -54,5 +54,7 @@ function scr_draw_tool(){
 				draw_sprite_ext(sprite_index, image_index, _owner.x-21*_owner.image_xscale, _owner.y-22, _owner.image_xscale*_scale_equipment, _owner.image_yscale*_scale_equipment, 290*_owner.image_xscale,c_white,1);
 			}
 			break;
+		default:
+			break;
 	}
 }

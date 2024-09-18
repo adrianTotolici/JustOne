@@ -128,7 +128,7 @@ if (show_inv){
 		}
 		_a+=1;
 	}
-	draw_set_halign(fa_left)
+	draw_set_halign(fa_left);
 }
 
 if (show_help){

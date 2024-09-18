@@ -9,7 +9,7 @@ function scr_draw_armor(){
 	switch(_owner.sprite_index){
 		case (obj_you.anim_idle):
 			if (obj_you.head_equipment != noone){
-				equip_head_player_anim_idle();
+				equip_head_front();
 			}
 			if (obj_you.body_equipment != noone){
 				equip_armor_player_anim_idle();
@@ -27,7 +27,7 @@ function scr_draw_armor(){
 		
 		case obj_you.anim_walk_down:
 			if (obj_you.head_equipment != noone){
-				equip_head_player_anim_walk_down();
+				equip_head_front();
 			}
 			if (obj_you.body_equipment != noone){
 				equip_armor_player_anim_walk_down();
@@ -45,7 +45,7 @@ function scr_draw_armor(){
 		
 		case obj_you.anim_walk_up:
 			if (obj_you.head_equipment != noone){
-				equip_head_player_anim_walk_up();
+				equip_head_front();
 			}
 			if (obj_you.body_equipment != noone){
 				equip_armor_player_anim_walk_up();
@@ -63,7 +63,7 @@ function scr_draw_armor(){
 			
 		case obj_you.anim_walk_side:
 			if (obj_you.head_equipment != noone){
-				equip_head_player_anim_walk_side();
+				equip_head_side();
 			}
 			if (obj_you.body_equipment != noone){
 				equip_armor_player_anim_walk_side(_img);
@@ -81,7 +81,7 @@ function scr_draw_armor(){
 			
 		case obj_you.anim_harvest:
 			if (obj_you.head_equipment != noone){
-				equip_head_player_anim_walk_harvest();
+				equip_head_side();
 			}
 			if (obj_you.body_equipment != noone){
 				equip_armor_player_anim_walk_harvest(_img);
@@ -93,43 +93,22 @@ function scr_draw_armor(){
 				equip_footware_player_anim_walk_harvest(true, false, _img);
 			}
 			break;
+		default:
+			break;
 	}
 }
 
 // headware
-function equip_head_player_anim_idle(){
+function equip_head_front(){
 	switch(obj_you.head_equipment){
 		case obj_straw_hat:
 			draw_sprite_ext(spr_player_front_headware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0, c_white, 1);
 			break;
-	}
-}
-
-function equip_head_player_anim_walk_down(){
-	switch(obj_you.head_equipment){
-		case obj_straw_hat:
-			draw_sprite_ext(spr_player_front_headware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
+		default:
 			break;
 	}
 }
-
-function equip_head_player_anim_walk_up(){
-	switch(obj_you.head_equipment){
-		case obj_straw_hat:
-			draw_sprite_ext(spr_player_front_headware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-			break;
-	}
-}
-
-function equip_head_player_anim_walk_side(){
-	switch(obj_you.head_equipment){
-		case obj_straw_hat:
-			draw_sprite_ext(spr_player_side_headware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
-			break;
-	}
-}
-
-function equip_head_player_anim_walk_harvest(){
+function equip_head_side(){
 	switch(obj_you.head_equipment){
 		case obj_straw_hat:
 			if (mouse_x>obj_you.x){
@@ -137,6 +116,8 @@ function equip_head_player_anim_walk_harvest(){
 			}else{
 				draw_sprite_ext(spr_player_side_headware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 			}
+			break;
+		default:
 			break;
 	}
 }
@@ -147,6 +128,8 @@ function equip_armor_player_anim_idle(){
 		case obj_straw_armor:
 			draw_sprite_ext(spr_player_front_straw_armor, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
 			break;
+		default:
+			break;
 	}
 }
 
@@ -155,6 +138,8 @@ function equip_armor_player_anim_walk_down(){
 		case obj_straw_armor:
 			draw_sprite_ext(spr_player_front_straw_armor, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
 			break;
+		default:
+			break;
 	}
 }
 
@@ -162,6 +147,8 @@ function equip_armor_player_anim_walk_up(){
 	switch(obj_you.body_equipment){
 		case obj_straw_armor:
 			draw_sprite_ext(spr_player_back_straw_armor, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
+			break;
+		default:
 			break;
 	}
 }
@@ -181,6 +168,8 @@ function equip_armor_player_anim_walk_side(_img){
 				draw_sprite_ext(spr_player_side_straw_armor, 6, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 			}
 			break;
+		default:
+			break;
 	}
 }
 
@@ -193,6 +182,8 @@ function equip_armor_player_anim_walk_harvest(_img){
 				draw_sprite_ext(spr_player_harvest_straw_armor, _img, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
 			}
 			break;
+		default:
+			break;
 	}
 }
 	
@@ -202,6 +193,8 @@ function equip_legware_player_anim_idle(){
 		case obj_straw_pants:
 			draw_sprite_ext(spr_player_front_legware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 			break;
+		default:
+			break;
 	}
 }
 
@@ -210,6 +203,8 @@ function equip_legware_player_anim_walk_down(_img){
 		case obj_straw_pants:
 			draw_sprite_ext(spr_player_front_legware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 			break;
+		default:
+			break;
 	}
 }
 
@@ -217,6 +212,8 @@ function equip_legware_player_anim_walk_up(_img){
 	switch(obj_you.leg_equipment){
 		case obj_straw_pants:
 			draw_sprite_ext(spr_player_down_legware_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
+			break;
+		default:
 			break;
 	}
 }
@@ -234,6 +231,8 @@ function equip_legware_player_anim_walk_side(_img){
 				draw_sprite_ext(spr_player_side_legware_straw, _img, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
 			}
 			break;
+		default:
+			break;
 	}
 }
 
@@ -246,6 +245,8 @@ function equip_legware_player_anim_walk_harvest(_img){
 				draw_sprite_ext(spr_player_harvest_legware_straw, _img, obj_you.x, obj_you.y, 1, 1,0,c_white,1);
 			}
 			break;
+		default:
+			break;
 	}
 }
 	
@@ -256,6 +257,8 @@ function equip_footware_player_anim_idle(_left_foot, _right_foot){
 			case obj_straw_footwear:
 				draw_sprite_ext(spr_player_down_left_straw_foot, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				break;
+			default:
+				break;
 		}
 	}
 	
@@ -263,6 +266,8 @@ function equip_footware_player_anim_idle(_left_foot, _right_foot){
 		switch(obj_you.right_foot_equipment){
 			case obj_straw_footwear:
 				draw_sprite_ext(spr_player_down_right_straw_foot, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
+				break;
+			default:
 				break;
 		}
 	}
@@ -280,6 +285,8 @@ function equip_footware_player_anim_walk_down(_left_foot, _right_foot, _img){
 					draw_sprite_ext(spr_player_down_left_straw_foot, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
 				break;
+			default:
+				break;
 		}
 	}
 	
@@ -293,6 +300,8 @@ function equip_footware_player_anim_walk_down(_left_foot, _right_foot, _img){
 				} else {
 					draw_sprite_ext(spr_player_down_right_straw_foot, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
+				break;
+			default:
 				break;
 		}
 	}
@@ -310,6 +319,8 @@ function equip_footware_player_anim_walk_up(_left_foot, _right_foot, _img){
 					draw_sprite_ext(spr_player_up_left_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
 				break;
+			default:
+				break;
 		}
 	}
 	
@@ -323,6 +334,8 @@ function equip_footware_player_anim_walk_up(_left_foot, _right_foot, _img){
 				} else {
 					draw_sprite_ext(spr_player_up_right_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
+				break;
+			default:
 				break;
 		}
 	}
@@ -344,6 +357,8 @@ function equip_footware_player_anim_walk_side(_left_foot, _right_foot, _img){
 					draw_sprite_ext(spr_player_side_left_foot_straw, 4, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
 				break;
+			default:
+				break;
 		}
 	}
 	
@@ -360,6 +375,8 @@ function equip_footware_player_anim_walk_side(_left_foot, _right_foot, _img){
 					draw_sprite_ext(spr_player_side_right_foot_straw, 3, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
 				break;
+			default:
+				break;
 		}
 	}
 }
@@ -371,6 +388,8 @@ function equip_footware_player_anim_walk_harvest(_left_foot, _right_foot, _img){
 				if (mouse_x > obj_you.x){
 					draw_sprite_ext(spr_player_side_left_foot_straw, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale,0,c_white,1);
 				}
+				break;
+			default:
 				break;
 		}
 	}
