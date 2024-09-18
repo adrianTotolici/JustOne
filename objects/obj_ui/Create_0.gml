@@ -71,6 +71,7 @@ text_rock="5x ";
 text_stick="4x ";
 text_no_resources="";
 show_text_no_resources=false;
+start_alarm=true;
 
 
 // screen menu buttons

@@ -160,3 +160,8 @@ if (keyboard_check(vk_anykey)){
 		}
 	}
 }
+
+if (show_text_no_resources && start_alarm){
+	alarm[0]=60;
+	start_alarm=false;
+}
