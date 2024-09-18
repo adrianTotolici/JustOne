@@ -13,13 +13,6 @@ _text_to_display = "Just One v0.0.7";
 
 display_set_gui_size(x_size_ui,y_size_ui);
 
-slot_list = array_create(_nr_of_boxes, noone);
-slot_selected_list = array_create(_nr_of_boxes, false);
-
-
-slot_selected=noone;
-_middle_box = (array_length(slot_list)-1) div 2;
-
 show_inv=false;
 inventory_list = array_create(16, noone);
 inventory_num = array_create(16, 0);
@@ -27,9 +20,6 @@ inventory_equiped = array_create(16, false);
 inv_selected=noone;
 
 // add test items
-slot_list[0]=obj_rock;
-slot_list[1]=obj_stick;
-slot_list[2]=obj_straw_mug;
 inventory_list[0]=obj_rock;
 inventory_list[1]=obj_stick;
 inventory_list[2]=obj_straw_mug;

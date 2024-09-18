@@ -241,20 +241,6 @@ if (show_player_equipment){
 	}
 }
 
-for(var _i=0;_i<array_length(slot_list);_i++){
-	draw_sprite(spr_quickinventory,0,x_size_ui/2+(sprite_size*(_i-_middle_box)),y_size_ui);
-}
-
-for (var _i=0;_i<array_length(slot_list);_i++){
-	if (slot_list[_i] !=noone){
-		if (slot_selected_list[_i] == false){
-			draw_sprite(object_get_sprite(slot_list[_i]),0,x_size_ui/2+(sprite_size*(_i-_middle_box)),y_size_ui);
-		}else{
-			draw_sprite(object_get_sprite(slot_list[_i]),0,_mx,_my);
-		}
-	}
-}
-
 if (show_text_no_resources){
 	draw_set_font(fnt_help_text);
 	draw_set_color(c_red);

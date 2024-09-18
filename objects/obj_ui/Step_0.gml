@@ -118,45 +118,7 @@ if (keyboard_check_released(ord("I"))){
 if (show_inv == false){
 	if (_my>=y_size_ui-sprite_size){
 		if (_mx>=x_size_ui/2-sprite_size*2-16 && _mx<=x_size_ui/2+sprite_size*2+16){
-			obj_you.state=PLAYER_STATE.QUICK_INVENTORY;
-		}
-	}
-}
-
-if (keyboard_check(vk_anykey)){
-	var _key_pressed = keyboard_lastkey;
-	var _slot_nr=-1;
-	switch(_key_pressed){
-		case ord("1"):
-			_slot_nr=0;
-			break;
-		case ord("2"):
-			_slot_nr=1;
-			break;
-		case ord("3"):
-			_slot_nr=2;
-			break;
-		case ord("4"):
-			_slot_nr=3;
-			break;
-		case ord("5"):
-			_slot_nr=4;
-			break;
-		default:
-			break;
-	}
-		
-	if (_slot_nr != -1){	
-		if (slot_list[_slot_nr] != noone){
-			var _par=object_get_parent(slot_list[_slot_nr]);
-			if (obj_you.equipped!=slot_list[_slot_nr]){
-				if (_par==obj_par_wepons || _par==obj_par_items){
-					obj_you.equipped=slot_list[_slot_nr];
-					with (obj_par_wepons) {instance_destroy();}
-					with (obj_par_items){instance_destroy();}
-					instance_create_layer(obj_you.x, obj_you.y, "Player", slot_list[_slot_nr]);
-				}
-			}
+			obj_you.state=PLAYER_STATE.INVENTORY;
 		}
 	}
 }
