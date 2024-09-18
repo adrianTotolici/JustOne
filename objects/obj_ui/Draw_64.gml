@@ -121,7 +121,6 @@ if (show_inv){
 					instance_create_layer(obj_you.x, obj_you.y, "Player", inventory_list[_i]);
 				}
 				if (_par==obj_par_armors){
-					// obj_you.equipped=inventory_list[_i];
 					// equip weappon or item in hand
 					instance_create_layer(obj_you.x, obj_you.y, "Player", inventory_list[_i]);
 				}
@@ -129,6 +128,7 @@ if (show_inv){
 		}
 		_a+=1;
 	}
+	draw_set_halign(fa_left)
 }
 
 if (show_help){

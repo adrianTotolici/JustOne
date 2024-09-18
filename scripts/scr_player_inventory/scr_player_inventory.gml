@@ -46,15 +46,6 @@ function scr_player_inventory(){
 					}
 				}
 			}
-				
-			//Quickslot selection
-			if (_my >=_ui.y_size_ui-_ui.sprite_size+2){
-				for (i=0;i<array_length(_ui.slot_list);i++){
-					if (_mx>=_ui.x_size_ui/2+(_ui.sprite_size*(i-_ui._middle_box))-16 && _mx<=_ui.x_size_ui/2+(_ui.sprite_size*(i-_ui._middle_box))+16){
-						_ui.slot_list[i]=_ui.inv_selected;
-					}
-				}
-			}
 			
 			//Drop item
 			if (_my <= _ui.y_size_ui-_ui.sprite_size+2 && _ui.inv_selected!=noone){
