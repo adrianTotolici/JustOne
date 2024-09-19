@@ -30,6 +30,24 @@ function scr_player_control(){
 				sprite_index=anim_harvest;
 			}
 		}
+		if (instance_position(mouse_x, mouse_y, obj_par_buildings)){
+			var _building = instance_position(mouse_x, mouse_y, obj_grass_house);
+			player_instance=instance_find(obj_you,0);
+			if (_building.x >= x-10) {
+				image_xscale=-1;
+				state=PLAYER_STATE.SLEEP;	
+				player_instance.visible=false;
+				_building.sprite_index=spr_grass_house_sleep;
+				obj_you.building_instance_used=_building;
+			} else if (_building.x <= x+10) {
+				image_xscale=1;
+				state=PLAYER_STATE.SLEEP;
+				object_set_visible(obj_you,false);
+				player_instance.visible=false;
+				_building.sprite_index=spr_grass_house_sleep;
+				obj_you.building_instance_used=_building;
+			}
+		}
 	}
 	
 	if (keyboard_check(ord("W")) || keyboard_check(vk_up)) {

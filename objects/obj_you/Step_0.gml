@@ -28,6 +28,8 @@ switch(state)
 		scr_player_control();
 		scr_player_attack();
 		break;
+	case PLAYER_STATE.SLEEP:
+		scr_player_sleep();
 	default:
 		break;
 }
