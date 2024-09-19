@@ -4,3 +4,4 @@ event_inherited();
 max_hp=50;
 hp=max_hp;
 tool_required = false;
+snd_harvest=snd_stone_pick;

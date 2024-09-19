@@ -1,6 +1,7 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_player_harvest(){
+	play_sound=true;
 	if (mouse_check_button(mb_left)){
 		var _resources = instance_position(mouse_x, mouse_y, obj_par_resource);
 		var _player = obj_you;
@@ -11,7 +12,7 @@ function scr_player_harvest(){
 		y_min=obj_you.y-50;
 		y_max=obj_you.y+50;
 		
-		if (instance_exists(_resources) && (x_min<=_resources.x && _resources.x<=x_max) && (y_min<=_resources.y && _resources.y<=y_max) && _resources.no_resources==false){
+		if (instance_exists(_resources) && (x_min<=_resources.x && _resources.x<=x_max) && (y_min<=_resources.y && _resources.y<=y_max) && _resources.no_resources==false && _resources!=_player){
 			if (sprite_index!=anim_harvest){
 				sprite_index=anim_harvest;
 				image_index=0;
@@ -19,6 +20,10 @@ function scr_player_harvest(){
 			if (image_index>=image_number-1){
 				_resources.hp-=_player.attack;
 				_resources.show_healthbar=true;
+				if (play_sound && _resources.hit!=true){
+					_resources.hit=true;
+					play_sound=false;
+				}
 				if (_resources.shake!=true){
 					_resources.shake=true;
 				}
@@ -31,6 +36,7 @@ function scr_player_harvest(){
 			with (obj_par_resource){
 				shake=false;
 			}
+			
 			state=PLAYER_STATE.CONTROLS;
 		}
 	}else{
@@ -42,5 +48,6 @@ function scr_player_harvest(){
 			shake=false;
 		}
 		state=PLAYER_STATE.CONTROLS;
+		play_sound=true;
 	}
 }

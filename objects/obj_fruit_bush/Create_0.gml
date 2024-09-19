@@ -4,4 +4,5 @@ event_inherited();
 required = TOOL_TYPE.STICK;
 max_hp=50;
 hp=max_hp;
+snd_harvest=snd_bush_hit;
 

@@ -13,6 +13,8 @@ tool_required = true;
 hp=100;
 max_hp=100;
 show_healthbar=false;
+hit=false;
+snd_harvest= noone;
 
 alarm[0] = 30;
 alarm[1] = 300;

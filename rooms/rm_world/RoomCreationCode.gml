@@ -20,3 +20,4 @@ enum EQUIPMENT_TYPE {
 	STRAW_GLOVES
 }
 
+audio_play_sound(snd_background_birdsong, 5, true);
