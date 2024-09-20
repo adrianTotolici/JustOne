@@ -1,7 +1,6 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_player_harvest(){
-	play_sound=true;
 	if (mouse_check_button(mb_left)){
 		var _resources = instance_position(mouse_x, mouse_y, obj_par_resource);
 		var _player = obj_you;
@@ -20,10 +19,6 @@ function scr_player_harvest(){
 			if (image_index>=image_number-1){
 				_resources.hp-=_player.attack;
 				_resources.show_healthbar=true;
-				if (play_sound && _resources.hit!=true){
-					_resources.hit=true;
-					play_sound=false;
-				}
 				if (_resources.shake!=true){
 					_resources.shake=true;
 				}

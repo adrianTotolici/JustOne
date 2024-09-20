@@ -8,4 +8,5 @@ if(hp<1 && no_resources == false){
 	sprite_index = spr_branch_pile_empty;
 	no_resources = true;
 	shadow=false;
+	hit=true;
 }

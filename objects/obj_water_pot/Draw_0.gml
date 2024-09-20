@@ -18,6 +18,7 @@ if(hp<1 && no_resources == false){
 			break;
 	}
 	no_resources = true;
+	hit=true;
 }
 
 if (hp>1 && no_resources == false){
