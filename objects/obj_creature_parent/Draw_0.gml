@@ -5,17 +5,17 @@ draw_set_alpha(1);
 draw_self();
 
 if (hp>1 && show_healthbar){
-	var health_percentage = hp / max_health;
-	var bar_width = 25;
-	var bar_height = 5;
-	var bar_x = x - bar_width / 2;
-	var bar_y = y - 50;
+	var _health_percentage = hp / max_health;
+	var _bar_width = 25;
+	var _bar_height = 5;
+	var _bar_x = x - _bar_width / 2;
+	var _bar_y = y - 50;
 
 	draw_set_color(c_black);
-	draw_rectangle(bar_x, bar_y, bar_x + bar_width, bar_y + bar_height, false);
+	draw_rectangle(_bar_x, _bar_y, _bar_x + _bar_width, _bar_y + _bar_height, false);
 
 	draw_set_color(c_red);
-	draw_rectangle(bar_x, bar_y, bar_x + (bar_width * health_percentage), bar_y + bar_height, false);
+	draw_rectangle(_bar_x, _bar_y, _bar_x + (_bar_width * _health_percentage), _bar_y + _bar_height, false);
 }
 
 if (hp<1){

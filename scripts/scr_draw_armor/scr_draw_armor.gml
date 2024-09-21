@@ -6,95 +6,98 @@ function scr_draw_armor(){
 	var _scale_equipment=0.8;
 	x=_owner.x;
 	y=_owner.y;
-	switch(_owner.sprite_index){
-		case (obj_you.anim_idle):
-			if (obj_you.head_equipment != noone){
-				equip_head_front();
-			}
-			if (obj_you.body_equipment != noone){
-				equip_armor_player_anim_idle();
-			}
-			if (obj_you.leg_equipment != noone){
-				equip_legware_player_anim_idle();
-			}
-			if (obj_you.left_foot_equipment != noone){
-				equip_footware_player_anim_idle(true, false);
-			}
-			if (obj_you.right_foot_equipment != noone){
-				equip_footware_player_anim_idle(false, true);
-			}
-			break;
+	player_instance=instance_find(obj_you,0);
+	if (player_instance.visible) {
+		switch(_owner.sprite_index){
+			case (obj_you.anim_idle):
+				if (obj_you.head_equipment != noone){
+					equip_head_front();
+				}
+				if (obj_you.body_equipment != noone){
+					equip_armor_player_anim_idle();
+				}
+				if (obj_you.leg_equipment != noone){
+					equip_legware_player_anim_idle();
+				}
+				if (obj_you.left_foot_equipment != noone){
+					equip_footware_player_anim_idle(true, false);
+				}
+				if (obj_you.right_foot_equipment != noone){
+					equip_footware_player_anim_idle(false, true);
+				}
+				break;
 		
-		case obj_you.anim_walk_down:
-			if (obj_you.head_equipment != noone){
-				equip_head_front();
-			}
-			if (obj_you.body_equipment != noone){
-				equip_armor_player_anim_walk_down();
-			}
-			if (obj_you.leg_equipment != noone){
-				equip_legware_player_anim_walk_down(_img);
-			}
-			if (obj_you.left_foot_equipment != noone){
-				equip_footware_player_anim_walk_down(true, false, _img);
-			}
-			if (obj_you.right_foot_equipment != noone){
-				equip_footware_player_anim_walk_down(false, true, _img);
-			}
-			break;
+			case obj_you.anim_walk_down:
+				if (obj_you.head_equipment != noone){
+					equip_head_front();
+				}
+				if (obj_you.body_equipment != noone){
+					equip_armor_player_anim_walk_down();
+				}
+				if (obj_you.leg_equipment != noone){
+					equip_legware_player_anim_walk_down(_img);
+				}
+				if (obj_you.left_foot_equipment != noone){
+					equip_footware_player_anim_walk_down(true, false, _img);
+				}
+				if (obj_you.right_foot_equipment != noone){
+					equip_footware_player_anim_walk_down(false, true, _img);
+				}
+				break;
 		
-		case obj_you.anim_walk_up:
-			if (obj_you.head_equipment != noone){
-				equip_head_front();
-			}
-			if (obj_you.body_equipment != noone){
-				equip_armor_player_anim_walk_up();
-			}
-			if (obj_you.leg_equipment != noone){
-				equip_legware_player_anim_walk_up(_img);
-			}
-			if (obj_you.left_foot_equipment != noone){
-				equip_footware_player_anim_walk_up(true, false, _img);
-			}
-			if (obj_you.right_foot_equipment != noone){
-				equip_footware_player_anim_walk_up(false, true, _img);
-			}
-			break;
+			case obj_you.anim_walk_up:
+				if (obj_you.head_equipment != noone){
+					equip_head_front();
+				}
+				if (obj_you.body_equipment != noone){
+					equip_armor_player_anim_walk_up();
+				}
+				if (obj_you.leg_equipment != noone){
+					equip_legware_player_anim_walk_up(_img);
+				}
+				if (obj_you.left_foot_equipment != noone){
+					equip_footware_player_anim_walk_up(true, false, _img);
+				}
+				if (obj_you.right_foot_equipment != noone){
+					equip_footware_player_anim_walk_up(false, true, _img);
+				}
+				break;
 			
-		case obj_you.anim_walk_side:
-			if (obj_you.head_equipment != noone){
-				equip_head_side();
-			}
-			if (obj_you.body_equipment != noone){
-				equip_armor_player_anim_walk_side(_img);
-			}
-			if (obj_you.leg_equipment != noone){
-				equip_legware_player_anim_walk_side(_img);
-			}
-			if (obj_you.left_foot_equipment != noone){
-				equip_footware_player_anim_walk_side(true, false, _img);
-			}
-			if (obj_you.right_foot_equipment != noone){
-				equip_footware_player_anim_walk_side(false, true, _img);
-			}
-			break;
+			case obj_you.anim_walk_side:
+				if (obj_you.head_equipment != noone){
+					equip_head_side();
+				}
+				if (obj_you.body_equipment != noone){
+					equip_armor_player_anim_walk_side(_img);
+				}
+				if (obj_you.leg_equipment != noone){
+					equip_legware_player_anim_walk_side(_img);
+				}
+				if (obj_you.left_foot_equipment != noone){
+					equip_footware_player_anim_walk_side(true, false, _img);
+				}
+				if (obj_you.right_foot_equipment != noone){
+					equip_footware_player_anim_walk_side(false, true, _img);
+				}
+				break;
 			
-		case obj_you.anim_harvest:
-			if (obj_you.head_equipment != noone){
-				equip_head_side();
-			}
-			if (obj_you.body_equipment != noone){
-				equip_armor_player_anim_walk_harvest(_img);
-			}
-			if (obj_you.leg_equipment != noone){
-				equip_legware_player_anim_walk_harvest(_img);
-			}
-			if (obj_you.left_foot_equipment != noone){
-				equip_footware_player_anim_walk_harvest(true, false, _img);
-			}
-			break;
-		default:
-			break;
+			case obj_you.anim_harvest:
+				if (obj_you.head_equipment != noone){
+					equip_head_side();
+				}
+				if (obj_you.body_equipment != noone){
+					equip_armor_player_anim_walk_harvest(_img);
+				}
+				if (obj_you.leg_equipment != noone){
+					equip_legware_player_anim_walk_harvest(_img);
+				}
+				if (obj_you.left_foot_equipment != noone){
+					equip_footware_player_anim_walk_harvest(true, false, _img);
+				}
+				break;
+			default:
+				break;
+		}
 	}
 }
 
