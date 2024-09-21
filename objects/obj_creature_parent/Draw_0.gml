@@ -17,3 +17,7 @@ if (hp>1 && show_healthbar){
 	draw_set_color(c_red);
 	draw_rectangle(bar_x, bar_y, bar_x + (bar_width * health_percentage), bar_y + bar_height, false);
 }
+
+if (hp<1){
+	hit=true;
+}

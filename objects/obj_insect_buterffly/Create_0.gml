@@ -8,5 +8,6 @@ hp = max_health;
 speed=1;
 image_xscale=0.5;
 image_yscale=0.5;
+snd_kill=snd_bug_squash;
 
 alarm[0]=speed*600;

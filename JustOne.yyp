@@ -123,6 +123,7 @@
     {"id":{"name":"scr_player_sleep","path":"scripts/scr_player_sleep/scr_player_sleep.yy",},},
     {"id":{"name":"scr_populate_map_resources","path":"scripts/scr_populate_map_resources/scr_populate_map_resources.yy",},},
     {"id":{"name":"snd_background_birdsong","path":"sounds/snd_background_birdsong/snd_background_birdsong.yy",},},
+    {"id":{"name":"snd_bug_squash","path":"sounds/snd_bug_squash/snd_bug_squash.yy",},},
     {"id":{"name":"snd_bush_hit","path":"sounds/snd_bush_hit/snd_bush_hit.yy",},},
     {"id":{"name":"snd_grass_hit","path":"sounds/snd_grass_hit/snd_grass_hit.yy",},},
     {"id":{"name":"snd_mud_hit","path":"sounds/snd_mud_hit/snd_mud_hit.yy",},},
