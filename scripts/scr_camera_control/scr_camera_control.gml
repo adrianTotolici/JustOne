@@ -24,7 +24,7 @@ function scr_camera_control(){
 	height_step=72;
 	
 	if (keyboard_check_pressed(vk_add)){
-		for (i=0;i<5;i++){
+		for (i=0;i<10;i++){
 			if (window_size_w==(window_get_width()+(i*width_step))){
 				window_size_w=(window_get_width()+((i+1)*width_step));
 				window_size_h=(window_get_height()+((i+1)*height_step));
@@ -33,7 +33,7 @@ function scr_camera_control(){
 			}
 		}
 	}else if (keyboard_check_pressed(vk_subtract)){
-		for (i=0;i<5;i++){
+		for (i=0;i<10;i++){
 			if (window_size_w==(window_get_width()+(i+1)*width_step)){
 				window_size_w=(window_get_width()+(i*width_step));
 				window_size_h=(window_get_height()+(i*height_step));

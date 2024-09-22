@@ -105,7 +105,7 @@ function scr_player_inventory(){
 											with (obj_par_items){instance_destroy();}
 											equip(_ui.inventory_list[b]);
 											_ui.inventory_equiped[b] = true;
-											instance_create_layer(obj_you.x, obj_you.y, "Player", _ui.inventory_list[b]);
+											//instance_create_layer(obj_you.x, obj_you.y, "Player", _ui.inventory_list[b]);
 										}else{
 											unequip(_ui.inventory_list[b]);
 											_ui.inventory_equiped[b] = false;
