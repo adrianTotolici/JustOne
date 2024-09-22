@@ -7,6 +7,7 @@ max_mud_drop=irandom(4);
 max_coacaze_drop=irandom(7);
 max_pebels_drop=irandom(3);
 max_brench_drop=irandom(3);
+max_wood_drop=irandom(2);
 no_resources = false;
 loot=false
 tool_required = true;

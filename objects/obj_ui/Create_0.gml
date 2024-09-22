@@ -20,17 +20,17 @@ inventory_equiped = array_create(16, false);
 inv_selected=noone;
 
 // add test items
-//inventory_list[0]=obj_rock;
-//inventory_list[1]=obj_stick;
-//inventory_list[2]=obj_straw_mug;
-//inventory_list[3]=obj_grass_house;
-//inventory_list[4]=obj_grass_loot;
+inventory_list[0]=obj_rock;
+inventory_list[1]=obj_stick;
+inventory_list[2]=obj_straw_mug;
+inventory_list[3]=obj_grass_house;
+inventory_list[4]=obj_grass_loot;
 
-//inventory_num[0]=1;
-//inventory_num[1]=1;
-//inventory_num[2]=1;
-//inventory_num[3]=1;
-//inventory_num[4]=15;
+inventory_num[0]=1;
+inventory_num[1]=1;
+inventory_num[2]=1;
+inventory_num[3]=1;
+inventory_num[4]=15;
 
 
 show_crafting=false;

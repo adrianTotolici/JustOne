@@ -6,6 +6,20 @@ function scr_populate_map_resources(_sprite_size){
 		for (j=2;j<array_length(global.resource_matrix[i])-2;j++){
 			if (global.resource_matrix[i][j] != true){
 				resource_freq=random_range(1,100);
+				if (resource_freq>60 && resource_freq<=61){
+					instance_create_layer(i*_sprite_size+_sprite_size/2,j*_sprite_size+_sprite_size/2,"Instances",obj_small_tree);
+					global.resource_matrix[i][j] = true;
+					global.resource_matrix[i-1][j] = true;
+					
+				}
+			}
+		}
+	}
+	
+	for (i=2;i<array_length(global.resource_matrix)-2;i++){
+		for (j=2;j<array_length(global.resource_matrix[i])-2;j++){
+			if (global.resource_matrix[i][j] != true){
+				resource_freq=random_range(1,100);
 				if (resource_freq>0 && resource_freq<=5){
 					instance_create_layer(i*_sprite_size+_sprite_size/2,j*_sprite_size+_sprite_size/2,"Instances",obj_grass);
 					global.resource_matrix[i][j] = true;

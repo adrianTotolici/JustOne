@@ -9,7 +9,8 @@ enum PLAYER_STATE {
 enum TOOL_TYPE {
 	ROCK,
 	STICK,
-	MUG
+	MUG,
+	AXE
 }
 
 enum EQUIPMENT_TYPE {
