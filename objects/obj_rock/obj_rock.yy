@@ -10,8 +10,8 @@
   "name":"obj_rock",
   "overriddenProperties":[],
   "parent":{
-    "name":"equipment",
-    "path":"folders/Objects/equipment.yy",
+    "name":"tools",
+    "path":"folders/Objects/equipment/tools.yy",
   },
   "parentObjectId":{
     "name":"obj_par_wepons",

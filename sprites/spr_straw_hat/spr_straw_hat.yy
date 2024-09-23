@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":7,
   "parent":{
-    "name":"equipment",
-    "path":"folders/Sprites/equipment.yy",
+    "name":"armor",
+    "path":"folders/Sprites/equipment/armor.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

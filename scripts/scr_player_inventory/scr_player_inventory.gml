@@ -202,6 +202,10 @@ function equip(_object){
 			obj_you.equipped = obj_straw_mug;
 			obj_you.attack += 0.1;
 			break;
+		case obj_axe:
+			obj_you.equipped = obj_axe;
+			obj_you.attack += 10.0;
+			break;
 		default:
 			break;
 	}
@@ -241,6 +245,10 @@ function unequip(_object){
 		case obj_straw_mug:
 			obj_you.equipped = obj_straw_mug;
 			obj_you.attack -= 0.1;
+			break;
+		case obj_axe:
+			obj_you.equipped = obj_axe;
+			obj_you.attack -= 10.0;
 			break;
 		default:
 			break;

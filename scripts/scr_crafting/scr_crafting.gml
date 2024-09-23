@@ -7,6 +7,9 @@ function scr_crafting(){
 	var _straw_own=0;
 	var _branch_own=0;
 	var _rock_own=0;
+	obj_resorces = array_create(10, noone);
+	obj_own = array_create(10, 0);
+	obj_need = array_create(10, 0);
 	
 	if (mouse_check_button_pressed(mb_left)){
 		if (_ui.inv_selected==noone){
@@ -25,39 +28,71 @@ function scr_crafting(){
 			if (_ui.show_equipment==true){
 				// craft straw armor
 				if (_my>=_ui.button_height+10 && _my<=(_ui.button_height*2)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
-					create_object(obj_straw_armor, obj_grass_loot, 4, _straw_own);
+					obj_resorces[0]=obj_grass_loot;
+					obj_need[0]=4;
+					obj_own[0]=_straw_own;
+					create_object(obj_straw_armor, obj_need, obj_need, obj_own);
 				}
 			
 				// craft straw hat
 				if (_my>=_ui.button_height+10+_ui.button_height && _my<=(_ui.button_height*3)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
-					create_object(obj_straw_hat, obj_grass_loot, 2, _straw_own);
+					obj_resorces[0]=obj_grass_loot;
+					obj_need[0]=2;
+					obj_own[0]=_straw_own;
+					create_object(obj_straw_hat, obj_need, obj_need, obj_own);
 				}
 			
 				// craft straw pants
 				if (_my>=_ui.button_height+10+(_ui.button_height*2) && _my<=(_ui.button_height*4)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
-					create_object(obj_straw_pants, obj_grass_loot, 3, _straw_own);
+					obj_resorces[0]=obj_grass_loot;
+					obj_need[0]=3;
+					obj_own[0]=_straw_own;
+					create_object(obj_straw_pants, obj_need, obj_need, obj_own);
 				}
 			
 				// craft straw footware
 				if (_my>=_ui.button_height+10+(_ui.button_height*3) && _my<=(_ui.button_height*5)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
-					create_object(obj_straw_footwear, obj_grass_loot, 2, _straw_own);
+					obj_resorces[0]=obj_grass_loot;
+					obj_need[0]=2;
+					obj_own[0]=_straw_own;
+					create_object(obj_straw_footwear, obj_need, obj_need, obj_own);
 				}
 			}
 		
 			if (_ui.show_tools==true){
 				// craft stick
 				if (_my>=_ui.button_height+10 && _my<=(_ui.button_height*2)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
-					create_object(obj_stick, obj_branch_loot, 4, _branch_own);
+					obj_resorces[0]=obj_branch_loot;
+					obj_need[0]=4;
+					obj_own[0]=_branch_own;
+					create_object(obj_stick, obj_resorces, obj_need, obj_own);
 				}
 				
 				// craft stone
 				if (_my>=_ui.button_height+10+_ui.button_height && _my<=(_ui.button_height*3)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
-					create_object(obj_rock, obj_stone_pebles_loot, 5, _rock_own);
+					obj_resorces[0]=obj_stone_pebles_loot;
+					obj_need[0]=5;
+					obj_own[0]=_rock_own;
+					create_object(obj_rock, obj_resorces, obj_need, obj_own);
 				}
 				
 				// craft straw mug
 				if (_my>=_ui.button_height+10+(_ui.button_height*2) && _my<=(_ui.button_height*4)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
-					create_object(obj_straw_mug, obj_grass_loot, 1, _straw_own);
+					obj_resorces[0]=obj_grass_loot;
+					obj_need[0]=1;
+					obj_own[0]=_straw_own;
+					create_object(obj_straw_mug, obj_resorces, obj_need, obj_own);
+				}
+				
+				// craft stone axe
+				if (_my>=_ui.button_height+10+(_ui.button_height*3) && _my<=(_ui.button_height*5)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+					obj_resorces[0]=obj_branch_loot;
+					obj_resorces[1]=obj_stone_pebles_loot;
+					obj_need[0]=1;
+					obj_need[1]=1;
+					obj_own[0]=_branch_own;
+					obj_own[1]=_rock_own;
+					create_object(obj_axe, obj_resorces, obj_need, obj_own);
 				}
 				
 
@@ -81,30 +116,47 @@ function scr_crafting(){
 
 function create_object(_obj_created, _obj_resources, _resource_need, _resource_own){
 	var _ui=obj_ui;
-	if (_resource_need<=_resource_own){
+	var _craft=false;
+	for (i=0;i<array_length(_obj_resources); i++){
+		if (_obj_resources[i]!=noone){
+			if (_resource_need[i] <= _resource_own[i]){
+				_craft=true;
+			}else{
+				_craft=false;
+				show_ui_text(_ui, _resource_need[i], _resource_own[i]);
+				break;
+			}
+		}
+	}
+	
+	if (_craft){
 		for (j=0;j<array_length(_ui.inventory_list); j++){
 			if (_ui.inventory_list[j]==noone){
 				_ui.inventory_list[j]=_obj_created;
 				_ui.inventory_num[j]+=1;
-				for (i=0; i<array_length(_ui.inventory_list); i++){
-					if (_ui.inventory_list[i]=_obj_resources){
-						if (_ui.inventory_num[i]>_resource_need){
-							_ui.inventory_num[i]-=_resource_need;
-						}else{
-							_resource_need-=_ui.inventory_num[i];
-							_ui.inventory_list[i]=noone;
-							_ui.inventory_num[i]=0;
-							if (_resource_need==0){
-								break;
+				for (k=0; i<array_length(_obj_resources); k++){
+					if (_obj_resources[k]!=noone){
+						for (i=0; i<array_length(_ui.inventory_list); i++){
+							if (_ui.inventory_list[i]=_obj_resources[k]){
+								if (_ui.inventory_num[i]>_resource_need[k]){
+									_ui.inventory_num[i]-=_resource_need[k];
+								}else{
+									_resource_need[k]-=_ui.inventory_num[i];
+									_ui.inventory_list[i]=noone;
+									_ui.inventory_num[i]=0;
+									if (_resource_need[k]==0){
+										break;
+									}
+								}
 							}
 						}
+					}else{
+						break;
 					}
 				}
 				break;
 			}
 		}
-	}else{
-		show_ui_text(_ui, _resource_need, _resource_own);
 	}
 }
 

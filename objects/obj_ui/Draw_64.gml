@@ -65,7 +65,7 @@ if (show_tools){
 	draw_set_font(fnt_info_crafting);
 	draw_sprite(spr_stick,0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_stick);
-	draw_sprite(spr_branch_loot, 0, x_size_ui-craft_menu_width+button_width*4,button_height*2+5)
+	draw_sprite_ext(spr_branch_loot, 0, x_size_ui-craft_menu_width+button_width*4,button_height*2+5,0.5,0.5,0,c_white,1);
 		
 	draw_sprite(spr_rock,0,x_size_ui-craft_menu_width+button_width+32,button_height*3+10);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*3-10, text_rock);
@@ -74,6 +74,12 @@ if (show_tools){
 	draw_sprite(spr_straw_mug,0,x_size_ui-craft_menu_width+button_width+32,button_height*4+10);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*4-10, text_straw_mug);
 	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5);
+	
+	draw_sprite_ext(spr_axe,0,x_size_ui-craft_menu_width+button_width+32,button_height*5+15,0.5,0.5,0,c_white,1);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5-10, text_axe_stick);
+	draw_sprite_ext(spr_branch_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+5,0.5,0.5,0,c_white,1);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5+5, text_axe_stone);
+	draw_sprite(spr_rock_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+15);
 }
 
 if (show_build){
