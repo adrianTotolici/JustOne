@@ -5,3 +5,5 @@ required = TOOL_TYPE.STICK;
 max_hp=50;
 hp=max_hp;
 snd_harvest=snd_mud_hit;
+image_xscale=0.5;
+image_yscale=0.5;

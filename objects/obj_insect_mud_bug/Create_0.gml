@@ -4,9 +4,9 @@
 // Inherit the parent event
 event_inherited();
 max_health=10;
-hp = max_health;
+hp=max_health;
 speed=1;
-image_xscale=0.5;
-image_yscale=0.5;
 alarm[0]=speed*600;
 snd_kill=snd_bug_squash;
+spr_side=spr_mud_bug_walk_side;
+spr_up=spr_mud_bug_walk_up;

@@ -12,12 +12,12 @@
   "name":"obj_insect_buterffly",
   "overriddenProperties":[],
   "parent":{
-    "name":"creatures",
-    "path":"folders/Objects/creatures.yy",
+    "name":"insect",
+    "path":"folders/Objects/creatures/insect.yy",
   },
   "parentObjectId":{
-    "name":"obj_creature_parent",
-    "path":"objects/obj_creature_parent/obj_creature_parent.yy",
+    "name":"obj_insect_parent",
+    "path":"objects/obj_insect_parent/obj_insect_parent.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

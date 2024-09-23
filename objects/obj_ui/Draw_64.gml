@@ -44,42 +44,42 @@ if (show_crafting){
 if (show_equipment){
 	draw_set_font(fnt_info_crafting);
 		
-	draw_sprite(spr_straw_armor, 0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10);
+	draw_sprite_ext(spr_straw_armor, 0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10,0.5,0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_straw_armor_rec);
-	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5);
+	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5,0.5,0.5,0,c_white,1);
 		
-	draw_sprite(spr_straw_hat, 0, x_size_ui-craft_menu_width+button_width+32,button_height*3+10);
+	draw_sprite_ext(spr_straw_hat, 0, x_size_ui-craft_menu_width+button_width+32,button_height*3+10,0.5,0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*3-10, text_straw_hat_rec);
-	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*3+5);
+	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*3+5,0.5,0.5,0,c_white,1);
 		
-	draw_sprite(spr_straw_pants, 0, x_size_ui-craft_menu_width+button_width+32,button_height*4+10);
+	draw_sprite_ext(spr_straw_pants, 0, x_size_ui-craft_menu_width+button_width+32,button_height*4+10,0.5,0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*4-10, text_straw_pants_rec);
-	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5);
+	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5,0.5,0.5,0,c_white,1);
 		
-	draw_sprite(spr_straw_sock, 0, x_size_ui-craft_menu_width+button_width+32,button_height*5+10);
+	draw_sprite_ext(spr_straw_sock, 0, x_size_ui-craft_menu_width+button_width+32,button_height*5+10,0.5,0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5-10, text_straw_footware_rec);
-	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+5);
+	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+5,0.5,0.5,0,c_white,1);
 }
 
 if (show_tools){
 	draw_set_font(fnt_info_crafting);
-	draw_sprite(spr_stick,0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10);
+	draw_sprite_ext(spr_stick,0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10,0.5,0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_stick);
-	draw_sprite_ext(spr_branch_loot, 0, x_size_ui-craft_menu_width+button_width*4,button_height*2+5,0.5,0.5,0,c_white,1);
+	draw_sprite_ext(spr_branch_loot, 0, x_size_ui-craft_menu_width+button_width*4,button_height*2+5,0.25,0.25,0,c_white,1);
 		
-	draw_sprite(spr_rock,0,x_size_ui-craft_menu_width+button_width+32,button_height*3+10);
+	draw_sprite_ext(spr_rock,0,x_size_ui-craft_menu_width+button_width+32,button_height*3+10,0.5,0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*3-10, text_rock);
-	draw_sprite(spr_rock_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*3+5);
+	draw_sprite_ext(spr_rock_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*3+5,0.5,0.5,0,c_white,1);
 		
-	draw_sprite(spr_straw_mug,0,x_size_ui-craft_menu_width+button_width+32,button_height*4+10);
+	draw_sprite_ext(spr_straw_mug,0,x_size_ui-craft_menu_width+button_width+32,button_height*4+10,0.5,0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*4-10, text_straw_mug);
-	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5);
+	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5,0.5,0.5,0,c_white,1);
 	
 	draw_sprite_ext(spr_axe,0,x_size_ui-craft_menu_width+button_width+32,button_height*5+15,0.5,0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5-10, text_axe_stick);
-	draw_sprite_ext(spr_branch_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+5,0.5,0.5,0,c_white,1);
+	draw_sprite_ext(spr_branch_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+5,0.25,0.25,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5+5, text_axe_stone);
-	draw_sprite(spr_rock_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+15);
+	draw_sprite_ext(spr_rock_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+15,0.5,0.5,0,c_white,1);
 }
 
 if (show_build){
@@ -88,7 +88,7 @@ if (show_build){
 	draw_set_font(fnt_info_crafting);
 	draw_sprite_ext(spr_grass_house, 0, x_size_ui-craft_menu_width+button_width+32, button_height*2+10, 0.5, 0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_straw_house);
-	draw_sprite(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5);
+	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5,0.5,0.5,0,c_white,1);
 		
 	if (inv_selected!=noone){
 		draw_sprite_ext(object_get_sprite(inv_selected),0,_mx,_my,1,1,0,c_white,0.5);
@@ -112,7 +112,7 @@ if (show_inv){
 			var _xpos=x_size_ui/2+((inventory_sprite_size/_inv_nr_columns)*(_a-_middle_box_inv))+((inventory_sprite_size/_inv_nr_columns)/2);
 			var _ypos=y_size_ui-(_heigh_diff_inventory+(inventory_sprite_size/2)-((inventory_sprite_size/_inv_nr_columns)/2)-8)+((inventory_sprite_size/_inv_nr_columns)*_j);
 			
-			draw_sprite_ext(object_get_sprite(inventory_list[_i]),0,_xpos, _ypos, 1,1,0,c_white,1);
+			draw_sprite_ext(object_get_sprite(inventory_list[_i]),0,_xpos, _ypos, 0.5,0.5,0,c_white,1);
 			draw_set_halign(fa_center);
 			draw_text(_xpos,_ypos,inventory_num[_i]);
 			
@@ -159,7 +159,7 @@ if (show_player_equipment){
 		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos+4,0.7,0.7,0,c_white,1);
 		switch (obj_you.head_equipment){
 			case obj_straw_hat:
-				draw_sprite_ext(spr_straw_hat,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_hat,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_hat,0,20,y_size_ui/2);
 				break;
 			default:
@@ -174,7 +174,7 @@ if (show_player_equipment){
 		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,0.7,0.7,0,c_white,1);
 		switch (obj_you.body_equipment){
 			case obj_straw_armor:
-				draw_sprite_ext(spr_straw_armor,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_armor,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_armor,0,20,y_size_ui/2);
 				break;
 			default:
@@ -189,7 +189,7 @@ if (show_player_equipment){
 		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,0.7,0.7,0,c_white,1);
 		switch (obj_you.leg_equipment){
 			case obj_straw_pants:
-				draw_sprite_ext(spr_straw_pants,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_pants,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_legware,0,20,y_size_ui/2);
 				break;
 			default:
@@ -204,7 +204,7 @@ if (show_player_equipment){
 		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,0.7,0.7,0,c_white,1);
 		switch (obj_you.left_foot_equipment){
 			case obj_straw_footwear:
-				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_left_foot,0,20,y_size_ui/2);
 				break;
 			default:
@@ -219,7 +219,7 @@ if (show_player_equipment){
 		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,0.7,0.7,0,c_white,1);
 		switch (obj_you.right_foot_equipment){
 			case obj_straw_footwear:
-				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_right_foot,0,20,y_size_ui/2);
 				break;
 			default:
@@ -234,13 +234,17 @@ if (show_player_equipment){
 		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,0.7,0.7,0,c_white,1);
 		switch (obj_you.equipped){
 			case obj_rock:
-				draw_sprite_ext(spr_rock,0,_x_pos+2,_y_pos-5,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_rock,0,_x_pos+2,_y_pos-5,0.5,0.5,0,c_white,1);
 				break;
 			case obj_stick:
-				draw_sprite_ext(spr_stick,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_stick,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
 				break;
 			case obj_straw_mug:
-				draw_sprite_ext(spr_straw_mug,0,_x_pos,_y_pos,0.85,0.85,0,c_white,1);
+				draw_sprite_ext(spr_straw_mug,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
+				break;
+			case obj_axe:
+				draw_sprite_ext(spr_axe,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
+				break;
 			default:
 				break;
 		}

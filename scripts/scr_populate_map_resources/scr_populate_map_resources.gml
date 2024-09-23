@@ -1,6 +1,8 @@
 // Script assets have changed for v2.3.0 see
 // https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_populate_map_resources(_sprite_size){
+	image_xscale=0.5;
+	image_yscale=0.5;
 	
 	for (i=2;i<array_length(global.resource_matrix)-2;i++){
 		for (j=2;j<array_length(global.resource_matrix[i])-2;j++){
@@ -47,4 +49,7 @@ function scr_populate_map_resources(_sprite_size){
 			}
 		}
 	}
+	
+	image_xscale=1;
+	image_yscale=1;
 }

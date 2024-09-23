@@ -1,12 +1,12 @@
 {
   "$GMSprite":"",
   "%Name":"spr_water_pot_empty_2",
-  "bboxMode":0,
-  "bbox_bottom":26,
+  "bboxMode":2,
+  "bbox_bottom":48,
   "bbox_left":1,
-  "bbox_right":30,
-  "bbox_top":7,
-  "collisionKind":1,
+  "bbox_right":54,
+  "bbox_top":15,
+  "collisionKind":2,
   "collisionTolerance":0,
   "DynamicTexturePage":false,
   "edgeFiltering":false,
@@ -16,7 +16,7 @@
   ],
   "gridX":0,
   "gridY":0,
-  "height":33,
+  "height":64,
   "HTile":false,
   "layers":[
     {"$GMImageLayer":"","%Name":"4e812343-0b28-4038-b25d-21f4d080e9e1","blendMode":0,"displayName":"default","isLocked":false,"name":"4e812343-0b28-4038-b25d-21f4d080e9e1","opacity":100.0,"resourceType":"GMImageLayer","resourceVersion":"2.0","visible":true,},
@@ -86,5 +86,5 @@
   },
   "type":0,
   "VTile":false,
-  "width":32,
+  "width":62,
 }

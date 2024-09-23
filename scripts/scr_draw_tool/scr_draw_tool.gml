@@ -3,7 +3,7 @@
 function scr_draw_tool(){
 	var _owner = obj_you;
 	var _img=ceil(_owner.image_index)-1;
-	var _scale_equipment=0.75;
+	var _scale_equipment=0.5;
 	x=_owner.x;
 	y=_owner.y;
 	depth = _owner.depth-2;
