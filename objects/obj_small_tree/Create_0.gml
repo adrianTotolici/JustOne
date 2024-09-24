@@ -10,6 +10,9 @@ hp=max_hp;
 snd_harvest=snd_tree_fall;
 image_xscale=image_xscale*2;
 image_yscale=image_yscale*2;
+max_wood_drop=irandom(2);
+max_brench_drop=irandom(3);
+max_bark_drop=irandom(2);
 
 tree_type=irandom_range(1,10);
 if (tree_type==1){

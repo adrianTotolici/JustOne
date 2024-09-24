@@ -18,7 +18,12 @@ enum EQUIPMENT_TYPE {
 	STRAW_HAT,
 	STRAW_PANTS,
 	STRAW_FOOTWARE,
-	STRAW_GLOVES
+	STRAW_GLOVES,
+	BARK_ARMOR,
+	BARK_HAT,
+	BARK_PANTS,
+	BARK_FOOTWARE,
+	BARK_GLOVES
 }
 
 audio_play_sound(snd_background_birdsong, 1, true);

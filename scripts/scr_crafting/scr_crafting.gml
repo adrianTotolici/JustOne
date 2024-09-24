@@ -7,6 +7,7 @@ function scr_crafting(){
 	var _straw_own=0;
 	var _branch_own=0;
 	var _rock_own=0;
+	var _tree_bark_own=0;
 	obj_resorces = array_create(10, noone);
 	obj_own = array_create(10, 0);
 	obj_need = array_create(10, 0);
@@ -22,6 +23,9 @@ function scr_crafting(){
 				}
 				if (_ui.inventory_list[i]=obj_stone_pebles_loot){
 					_rock_own+=_ui.inventory_num[i];
+				}
+				if (_ui.inventory_list[i]=obj_tree_bark_loot){
+					_tree_bark_own+=_ui.inventory_num[i];
 				}
 			}
 		
@@ -56,6 +60,38 @@ function scr_crafting(){
 					obj_need[0]=2;
 					obj_own[0]=_straw_own;
 					create_object(obj_straw_footwear, obj_need, obj_need, obj_own);
+				}
+				
+				// craft bark armor
+				if (_my>=_ui.button_height+10+(_ui.button_height*4) && _my<=(_ui.button_height*6)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+					obj_resorces[0]=obj_tree_bark_loot;
+					obj_need[0]=4;
+					obj_own[0]=_tree_bark_own;
+					create_object(obj_bark_armor, obj_need, obj_need, obj_own);
+				}
+			
+				// craft bark hat
+				if (_my>=_ui.button_height+10+(_ui.button_height*5) && _my<=(_ui.button_height*7)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+					obj_resorces[0]=obj_tree_bark_loot;
+					obj_need[0]=2;
+					obj_own[0]=_tree_bark_own;
+					create_object(obj_bark_hat, obj_need, obj_need, obj_own);
+				}
+			
+				// craft bark pants
+				if (_my>=_ui.button_height+10+(_ui.button_height*6) && _my<=(_ui.button_height*8)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+					obj_resorces[0]=obj_tree_bark_loot;
+					obj_need[0]=3;
+					obj_own[0]=_tree_bark_own;
+					create_object(obj_bark_pants, obj_need, obj_need, obj_own);
+				}
+			
+				// craft bark footware
+				if (_my>=_ui.button_height+10+(_ui.button_height*7) && _my<=(_ui.button_height*9)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+					obj_resorces[0]=obj_tree_bark_loot;
+					obj_need[0]=2;
+					obj_own[0]=_tree_bark_own;
+					create_object(obj_bark_footwear, obj_need, obj_need, obj_own);
 				}
 			}
 		

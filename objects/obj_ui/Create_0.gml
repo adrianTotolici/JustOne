@@ -26,6 +26,7 @@ inventory_list[2]=obj_straw_mug;
 inventory_list[3]=obj_grass_house;
 inventory_list[4]=obj_grass_loot;
 inventory_list[5]=obj_axe;
+inventory_list[6]=obj_tree_bark_loot;
 
 inventory_num[0]=1;
 inventory_num[1]=1;
@@ -33,6 +34,7 @@ inventory_num[2]=1;
 inventory_num[3]=1;
 inventory_num[4]=15;
 inventory_num[5]=1;
+inventory_num[6]=15;
 
 
 show_crafting=false;
@@ -47,12 +49,17 @@ text_straw_house="10x"
 
 //ui craft menu
 craft_menu_width=128+32;
-craft_menu_height=256;
+craft_menu_height=512;
 text_straw_armor_rec="4x ";
 text_straw_pants_rec="3x ";
 text_straw_hat_rec="2x ";
 text_straw_footware_rec="2x ";
 text_straw_mug="1x ";
+text_bark_armor_rec="4x ";
+text_bark_pants_rec="3x ";
+text_bark_hat_rec="2x ";
+text_bark_footware_rec="2x ";
+text_bark_mug="1x ";
 text_rock="5x ";
 text_stick="4x ";
 text_axe_stick="1x";

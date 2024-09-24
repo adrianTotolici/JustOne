@@ -43,12 +43,13 @@ if (show_crafting){
 
 if (show_equipment){
 	draw_set_font(fnt_info_crafting);
-		
+	
+	// straw armor
 	draw_sprite_ext(spr_straw_armor, 0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10,0.5,0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_straw_armor_rec);
 	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5,0.5,0.5,0,c_white,1);
 		
-	draw_sprite_ext(spr_straw_hat, 0, x_size_ui-craft_menu_width+button_width+32,button_height*3+10,0.5,0.5,0,c_white,1);
+	draw_sprite_ext(spr_straw_hat, 0, x_size_ui-craft_menu_width+button_width+32,button_height*3+5,0.5,0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*3-10, text_straw_hat_rec);
 	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*3+5,0.5,0.5,0,c_white,1);
 		
@@ -59,6 +60,23 @@ if (show_equipment){
 	draw_sprite_ext(spr_straw_sock, 0, x_size_ui-craft_menu_width+button_width+32,button_height*5+10,0.5,0.5,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5-10, text_straw_footware_rec);
 	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+5,0.5,0.5,0,c_white,1);
+	
+	//bark armor
+	draw_sprite_ext(spr_bark_armor, 0, x_size_ui-craft_menu_width+button_width+32,button_height*6+10,0.5,0.5,0,c_white,1);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*6-10, text_straw_armor_rec);
+	draw_sprite_ext(spr_tree_barck_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*6+5,0.5,0.5,0,c_white,1);
+		
+	draw_sprite_ext(spr_bark_hat, 0, x_size_ui-craft_menu_width+button_width+32,button_height*7+5,0.5,0.5,0,c_white,1);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*7-10, text_straw_hat_rec);
+	draw_sprite_ext(spr_tree_barck_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*7+5,0.5,0.5,0,c_white,1);
+		
+	draw_sprite_ext(spr_bark_pants, 0, x_size_ui-craft_menu_width+button_width+32,button_height*8+10,0.5,0.5,0,c_white,1);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*8-10, text_straw_pants_rec);
+	draw_sprite_ext(spr_tree_barck_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*8+5,0.5,0.5,0,c_white,1);
+		
+	draw_sprite_ext(spr_bark_sock, 0, x_size_ui-craft_menu_width+button_width+32,button_height*9+10,0.5,0.5,0,c_white,1);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*9-10, text_straw_footware_rec);
+	draw_sprite_ext(spr_tree_barck_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*9+5,0.5,0.5,0,c_white,1);
 }
 
 if (show_tools){
@@ -162,6 +180,10 @@ if (show_player_equipment){
 				draw_sprite_ext(spr_straw_hat,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_hat,0,20,y_size_ui/2);
 				break;
+			case obj_bark_hat:
+				draw_sprite_ext(spr_bark_hat,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
+				draw_sprite(spr_player_equipment_bark_hat,0,20,y_size_ui/2);
+				break;
 			default:
 				break;
 		}	
@@ -176,6 +198,10 @@ if (show_player_equipment){
 			case obj_straw_armor:
 				draw_sprite_ext(spr_straw_armor,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_armor,0,20,y_size_ui/2);
+				break;
+			case obj_bark_armor:
+				draw_sprite_ext(spr_bark_armor,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
+				draw_sprite(spr_player_equipment_bark_armor,0,20,y_size_ui/2);
 				break;
 			default:
 				break;
@@ -192,6 +218,10 @@ if (show_player_equipment){
 				draw_sprite_ext(spr_straw_pants,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_legware,0,20,y_size_ui/2);
 				break;
+			case obj_bark_pants:
+				draw_sprite_ext(spr_bark_pants,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
+				draw_sprite(spr_player_equipment_bark_legware,0,20,y_size_ui/2);
+				break;
 			default:
 				break;
 		}
@@ -207,6 +237,10 @@ if (show_player_equipment){
 				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_left_foot,0,20,y_size_ui/2);
 				break;
+			case obj_bark_footwear:
+				draw_sprite_ext(spr_bark_sock,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
+				draw_sprite(spr_player_equipment_bark_left_foot,0,20,y_size_ui/2);
+				break;
 			default:
 				break;
 		}
@@ -221,6 +255,10 @@ if (show_player_equipment){
 			case obj_straw_footwear:
 				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
 				draw_sprite(spr_player_equipment_straw_right_foot,0,20,y_size_ui/2);
+				break;
+			case obj_bark_footwear:
+				draw_sprite_ext(spr_bark_sock,0,_x_pos,_y_pos,0.5,0.5,0,c_white,1);
+				draw_sprite(spr_player_equipment_bark_right_foot,0,20,y_size_ui/2);
 				break;
 			default:
 				break;
