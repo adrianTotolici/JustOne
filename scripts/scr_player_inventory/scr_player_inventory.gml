@@ -88,15 +88,15 @@ function scr_player_inventory(){
 										}
 										break;
 									}
-									if (object_get_parent(_ui.inventory_list[b])=obj_par_armors){
+									if (object_get_parent(object_get_parent(_ui.inventory_list[b]))=obj_par_armors){
 										if (_ui.inventory_equiped[b] == false){
-											remove_old_armor_item_selection(b);
+											//remove_old_armor_item_selection(b);
 											equip(_ui.inventory_list[b]);
 											_ui.inventory_equiped[b]=true;
 										}else{
 											unequip(_ui.inventory_list[b]);
 											_ui.inventory_equiped[b]=false;
-											remove_old_armor_item_selection(b);
+											//remove_old_armor_item_selection(b);
 										}
 										break;
 									}
@@ -335,7 +335,7 @@ function remove_old_weapon_item_selection(_new_pos_obj){
 function remove_old_armor_item_selection(_new_pos_obj){
 	for (var _a=0; _a<array_length(obj_ui.inventory_list); ++_a){
 		if (obj_ui.inventory_list[_a] != noone){
-			if (object_get_parent(obj_ui.inventory_list[_a])=obj_par_armors){
+			if (object_get_parent(obj_ui.inventory_list[_a])=object_get_parent(obj_ui.inventory_list[_new_pos_obj])){
 				obj_ui.inventory_equiped[_a] = false;
 			}
 		}

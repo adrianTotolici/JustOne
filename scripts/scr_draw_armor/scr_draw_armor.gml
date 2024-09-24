@@ -148,7 +148,6 @@ function equip_armor_player_anim_idle(){
 			break;
 	}
 }
-
 function equip_armor_player_anim_walk_down(){
 	switch(obj_you.body_equipment){
 		case obj_straw_armor:
@@ -161,7 +160,6 @@ function equip_armor_player_anim_walk_down(){
 			break;
 	}
 }
-
 function equip_armor_player_anim_walk_up(){
 	switch(obj_you.body_equipment){
 		case obj_straw_armor:
@@ -174,7 +172,6 @@ function equip_armor_player_anim_walk_up(){
 			break;
 	}
 }
-
 function equip_armor_player_anim_walk_side(_img){
 	switch(obj_you.body_equipment){
 		case obj_straw_armor:
@@ -207,7 +204,6 @@ function equip_armor_player_anim_walk_side(_img){
 			break;
 	}
 }
-
 function equip_armor_player_anim_walk_harvest(_img){
 	switch(obj_you.body_equipment){
 		case obj_straw_armor:
@@ -242,7 +238,6 @@ function equip_legware_player_anim_idle(){
 			break;
 	}
 }
-
 function equip_legware_player_anim_walk_down(_img){
 	switch(obj_you.leg_equipment){
 		case obj_straw_pants:
@@ -255,7 +250,6 @@ function equip_legware_player_anim_walk_down(_img){
 			break;
 	}
 }
-
 function equip_legware_player_anim_walk_up(_img){
 	switch(obj_you.leg_equipment){
 		case obj_straw_pants:
@@ -268,7 +262,6 @@ function equip_legware_player_anim_walk_up(_img){
 			break;
 	}
 }
-
 function equip_legware_player_anim_walk_side(_img){
 	switch(obj_you.leg_equipment){
 		case obj_straw_pants:
@@ -297,7 +290,6 @@ function equip_legware_player_anim_walk_side(_img){
 			break;
 	}
 }
-
 function equip_legware_player_anim_walk_harvest(_img){
 	switch(obj_you.leg_equipment){
 		case obj_straw_pants:
@@ -347,7 +339,6 @@ function equip_footware_player_anim_idle(_left_foot, _right_foot){
 		}
 	}
 }
-
 function equip_footware_player_anim_walk_down(_left_foot, _right_foot, _img){
 	if (_left_foot){
 		switch(obj_you.left_foot_equipment){
@@ -399,7 +390,6 @@ function equip_footware_player_anim_walk_down(_left_foot, _right_foot, _img){
 		}
 	}
 }
-
 function equip_footware_player_anim_walk_up(_left_foot, _right_foot, _img){
 	if (_left_foot){
 		switch(obj_you.left_foot_equipment){
@@ -451,7 +441,6 @@ function equip_footware_player_anim_walk_up(_left_foot, _right_foot, _img){
 		}
 	}
 }
-
 function equip_footware_player_anim_walk_side(_left_foot, _right_foot, _img){
 	if (_left_foot){
 		switch(obj_you.left_foot_equipment){
@@ -515,7 +504,6 @@ function equip_footware_player_anim_walk_side(_left_foot, _right_foot, _img){
 		}
 	}
 }
-
 function equip_footware_player_anim_walk_harvest(_left_foot, _right_foot, _img){
 	if (_left_foot){
 		switch(obj_you.left_foot_equipment){

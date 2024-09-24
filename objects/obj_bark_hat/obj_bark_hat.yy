@@ -10,12 +10,12 @@
   "name":"obj_bark_hat",
   "overriddenProperties":[],
   "parent":{
-    "name":"armor",
-    "path":"folders/Objects/equipment/armor.yy",
+    "name":"hat",
+    "path":"folders/Objects/equipment/armor/hat.yy",
   },
   "parentObjectId":{
-    "name":"obj_par_armors",
-    "path":"objects/obj_par_armors/obj_par_armors.yy",
+    "name":"obj_hat_par",
+    "path":"objects/obj_hat_par/obj_hat_par.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

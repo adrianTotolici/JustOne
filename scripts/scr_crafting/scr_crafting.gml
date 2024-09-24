@@ -8,9 +8,9 @@ function scr_crafting(){
 	var _branch_own=0;
 	var _rock_own=0;
 	var _tree_bark_own=0;
-	obj_resorces = array_create(10, noone);
-	obj_own = array_create(10, 0);
-	obj_need = array_create(10, 0);
+	var obj_resorces = array_create(10, noone);
+	var obj_own = array_create(10, 0);
+	var obj_need = array_create(10, 0);
 	
 	if (mouse_check_button_pressed(mb_left)){
 		if (_ui.inv_selected==noone){
@@ -35,7 +35,7 @@ function scr_crafting(){
 					obj_resorces[0]=obj_grass_loot;
 					obj_need[0]=4;
 					obj_own[0]=_straw_own;
-					create_object(obj_straw_armor, obj_need, obj_need, obj_own);
+					create_object(obj_straw_armor, obj_resorces, obj_need, obj_own);
 				}
 			
 				// craft straw hat
@@ -43,7 +43,7 @@ function scr_crafting(){
 					obj_resorces[0]=obj_grass_loot;
 					obj_need[0]=2;
 					obj_own[0]=_straw_own;
-					create_object(obj_straw_hat, obj_need, obj_need, obj_own);
+					create_object(obj_straw_hat, obj_resorces, obj_need, obj_own);
 				}
 			
 				// craft straw pants
@@ -51,7 +51,7 @@ function scr_crafting(){
 					obj_resorces[0]=obj_grass_loot;
 					obj_need[0]=3;
 					obj_own[0]=_straw_own;
-					create_object(obj_straw_pants, obj_need, obj_need, obj_own);
+					create_object(obj_straw_pants, obj_resorces, obj_need, obj_own);
 				}
 			
 				// craft straw footware
@@ -59,7 +59,7 @@ function scr_crafting(){
 					obj_resorces[0]=obj_grass_loot;
 					obj_need[0]=2;
 					obj_own[0]=_straw_own;
-					create_object(obj_straw_footwear, obj_need, obj_need, obj_own);
+					create_object(obj_straw_footwear, obj_resorces, obj_need, obj_own);
 				}
 				
 				// craft bark armor
@@ -67,7 +67,7 @@ function scr_crafting(){
 					obj_resorces[0]=obj_tree_bark_loot;
 					obj_need[0]=4;
 					obj_own[0]=_tree_bark_own;
-					create_object(obj_bark_armor, obj_need, obj_need, obj_own);
+					create_object(obj_bark_armor, obj_resorces, obj_need, obj_own);
 				}
 			
 				// craft bark hat
@@ -75,7 +75,7 @@ function scr_crafting(){
 					obj_resorces[0]=obj_tree_bark_loot;
 					obj_need[0]=2;
 					obj_own[0]=_tree_bark_own;
-					create_object(obj_bark_hat, obj_need, obj_need, obj_own);
+					create_object(obj_bark_hat, obj_resorces, obj_need, obj_own);
 				}
 			
 				// craft bark pants
@@ -83,7 +83,7 @@ function scr_crafting(){
 					obj_resorces[0]=obj_tree_bark_loot;
 					obj_need[0]=3;
 					obj_own[0]=_tree_bark_own;
-					create_object(obj_bark_pants, obj_need, obj_need, obj_own);
+					create_object(obj_bark_pants, obj_resorces, obj_need, obj_own);
 				}
 			
 				// craft bark footware
@@ -91,7 +91,7 @@ function scr_crafting(){
 					obj_resorces[0]=obj_tree_bark_loot;
 					obj_need[0]=2;
 					obj_own[0]=_tree_bark_own;
-					create_object(obj_bark_footwear, obj_need, obj_need, obj_own);
+					create_object(obj_bark_footwear, obj_resorces, obj_need, obj_own);
 				}
 			}
 		
@@ -170,7 +170,7 @@ function create_object(_obj_created, _obj_resources, _resource_need, _resource_o
 			if (_ui.inventory_list[j]==noone){
 				_ui.inventory_list[j]=_obj_created;
 				_ui.inventory_num[j]+=1;
-				for (k=0; i<array_length(_obj_resources); k++){
+				for (k=0; k<array_length(_obj_resources); k++){
 					if (_obj_resources[k]!=noone){
 						for (i=0; i<array_length(_ui.inventory_list); i++){
 							if (_ui.inventory_list[i]=_obj_resources[k]){
@@ -186,8 +186,6 @@ function create_object(_obj_created, _obj_resources, _resource_need, _resource_o
 								}
 							}
 						}
-					}else{
-						break;
 					}
 				}
 				break;
