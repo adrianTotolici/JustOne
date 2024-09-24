@@ -8,9 +8,9 @@ function scr_crafting(){
 	var _branch_own=0;
 	var _rock_own=0;
 	var _tree_bark_own=0;
-	var obj_resorces = array_create(10, noone);
-	var obj_own = array_create(10, 0);
-	var obj_need = array_create(10, 0);
+	obj_resorces = array_create(10, noone);
+	obj_own = array_create(10, 0);
+	obj_need = array_create(10, 0);
 	
 	if (mouse_check_button_pressed(mb_left)){
 		if (_ui.inv_selected==noone){
@@ -186,6 +186,8 @@ function create_object(_obj_created, _obj_resources, _resource_need, _resource_o
 								}
 							}
 						}
+					}else{
+						break;
 					}
 				}
 				break;

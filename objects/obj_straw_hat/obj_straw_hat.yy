@@ -10,12 +10,12 @@
   "name":"obj_straw_hat",
   "overriddenProperties":[],
   "parent":{
-    "name":"hat",
-    "path":"folders/Objects/equipment/armor/hat.yy",
+    "name":"armor",
+    "path":"folders/Objects/equipment/armor.yy",
   },
   "parentObjectId":{
-    "name":"obj_hat_par",
-    "path":"objects/obj_hat_par/obj_hat_par.yy",
+    "name":"obj_par_armors",
+    "path":"objects/obj_par_armors/obj_par_armors.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

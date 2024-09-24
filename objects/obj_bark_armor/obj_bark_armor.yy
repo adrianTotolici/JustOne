@@ -11,11 +11,11 @@
   "overriddenProperties":[],
   "parent":{
     "name":"armor",
-    "path":"folders/Objects/equipment/armor/armor.yy",
+    "path":"folders/Objects/equipment/armor.yy",
   },
   "parentObjectId":{
-    "name":"obj_bodyware_par",
-    "path":"objects/obj_bodyware_par/obj_bodyware_par.yy",
+    "name":"obj_par_armors",
+    "path":"objects/obj_par_armors/obj_par_armors.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

@@ -15,8 +15,8 @@
     "path":"folders/Objects/loot.yy",
   },
   "parentObjectId":{
-    "name":"obj_par_food",
-    "path":"objects/obj_par_food/obj_par_food.yy",
+    "name":"obj_par_loot",
+    "path":"objects/obj_par_loot/obj_par_loot.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

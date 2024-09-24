@@ -13,9 +13,6 @@ if (hunger<5) || (thirst<5){
 	}
 }
 
-scr_draw_armor();
-scr_crafting();
-
 switch(state)
 {
 	case PLAYER_STATE.CONTROLS:
@@ -37,7 +34,8 @@ switch(state)
 	default:
 		break;
 }
-
+//scr_draw_armor();
+scr_crafting();
 
 if (hp<=0){
 	show_end_game=true;
