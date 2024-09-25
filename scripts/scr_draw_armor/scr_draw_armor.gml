@@ -143,6 +143,7 @@ function equip_armor_player_anim_idle(){
 			break;
 		case obj_bark_armor:
 			draw_sprite_ext(spr_player_front_bark_armor, 0, obj_you.x, obj_you.y, obj_you.image_xscale, obj_you.image_yscale, 0,c_white,1);
+			
 			break;
 		default:
 			break;

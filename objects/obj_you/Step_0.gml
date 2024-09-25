@@ -34,7 +34,6 @@ switch(state)
 	default:
 		break;
 }
-//scr_draw_armor();
 scr_crafting();
 
 if (hp<=0){

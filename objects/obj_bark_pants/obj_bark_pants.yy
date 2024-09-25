@@ -10,8 +10,8 @@
   "name":"obj_bark_pants",
   "overriddenProperties":[],
   "parent":{
-    "name":"armor",
-    "path":"folders/Objects/equipment/armor.yy",
+    "name":"legware",
+    "path":"folders/Objects/equipment/armor/legware.yy",
   },
   "parentObjectId":{
     "name":"obj_par_armors",

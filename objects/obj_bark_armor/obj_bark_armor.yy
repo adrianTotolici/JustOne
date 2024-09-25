@@ -10,8 +10,8 @@
   "name":"obj_bark_armor",
   "overriddenProperties":[],
   "parent":{
-    "name":"armor",
-    "path":"folders/Objects/equipment/armor.yy",
+    "name":"bodyware",
+    "path":"folders/Objects/equipment/armor/bodyware.yy",
   },
   "parentObjectId":{
     "name":"obj_par_armors",

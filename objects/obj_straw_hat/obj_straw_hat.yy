@@ -10,8 +10,8 @@
   "name":"obj_straw_hat",
   "overriddenProperties":[],
   "parent":{
-    "name":"armor",
-    "path":"folders/Objects/equipment/armor.yy",
+    "name":"headware",
+    "path":"folders/Objects/equipment/armor/headware.yy",
   },
   "parentObjectId":{
     "name":"obj_par_armors",

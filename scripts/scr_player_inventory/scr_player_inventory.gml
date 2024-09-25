@@ -161,23 +161,14 @@ function equip(_object){
 		// armor
 		//straw
 		case obj_straw_hat:
-			if (obj_you.head_armor > 0){
-				obj_you.head_armor = 0;
-			}
 			obj_you.head_equipment = obj_straw_hat;
 			obj_you.head_armor = 1;
 			break;
 		case obj_straw_armor:
-			if (obj_you.body_armor > 0){
-				obj_you.body_armor = 0;
-			}
 			obj_you.body_equipment = obj_straw_armor;
 			obj_you.body_armor = 3;
 			break;
 		case obj_straw_pants:
-			if (obj_you.leg_armor > 0){
-				obj_you.leg_armor=0;
-			}
 			obj_you.leg_equipment = obj_straw_pants;
 			obj_you.leg_armor = 2;
 			break;
@@ -197,23 +188,14 @@ function equip(_object){
 			break;
 		// bark
 		case obj_bark_hat:
-			if (obj_you.head_armor > 0){
-				obj_you.head_armor = 0;
-			}
 			obj_you.head_equipment = obj_bark_hat;
 			obj_you.head_armor = 2;
 			break;
 		case obj_bark_armor:
-			if (obj_you.body_armor > 0){
-				obj_you.body_armor = 0;
-			}
 			obj_you.body_equipment = obj_bark_armor;
 			obj_you.body_armor = 4;
 			break;
 		case obj_bark_pants:
-			if (obj_you.leg_armor > 0){
-				obj_you.leg_armor=0;
-			}
 			obj_you.leg_equipment = obj_bark_pants;
 			obj_you.leg_armor = 3;
 			break;
@@ -335,6 +317,7 @@ function remove_old_weapon_item_selection(_new_pos_obj){
 function remove_old_armor_item_selection(_new_pos_obj){
 	for (var _a=0; _a<array_length(obj_ui.inventory_list); ++_a){
 		if (obj_ui.inventory_list[_a] != noone){
+			//if (object_get_parent(obj_ui.inventory_list[_a])=obj_par_bodyware){
 			if (object_get_parent(obj_ui.inventory_list[_a])=obj_par_armors){
 				obj_ui.inventory_equiped[_a] = false;
 			}
