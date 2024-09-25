@@ -233,6 +233,7 @@ function equip(_object){
 		default:
 			break;
 	}
+	scr_select_draw_armor();
 }
 
 function unequip(_object){
@@ -242,44 +243,54 @@ function unequip(_object){
 		case obj_straw_hat:
 			obj_you.head_armor = 0;
 			obj_you.head_equipment = noone;
+			obj_you.ware_armor[0]=noone;
 			break;
 		case obj_straw_armor:
 			obj_you.body_armor = 0;
 			obj_you.body_equipment = noone;
+			obj_you.ware_armor[1]=noone;
 			break;
 		case obj_straw_pants:
 			obj_you.leg_armor=0;
 			obj_you.leg_equipment = noone;
+			obj_you.ware_armor[2]=noone;
 			break;
 		case obj_straw_footwear:
 			if (obj_you.left_foot_equipment != noone){
 				obj_you.left_foot_equipment = noone;
 				obj_you.feet_armor -=1;
+				obj_you.ware_armor[3]=noone;
 			}else if (obj_you.right_foot_equipment != noone){
 				obj_you.right_foot_equipment = noone;
 				obj_you.feet_armor -=1;
+				obj_you.ware_armor[4]=noone;
 			}
 			break;
 		// bark
 		case obj_bark_hat:
 			obj_you.head_armor = 0;
 			obj_you.head_equipment = noone;
+			obj_you.ware_armor[0]=noone;
 			break;
 		case obj_bark_armor:
 			obj_you.body_armor = 0;
 			obj_you.body_equipment = noone;
+			obj_you.ware_armor[1]=noone;
 			break;
 		case obj_bark_pants:
 			obj_you.leg_armor=0;
 			obj_you.leg_equipment = noone;
+			obj_you.ware_armor[2]=noone;
 			break;
 		case obj_bark_footwear:
 			if (obj_you.left_foot_equipment != noone){
 				obj_you.left_foot_equipment = noone;
 				obj_you.feet_armor -=2;
+				obj_you.ware_armor[3]=noone;
 			}else if (obj_you.right_foot_equipment != noone){
 				obj_you.right_foot_equipment = noone;
 				obj_you.feet_armor -=2;
+				obj_you.ware_armor[4]=noone;
 			}
 			break;
 		// tools
@@ -318,7 +329,7 @@ function remove_old_armor_item_selection(_new_pos_obj){
 	for (var _a=0; _a<array_length(obj_ui.inventory_list); ++_a){
 		if (obj_ui.inventory_list[_a] != noone){
 			//if (object_get_parent(obj_ui.inventory_list[_a])=obj_par_bodyware){
-			if (object_get_parent(obj_ui.inventory_list[_a])=obj_par_armors){
+			if (object_get_parent(obj_ui.inventory_list[_a])=object_get_parent(obj_ui.inventory_list[_new_pos_obj])){
 				obj_ui.inventory_equiped[_a] = false;
 			}
 		}

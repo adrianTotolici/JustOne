@@ -51,23 +51,28 @@ function scr_player_control(){
 	}
 	
 	if (keyboard_check(ord("W")) || keyboard_check(vk_up)) {
+		scr_select_draw_armor();
 		sprite_index=anim_walk_up;
 		_travel_y=-20;
 	} else if (keyboard_check(ord("S")) || keyboard_check(vk_down)) {
+		scr_select_draw_armor();
 		sprite_index=anim_walk_down;
 		_travel_y=+20;
 	}
 	if (keyboard_check(ord("A")) || keyboard_check(vk_left)) {
 		image_xscale = 1;
+		scr_select_draw_armor();
 		sprite_index=anim_walk_side
 		_travel_x=-20;
 	}
 	else if (keyboard_check(ord("D")) || keyboard_check(vk_right)) {
 		image_xscale = -1;
+		scr_select_draw_armor();
 		sprite_index=anim_walk_side
 		_travel_x=+20;
 	}
 	if (keyboard_check(vk_nokey)){
+		scr_select_draw_armor();
 		x=x+_travel_x;
 		y=y+_travel_y;
 		sprite_index=anim_idle;

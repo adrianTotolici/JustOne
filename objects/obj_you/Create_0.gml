@@ -36,4 +36,7 @@ leg_equipment=noone;
 left_foot_equipment=noone;
 right_foot_equipment=noone;
 
+ware_armor=array_create(7,noone);
+ware_tools=array_create(1,noone);
+
 instance_create_layer(x,y,"Instances",obj_ui);
