@@ -16,10 +16,8 @@ function scr_player_attack(){
 				sprite_index=anim_harvest;
 				image_index=0;
 			}
-			//if (image_index>=image_number-1){
-				_creature.hp-=_player.attack;
-				_creature.show_healthbar=true;
-			//}
+			_creature.hp-=_player.attack;
+			_creature.show_healthbar=true;
 		}else{
 			if (sprite_index!=anim_idle){
 				sprite_index=anim_idle;

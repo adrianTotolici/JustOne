@@ -43,10 +43,6 @@ if (hp<=0){
 	}
 }
 
-if (keyboard_check(vk_escape)){
-	room_goto(rm_menu);
-}
-
 
 // Clamp the player's position
 x = clamp(x, 96, room_width-96);
