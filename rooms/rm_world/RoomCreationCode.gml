@@ -10,7 +10,8 @@ enum TOOL_TYPE {
 	ROCK,
 	STICK,
 	MUG,
-	AXE
+	AXE,
+	WEAPON
 }
 
 enum EQUIPMENT_TYPE {

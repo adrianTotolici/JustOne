@@ -98,6 +98,10 @@ if (show_tools){
 	draw_sprite_ext(spr_branch_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+5,0.25,0.25,0,c_white,1);
 	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5+5, text_axe_stone);
 	draw_sprite_ext(spr_rock_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+15,0.5,0.5,0,c_white,1);
+	
+	draw_sprite_ext(spr_wood_weapon,0,x_size_ui-craft_menu_width+button_width+32,button_height*6+15,0.5,0.5,0,c_white,1);
+	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*6-10, text_wood_weapon_lvl1);
+	draw_sprite_ext(spr_branch_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*6+5,0.25,0.25,0,c_white,1);
 }
 
 if (show_build){

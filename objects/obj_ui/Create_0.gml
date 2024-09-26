@@ -24,9 +24,10 @@ inventory_list[0]=obj_rock;
 inventory_list[1]=obj_stick;
 inventory_list[2]=obj_straw_mug;
 inventory_list[3]=obj_grass_house;
-inventory_list[4]=obj_grass_loot;
+inventory_list[4]=obj_branch_loot;
 inventory_list[5]=obj_axe;
 inventory_list[6]=obj_tree_bark_loot;
+inventory_list[7]=obj_wood_weapon_lvl0;
 
 inventory_num[0]=1;
 inventory_num[1]=1;
@@ -35,6 +36,7 @@ inventory_num[3]=1;
 inventory_num[4]=15;
 inventory_num[5]=1;
 inventory_num[6]=15;
+inventory_num[7]=1;
 
 
 show_crafting=false;
@@ -64,6 +66,7 @@ text_rock="5x ";
 text_stick="4x ";
 text_axe_stick="1x";
 text_axe_stone="1x";
+text_wood_weapon_lvl1="10x";
 text_no_resources="";
 show_text_no_resources=false;
 start_alarm=true;

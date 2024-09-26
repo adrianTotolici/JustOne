@@ -100,7 +100,7 @@ function scr_player_inventory(){
 										}
 										break;
 									}
-									if (object_get_parent(_ui.inventory_list[b])=obj_par_wepons || object_get_parent(_ui.inventory_list[b])=obj_par_items){
+									if (object_get_parent(_ui.inventory_list[b])=obj_par_items ||  object_get_parent(_ui.inventory_list[b])=obj_par_wepons){
 										if (_ui.inventory_equiped[b] == false){
 											remove_old_weapon_item_selection(b);
 											with (obj_par_wepons) {instance_destroy();}
@@ -230,6 +230,10 @@ function equip(_object){
 			obj_you.equipped = obj_axe;
 			obj_you.attack += 10.0;
 			break;
+		case obj_wood_weapon_lvl0:
+			obj_you.equipped = obj_wood_weapon_lvl0;
+			obj_you.attack += 15.0;
+			break;
 		default:
 			break;
 	}
@@ -309,6 +313,10 @@ function unequip(_object){
 		case obj_axe:
 			obj_you.equipped = obj_axe;
 			obj_you.attack -= 10.0;
+			break;
+		case obj_wood_weapon_lvl0:
+			obj_you.equipped = obj_wood_weapon_lvl0;
+			obj_you.attack -= 15.0;
 			break;
 		default:
 			break;
