@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":9,
   "parent":{
-    "name":"creatures",
-    "path":"folders/Sprites/creatures.yy",
+    "name":"peacefull",
+    "path":"folders/Sprites/creatures/peacefull.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

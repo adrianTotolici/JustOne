@@ -17,6 +17,7 @@ if(hp<1 && no_resources == false){
 		var _inst_branch = instance_create_layer(x,y,"Instances",obj_tree_bark_loot);
 		_inst_branch.on_floor=true;
 	}
+	instance_create_layer(x+50,y,"Instances", obj_enemy_lvl0);
 	sprite_index = spr_small_tree_empty;
 	no_resources = true;
 	hit=true;
