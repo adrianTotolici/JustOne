@@ -46,7 +46,7 @@ show_player_equipment=false;
 show_build=false;
 
 ui_buttons_spr=array_create(5,noone);
-ui_buttons_spr[0]=spr_main_menu_ui;
+ui_buttons_spr[0]=spr_craft_ui_1;
 ui_buttons_spr[1]=spr_help;
 ui_buttons_spr[2]=spr_craft_ui;
 ui_buttons_spr[3]=spr_equipment_ui;

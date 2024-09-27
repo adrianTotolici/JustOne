@@ -17,6 +17,6 @@ show_healthbar=false;
 hit=false;
 snd_harvest= noone;
 
-alarm[0] = 30;
+alarm[0] = 10*speed;
 alarm[1] = 300;
 alarm[2] = 100;

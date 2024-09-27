@@ -30,7 +30,7 @@ if (direction>=225 && direction<315){
 	sprite_index = spr_down;
 } 
 
-if(obj_you.x>=x-15 && obj_you.x<=x+15 || obj_you.y>=y-10 && obj_you.y<=y+10){
+if(obj_you.x>=x-15 && obj_you.x<=x+15 && obj_you.y>=y-15 && obj_you.y<=y+15){
 	sprite_index = spr_atack;
 	obj_you.hp -= attack;
 }

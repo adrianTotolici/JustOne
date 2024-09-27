@@ -92,7 +92,7 @@ function scr_select_draw_armor(){
 					equip_legware_player_anim_walk_harvest(_img);
 				}
 				if (obj_you.left_foot_equipment != noone){
-					equip_footware_player_anim_walk_harvest(true, false, _img);
+					equip_footware_player_anim_walk_harvest(true, false);
 				}
 				break;
 			default:

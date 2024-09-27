@@ -1,5 +1,3 @@
-// Script assets have changed for v2.3.0 see
-// https://help.yoyogames.com/hc/en-us/articles/360005277377 for more information
 function scr_populate_map_resources(_sprite_size){
 	image_xscale=0.5;
 	image_yscale=0.5;
@@ -7,12 +5,23 @@ function scr_populate_map_resources(_sprite_size){
 	for (i=2;i<array_length(global.resource_matrix)-2;i++){
 		for (j=2;j<array_length(global.resource_matrix[i])-2;j++){
 			if (global.resource_matrix[i][j] != true){
-				resource_freq=random_range(1,100);
+				resource_freq=random_range(1,500);
 				if (resource_freq>60 && resource_freq<=61){
-					instance_create_layer(i*_sprite_size+_sprite_size/2,j*_sprite_size+_sprite_size/2,"Instances",obj_small_tree);
-					global.resource_matrix[i][j] = true;
-					global.resource_matrix[i-1][j] = true;
 					
+					// scr_generate_forest
+					var forest_width = irandom_range(5,13);
+					var forest_height = irandom_range(5,13);
+					var tree_count = irandom_range(50,200); // Number of trees to generate
+
+					for (var a = 0; a < tree_count; a++) {
+						var tx = irandom(forest_width);
+						var ty = irandom(forest_height);
+						if ((i+tx-1) < array_length(global.resource_matrix)-2 && (j+ty)< array_length(global.resource_matrix[i])-2 && global.resource_matrix[i+tx][j+ty]==false && global.resource_matrix[i+tx-1][j+ty]==false){
+							instance_create_layer((i+tx)*_sprite_size+_sprite_size/2, (j+ty)*_sprite_size+_sprite_size/2, "Instances", obj_small_tree);
+							global.resource_matrix[i+tx][j+ty]=true;
+							global.resource_matrix[i+tx-1][j+ty]=true;
+						}
+					}
 				}
 			}
 		}
@@ -22,7 +31,7 @@ function scr_populate_map_resources(_sprite_size){
 		for (j=2;j<array_length(global.resource_matrix[i])-2;j++){
 			if (global.resource_matrix[i][j] != true){
 				resource_freq=random_range(1,100);
-				if (resource_freq>0 && resource_freq<=5){
+				if (resource_freq>0 && resource_freq<=1){
 					instance_create_layer(i*_sprite_size+_sprite_size/2,j*_sprite_size+_sprite_size/2,"Instances",obj_grass);
 					global.resource_matrix[i][j] = true;
 				}

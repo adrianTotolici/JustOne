@@ -29,7 +29,7 @@ draw_set_color(c_black);
 draw_text(40, 0,_text_to_display);
 draw_text(40, 10, "FPS = " + string(fps));
 
-for (i=0; i<array_length(ui_buttons_spr); i++){
+for (var i=0; i<array_length(ui_buttons_spr); i++){
 	draw_sprite_ext(ui_buttons_spr[i], 0, x_size_ui-(button_width*(i+1))-(i*5)-5,0,0.5,0.5,0,c_white,1);
 }
 
