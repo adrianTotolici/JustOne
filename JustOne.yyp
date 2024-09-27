@@ -121,6 +121,7 @@
     {"id":{"name":"obj_par_resource","path":"objects/obj_par_resource/obj_par_resource.yy",},},
     {"id":{"name":"obj_par_wepons","path":"objects/obj_par_wepons/obj_par_wepons.yy",},},
     {"id":{"name":"obj_play_menu","path":"objects/obj_play_menu/obj_play_menu.yy",},},
+    {"id":{"name":"obj_rain","path":"objects/obj_rain/obj_rain.yy",},},
     {"id":{"name":"obj_rock_pile","path":"objects/obj_rock_pile/obj_rock_pile.yy",},},
     {"id":{"name":"obj_rock","path":"objects/obj_rock/obj_rock.yy",},},
     {"id":{"name":"obj_small_tree","path":"objects/obj_small_tree/obj_small_tree.yy",},},
