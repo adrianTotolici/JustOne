@@ -161,6 +161,7 @@ function scr_crafting(){
 			//Build 
 			if (_ui.show_build && object_get_parent(_ui.inv_selected)=obj_par_buildings ){
 				instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inv_selected);
+				global.resource_matrix[mouse_x div 64][mouse_y div 64]=true;
 				_ui.inv_selected=noone;
 			}
 		}

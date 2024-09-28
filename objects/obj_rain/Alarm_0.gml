@@ -1,6 +1,6 @@
 /// @description Insert description here
-rain=irandom_range(0,1);
-if (rain==0){
+var _rain=irandom_range(0,1);
+if (_rain==0){
 	raining=true;
 }else{
 	raining=false;

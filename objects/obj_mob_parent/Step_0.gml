@@ -32,5 +32,9 @@ if (direction>=225 && direction<315){
 
 if(obj_you.x>=x-15 && obj_you.x<=x+15 || obj_you.y>=y-15 && obj_you.y<=y+15){
 	sprite_index = spr_atack;
-	obj_you.hp -= attack;
+	var _total_armor=obj_you.head_armor+obj_you.body_armor+obj_you.leg_armor+obj_you.feet_armor;
+	var _damage=attack-_total_armor;
+	if (_damage>0){
+		obj_you.hp -= _damage;
+	}
 }

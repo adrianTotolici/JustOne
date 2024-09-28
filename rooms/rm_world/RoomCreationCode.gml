@@ -29,7 +29,7 @@ enum EQUIPMENT_TYPE {
 
 audio_play_sound(snd_background_birdsong, 1, true);
 
-full_screen=false;
+full_screen=true;
 
 if (full_screen) {
 	// Enable borderless fullscreen

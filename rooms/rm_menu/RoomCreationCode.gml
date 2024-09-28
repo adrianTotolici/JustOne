@@ -1,4 +1,4 @@
-full_screen=false;
+full_screen=true;
 
 if (full_screen) {
 	// Enable borderless fullscreen

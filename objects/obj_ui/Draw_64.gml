@@ -29,8 +29,8 @@ draw_set_color(c_black);
 draw_text(40, 0,_text_to_display);
 draw_text(40, 10, "FPS = " + string(fps));
 
-for (var i=0; i<array_length(ui_buttons_spr); i++){
-	draw_sprite_ext(ui_buttons_spr[i], 0, x_size_ui-(button_width*(i+1))-(i*5)-5,0,0.5,0.5,0,c_white,1);
+for (var _i=0; _i<array_length(ui_buttons_spr); _i++){
+	draw_sprite_ext(ui_buttons_spr[_i], 0, x_size_ui-(button_width*(_i+1))-(_i*5)-5,0,0.5,0.5,0,c_white,1);
 }
 
 if (show_crafting){
@@ -106,11 +106,11 @@ if (show_build){
 	draw_sprite_stretched(spr_craft_ui_menu,0,x_size_ui-craft_menu_width,button_height,craft_menu_width,craft_menu_height);
 	
 	draw_set_font(fnt_info_crafting);
-	for (i=0;i<array_length(sprite_build);i++){
-		if (sprite_build[i]!=noone){
-			draw_sprite_ext(sprite_build[i], 0, x_size_ui-craft_menu_width+button_width+32, button_height*(i+2)+10, 0.5, 0.5,0,c_white,1);
-			draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*(i+2)-10, text_build[i]);
-			draw_sprite_ext(materials_sprite_build[i],0,x_size_ui-craft_menu_width+button_width*4+5,button_height*(i+2)+5,0.5,0.5,0,c_white,1);
+	for (var _i=0;_i<array_length(sprite_build);_i++){
+		if (sprite_build[_i]!=noone){
+			draw_sprite_ext(sprite_build[_i], 0, x_size_ui-craft_menu_width+button_width+32, button_height*(_i+2)+10, 0.5, 0.5,0,c_white,1);
+			draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*(_i+2)-10, text_build[_i]);
+			draw_sprite_ext(materials_sprite_build[_i],0,x_size_ui-craft_menu_width+button_width*4+5,button_height*(_i+2)+5,0.5,0.5,0,c_white,1);
 		}
 	}
 		
