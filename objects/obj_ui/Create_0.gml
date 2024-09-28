@@ -53,8 +53,19 @@ ui_buttons_spr[3]=spr_equipment_ui;
 ui_buttons_spr[4]=spr_build_ui;
 
 //ui build
-text_straw_house="10x"
+sprite_build=array_create(2, noone);
+text_build=array_create(2, noone);
+materials_sprite_build=array_create(2, noone);
 
+//grass house
+sprite_build[0]=spr_grass_house;
+text_build[0]="10x"
+materials_sprite_build[0]=spr_grass_loot;
+
+//campfire
+sprite_build[1]=spr_camp_fire;
+text_build[1]="3x"
+materials_sprite_build[1]=spr_wood_loot;
 
 //ui craft menu
 craft_menu_width=128+32;

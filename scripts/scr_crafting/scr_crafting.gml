@@ -8,6 +8,7 @@ function scr_crafting(){
 	var _branch_own=0;
 	var _rock_own=0;
 	var _tree_bark_own=0;
+	var _wood_own=0;
 	obj_resorces = array_create(10, noone);
 	obj_own = array_create(10, 0);
 	obj_need = array_create(10, 0);
@@ -26,6 +27,9 @@ function scr_crafting(){
 				}
 				if (_ui.inventory_list[i]=obj_tree_bark_loot){
 					_tree_bark_own+=_ui.inventory_num[i];
+				}
+				if (_ui.inventory_list[i]=obj_wood_loot){
+					_wood_own+=_ui.inventory_num[i];
 				}
 			}
 		
@@ -143,8 +147,14 @@ function scr_crafting(){
 			}
 		
 			if (_ui.show_build==true){
+				// build straw house
 				if (_my>=_ui.button_height+10 && _my<=(_ui.button_height*2)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
 					build_object(obj_grass_house, obj_grass_loot, 10, _straw_own);
+				}
+				
+				// build camp fire
+				if (_my>=_ui.button_height*2+10 && _my<=(_ui.button_height*3)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+					build_object(obj_camp_fire, obj_wood_loot, 3, _wood_own);
 				}
 			}
 		}else{

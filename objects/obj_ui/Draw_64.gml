@@ -106,9 +106,13 @@ if (show_build){
 	draw_sprite_stretched(spr_craft_ui_menu,0,x_size_ui-craft_menu_width,button_height,craft_menu_width,craft_menu_height);
 	
 	draw_set_font(fnt_info_crafting);
-	draw_sprite_ext(spr_grass_house, 0, x_size_ui-craft_menu_width+button_width+32, button_height*2+10, 0.5, 0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_straw_house);
-	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5,0.5,0.5,0,c_white,1);
+	for (i=0;i<array_length(sprite_build);i++){
+		if (sprite_build[i]!=noone){
+			draw_sprite_ext(sprite_build[i], 0, x_size_ui-craft_menu_width+button_width+32, button_height*(i+2)+10, 0.5, 0.5,0,c_white,1);
+			draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*(i+2)-10, text_build[i]);
+			draw_sprite_ext(materials_sprite_build[i],0,x_size_ui-craft_menu_width+button_width*4+5,button_height*(i+2)+5,0.5,0.5,0,c_white,1);
+		}
+	}
 		
 	if (inv_selected!=noone){
 		draw_sprite_ext(object_get_sprite(inv_selected),0,_mx,_my,1,1,0,c_white,0.5);
