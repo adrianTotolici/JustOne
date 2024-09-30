@@ -8,7 +8,7 @@ y_size_ui=window_get_height();
 _middle_box_inv = 2;
 _inv_nr_columns = 4;
 _heigh_diff_inventory = 155;
-_text_to_display = "Just One v0.0.8";
+_text_to_display = "Just One v0.0.9";
 
 
 display_set_gui_size(x_size_ui,y_size_ui);
@@ -52,39 +52,96 @@ ui_buttons_spr[2]=spr_craft_ui;
 ui_buttons_spr[3]=spr_equipment_ui;
 ui_buttons_spr[4]=spr_build_ui;
 
-//ui build
-sprite_build=array_create(2, noone);
-text_build=array_create(2, noone);
-materials_sprite_build=array_create(2, noone);
-
+//----------------------------------------ui build
+building_nr=2;
+sprite_build=array_create(building_nr, noone);
+text_build=array_create(building_nr, noone);
+materials_sprite_build=array_create(building_nr, noone);
 //grass house
 sprite_build[0]=spr_grass_house;
-text_build[0]="10x"
+text_build[0]="10x "
 materials_sprite_build[0]=spr_grass_loot;
-
 //campfire
 sprite_build[1]=spr_camp_fire;
-text_build[1]="3x"
+text_build[1]="3x "
 materials_sprite_build[1]=spr_wood_loot;
 
-//ui craft menu
+//--------------------------------------ui craft menu
 craft_menu_width=128+32;
 craft_menu_height=512;
-text_straw_armor_rec="4x ";
-text_straw_pants_rec="3x ";
-text_straw_hat_rec="2x ";
-text_straw_footware_rec="2x ";
-text_straw_mug="1x ";
-text_bark_armor_rec="4x ";
-text_bark_pants_rec="3x ";
-text_bark_hat_rec="2x ";
-text_bark_footware_rec="2x ";
-text_bark_mug="1x ";
-text_rock="5x ";
-text_stick="4x ";
-text_axe_stick="1x";
-text_axe_stone="1x";
-text_wood_weapon_lvl1="10x";
+//++++++++++ armor
+armors_nr=8
+sprite_armors=array_create(armors_nr, noone);
+text_armors=array_create(armors_nr, noone);
+material_armors=array_create(armors_nr, noone);
+//straw_armor
+sprite_armors[0]=spr_straw_armor;
+text_armors[0]="4x ";
+material_armors[0]=spr_grass_loot;
+//straw pants
+sprite_armors[1]=spr_straw_pants;
+text_armors[1]="3x ";
+material_armors[1]=spr_grass_loot;
+//straw hat
+sprite_armors[2]=spr_straw_hat;
+text_armors[2]="2x ";
+material_armors[2]=spr_grass_loot;
+//straw footware
+sprite_armors[3]=spr_straw_sock;
+text_armors[3]="2x ";
+material_armors[3]=spr_grass_loot;
+//bark_armor
+sprite_armors[4]=spr_bark_armor;
+text_armors[4]="4x ";
+material_armors[4]=spr_tree_barck_loot;
+//bark pants
+sprite_armors[5]=spr_bark_pants;
+text_armors[5]="3x ";
+material_armors[5]=spr_tree_barck_loot;
+//bark hat
+sprite_armors[6]=spr_bark_hat;
+text_armors[6]="2x ";
+material_armors[6]=spr_tree_barck_loot;
+//bark footware
+sprite_armors[7]=spr_bark_sock;
+text_armors[7]="2x ";
+material_armors[7]=spr_tree_barck_loot;
+
+
+//+++++++++++++ tools
+tools_nr=8;
+sprite_tools=array_create(tools_nr, noone);
+material_tools=array_create(tools_nr, noone);
+text_tools=array_create(tools_nr, noone);
+//straw mug
+sprite_tools[0]=spr_straw_mug;
+material_tools[0][0]=spr_grass_loot;
+text_tools[0][0]="1x ";
+//rock
+sprite_tools[1]=spr_rock;
+text_tools[1][0]="5x ";
+material_tools[1][0]=spr_rock_loot;
+//stick
+sprite_tools[2]=spr_stick;
+text_tools[2][0]="4x ";
+material_tools[2][0]=spr_branch_loot;
+//rock axe
+sprite_tools[3]=spr_axe;
+text_tools[3][0]="1x ";
+text_tools[3][1]="1x ";
+material_tools[3][0]=spr_branch_loot;
+material_tools[3][1]=spr_rock_loot;
+//wood weapon
+sprite_tools[4]=spr_wood_weapon;
+text_tools[4][0]="10x ";
+material_tools[4][0]=spr_branch_loot;
+//rock pickaxe
+sprite_tools[5]=spr_pickaxe;
+text_tools[5][0]="2x ";
+text_tools[5][1]="1x ";
+material_tools[5][0]=spr_rock_loot;
+material_tools[5][1]=spr_branch_loot;
+
 text_no_resources="";
 show_text_no_resources=false;
 start_alarm=true;

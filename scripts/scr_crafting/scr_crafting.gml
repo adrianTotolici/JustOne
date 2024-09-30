@@ -143,6 +143,17 @@ function scr_crafting(){
 					create_object(obj_wood_weapon_lvl0, obj_resorces, obj_need, obj_own);
 				}
 				
+				// craft stone pickaxe
+				if (_my>=_ui.button_height+10+(_ui.button_height*5) && _my<=(_ui.button_height*7)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+					obj_resorces[0]=obj_branch_loot;
+					obj_resorces[1]=obj_stone_pebles_loot;
+					obj_need[0]=1;
+					obj_need[1]=2;
+					obj_own[0]=_branch_own;
+					obj_own[1]=_rock_own;
+					create_object(obj_stone_pickaxe, obj_resorces, obj_need, obj_own);
+				}
+				
 
 			}
 		

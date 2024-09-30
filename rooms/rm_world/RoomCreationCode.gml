@@ -11,7 +11,8 @@ enum TOOL_TYPE {
 	STICK,
 	MUG,
 	AXE,
-	WEAPON
+	WEAPON,
+	PICKAXE
 }
 
 enum EQUIPMENT_TYPE {
@@ -29,9 +30,8 @@ enum EQUIPMENT_TYPE {
 
 audio_play_sound(snd_background_birdsong, 1, true);
 
-full_screen=true;
 
-if (full_screen) {
+if (global.full_screen) {
 	// Enable borderless fullscreen
 	window_enable_borderless_fullscreen(true);
 

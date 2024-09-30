@@ -42,64 +42,27 @@ if (show_crafting){
 if (show_equipment){
 	draw_set_font(fnt_info_crafting);
 	
-	// straw armor
-	draw_sprite_ext(spr_straw_armor, 0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_straw_armor_rec);
-	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*2+5,0.5,0.5,0,c_white,1);
-		
-	draw_sprite_ext(spr_straw_hat, 0, x_size_ui-craft_menu_width+button_width+32,button_height*3+5,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*3-10, text_straw_hat_rec);
-	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*3+5,0.5,0.5,0,c_white,1);
-		
-	draw_sprite_ext(spr_straw_pants, 0, x_size_ui-craft_menu_width+button_width+32,button_height*4+10,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*4-10, text_straw_pants_rec);
-	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5,0.5,0.5,0,c_white,1);
-		
-	draw_sprite_ext(spr_straw_sock, 0, x_size_ui-craft_menu_width+button_width+32,button_height*5+10,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5-10, text_straw_footware_rec);
-	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+5,0.5,0.5,0,c_white,1);
-	
-	//bark armor
-	draw_sprite_ext(spr_bark_armor, 0, x_size_ui-craft_menu_width+button_width+32,button_height*6+10,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*6-10, text_straw_armor_rec);
-	draw_sprite_ext(spr_tree_barck_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*6+5,0.5,0.5,0,c_white,1);
-		
-	draw_sprite_ext(spr_bark_hat, 0, x_size_ui-craft_menu_width+button_width+32,button_height*7+5,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*7-10, text_straw_hat_rec);
-	draw_sprite_ext(spr_tree_barck_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*7+5,0.5,0.5,0,c_white,1);
-		
-	draw_sprite_ext(spr_bark_pants, 0, x_size_ui-craft_menu_width+button_width+32,button_height*8+10,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*8-10, text_straw_pants_rec);
-	draw_sprite_ext(spr_tree_barck_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*8+5,0.5,0.5,0,c_white,1);
-		
-	draw_sprite_ext(spr_bark_sock, 0, x_size_ui-craft_menu_width+button_width+32,button_height*9+10,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*9-10, text_straw_footware_rec);
-	draw_sprite_ext(spr_tree_barck_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*9+5,0.5,0.5,0,c_white,1);
+	for (var _i=0;_i<array_length(sprite_armors);_i++){
+		if (sprite_armors[_i]!=noone){
+			draw_sprite_ext(sprite_armors[_i], 0, x_size_ui-craft_menu_width+button_width+32,button_height*(_i+2)+10,0.5,0.5,0,c_white,1);
+			draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*(_i+2)-10, text_armors[_i]);
+			draw_sprite_ext(material_armors[_i],0,x_size_ui-craft_menu_width+button_width*4,button_height*(_i+2)+5,0.5,0.5,0,c_white,1);
+		}
+	}
 }
 
 if (show_tools){
 	draw_set_font(fnt_info_crafting);
-	draw_sprite_ext(spr_stick,0, x_size_ui-craft_menu_width+button_width+32,button_height*2+10,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*2-10, text_stick);
-	draw_sprite_ext(spr_branch_loot, 0, x_size_ui-craft_menu_width+button_width*4,button_height*2+5,0.25,0.25,0,c_white,1);
-		
-	draw_sprite_ext(spr_rock,0,x_size_ui-craft_menu_width+button_width+32,button_height*3+10,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*3-10, text_rock);
-	draw_sprite_ext(spr_rock_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*3+5,0.5,0.5,0,c_white,1);
-		
-	draw_sprite_ext(spr_straw_mug,0,x_size_ui-craft_menu_width+button_width+32,button_height*4+10,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*4-10, text_straw_mug);
-	draw_sprite_ext(spr_grass_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*4+5,0.5,0.5,0,c_white,1);
 	
-	draw_sprite_ext(spr_axe,0,x_size_ui-craft_menu_width+button_width+32,button_height*5+15,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5-10, text_axe_stick);
-	draw_sprite_ext(spr_branch_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+5,0.25,0.25,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*5+5, text_axe_stone);
-	draw_sprite_ext(spr_rock_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*5+15,0.5,0.5,0,c_white,1);
-	
-	draw_sprite_ext(spr_wood_weapon,0,x_size_ui-craft_menu_width+button_width+32,button_height*6+15,0.5,0.5,0,c_white,1);
-	draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*6-10, text_wood_weapon_lvl1);
-	draw_sprite_ext(spr_branch_loot,0,x_size_ui-craft_menu_width+button_width*4,button_height*6+5,0.25,0.25,0,c_white,1);
+	for (var _i=0; _i<array_length(sprite_tools);_i++){
+		if (sprite_tools[_i]!=noone){
+			draw_sprite_ext(sprite_tools[_i],0, x_size_ui-craft_menu_width+button_width+32,button_height*(_i+2)+13,0.5,0.5,0,c_white,1);
+			for (var _j=0; _j<array_length(material_tools[_i]); _j++){
+				draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*(_i+2)+((_j*15)-15), text_tools[_i][_j]);
+				draw_sprite_ext(material_tools[_i][_j], 0, x_size_ui-craft_menu_width+button_width*4,button_height*(_i+2)+((_j*10)),0.25,0.25,0,c_white,1);
+			}
+		}
+	}
 }
 
 if (show_build){
@@ -110,7 +73,7 @@ if (show_build){
 		if (sprite_build[_i]!=noone){
 			draw_sprite_ext(sprite_build[_i], 0, x_size_ui-craft_menu_width+button_width+32, button_height*(_i+2)+10, 0.5, 0.5,0,c_white,1);
 			draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*(_i+2)-10, text_build[_i]);
-			draw_sprite_ext(materials_sprite_build[_i],0,x_size_ui-craft_menu_width+button_width*4+5,button_height*(_i+2)+5,0.5,0.5,0,c_white,1);
+			draw_sprite_ext(materials_sprite_build[_i],0,x_size_ui-craft_menu_width+button_width*4+5,button_height*(_i+2),0.5,0.5,0,c_white,1);
 		}
 	}
 		
