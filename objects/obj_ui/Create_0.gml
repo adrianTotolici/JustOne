@@ -1,5 +1,5 @@
 /// @description Vars
-depth =obj_land.depth-4;
+depth =obj_you.depth-1;
 sprite_size=30;
 inventory_sprite_size=128*1.5;
 x_size_ui=window_get_width();
@@ -27,7 +27,7 @@ inventory_list[3]=obj_grass_house;
 inventory_list[4]=obj_branch_loot;
 inventory_list[5]=obj_axe;
 inventory_list[6]=obj_tree_bark_loot;
-inventory_list[7]=obj_wood_weapon_lvl0;
+inventory_list[7]=obj_stone_pickaxe;
 
 inventory_num[0]=1;
 inventory_num[1]=1;

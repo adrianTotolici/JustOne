@@ -35,6 +35,7 @@ switch(state)
 		break;
 }
 scr_crafting();
+scr_dig_tunel();
 
 if (hp<=0){
 	show_end_game=true;
