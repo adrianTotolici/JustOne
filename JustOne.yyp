@@ -168,6 +168,7 @@
     {"id":{"name":"snd_background_birdsong","path":"sounds/snd_background_birdsong/snd_background_birdsong.yy",},},
     {"id":{"name":"snd_bug_squash","path":"sounds/snd_bug_squash/snd_bug_squash.yy",},},
     {"id":{"name":"snd_bush_hit","path":"sounds/snd_bush_hit/snd_bush_hit.yy",},},
+    {"id":{"name":"snd_cave_background","path":"sounds/snd_cave_background/snd_cave_background.yy",},},
     {"id":{"name":"snd_grass_hit","path":"sounds/snd_grass_hit/snd_grass_hit.yy",},},
     {"id":{"name":"snd_mud_hit","path":"sounds/snd_mud_hit/snd_mud_hit.yy",},},
     {"id":{"name":"snd_stick_pick","path":"sounds/snd_stick_pick/snd_stick_pick.yy",},},

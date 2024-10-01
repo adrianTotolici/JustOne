@@ -1,4 +1,4 @@
-audio_play_sound(snd_background_birdsong, 1, true);
+
 
 
 if (global.full_screen) {

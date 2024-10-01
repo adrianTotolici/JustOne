@@ -27,7 +27,19 @@ function scr_dig_tunel(){
 		y_max=obj_you.y+50;
 		
 		if (instance_exists(_resources) && (x_min<=_resources.x && _resources.x<=x_max) && (y_min<=_resources.y && _resources.y<=y_max) && _resources!=_player){
+			audio_stop_all();
 			room_goto(rm_world_u1);
+		}else{
+			if (room == rm_world_u1){
+				tile_data=tilemap_get_at_pixel(global.back_tiles_underground,mouse_x,mouse_y);
+				if (tile_data==tile_set_index(ts_underground, 4)){
+					audio_stop_all();
+					room_goto(rm_world);
+				}
+				//if (tile_data==tile_set_index(ts_underground,3)){
+				//	draw_tunel_direction(mouse_x, mouse_y, tile_data);
+				//}
+			}
 		}
 	}
 }
