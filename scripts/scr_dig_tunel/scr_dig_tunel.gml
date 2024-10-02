@@ -32,9 +32,12 @@ function scr_dig_tunel(){
 		}else{
 			if (room == rm_world_u1){
 				tile_data=tilemap_get_at_pixel(global.back_tiles_underground,mouse_x,mouse_y);
-				if (tile_data==tile_set_index(ts_underground, 4)){
+				if (tile_data==tile_set_index(ts_underground, 2)){
 					audio_stop_all();
 					room_goto(rm_world);
+				}
+				if ((_player.equipped==obj_stone_pickaxe) && (tile_data==0)){
+					draw_tunel(mouse_x,mouse_y);
 				}
 				//if (tile_data==tile_set_index(ts_underground,3)){
 				//	draw_tunel_direction(mouse_x, mouse_y, tile_data);
@@ -44,10 +47,29 @@ function scr_dig_tunel(){
 	}
 }
 
-function draw_tunel(){
+function draw_tunel(mx, my){
 	_player=obj_you;
-	tile_x=_player.x div 64;
-	tile_y=_player.y div 64;
+	
+	tile_data_NE=tilemap_get_at_pixel(global.back_tiles_underground, mx-64, my-64);
+	tile_data_N=tilemap_get_at_pixel(global.back_tiles_underground, mx, my-64);
+	tile_data_NW=tilemap_get_at_pixel(global.back_tiles_underground, mx+64, my-64);
+	
+	tile_data_E=tilemap_get_at_pixel(global.back_tiles_underground, mx-64, my);
+	tile_data_W=tilemap_get_at_pixel(global.back_tiles_underground, mx+64, my);
+	
+	tile_data_SE=tilemap_get_at_pixel(global.back_tiles_underground, mx+64, my+64);
+	tile_data_S=tilemap_get_at_pixel(global.back_tiles_underground, mx, my+64);
+	tile_data_SW=tilemap_get_at_pixel(global.back_tiles_underground, mx-64, my+64);
+	
+	if (tile_data_E == 0){
+		if (tile_data_N == 8){
+			if  (tile_data_S == 8){
+				if (tile_data_W == 4){
+					
+				}
+			}
+		}
+	}
 	
 	tilemap_set_at_pixel(global.back_tiles_underground,1,_player.x,_player.y);
 

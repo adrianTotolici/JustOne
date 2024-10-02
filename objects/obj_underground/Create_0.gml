@@ -21,4 +21,26 @@ _player=obj_you;
 tile_x=_player.x div 64;
 tile_y=_player.y div 64;
 	
-tilemap_set_at_pixel(global.back_tiles_underground,4,_player.x,_player.y-32);
+tilemap_set_at_pixel(global.back_tiles_underground,2,_player.x,_player.y-32);
+
+//NW 
+tilemap_set_at_pixel(global.back_tiles_underground,7,_player.x-64,_player.y-32-64);
+//N
+scr_place_tile(1,3,_player.x,_player.y-32-64);
+//NE
+scr_place_tile(1,7,_player.x+64,_player.y-32-64);
+
+//E
+tilemap_set_at_pixel(global.back_tiles_underground,3,_player.x-64,_player.y-32);
+
+//W
+scr_place_tile(2,3,_player.x+64,_player.y-32);
+
+//SW 
+scr_place_tile(3,7,_player.x-64,_player.y-32+64);
+
+//S
+scr_place_tile(3,3,_player.x,_player.y-32+64);
+
+//SE
+scr_place_tile(2,7,_player.x+64,_player.y-32+64);

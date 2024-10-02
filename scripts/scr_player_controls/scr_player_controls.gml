@@ -77,5 +77,16 @@ function scr_player_control(){
 		y=y+_travel_y;
 		sprite_index=anim_idle;
 	}
-	mp_linear_step(x+_travel_x,y+_travel_y,my_speed,false);
+	switch (room){
+		case rm_world_u1:
+			tiles_available=tilemap_get_at_pixel(global.back_tiles_underground,x+_travel_x,y+_travel_y);
+			if (tiles_available==1 || tiles_available==2){
+				mp_linear_step(x+_travel_x,y+_travel_y,my_speed,false);
+			}
+			break;
+		default:
+			tiles_available=tilemap_get_at_pixel(global.back_tiles,x+_travel_x,y+_travel_y);
+			break;
+	}
+
 }
