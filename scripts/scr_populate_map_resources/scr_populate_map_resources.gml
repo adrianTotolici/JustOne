@@ -55,6 +55,14 @@ function scr_populate_map_resources(_sprite_size){
 					instance_create_layer(i*_sprite_size+_sprite_size/2,j*_sprite_size+_sprite_size/2,"Instances",obj_branch_pile);
 					global.resource_matrix[i][j] = true;	
 				}
+				if (resource_freq==61){
+					instance_create_layer(i*_sprite_size+_sprite_size/2,j*_sprite_size+_sprite_size/2,"Instances",obj_mountain_range);
+					global.resource_matrix[i][j] = true;	
+				}
+				if (resource_freq>61 && resource_freq<62){
+					instance_create_layer(i*_sprite_size+_sprite_size/2,j*_sprite_size+_sprite_size/2,"Instances",obj_large_bolder);
+					global.resource_matrix[i][j] = true;	
+				}
 			}
 		}
 	}
