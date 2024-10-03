@@ -14,6 +14,7 @@ var _ran_data=0;
 var _sprite_size=64;
 var _x_sprites=room_width div _sprite_size;
 var _y_sprites=room_height div _sprite_size;
+gen_mob_lvl1=true;
 
 global.resource_matrix= [];
 
