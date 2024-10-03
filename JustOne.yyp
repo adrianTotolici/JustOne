@@ -171,6 +171,7 @@
     {"id":{"name":"snd_bush_hit","path":"sounds/snd_bush_hit/snd_bush_hit.yy",},},
     {"id":{"name":"snd_cave_background","path":"sounds/snd_cave_background/snd_cave_background.yy",},},
     {"id":{"name":"snd_grass_hit","path":"sounds/snd_grass_hit/snd_grass_hit.yy",},},
+    {"id":{"name":"snd_mob_lvl1_dead","path":"sounds/snd_mob_lvl1_dead/snd_mob_lvl1_dead.yy",},},
     {"id":{"name":"snd_mud_hit","path":"sounds/snd_mud_hit/snd_mud_hit.yy",},},
     {"id":{"name":"snd_stick_pick","path":"sounds/snd_stick_pick/snd_stick_pick.yy",},},
     {"id":{"name":"snd_stone_pick","path":"sounds/snd_stone_pick/snd_stone_pick.yy",},},
