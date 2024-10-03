@@ -3,6 +3,6 @@
 
 // Inherit the parent event
 event_inherited();
-
+global.back_tiles= noone;
 room_goto(rm_world);
 

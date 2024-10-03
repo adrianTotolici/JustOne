@@ -109,6 +109,11 @@ if (mouse_check_button_pressed(mb_left) && _my>=(button_height*2)+12 && _my<=(bu
 	}
 }
 
+// press save button
+if (mouse_check_button_pressed(mb_left) && (_my>=0 && _my<=button_height) && (_mx>=x_size_ui-(button_width*6)-(6*5)-5 && _mx<=x_size_ui-(button_width*5)-5)){
+	scr_load_save_game();
+}
+
 if (keyboard_check_released(ord("I"))){
 	switch (show_inv){
 		case false:

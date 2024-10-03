@@ -45,12 +45,13 @@ show_equipment=false;
 show_player_equipment=false;
 show_build=false;
 
-ui_buttons_spr=array_create(5,noone);
+ui_buttons_spr=array_create(6,noone);
 ui_buttons_spr[0]=spr_craft_ui_1;
 ui_buttons_spr[1]=spr_help;
 ui_buttons_spr[2]=spr_craft_ui;
 ui_buttons_spr[3]=spr_equipment_ui;
 ui_buttons_spr[4]=spr_build_ui;
+ui_buttons_spr[5]=spr_save_buton;
 
 //----------------------------------------ui build
 building_nr=2;
