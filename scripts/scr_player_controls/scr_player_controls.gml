@@ -85,7 +85,7 @@ function scr_player_control(){
 			}
 			break;
 		default:
-			tiles_available=tilemap_get_at_pixel(global.back_tiles,x+_travel_x,y+_travel_y);
+			mp_linear_step(x+_travel_x,y+_travel_y,my_speed,false);
 			break;
 	}
 
