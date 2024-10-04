@@ -278,3 +278,10 @@ if (show_game_saved){
 	draw_set_color(c_red);
 	draw_text(window_get_width()/2-130, window_get_height()/2,text_game_saved);
 }
+
+if (show_enemy_health){
+	draw_set_font(fnt_info_bars);
+	draw_set_color(c_white);
+	draw_healthbar(550,30,750,50,enemy_health,c_black,c_red,c_red,0,true,true);
+	draw_text(600,33,string(floor(enemy_health)) + "/" + string(floor(enemy_max_health)));
+}

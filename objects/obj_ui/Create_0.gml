@@ -147,6 +147,10 @@ text_no_resources="";
 show_text_no_resources=false;
 start_alarm=true;
 
+show_enemy_health=false;
+enemy_max_health=0;
+enemy_health=0;
+
 
 // screen menu buttons
 button_height=32;

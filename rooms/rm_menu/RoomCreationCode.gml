@@ -1,4 +1,5 @@
 global.full_screen=false;
+global.new_game=false;
 
 if (global.full_screen) {
 	// Enable borderless fullscreen

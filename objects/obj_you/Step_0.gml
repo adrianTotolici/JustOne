@@ -41,6 +41,7 @@ if (hp<=0){
 	show_end_game=true;
 	if (keyboard_check_released(vk_anykey) || mouse_check_button_pressed(mb_any)){
 		room_goto(rm_menu);
+		room_restart();
 	}
 }
 

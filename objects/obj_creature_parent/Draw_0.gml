@@ -16,6 +16,10 @@ if (hp>1 && show_healthbar){
 
 	draw_set_color(c_red);
 	draw_rectangle(_bar_x, _bar_y, _bar_x + (_bar_width * _health_percentage), _bar_y + _bar_height, false);
+	
+	obj_ui.show_enemy_health=true;
+	obj_ui.enemy_health=hp;
+	obj_ui.enemy_max_health=max_health;
 }
 
 if (hp<1){
