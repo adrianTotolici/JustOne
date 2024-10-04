@@ -4,6 +4,7 @@ function scr_load_save_game(){
 	if (room==rm_world || room==rm_world_u1){
 		var save_data = {
 		world_tiles: global.back_tiles,
+		player: obj_you,
 		};
 		var json_string = json_stringify(save_data);
 		var file = file_text_open_write("savefile.txt");
@@ -19,6 +20,7 @@ function scr_load_save_game(){
 			file_text_close(file);
 
 			global.back_tiles=save_data.world_tiles;
+			
 			room_goto(rm_world);
 		}
 	}

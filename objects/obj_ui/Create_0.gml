@@ -160,3 +160,6 @@ help_inventory= "Press 'I' to open your inventory."
 help_crafting = "Click the 'C' button on the screen to open the crafting menu."
 help_ui_close = "Press 'F1' to close the help menu."
 help_exit_main_menu = "Press 'ESC' to exit to main menu."
+
+text_game_saved = "Game saved";
+show_game_saved=false;

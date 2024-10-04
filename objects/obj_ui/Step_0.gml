@@ -112,6 +112,7 @@ if (mouse_check_button_pressed(mb_left) && _my>=(button_height*2)+12 && _my<=(bu
 // press save button
 if (mouse_check_button_pressed(mb_left) && (_my>=0 && _my<=button_height) && (_mx>=x_size_ui-(button_width*6)-(6*5)-5 && _mx<=x_size_ui-(button_width*5)-5)){
 	scr_load_save_game();
+	show_game_saved=true;
 }
 
 if (keyboard_check_released(ord("I"))){
@@ -147,7 +148,7 @@ if (keyboard_check_pressed(vk_escape)){
 	show_help=false;
 }
 
-if (show_text_no_resources && start_alarm){
+if ((show_text_no_resources || show_game_saved) && start_alarm){
 	alarm[0]=60;
 	start_alarm=false;
 }

@@ -263,3 +263,9 @@ if (show_text_no_resources){
 	draw_set_color(c_red);
 	draw_text(window_get_width()/2-130, window_get_height()/2,text_no_resources);
 }
+
+if (show_game_saved){
+	draw_set_font(fnt_help_text);
+	draw_set_color(c_red);
+	draw_text(window_get_width()/2-130, window_get_height()/2,text_game_saved);
+}
