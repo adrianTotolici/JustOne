@@ -22,8 +22,8 @@ inv_selected=noone;
 // add test items
 inventory_list[0]=obj_rock;
 inventory_list[1]=obj_stick;
-inventory_list[2]=obj_straw_mug;
-inventory_list[3]=obj_grass_house;
+inventory_list[2]=obj_wood_weapon_lvl0;
+inventory_list[3]=obj_straw_mug;
 inventory_list[4]=obj_branch_loot;
 inventory_list[5]=obj_axe;
 inventory_list[6]=obj_tree_bark_loot;
