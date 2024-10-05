@@ -44,25 +44,25 @@ function scr_dig_tunel(){
 	}
 }
 
-function draw_tunel(mx, my, dig_data){
+function draw_tunel(_mx, _my, _dig_data){
 	_player=obj_you;
-	scr_place_tile(0,1,mx,my);
+	scr_place_tile(0,1,_mx,_my);
 
 	tile_3=tile_set_index(ts_underground, 3);
 	tile_4=tile_set_index(ts_underground, 4);
 	
-	switch (dig_data){
+	switch (_dig_data){
 		case tile_3:
-			scr_place_tile(0,3,mx-64,my);
-			scr_place_tile(0,7,mx-64,my-64);
-			scr_place_tile(1,11,mx-64,my+64);
-			scr_place_tile(1,3,mx,my-64);
-			scr_place_tile(1,8,mx,my+64);
+			scr_place_tile(0,3,_mx-64,_my);
+			scr_place_tile(0,7,_mx-64,_my-64);
+			scr_place_tile(1,11,_mx-64,_my+64);
+			scr_place_tile(1,3,_mx,_my-64);
+			scr_place_tile(1,8,_mx,_my+64);
 			break;
 		case tile_4:
-			scr_place_tile(0,3,mx-64,my);
-			scr_place_tile(0,7,mx-64,my-64);
-			scr_place_tile(1,8,mx,my+64);
+			scr_place_tile(0,3,_mx-64,_my);
+			scr_place_tile(0,7,_mx-64,_my-64);
+			scr_place_tile(1,8,_mx,_my+64);
 			break;
 		default:
 			break;

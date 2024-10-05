@@ -137,24 +137,24 @@ if (show_help){
 }
 
 if (show_player_equipment){
-	scale_player=2;
-	scale_bgd=1.35;
-	scale_equip=0.6;
-	draw_sprite_ext(spr_player_equipment_ui,0,20,y_size_ui/2,scale_player,scale_player,0,c_white,1);
+	var _scale_player=2;
+	var _scale_bgd=1.35;
+	var _scale_equip=0.6;
+	draw_sprite_ext(spr_player_equipment_ui,0,20,y_size_ui/2,_scale_player,_scale_player,0,c_white,1);
 	
 	// check if headware is equiped
 	if (obj_you.head_equipment!=noone){
 		var _x_pos=64;
 		var _y_pos=y_size_ui/2-149;
-		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos,_y_pos+18,scale_bgd,scale_bgd,0,c_white,1);
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos,_y_pos+18,_scale_bgd,_scale_bgd,0,c_white,1);
 		switch (obj_you.head_equipment){
 			case obj_straw_hat:
-				draw_sprite_ext(spr_straw_hat,0,_x_pos,_y_pos,scale_equip,scale_equip,0,c_white,1);
-				draw_sprite_ext(spr_player_equipment_straw_hat,0,20,y_size_ui/2,scale_player,scale_player,0,c_white,1);
+				draw_sprite_ext(spr_straw_hat,0,_x_pos,_y_pos,_scale_equip,_scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_player_equipment_straw_hat,0,20,y_size_ui/2,_scale_player,_scale_player,0,c_white,1);
 				break;
 			case obj_bark_hat:
-				draw_sprite_ext(spr_bark_hat,0,_x_pos,_y_pos,scale_equip,scale_equip,0,c_white,1);
-				draw_sprite_ext(spr_player_equipment_bark_hat,0,20,y_size_ui/2,scale_player,scale_player,0,c_white,1);
+				draw_sprite_ext(spr_bark_hat,0,_x_pos,_y_pos,_scale_equip,_scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_player_equipment_bark_hat,0,20,y_size_ui/2,_scale_player,_scale_player,0,c_white,1);
 				break;
 			default:
 				break;
@@ -165,15 +165,15 @@ if (show_player_equipment){
 	if (obj_you.body_equipment!=noone){
 		var _x_pos=240;
 		var _y_pos=y_size_ui/2-27;
-		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos,_y_pos+4,scale_bgd,scale_bgd,0,c_white,1);
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos,_y_pos+4,_scale_bgd,_scale_bgd,0,c_white,1);
 		switch (obj_you.body_equipment){
 			case obj_straw_armor:
-				draw_sprite_ext(spr_straw_armor,0,_x_pos,_y_pos,scale_equip,scale_equip,0,c_white,1);
-				draw_sprite_ext(spr_player_equipment_straw_armor,0,20,y_size_ui/2,scale_player,scale_player,0,c_white,1);
+				draw_sprite_ext(spr_straw_armor,0,_x_pos,_y_pos,_scale_equip,_scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_player_equipment_straw_armor,0,20,y_size_ui/2,_scale_player,_scale_player,0,c_white,1);
 				break;
 			case obj_bark_armor:
-				draw_sprite_ext(spr_bark_armor,0,_x_pos,_y_pos,scale_equip,scale_equip,0,c_white,1);
-				draw_sprite_ext(spr_player_equipment_bark_armor,0,20,y_size_ui/2,scale_player,scale_player,0,c_white,1);
+				draw_sprite_ext(spr_bark_armor,0,_x_pos,_y_pos,_scale_equip,_scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_player_equipment_bark_armor,0,20,y_size_ui/2,_scale_player,_scale_player,0,c_white,1);
 				break;
 			default:
 				break;
@@ -184,15 +184,15 @@ if (show_player_equipment){
 	if (obj_you.leg_equipment!=noone){
 		var _x_pos=222;
 		var _y_pos=y_size_ui/2+101;
-		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos,_y_pos+4,scale_bgd,scale_bgd,0,c_white,1);
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos,_y_pos+4,_scale_bgd,_scale_bgd,0,c_white,1);
 		switch (obj_you.leg_equipment){
 			case obj_straw_pants:
-				draw_sprite_ext(spr_straw_pants,0,_x_pos,_y_pos,scale_equip,scale_equip,0,c_white,1);
-				draw_sprite_ext(spr_player_equipment_straw_legware,0,20,y_size_ui/2,scale_player,scale_player,0,c_white,1);
+				draw_sprite_ext(spr_straw_pants,0,_x_pos,_y_pos,_scale_equip,_scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_player_equipment_straw_legware,0,20,y_size_ui/2,_scale_player,_scale_player,0,c_white,1);
 				break;
 			case obj_bark_pants:
-				draw_sprite_ext(spr_bark_pants,0,_x_pos,_y_pos,scale_equip,scale_equip,0,c_white,1);
-				draw_sprite_ext(spr_player_equipment_bark_legware,0,20,y_size_ui/2,scale_player,scale_player,0,c_white,1);
+				draw_sprite_ext(spr_bark_pants,0,_x_pos,_y_pos,_scale_equip,_scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_player_equipment_bark_legware,0,20,y_size_ui/2,_scale_player,_scale_player,0,c_white,1);
 				break;
 			default:
 				break;
@@ -203,15 +203,15 @@ if (show_player_equipment){
 	if (obj_you.left_foot_equipment!=noone){
 		var _x_pos=108;
 		var _y_pos=y_size_ui/2+172;
-		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos,_y_pos+7,scale_bgd,scale_bgd,0,c_white,1);
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos,_y_pos+7,_scale_bgd,_scale_bgd,0,c_white,1);
 		switch (obj_you.left_foot_equipment){
 			case obj_straw_footwear:
-				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,scale_equip,scale_equip,0,c_white,1);
-				draw_sprite_ext(spr_player_equipment_straw_left_foot,0,20,y_size_ui/2,scale_player,scale_player,0,c_white,1);
+				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,_scale_equip,_scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_player_equipment_straw_left_foot,0,20,y_size_ui/2,_scale_player,_scale_player,0,c_white,1);
 				break;
 			case obj_bark_footwear:
-				draw_sprite_ext(spr_bark_sock,0,_x_pos,_y_pos,scale_equip,scale_equip,0,c_white,1);
-				draw_sprite_ext(spr_player_equipment_bark_left_foot,0,20,y_size_ui/2,scale_player,scale_player,0,c_white,1);
+				draw_sprite_ext(spr_bark_sock,0,_x_pos,_y_pos,_scale_equip,_scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_player_equipment_bark_left_foot,0,20,y_size_ui/2,_scale_player,_scale_player,0,c_white,1);
 				break;
 			default:
 				break;
@@ -222,15 +222,15 @@ if (show_player_equipment){
 	if (obj_you.right_foot_equipment!=noone){
 		var _x_pos=168;
 		var _y_pos=y_size_ui/2+172;
-		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos,_y_pos+7,scale_bgd,scale_bgd,0,c_white,1);
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos,_y_pos+7,_scale_bgd,_scale_bgd,0,c_white,1);
 		switch (obj_you.right_foot_equipment){
 			case obj_straw_footwear:
-				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,scale_equip,scale_equip,0,c_white,1);
-				draw_sprite_ext(spr_player_equipment_straw_right_foot,0,20,y_size_ui/2,scale_player,scale_player,0,c_white,1);
+				draw_sprite_ext(spr_straw_sock,0,_x_pos,_y_pos,_scale_equip,_scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_player_equipment_straw_right_foot,0,20,y_size_ui/2,_scale_player,_scale_player,0,c_white,1);
 				break;
 			case obj_bark_footwear:
-				draw_sprite_ext(spr_bark_sock,0,_x_pos,_y_pos,scale_equip,scale_equip,0,c_white,1);
-				draw_sprite_ext(spr_player_equipment_bark_right_foot,0,20,y_size_ui/2,scale_player,scale_player,0,c_white,1);
+				draw_sprite_ext(spr_bark_sock,0,_x_pos,_y_pos,_scale_equip,_scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_player_equipment_bark_right_foot,0,20,y_size_ui/2,_scale_player,_scale_player,0,c_white,1);
 				break;
 			default:
 				break;
@@ -241,22 +241,22 @@ if (show_player_equipment){
 	if (obj_you.equipped != noone){
 		var _x_pos=50;
 		var _y_pos=y_size_ui/2-43;
-		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,scale_bgd,scale_bgd,0,c_white,1);
+		draw_sprite_ext(spr_backgorud_equiped,0,_x_pos+2,_y_pos,_scale_bgd,_scale_bgd,0,c_white,1);
 		switch (obj_you.equipped){
 			case obj_rock:
-				draw_sprite_ext(spr_rock,0,_x_pos+2,_y_pos-10,scale_equip,scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_rock,0,_x_pos+2,_y_pos-10,_scale_equip,_scale_equip,0,c_white,1);
 				break;
 			case obj_stick:
-				draw_sprite_ext(spr_stick,0,_x_pos+2,_y_pos-8,scale_equip,scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_stick,0,_x_pos+2,_y_pos-8,_scale_equip,_scale_equip,0,c_white,1);
 				break;
 			case obj_straw_mug:
-				draw_sprite_ext(spr_straw_mug,0,_x_pos,_y_pos-5,scale_equip,scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_straw_mug,0,_x_pos,_y_pos-5,_scale_equip,_scale_equip,0,c_white,1);
 				break;
 			case obj_axe:
-				draw_sprite_ext(spr_axe,0,_x_pos,_y_pos-5,scale_equip,scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_axe,0,_x_pos,_y_pos-5,_scale_equip,_scale_equip,0,c_white,1);
 				break;
 			case obj_stone_pickaxe:
-				draw_sprite_ext(spr_pickaxe,0,_x_pos,_y_pos-7,scale_equip,scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_pickaxe,0,_x_pos,_y_pos-7,_scale_equip,_scale_equip,0,c_white,1);
 				break;
 			case obj_wood_weapon_lvl0:
 				draw_sprite_ext(spr_wood_weapon,0,_x_pos+2,_y_pos-7,scale_equip,scale_equip,0,c_white,1);

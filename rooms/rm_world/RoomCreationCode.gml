@@ -1,6 +1,3 @@
-if (global.new_game){
-	room_restart();
-}
 enum PLAYER_STATE {
 	CONTROLS,
 	HARVEST,
