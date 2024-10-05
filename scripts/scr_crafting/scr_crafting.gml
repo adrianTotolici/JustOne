@@ -74,20 +74,20 @@ function scr_crafting(){
 					create_object(obj_bark_armor, obj_resorces, obj_need, obj_own);
 				}
 			
-				// craft bark hat
-				if (_my>=_ui.button_height+10+(_ui.button_height*5) && _my<=(_ui.button_height*7)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
-					obj_resorces[0]=obj_tree_bark_loot;
-					obj_need[0]=2;
-					obj_own[0]=_tree_bark_own;
-					create_object(obj_bark_hat, obj_resorces, obj_need, obj_own);
-				}
-			
 				// craft bark pants
-				if (_my>=_ui.button_height+10+(_ui.button_height*6) && _my<=(_ui.button_height*8)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+				if (_my>=_ui.button_height+10+(_ui.button_height*5) && _my<=(_ui.button_height*7)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
 					obj_resorces[0]=obj_tree_bark_loot;
 					obj_need[0]=3;
 					obj_own[0]=_tree_bark_own;
 					create_object(obj_bark_pants, obj_resorces, obj_need, obj_own);
+				}
+			
+				// craft bark headware
+				if (_my>=_ui.button_height+10+(_ui.button_height*6) && _my<=(_ui.button_height*8)+10 && _mx>=_ui.x_size_ui-_ui.craft_menu_width+_ui.button_width+16 && _mx<=_ui.x_size_ui-_ui.button_width*2-10){
+					obj_resorces[0]=obj_tree_bark_loot;
+					obj_need[0]=2;
+					obj_own[0]=_tree_bark_own;
+					create_object(obj_bark_hat, obj_resorces, obj_need, obj_own);
 				}
 			
 				// craft bark footware
