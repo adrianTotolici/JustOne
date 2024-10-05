@@ -6,12 +6,12 @@ var _mx=device_mouse_x_to_gui(0);
 var _my=device_mouse_y_to_gui(0);
 
 //press exit main menu button
-if ((mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>=x_size_ui-(button_width*1)-(1*5)-5 && _mx<=x_size_ui-(button_width*0)-5) || keyboard_check_released(vk_f1)){
+if ((mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>=x_size_ui-(button_width*1)-(1*5)-5 && _mx<=x_size_ui-(button_width*0)-(0*5)-5) || keyboard_check_released(vk_f1)){
 	game_restart();
 }
 
 //press help button
-if ((mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>=x_size_ui-(button_width*2)-(2*5)-5 && _mx<=x_size_ui-(button_width*1)-5) || keyboard_check_released(vk_f1)){
+if ((mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>=x_size_ui-(button_width*2)-(2*5)-5 && _mx<=x_size_ui-(button_width*1)-(1*5)-5) || keyboard_check_released(vk_f1)){
 	switch (show_help){
 		case false:
 			show_help=true;
@@ -25,7 +25,7 @@ if ((mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>
 }
 
 // press crafting button
-if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>=x_size_ui-(button_width*3)-(3*5)-5 && _mx<=x_size_ui-(button_width*2)-5){
+if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>=x_size_ui-(button_width*3)-(3*5)-5 && _mx<=x_size_ui-(button_width*2)-(2*5)-5){
 	switch (show_crafting){
 		case false:
 			show_crafting=true;
@@ -44,7 +44,7 @@ if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>=
 }
 
 //press player equipment button
-if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>=x_size_ui-(button_width*4)-(4*5)-5 && _mx<=x_size_ui-(button_width*3)-5){
+if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>=x_size_ui-(button_width*4)-(4*5)-5 && _mx<=x_size_ui-(button_width*3)-(3*5)-5){
 	switch (show_player_equipment){
 		case false:
 			show_player_equipment=true;
@@ -62,7 +62,7 @@ if (mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>=
 }
 
 // press build button
-if (mouse_check_button_pressed(mb_left) && (_my>=0 && _my<=button_height) && (_mx>=x_size_ui-(button_width*5)-(5*5)-5 && _mx<=x_size_ui-(button_width*4)-5)){
+if (mouse_check_button_pressed(mb_left) && (_my>=0 && _my<=button_height) && (_mx>=x_size_ui-(button_width*5)-(5*5)-5 && _mx<=x_size_ui-(button_width*4)-(4*5)-5)){
 	switch (show_build){
 		case false:
 			show_build=true;
@@ -110,7 +110,7 @@ if (mouse_check_button_pressed(mb_left) && _my>=(button_height*2)+12 && _my<=(bu
 }
 
 // press save button
-if (mouse_check_button_pressed(mb_left) && (_my>=0 && _my<=button_height) && (_mx>=x_size_ui-(button_width*6)-(6*5)-5 && _mx<=x_size_ui-(button_width*5)-5)){
+if (mouse_check_button_pressed(mb_left) && (_my>=0 && _my<=button_height) && (_mx>=x_size_ui-(button_width*6)-(6*5)-5 && _mx<=x_size_ui-(button_width*5)-(5*5)-5)){
 	scr_load_save_game();
 	show_game_saved=true;
 }
