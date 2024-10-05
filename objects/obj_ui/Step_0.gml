@@ -7,8 +7,7 @@ var _my=device_mouse_y_to_gui(0);
 
 //press exit main menu button
 if ((mouse_check_button_pressed(mb_left) && _my>=0 && _my<=button_height && _mx>=x_size_ui-(button_width*1)-(1*5)-5 && _mx<=x_size_ui-(button_width*0)-5) || keyboard_check_released(vk_f1)){
-	room_instance_clear(rm_world);
-	room_goto(rm_menu);
+	game_restart();
 }
 
 //press help button

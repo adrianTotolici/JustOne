@@ -237,6 +237,7 @@
     {"id":{"name":"spr_pickaxe","path":"sprites/spr_pickaxe/spr_pickaxe.yy",},},
     {"id":{"name":"spr_player_back_bark_armor","path":"sprites/spr_player_back_bark_armor/spr_player_back_bark_armor.yy",},},
     {"id":{"name":"spr_player_back_straw_armor","path":"sprites/spr_player_back_straw_armor/spr_player_back_straw_armor.yy",},},
+    {"id":{"name":"spr_player_die","path":"sprites/spr_player_die/spr_player_die.yy",},},
     {"id":{"name":"spr_player_down_left_bark_foot","path":"sprites/spr_player_down_left_bark_foot/spr_player_down_left_bark_foot.yy",},},
     {"id":{"name":"spr_player_down_left_straw_foot","path":"sprites/spr_player_down_left_straw_foot/spr_player_down_left_straw_foot.yy",},},
     {"id":{"name":"spr_player_down_legware_bark","path":"sprites/spr_player_down_legware_bark/spr_player_down_legware_bark.yy",},},
