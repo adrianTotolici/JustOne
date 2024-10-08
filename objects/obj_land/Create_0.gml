@@ -62,4 +62,5 @@ for (i=0;i<213;i+=1) {
 	}
 }
 
+
 scr_populate_map_resources(_sprite_size);

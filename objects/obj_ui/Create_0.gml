@@ -8,7 +8,7 @@ y_size_ui=window_get_height();
 _middle_box_inv = 2;
 _inv_nr_columns = 4;
 _heigh_diff_inventory = 155;
-_text_to_display = "Just One v0.0.9";
+_text_to_display = "Just One v0.1.0";
 
 
 display_set_gui_size(x_size_ui,y_size_ui);

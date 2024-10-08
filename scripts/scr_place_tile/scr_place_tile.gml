@@ -27,7 +27,7 @@ function scr_place_tile(_nr_root, _tile_index, _xpos, _ypos) {
     }
     
     // Apply the final rotation state to the tile data
-    _tile_data = tile_set_rotate(_tile_data, rotation_state);
+    _tile_data = tile_set_rotate(_tile_data, _rotation_state);
     
     // Set the rotated tile back to the tilemap
     tilemap_set_at_pixel(global.back_tiles_underground, _tile_data, _xpos, _ypos);
