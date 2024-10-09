@@ -46,7 +46,7 @@ function scr_dig_tunel(){
 	}
 }
 
-function draw_tunel(_mx, _my, _dig_data,_rotation_state,tiles,tilesr){
+function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 	_player=obj_you;
 	scr_place_tile(0,1,_mx,_my);
 	
@@ -170,6 +170,7 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state,tiles,tilesr){
 					show_debug_message("dig 4 West case");
 					break;
 			}
+			break;
 		case tiles[4]:
 			switch (n_tile){
 				case tiles[15]:
@@ -191,7 +192,135 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state,tiles,tilesr){
 					show_debug_message("dig 5 North case");
 					break;
 			}
-		
+			break;
+		case tilesr[8]:
+			switch (w_tile){
+				case tilesr[15]:
+					scr_place_tile(1,18,_mx-64,_my);
+					break;
+				case tilesr[7]:
+					scr_place_tile(1,9,_mx-64,_my);
+					break;
+				case tilesr[12]:
+					scr_place_tile(0,14,_mx-64,_my);
+					break;
+				default:
+					show_debug_message("dig 9r West case");
+					break;
+			}
+			switch(s_tile){
+				case tiles[2]:
+					scr_place_tile(1,9,_mx,_my+64);
+					break;
+				case tiles[3]:
+					scr_place_tile(1,19,_mx,_my+64);
+					break;
+				case tilesr[14]:
+					scr_place_tile(1,14,_mx,_my+64);
+					break;
+				case tilesr[10]:
+					scr_place_tile(1,8,_mx,_my+64);
+					break;
+				case tilesr[11]:
+					scr_place_tile(1,18,_mx,_my+64);
+					break;
+				default:
+					show_debug_message("dig 9r South case");
+					break;
+			}
+			break;
+		case tiles[9]:
+			switch(s_tile){
+				case tiles[4]:
+					scr_place_tile(0,6,_mx,_my+64);
+					break;
+				case tiles[13]:
+					scr_place_tile(0,10,_mx,_my+64);
+					break;
+				case tilesr[16]:
+					scr_place_tile(1,5,_mx,_my+64);
+					break;
+				case tilesr[12]:
+					scr_place_tile(0,9,_mx,_my+64);
+					break;
+				default:
+					show_debug_message("dig 9 South case");
+					break;
+			}
+			break;
+		case tiles[13]:
+			switch(n_tile){
+				case tiles[15]:
+					scr_place_tile(1,4,_mx,_my-64);
+					break;
+				case tiles[9]:
+					scr_place_tile(0,6,_mx,_my-64);
+					break;
+				case tiles[13]:
+					scr_place_tile(0,5,_mx,_my-64);
+					break;
+				case tiles[17]:
+					scr_place_tile(1,5,_mx,_my-64);
+					break;
+				case tilesr[11]:
+					scr_place_tile(0,4,_mx,_my-64);
+					break;
+				case tilesr[17]:
+					scr_place_tile(1,10,_mx,_my-64);
+					break;
+				default:
+					show_debug_message("dig 14 N case");
+					break;
+			}
+			switch(s_tile){
+				case tiles[4]:
+					scr_place_tile(0,6,_mx,_my+64);
+					break;
+				case tiles[13]:
+					scr_place_tile(0,10,_mx,_my+64);
+					break;
+				case tilesr[16]:
+					scr_place_tile(1,5,_mx,_my+64);
+					break;
+				case tilesr[12]:
+					scr_place_tile(0,9,_mx,_my+64);
+					break;
+				case tiles[14]:
+					scr_place_tile(1,9,_mx,_my+64);
+					break;
+				case tiles[16]:
+					scr_place_tile(1,10,_mx,_my+64);
+					break;
+				default:
+					show_debug_message("dig 14 S case");
+					break;
+			}
+			break;
+		case tilesr[9]:
+			switch (w_tile){
+				case tilesr[4]:
+					scr_place_tile(0,6,_mx-64,_my);
+					break;
+				case tilesr[13]:
+					scr_place_tile(1,10,_mx-64,_my);
+					break;
+				case tilesr[14]:
+					scr_place_tile(0,4,_mx-64,_my);
+					break;
+				case tilesr[16]:
+					scr_place_tile(1,17,_mx-64,_my);
+					break;
+				case tiles[17]:
+					scr_place_tile(0,10,_mx-64,_my);
+					break;
+				case tiles[11]:
+					scr_place_tile(1,9,_mx-64,_my);
+					break;
+				default:
+					show_debug_message("dig 10r W case");
+					break;
+			}
+			break;
 		default:
 			break;
 			
