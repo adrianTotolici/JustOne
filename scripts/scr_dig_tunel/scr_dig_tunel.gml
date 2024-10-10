@@ -49,280 +49,362 @@ function scr_dig_tunel(){
 function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 	_player=obj_you;
 	scr_place_tile(0,1,_mx,_my);
+	_sprite_size=64;
 	
 	tiles=obj_underground.tiles;
 	tilesr=obj_underground.tiles_r;
 	n_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx,_my-64);
-	nww_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx-64,_my-64);
 	w_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx-64,_my);
+	e_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx+64,_my);
 	s_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx,_my+64);
+	nww_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx-64,_my-64);
+	nee_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx+64,_my-64);
 	sww_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx-64,_my+64);
+	see_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx+64,_my+64);
 	
-	switch (_dig_data){
-		case tiles[2]:
-			switch (n_tile){
-				case tiles[6]:
-					scr_place_tile(1,3,_mx,_my-64);
-					break;
-				case tiles[2]:
-					scr_place_tile(0,4,_mx,_my-64);
-					break;
-				case tilesr[8]:
-					scr_place_tile(1,10,_mx,_my-64);
-					break;
-				case tilesr[11]:
-					scr_place_tile(0,4,_mx,_my-64);
-					break;
-				case tiles[14]:
-					scr_place_tile(0,17,_mx,_my-64);
-					break;
-				case tiles[15]:
-					scr_place_tile(0,14,_mx,_my-64);
-					break;
-				default:
-					show_debug_message("dig 3 North case");
-					break;
-			}
-			switch (w_tile){
-				case 0:
-					scr_place_tile(0,3,_mx-64,_my);
-					break;
-				case tilesr[6]:
-					scr_place_tile(1,12,_mx-64,_my);
-					break;
-				case tiles[7]:
-					scr_place_tile(0,14,_mx-64,_my);
-					break;
-				case tiles[10]:
-					scr_place_tile(0,15,_mx-64,_my);
-					break;
-				default:
-					show_debug_message("dig 3 West case");
-					break;
-			}
-			switch (s_tile){
-				case tiles[3]:
-					scr_place_tile(1,10,_mx,_my+64);
-					break;
-				case tilesr[10]:
-					scr_place_tile(1,8,_mx,_my+64);
-					break;
-				case tilesr[11]:
-					scr_place_tile(1,18,_mx,_my+64);
-					break;
-				case tilesr[14]:
-					scr_place_tile(0,14,_mx,_my+64);
-					break;
-				default:
-					show_debug_message("dig 3 South case");
-					break;
-			}
-			switch (sww_tile){
-				case 0:
-					scr_place_tile(0,7,_mx-64,_my-64);
-					break;
-				default:
-					break;
-			}
-			switch (nww_tile){
-				case 0:
-					scr_place_tile(1,11,_mx-64,_my+64);
-					break;
-				default:
-					break;
-			}
-			break;
-		case tiles[3]:
-			switch (n_tile){
-				case tiles[2]:
-					scr_place_tile(0,4,_mx,_my-64);
-					break;
-				case tiles[6]:
-					scr_place_tile(1,3,_mx,_my-64);
-					break;
-				case tilesr[11]:
-					scr_place_tile(1,14,_mx,_my-64);
-					break;
-				case tilesr[14]:
-					scr_place_tile(0,17,_mx,_my-64);
-					break;
-				default:
-					show_debug_message("dig 4 North case");
-					break;
-			}
-			switch (w_tile){
-				case tilesr[2]:
-					scr_place_tile(0,4,_mx-64,_my);
-					break;
-				case tilesr[3]:
-					scr_place_tile(0,5,_mx-64,_my);
-					break;
-				case tiles[15]:
-					scr_place_tile(0,14,_mx-64,_my);
-					break;
-				case tiles[6]:
-					scr_place_tile(0,3,_mx-64,_my);
-					break;
-				case tilesr[12]:
-					scr_place_tile(0,17,_mx-64,_my);
-					break;
-				default:
-					show_debug_message("dig 4 West case");
-					break;
-			}
-			break;
-		case tiles[4]:
-			switch (n_tile){
-				case tiles[15]:
-					scr_place_tile(1,4,_mx,_my-64);
-					break;
-				case tiles[9]:
-					scr_place_tile(0,6,_mx,_my-64);
-					break;
-				case tiles[17]:
-					scr_place_tile(1,5,_mx,_my-64);
-					break;
-				case tilesr[11]:
-					scr_place_tile(0,4,_mx,_my-64);
-					break;
-				case tilesr[17]:
-					scr_place_tile(1,10,_mx,_my-64);
-					break;
-				default:
-					show_debug_message("dig 5 North case");
-					break;
-			}
-			break;
-		case tilesr[8]:
-			switch (w_tile){
-				case tilesr[15]:
-					scr_place_tile(1,18,_mx-64,_my);
-					break;
-				case tilesr[7]:
-					scr_place_tile(1,9,_mx-64,_my);
-					break;
-				case tilesr[12]:
-					scr_place_tile(0,14,_mx-64,_my);
-					break;
-				default:
-					show_debug_message("dig 9r West case");
-					break;
-			}
-			switch(s_tile){
-				case tiles[2]:
-					scr_place_tile(1,9,_mx,_my+64);
-					break;
-				case tiles[3]:
-					scr_place_tile(1,19,_mx,_my+64);
-					break;
-				case tilesr[14]:
-					scr_place_tile(1,14,_mx,_my+64);
-					break;
-				case tilesr[10]:
-					scr_place_tile(1,8,_mx,_my+64);
-					break;
-				case tilesr[11]:
-					scr_place_tile(1,18,_mx,_my+64);
-					break;
-				default:
-					show_debug_message("dig 9r South case");
-					break;
-			}
-			break;
-		case tiles[9]:
-			switch(s_tile){
-				case tiles[4]:
-					scr_place_tile(0,6,_mx,_my+64);
-					break;
-				case tiles[13]:
-					scr_place_tile(0,10,_mx,_my+64);
-					break;
-				case tilesr[16]:
-					scr_place_tile(1,5,_mx,_my+64);
-					break;
-				case tilesr[12]:
-					scr_place_tile(0,9,_mx,_my+64);
-					break;
-				default:
-					show_debug_message("dig 9 South case");
-					break;
-			}
-			break;
-		case tiles[13]:
-			switch(n_tile){
-				case tiles[15]:
-					scr_place_tile(1,4,_mx,_my-64);
-					break;
-				case tiles[9]:
-					scr_place_tile(0,6,_mx,_my-64);
-					break;
-				case tiles[13]:
-					scr_place_tile(0,5,_mx,_my-64);
-					break;
-				case tiles[17]:
-					scr_place_tile(1,5,_mx,_my-64);
-					break;
-				case tilesr[11]:
-					scr_place_tile(0,4,_mx,_my-64);
-					break;
-				case tilesr[17]:
-					scr_place_tile(1,10,_mx,_my-64);
-					break;
-				default:
-					show_debug_message("dig 14 N case");
-					break;
-			}
-			switch(s_tile){
-				case tiles[4]:
-					scr_place_tile(0,6,_mx,_my+64);
-					break;
-				case tiles[13]:
-					scr_place_tile(0,10,_mx,_my+64);
-					break;
-				case tilesr[16]:
-					scr_place_tile(1,5,_mx,_my+64);
-					break;
-				case tilesr[12]:
-					scr_place_tile(0,9,_mx,_my+64);
-					break;
-				case tiles[14]:
-					scr_place_tile(1,9,_mx,_my+64);
-					break;
-				case tiles[16]:
-					scr_place_tile(1,10,_mx,_my+64);
-					break;
-				default:
-					show_debug_message("dig 14 S case");
-					break;
-			}
-			break;
-		case tilesr[9]:
-			switch (w_tile){
-				case tilesr[4]:
-					scr_place_tile(0,6,_mx-64,_my);
-					break;
-				case tilesr[13]:
-					scr_place_tile(1,10,_mx-64,_my);
-					break;
-				case tilesr[14]:
-					scr_place_tile(0,4,_mx-64,_my);
-					break;
-				case tilesr[16]:
-					scr_place_tile(1,17,_mx-64,_my);
-					break;
-				case tiles[17]:
-					scr_place_tile(0,10,_mx-64,_my);
-					break;
-				case tiles[11]:
-					scr_place_tile(1,9,_mx-64,_my);
-					break;
-				default:
-					show_debug_message("dig 10r W case");
-					break;
-			}
-			break;
-		default:
-			break;
-			
+	if (_dig_data==tilesr[2] || _dig_data==tiles[6] || _dig_data==tilesr[6] || _dig_data==0){
+		switch (n_tile){
+			case tilesr[7]:
+				scr_place_tile(1,14,_mx,_my-_sprite_size);
+				break;
+			case tiles[10]:
+				scr_place_tile(0,13,_mx,_my-_sprite_size);
+				break;
+			case tilesr[10]:
+				scr_place_tile(1,15,_mx,_my-_sprite_size);
+				break;
+			case 0:
+				scr_place_tile(1,3,_mx,_my-_sprite_size);
+				break;
+			default:
+				break;
+		}
+		if (nee_tile==0){
+			scr_place_tile(0,7,_mx-64,_my-64);
+		}
+		if (nww_tile==0){
+			scr_place_tile(1,7,_mx+64,_my-64);
+		}
 	}
+		
+	if (_dig_data==tilesr[3] || _dig_data==tiles[15] || _dig_data==tiles[7] || _dig_data==tiles[10] || _dig_data==tiles[12]){
+		switch(n_tile){
+			case tilesr[15]:
+				scr_place_tile(1,14,_mx,_my-_sprite_size);
+				break;
+			case tilesr[6]:
+				scr_place_tile(1,3,_mx,_my-_sprite_size);
+				break;
+			case tiles[7]:
+				scr_place_tile(1,4,_mx,_my-_sprite_size);
+				break;
+			case tiles[8]:
+				scr_place_tile(1,5,_mx,_my-_sprite_size);
+				break;
+			case tilesr[12]:
+				scr_place_tile(1,17,_mx,_my-_sprite_size);
+				break;
+			default:
+				break;
+		}
+		if (nee_tile==0){
+			scr_place_tile(0,7,_mx-64,_my-64);
+		}
+	}
+	
+	if (_dig_data==tiles[3] || _dig_data==tiles[2] || _dig_data==tilesr[14] || _dig_data==tilesr[10]){
+		switch(n_tile){
+			case tiles[6]:
+				scr_place_tile(1,3,_mx,_my-_sprite_size);
+				break;
+			case tiles[2]:
+				scr_place_tile(0,4,_mx,_my-_sprite_size);
+				break;
+			case tilesr[8]:
+				scr_place_tile(1,10,_mx,_my-_sprite_size);
+				break;
+			case tilesr[11]:
+				scr_place_tile(0,4,_mx,_my-_sprite_size);
+				break;
+			case tiles[14]:
+				scr_place_tile(0,17,_mx,_my-_sprite_size);
+				break;
+			case tiles[15]:
+				scr_place_tile(0,14,_mx,_my-_sprite_size);
+				break;
+			default:
+				break;
+		}
+		if (nww_tile==0){
+			scr_place_tile(1,7,_mx+64,_my-64);
+		}
+	}
+	
+	//switch (_dig_data){
+	//	case tiles[2]:
+	//		switch (n_tile){
+	//			case tiles[6]:
+	//				scr_place_tile(1,3,_mx,_my-64);
+	//				break;
+	//			case tiles[2]:
+	//				scr_place_tile(0,4,_mx,_my-64);
+	//				break;
+	//			case tilesr[8]:
+	//				scr_place_tile(1,10,_mx,_my-64);
+	//				break;
+	//			case tilesr[11]:
+	//				scr_place_tile(0,4,_mx,_my-64);
+	//				break;
+	//			case tiles[14]:
+	//				scr_place_tile(0,17,_mx,_my-64);
+	//				break;
+	//			case tiles[15]:
+	//				scr_place_tile(0,14,_mx,_my-64);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 3 North case");
+	//				break;
+	//		}
+	//		switch (w_tile){
+	//			case 0:
+	//				scr_place_tile(0,3,_mx-64,_my);
+	//				break;
+	//			case tilesr[6]:
+	//				scr_place_tile(1,12,_mx-64,_my);
+	//				break;
+	//			case tiles[7]:
+	//				scr_place_tile(0,14,_mx-64,_my);
+	//				break;
+	//			case tiles[10]:
+	//				scr_place_tile(0,15,_mx-64,_my);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 3 West case");
+	//				break;
+	//		}
+	//		switch (s_tile){
+	//			case tiles[3]:
+	//				scr_place_tile(1,10,_mx,_my+64);
+	//				break;
+	//			case tilesr[10]:
+	//				scr_place_tile(1,8,_mx,_my+64);
+	//				break;
+	//			case tilesr[11]:
+	//				scr_place_tile(1,18,_mx,_my+64);
+	//				break;
+	//			case tilesr[14]:
+	//				scr_place_tile(0,14,_mx,_my+64);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 3 South case");
+	//				break;
+	//		}
+	//		switch (sww_tile){
+	//			case 0:
+	//				scr_place_tile(0,7,_mx-64,_my-64);
+	//				break;
+	//			default:
+	//				break;
+	//		}
+	//		switch (nww_tile){
+	//			case 0:
+	//				scr_place_tile(1,11,_mx-64,_my+64);
+	//				break;
+	//			default:
+	//				break;
+	//		}
+	//		break;
+	//	case tiles[3]:
+	//		switch (n_tile){
+	//			case tiles[2]:
+	//				scr_place_tile(0,4,_mx,_my-64);
+	//				break;
+	//			case tiles[6]:
+	//				scr_place_tile(1,3,_mx,_my-64);
+	//				break;
+	//			case tilesr[11]:
+	//				scr_place_tile(1,14,_mx,_my-64);
+	//				break;
+	//			case tilesr[14]:
+	//				scr_place_tile(0,17,_mx,_my-64);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 4 North case");
+	//				break;
+	//		}
+	//		switch (w_tile){
+	//			case tilesr[2]:
+	//				scr_place_tile(0,4,_mx-64,_my);
+	//				break;
+	//			case tilesr[3]:
+	//				scr_place_tile(0,5,_mx-64,_my);
+	//				break;
+	//			case tiles[15]:
+	//				scr_place_tile(0,14,_mx-64,_my);
+	//				break;
+	//			case tiles[6]:
+	//				scr_place_tile(0,3,_mx-64,_my);
+	//				break;
+	//			case tilesr[12]:
+	//				scr_place_tile(0,17,_mx-64,_my);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 4 West case");
+	//				break;
+	//		}
+	//		break;
+	//	case tiles[4]:
+	//		switch (n_tile){
+	//			case tiles[15]:
+	//				scr_place_tile(1,4,_mx,_my-64);
+	//				break;
+	//			case tiles[9]:
+	//				scr_place_tile(0,6,_mx,_my-64);
+	//				break;
+	//			case tiles[17]:
+	//				scr_place_tile(1,5,_mx,_my-64);
+	//				break;
+	//			case tilesr[11]:
+	//				scr_place_tile(0,4,_mx,_my-64);
+	//				break;
+	//			case tilesr[17]:
+	//				scr_place_tile(1,10,_mx,_my-64);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 5 North case");
+	//				break;
+	//		}
+	//		break;
+	//	case tilesr[8]:
+	//		switch (w_tile){
+	//			case tilesr[15]:
+	//				scr_place_tile(1,18,_mx-64,_my);
+	//				break;
+	//			case tilesr[7]:
+	//				scr_place_tile(1,9,_mx-64,_my);
+	//				break;
+	//			case tilesr[12]:
+	//				scr_place_tile(0,14,_mx-64,_my);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 9r West case");
+	//				break;
+	//		}
+	//		switch(s_tile){
+	//			case tiles[2]:
+	//				scr_place_tile(1,9,_mx,_my+64);
+	//				break;
+	//			case tiles[3]:
+	//				scr_place_tile(1,19,_mx,_my+64);
+	//				break;
+	//			case tilesr[14]:
+	//				scr_place_tile(1,14,_mx,_my+64);
+	//				break;
+	//			case tilesr[10]:
+	//				scr_place_tile(1,8,_mx,_my+64);
+	//				break;
+	//			case tilesr[11]:
+	//				scr_place_tile(1,18,_mx,_my+64);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 9r South case");
+	//				break;
+	//		}
+	//		break;
+	//	case tiles[9]:
+	//		switch(s_tile){
+	//			case tiles[4]:
+	//				scr_place_tile(0,6,_mx,_my+64);
+	//				break;
+	//			case tiles[13]:
+	//				scr_place_tile(0,10,_mx,_my+64);
+	//				break;
+	//			case tilesr[16]:
+	//				scr_place_tile(1,5,_mx,_my+64);
+	//				break;
+	//			case tilesr[12]:
+	//				scr_place_tile(0,9,_mx,_my+64);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 9 South case");
+	//				break;
+	//		}
+	//		break;
+	//	case tiles[13]:
+	//		switch(n_tile){
+	//			case tiles[15]:
+	//				scr_place_tile(1,4,_mx,_my-64);
+	//				break;
+	//			case tiles[9]:
+	//				scr_place_tile(0,6,_mx,_my-64);
+	//				break;
+	//			case tiles[13]:
+	//				scr_place_tile(0,5,_mx,_my-64);
+	//				break;
+	//			case tiles[17]:
+	//				scr_place_tile(1,5,_mx,_my-64);
+	//				break;
+	//			case tilesr[11]:
+	//				scr_place_tile(0,4,_mx,_my-64);
+	//				break;
+	//			case tilesr[17]:
+	//				scr_place_tile(1,10,_mx,_my-64);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 14 N case");
+	//				break;
+	//		}
+	//		switch(s_tile){
+	//			case tiles[4]:
+	//				scr_place_tile(0,6,_mx,_my+64);
+	//				break;
+	//			case tiles[13]:
+	//				scr_place_tile(0,10,_mx,_my+64);
+	//				break;
+	//			case tilesr[16]:
+	//				scr_place_tile(1,5,_mx,_my+64);
+	//				break;
+	//			case tilesr[12]:
+	//				scr_place_tile(0,9,_mx,_my+64);
+	//				break;
+	//			case tiles[14]:
+	//				scr_place_tile(1,9,_mx,_my+64);
+	//				break;
+	//			case tiles[16]:
+	//				scr_place_tile(1,10,_mx,_my+64);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 14 S case");
+	//				break;
+	//		}
+	//		break;
+	//	case tilesr[9]:
+	//		switch (w_tile){
+	//			case tilesr[4]:
+	//				scr_place_tile(0,6,_mx-64,_my);
+	//				break;
+	//			case tilesr[13]:
+	//				scr_place_tile(1,10,_mx-64,_my);
+	//				break;
+	//			case tilesr[14]:
+	//				scr_place_tile(0,4,_mx-64,_my);
+	//				break;
+	//			case tilesr[16]:
+	//				scr_place_tile(1,17,_mx-64,_my);
+	//				break;
+	//			case tiles[17]:
+	//				scr_place_tile(0,10,_mx-64,_my);
+	//				break;
+	//			case tiles[11]:
+	//				scr_place_tile(1,9,_mx-64,_my);
+	//				break;
+	//			default:
+	//				show_debug_message("dig 10r W case");
+	//				break;
+	//		}
+	//		break;
+	//	default:
+	//		break;
+			
+	//}
 }
