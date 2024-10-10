@@ -80,10 +80,10 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 				break;
 		}
 		if (nee_tile==0){
-			scr_place_tile(0,7,_mx-64,_my-64);
+			scr_place_tile(1,7,_mx+64,_my-64);
 		}
 		if (nww_tile==0){
-			scr_place_tile(1,7,_mx+64,_my-64);
+			scr_place_tile(0,7,_mx-64,_my-64);
 		}
 	}
 		
@@ -137,6 +137,80 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 		}
 		if (nww_tile==0){
 			scr_place_tile(1,7,_mx+64,_my-64);
+		}
+	}
+		
+	if (_dig_data==tiles[4] || _dig_data==tiles[13] || _dig_data==tilesr[16] || _dig_data==tilesr[12] || _dig_data==tiles[14] || _dig_data==tiles[16]){
+		switch(n_tile){
+			case tiles[15]:
+				scr_place_tile(1,4,_mx,_my-_sprite_size);
+				break;
+			case tiles[9]:
+				scr_place_tile(0,6,_mx,_my-_sprite_size);
+				break;
+			case tiles[17]:
+				scr_place_tile(1,5,_mx,_my-_sprite_size);
+				break;
+			case tilesr[11]:
+				scr_place_tile(0,4,_mx,_my-_sprite_size);
+				break;
+			case tilesr[17]:
+				scr_place_tile(1,10,_mx,_my-_sprite_size);
+				break;
+			default:
+				break;
+		}
+	}
+		
+	if (_dig_data==tiles[2] || _dig_data==tiles[6] || _dig_data==tilesr[10] || _dig_data==0){
+		switch (w_tile){
+			case 0:
+				scr_place_tile(0,3,_mx-64,_my);
+				break;
+			case tilesr[6]:
+				scr_place_tile(1,12,_mx-64,_my);
+				break;
+			case tiles[7]:
+				scr_place_tile(0,14,_mx-64,_my);
+				break;
+			case tiles[10]:
+				scr_place_tile(0,15,_mx-64,_my);
+				break;
+			default:
+				break;
+		}
+		
+		if (sww_tile==0){
+			scr_place_tile(1,11,_mx-64,_my+64);
+		}
+		if (nww_tile==0){
+			scr_place_tile(0,7,_mx-64,_my-64);
+		}
+	}
+		
+	if (_dig_data==tilesr[2] || _dig_data==tiles[3] || _dig_data==tilesr[6] || _dig_data==tilesr[14] || _dig_data==tilesr[11]){
+		switch (w_tile){
+			case tilesr[2]:
+				scr_place_tile(0,4,_mx-64,_my);
+				break;
+			case tilesr[3]:
+				scr_place_tile(0,5,_mx-64,_my);
+				break;
+			case tiles[15]:
+				scr_place_tile(0,14,_mx-64,_my);
+				break;
+			case tiles[12]:
+				scr_place_tile(0,17,_mx-64,_my);
+				break;
+			case tiles[6]:
+				scr_place_tile(0,3,_mx-64,_my);
+				break;
+			default:
+				break;
+		}
+		
+		if (nww_tile==0){
+			scr_place_tile(0,7,_mx-64,_my-64);
 		}
 	}
 	
