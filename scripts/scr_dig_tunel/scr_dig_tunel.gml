@@ -62,6 +62,7 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 	sw_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx-64,_my+64);
 	se_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx+64,_my+64);
 	
+	//N1
 	if (_dig_data==tilesr[2] || _dig_data==tiles[6] || _dig_data==tilesr[6] || _dig_data==0){
 		switch (n_tile){
 			case tilesr[7]:
@@ -79,14 +80,32 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 			default:
 				break;
 		}
-		if (ne_tile==0){
-			scr_place_tile(1,7,_mx+64,_my-64);
+		switch (ne_tile){
+			case 0:
+				scr_place_tile(1,7,_mx+64,_my-64);
+				break;
+			case tiles[6]:
+				scr_place_tile(1,12,_mx+64,_my-64);
+				break;
+			case tiles[2]:
+				scr_place_tile(1,12,_mx+64,_my-64);
+				break;
+			default:
+				break;
+		}
+		switch (e_tile){
+			case tilesr[2]:
+				scr_place_tile(1,4,_mx+64,_my);
+				break;
+			default:
+				break;
 		}
 		if (nw_tile==0){
 			scr_place_tile(0,7,_mx-64,_my-64);
 		}
-	}
 		
+	}
+	//N2	
 	if (_dig_data==tilesr[3] || _dig_data==tiles[15] || _dig_data==tiles[7] || _dig_data==tiles[10] || _dig_data==tiles[12]){
 		switch(n_tile){
 			case tilesr[15]:
@@ -111,7 +130,7 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 			scr_place_tile(0,7,_mx+64,_my-64);
 		}
 	}
-	
+	//N3
 	if (_dig_data==tiles[3] || _dig_data==tiles[2] || _dig_data==tilesr[14] || _dig_data==tilesr[10]){
 		switch(n_tile){
 			case tiles[6]:
@@ -139,7 +158,7 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 			scr_place_tile(1,7,_mx-64,_my-64);
 		}
 	}
-		
+	//N4	
 	if (_dig_data==tiles[4] || _dig_data==tiles[13] || _dig_data==tilesr[16] || _dig_data==tilesr[12] || _dig_data==tiles[14] || _dig_data==tiles[16]){
 		switch(n_tile){
 			case tiles[15]:
@@ -161,7 +180,7 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 				break;
 		}
 	}
-		
+	//W1	
 	if (_dig_data==tiles[2] || _dig_data==tiles[6] || _dig_data==tilesr[10] || _dig_data==0){
 		switch (w_tile){
 			case 0:
@@ -186,8 +205,11 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 		if (nw_tile==0){
 			scr_place_tile(0,7,_mx-64,_my-64);
 		}
+		if (s_tile==tiles[2]){
+			scr_place_tile(1,9,_mx,_my+64);
+		}
 	}
-		
+	//W2	
 	if (_dig_data==tilesr[2] || _dig_data==tiles[3] || _dig_data==tilesr[6] || _dig_data==tilesr[14] || _dig_data==tilesr[11]){
 		switch (w_tile){
 			case tilesr[2]:
@@ -213,7 +235,7 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 			scr_place_tile(0,7,_mx-64,_my-64);
 		}
 	}
-	
+	//W3
 	if(_dig_data==tilesr[8] || _dig_data==tiles[10] || _dig_data==tiles[11] || _dig_data==tiles[14]){
 		switch (w_tile){
 			case tilesr[15]:
@@ -238,7 +260,7 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 			scr_place_tile(1,11,_mx-64,_my+64);
 		}
 	}
-		
+	//W4	
 	if (_dig_data==tilesr[13] || _dig_data==tilesr[15] || _dig_data==tilesr[9] || _dig_data==tiles[16] || _dig_data==tilesr[17]){
 		switch(w_tile){
 			case tilesr[4]:
@@ -263,7 +285,7 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 				break;
 		}
 	}
-		
+	//E1
 	if (_dig_data==tilesr[6] || _dig_data==tiles[7] || _dig_data==tiles[10] || _dig_data==0){
 		switch(e_tile){
 			case tiles[2]:
@@ -276,20 +298,45 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 				scr_place_tile(1,13,_mx+64,_my);
 				break;
 			case 0:
-				scr_place_tile(9,8,_mx+64,_my);
+				scr_place_tile(0,8,_mx+64,_my);
+				break;
+			case tilesr[8]:
+				scr_place_tile(0,10,_mx+64,_my);
+				break;
+			case tiles[10]:
+				scr_place_tile(0,8,_mx+64,_my);
+				break;
+			case tiles[11]:
+				scr_place_tile(0,18,_mx+64,_my);
+				break;
+			case tiles[14]:
+				scr_place_tile(0,14,_mx+64,_my);
 				break;
 			default:
 				break;
 		}
-		
-		if (ne_tile==0){
-			scr_place_tile(1,7,_mx+64,_my-64);
+		switch (ne_tile){
+			case 0:
+				scr_place_tile(1,7,_mx+64,_my-64);
+				break;
+			case tiles[2]:
+				scr_place_tile(1,12,_mx+64,_my-64);
+				break;
+			default:
+				break;
 		}
-		if (se_tile==0){
-			scr_place_tile(0,11,_mx+64,_my+64);
+		switch (se_tile){
+			case 0:
+				scr_place_tile(0,11,_mx+64,_my+64);
+				break;
+			case tiles[2]:
+				scr_place_tile(0,15,_mx+64,_my+64);
+				break;
+			default:
+				break;
 		}
 	}
-		
+	//E2	
 	if (_dig_data==tilesr[2] || _dig_data==tilesr[3] || _dig_data==tiles[15] || _dig_data==tiles[6] || _dig_data==tiles[12]){
 		switch(e_tile){
 			case tiles[3]:
@@ -309,6 +356,163 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 		}
 		if (ne_tile==0){
 			scr_place_tile(1,7,_mx+64,_my-64);
+		}
+	}
+	//E3	
+	if (_dig_data==tilesr[15] || _dig_data==tilesr[7] || _dig_data==tiles[8] || _dig_data==tilesr[10] || _dig_data==tilesr[12]){
+		switch(e_tile){
+			case tilesr[7]:
+				scr_place_tile(0,9,_mx+64,_my);
+				break;
+			case tilesr[8]:
+				scr_place_tile(0,10,_mx+64,_my);
+				break;
+			case tiles[10]:
+				scr_place_tile(0,8,_mx+64,_my);
+				break;
+			case tiles[11]:
+				scr_place_tile(0,18,_mx+64,_my);
+				break;
+			case tiles[14]:
+				scr_place_tile(0,14,_mx+64,_my);
+				break;
+			default:
+				break;
+		}
+		if (se_tile==0){
+			scr_place_tile(0,11,_mx+64,_my+64)
+		}
+	}
+	//E4
+	if (_dig_data==tilesr[4] || _dig_data==tilesr[13] || _dig_data==tilesr[14] || _dig_data==tilesr[16] || _dig_data==tiles[17] || _dig_data==tiles[11]){
+		switch(e_tile){
+			case tilesr[13]:
+				scr_place_tile(1,5,_mx+64,_my);
+				break;
+			case tilesr[15]:
+				scr_place_tile(0,9,_mx+64,_my);
+				break;
+			case tilesr[9]:
+				scr_place_tile(0,6,_mx+64,_my);
+				break;
+			case tiles[12]:
+				scr_place_tile(1,4,_mx+64,_my);
+				break;
+			case tiles[16]:
+				scr_place_tile(0,5,_mx+64,_my);
+				break;
+			default:
+				break;
+		}
+	}
+	//S1
+	if (_dig_data==tilesr[7] || _dig_data==tiles[10] || _dig_data==tilesr[10] || _dig_data==0){
+		switch (s_tile){
+			case tilesr[2]:
+				scr_place_tile(1,14,_mx,_my+64);
+				break;
+			case tiles[6]:
+				scr_place_tile(0,12,_mx,_my+64);
+				break;
+			case tilesr[6]:
+				scr_place_tile(1,16,_mx,_my+64);
+				break;
+			case 0:
+				scr_place_tile(1,8,_mx,_my+64);
+				break;
+			default:
+				break;
+		}
+		switch (w_tile){
+			case tilesr[10]:
+				scr_place_tile(0,3,_mx-64,_my);
+				break;
+			case tilesr[7]:
+				scr_place_tile(1,9,_mx-64,_my);
+				break;
+			default:
+				break;
+		}
+		
+		if (sw_tile==0){
+			scr_place_tile(1,11,_mx-64,_my+64);
+		}
+		if (se_tile==0){
+			scr_place_tile(0,11,_mx+64,_my+64);
+		}
+	}
+	//S2
+	if (_dig_data==tiles[2] || _dig_data==tiles[6] || _dig_data==tilesr[8] || _dig_data==tiles[11] || _dig_data==tiles[14]){
+		switch(s_tile){
+			case tiles[3]:
+				scr_place_tile(1,10,_mx,_my+64);
+				break;
+			case tilesr[14]:
+				scr_place_tile(1,14,_mx,_my+64);
+				break;
+			case tilesr[10]:
+				scr_place_tile(1,8,_mx,_my+64);
+				break;
+			case tilesr[11]:
+				scr_place_tile(1,18,_mx,_my+64);
+				break;
+			default:
+				break;
+		}
+		
+		if (sw_tile){
+			scr_place_tile(1,11,_mx-64,_my+64);
+		}
+	}
+	//S3
+	if (_dig_data==tilesr[15] || _dig_data==tilesr[6] || _dig_data==tiles[7] || _dig_data==tiles[8]){
+		switch(s_tile){
+			case tilesr[3]:
+				scr_place_tile(0,10,_mx,_my+64);
+				break;
+			case tiles[15]:
+				scr_place_tile(0,18,_mx,_my+64);
+				break;
+			case tiles[7]:
+				scr_place_tile(0,9,_mx,_my+64);
+				break;
+			case tiles[10]:
+				scr_place_tile(1,8,_mx,_my+64);
+				break;
+			case tiles[12]:
+				scr_place_tile(1,14,_mx,_my+64);
+				break;
+			default:
+				break;
+		}
+		
+		if(se_tile){
+			scr_place_tile(0,11,_mx+64,_my+64);
+		}
+	}
+	//S4
+	if (_dig_data==tiles[15] || _dig_data==tiles[9] || _dig_data==tiles[13] || _dig_data==tiles[17] || _dig_data==tilesr[11] || _dig_data==tilesr[17]){
+		switch(s_tile){
+			case tiles[4]:
+				scr_place_tile(0,6,_mx,_my+64);
+				break;
+			case tiles[13]:
+				scr_place_tile(0,10,_mx,_my+64);
+				break;
+			case tilesr[16]:
+				scr_place_tile(1,5,_mx,_my+64);
+				break;
+			case tilesr[12]:
+				scr_place_tile(0,9,_mx,_my+64);
+				break;
+			case tiles[14]:
+				scr_place_tile(1,9,_mx,_my+64);
+				break;
+			case tiles[16]:
+				scr_place_tile(1,10,_mx,_my+64);
+				break;
+			default:
+				break;
 		}
 	}
 }
