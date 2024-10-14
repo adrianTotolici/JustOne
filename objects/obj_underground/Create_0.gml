@@ -21,8 +21,8 @@ _player=obj_you;
 tile_x=_player.x div 64;
 tile_y=_player.y div 64;
 
-tiles=array_create(18,noone);
-tiles_r=array_create(18,noone);
+tiles=array_create(25,noone);
+tiles_r=array_create(25,noone);
 
 for (i=0;i<array_length(tiles);i++){
 	tiles[i]=tile_set_index(ts_underground, i+1);

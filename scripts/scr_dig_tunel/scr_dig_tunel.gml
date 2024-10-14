@@ -53,14 +53,14 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 	
 	tiles=obj_underground.tiles;
 	tilesr=obj_underground.tiles_r;
-	n_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx,_my-64);
-	w_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx-64,_my);
-	e_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx+64,_my);
-	s_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx,_my+64);
-	nw_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx-64,_my-64);
-	ne_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx+64,_my-64);
-	sw_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx-64,_my+64);
-	se_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx+64,_my+64);
+	n_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx,_my-_sprite_size);
+	w_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx-_sprite_size,_my);
+	e_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx+_sprite_size,_my);
+	s_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx,_my+_sprite_size);
+	nw_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx-_sprite_size,_my-_sprite_size);
+	ne_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx+_sprite_size,_my-_sprite_size);
+	sw_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx-_sprite_size,_my+_sprite_size);
+	se_tile=tilemap_get_at_pixel(global.back_tiles_underground,_mx+_sprite_size,_my+_sprite_size);
 	
 	//N1
 	if (_dig_data==tilesr[2] || _dig_data==tiles[6] || _dig_data==tilesr[6] || _dig_data==0){
@@ -76,6 +76,9 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 				break;
 			case 0:
 				scr_place_tile(1,3,_mx,_my-_sprite_size);
+				break;
+			case tiles[18]:
+				scr_place_tile(0,25,_mx,_my-_sprite_size);
 				break;
 			default:
 				break;
@@ -123,11 +126,20 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 			case tilesr[12]:
 				scr_place_tile(1,17,_mx,_my-_sprite_size);
 				break;
+			case tilesr[19]:
+				scr_place_tile(0,13,_mx,_my-_sprite_size);
+				break;
+			case tiles[20]:
+				scr_place_tile(1,15,_mx,_my-_sprite_size);
+				break;
+			case tilesr[22]:
+				scr_place_tile(0,25,_mx,_my-_sprite_size);
+				break;
 			default:
 				break;
 		}
 		if (ne_tile==0){
-			scr_place_tile(0,7,_mx+64,_my-64);
+			scr_place_tile(0,7,_mx+_sprite_size,_my-_sprite_size);
 		}
 	}
 	//N3
@@ -151,11 +163,20 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 			case tiles[15]:
 				scr_place_tile(0,14,_mx,_my-_sprite_size);
 				break;
+			case tilesr[18]:
+				scr_place_tile(1,13,_mx,_my-_sprite_size);
+				break;
+			case tilesr[20]:
+				scr_place_tile(0,13,_mx,_my-_sprite_size);
+				break;
+			case tiles[21]:
+				scr_place_tile(0,25,_mx,_my-_sprite_size);
+				break;
 			default:
 				break;
 		}
 		if (nw_tile==0){
-			scr_place_tile(1,7,_mx-64,_my-64);
+			scr_place_tile(1,7,_mx-_sprite_size,_my-_sprite_size);
 		}
 	}
 	//N4	
@@ -176,6 +197,21 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 			case tilesr[17]:
 				scr_place_tile(1,10,_mx,_my-_sprite_size);
 				break;
+			case tiles[19]:
+				scr_place_tile(1,3,_mx,_my-_sprite_size);
+				break;
+			case tilesr[21]:
+				scr_place_tile(1,15,_mx,_my-_sprite_size);
+				break;
+			case tiles[22]:
+				scr_place_tile(0,13,_mx,_my-_sprite_size);
+				break;
+			case tiles[23]:
+				scr_place_tile(0,25,_mx,_my-_sprite_size);
+				break;
+			case tiles[25]:
+				scr_place_tile(1,14,_mx,_my-_sprite_size);
+				break;
 			default:
 				break;
 		}
@@ -184,48 +220,60 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 	if (_dig_data==tiles[2] || _dig_data==tiles[6] || _dig_data==tilesr[10] || _dig_data==0){
 		switch (w_tile){
 			case 0:
-				scr_place_tile(0,3,_mx-64,_my);
+				scr_place_tile(0,3,_mx-_sprite_size,_my);
 				break;
 			case tilesr[6]:
-				scr_place_tile(1,12,_mx-64,_my);
+				scr_place_tile(1,12,_mx-_sprite_size,_my);
 				break;
 			case tiles[7]:
-				scr_place_tile(0,14,_mx-64,_my);
+				scr_place_tile(0,14,_mx-_sprite_size,_my);
 				break;
 			case tiles[10]:
-				scr_place_tile(0,15,_mx-64,_my);
+				scr_place_tile(0,15,_mx-_sprite_size,_my);
+				break;
+			case tilesr[19]:
+				scr_place_tile(1,26,_mx-_sprite_size,_my);
 				break;
 			default:
 				break;
 		}
 		
 		if (sw_tile==0){
-			scr_place_tile(1,11,_mx-64,_my+64);
+			scr_place_tile(1,11,_mx-_sprite_size,_my+_sprite_size);
 		}
 		if (nw_tile==0){
-			scr_place_tile(0,7,_mx-64,_my-64);
+			scr_place_tile(0,7,_mx-_sprite_size,_my-_sprite_size);
 		}
 		if (s_tile==tiles[2]){
-			scr_place_tile(1,9,_mx,_my+64);
+			scr_place_tile(1,9,_mx,_my+_sprite_size);
 		}
 	}
 	//W2	
 	if (_dig_data==tilesr[2] || _dig_data==tiles[3] || _dig_data==tilesr[6] || _dig_data==tilesr[14] || _dig_data==tilesr[11]){
 		switch (w_tile){
 			case tilesr[2]:
-				scr_place_tile(0,4,_mx-64,_my);
+				scr_place_tile(0,4,_mx-_sprite_size,_my);
 				break;
 			case tilesr[3]:
-				scr_place_tile(0,5,_mx-64,_my);
+				scr_place_tile(0,5,_mx-_sprite_size,_my);
 				break;
 			case tiles[15]:
-				scr_place_tile(0,14,_mx-64,_my);
+				scr_place_tile(0,14,_mx-_sprite_size,_my);
 				break;
 			case tiles[12]:
-				scr_place_tile(0,17,_mx-64,_my);
+				scr_place_tile(0,17,_mx-_sprite_size,_my);
 				break;
 			case tiles[6]:
-				scr_place_tile(0,3,_mx-64,_my);
+				scr_place_tile(0,3,_mx-_sprite_size,_my);
+				break;
+			case tiles[19]:
+				scr_place_tile(1,12,_mx-_sprite_size,_my)
+				break;
+			case tilesr[20]:
+				scr_place_tile(0,15,_mx-_sprite_size,_my);
+				break;
+			case tiles[22]:
+				scr_place_tile(1,26,_mx-_sprite_size,_my);
 				break;
 			default:
 				break;
@@ -239,47 +287,77 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 	if(_dig_data==tilesr[8] || _dig_data==tiles[10] || _dig_data==tiles[11] || _dig_data==tiles[14]){
 		switch (w_tile){
 			case tilesr[15]:
-				scr_place_tile(1,18,_mx-64,_my-64);
+				scr_place_tile(1,18,_mx-_sprite_size,_my-_sprite_size);
 				break;
 			case tilesr[7]:
-				scr_place_tile(1,9,_mx-64,_my-64);
+				scr_place_tile(1,9,_mx-_sprite_size,_my-_sprite_size);
 				break;
 			case tiles[8]:
-				scr_place_tile(0,10,_mx-64,_my-64);
+				scr_place_tile(0,10,_mx-_sprite_size,_my-_sprite_size);
 				break;
 			case tilesr[10]:
-				scr_place_tile(0,3,_mx-64,_my-64);
+				scr_place_tile(0,3,_mx-_sprite_size,_my-_sprite_size);
 				break;
 			case tilesr[12]:
-				scr_place_tile(0,14,_mx-64,_my-64);
+				scr_place_tile(0,14,_mx-_sprite_size,_my-_sprite_size);
+				break;
+			case tiles[18]:
+				scr_place_tile(0,15,_mx-_sprite_size,_my-_sprite_size);
+				break;
+			case tilesr[20]:
+				scr_place_tile(1,12,_mx-_sprite_size,_my-_sprite_size);
+				break;
+			case tilesr[22]:
+				scr_place_tile(1,26,_mx-_sprite_size,_my-_sprite_size);
 				break;
 			default:
 				break;
 		}
 		if (sw_tile==0){
-			scr_place_tile(1,11,_mx-64,_my+64);
+			scr_place_tile(1,11,_mx-_sprite_size,_my+_sprite_size);
 		}
 	}
 	//W4	
-	if (_dig_data==tilesr[13] || _dig_data==tilesr[15] || _dig_data==tilesr[9] || _dig_data==tiles[16] || _dig_data==tilesr[17]){
+	if (_dig_data==tiles[13] || _dig_data==tilesr[15] || _dig_data==tilesr[9] || _dig_data==tiles[16] || _dig_data==tilesr[17]){
 		switch(w_tile){
 			case tilesr[4]:
-				scr_place_tile(0,6,_mx-64,_my-64);
+				scr_place_tile(0,6,_mx-_sprite_size,_my-_sprite_size);
 				break;
 			case tilesr[13]:
-				scr_place_tile(1,10,_mx-64,_my-64);
+				scr_place_tile(1,10,_mx-_sprite_size,_my-_sprite_size);
 				break;
 			case tilesr[14]:
-				scr_place_tile(0,4,_mx-64,_my-64);
+				scr_place_tile(0,4,_mx-_sprite_size,_my-_sprite_size);
 				break;
 			case tilesr[16]:
-				scr_place_tile(0,5,_mx-64,_my-64);
+				scr_place_tile(0,5,_mx-_sprite_size,_my-_sprite_size);
 				break;
 			case tiles[17]:
-				scr_place_tile(0,10,_mx-64,_my-64);
+				scr_place_tile(0,10,_mx-_sprite_size,_my-_sprite_size);
 				break;
 			case tiles[11]:
-				scr_place_tile(1,9,_mx-64,_my-64);
+				scr_place_tile(1,9,_mx-_sprite_size,_my-_sprite_size);
+				break;
+			case tilesr[18]:
+				scr_place_tile(0,3,_mx-_sprite_size,_my-_sprite_size);
+				break;
+			case tiles[21]:
+				scr_place_tile(0,15,_mx-_sprite_size,_my-_sprite_size);
+				break;
+			case tilesr[21]:
+				scr_place_tile(1,12,_mx-_sprite_size,_my-_sprite_size);
+				break;
+			case tiles[23]:
+				scr_place_tile(1,26,_mx-_sprite_size,_my-_sprite_size);
+				break;
+			case tiles[24]:
+				scr_place_tile(0,17,_mx-_sprite_size,_my-_sprite_size);
+				break;
+			case tilesr[24]:
+				scr_place_tile(0,14,_mx-_sprite_size,_my-_sprite_size);
+				break;
+			case tiles[25]:
+				scr_place_tile(1,18,_mx-_sprite_size,_my-_sprite_size);
 				break;
 			default:
 				break;
@@ -289,48 +367,61 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 	if (_dig_data==tilesr[6] || _dig_data==tiles[7] || _dig_data==tiles[10] || _dig_data==0){
 		switch(e_tile){
 			case tiles[2]:
-				scr_place_tile(0,14,_mx+64,_my);
+				scr_place_tile(0,14,_mx+_sprite_size,_my);
 				break;
 			case tiles[6]:
-				scr_place_tile(0,16,_mx+64,_my);
+				scr_place_tile(0,16,_mx+_sprite_size,_my);
 				break;
 			case tilesr[10]:
-				scr_place_tile(1,13,_mx+64,_my);
+				scr_place_tile(1,13,_mx+_sprite_size,_my);
 				break;
 			case 0:
-				scr_place_tile(0,8,_mx+64,_my);
+				scr_place_tile(0,8,_mx+_sprite_size,_my);
 				break;
 			case tilesr[8]:
-				scr_place_tile(0,10,_mx+64,_my);
+				scr_place_tile(0,10,_mx+_sprite_size,_my);
 				break;
 			case tiles[10]:
-				scr_place_tile(0,8,_mx+64,_my);
+				scr_place_tile(0,8,_mx+_sprite_size,_my);
 				break;
 			case tiles[11]:
-				scr_place_tile(0,18,_mx+64,_my);
+				scr_place_tile(0,18,_mx+_sprite_size,_my);
 				break;
 			case tiles[14]:
-				scr_place_tile(0,14,_mx+64,_my);
+				scr_place_tile(0,14,_mx+_sprite_size,_my);
+				break;
+			case tilesr[18]:
+				scr_place_tile(1,25,_mx+_sprite_size,_my);
 				break;
 			default:
 				break;
 		}
 		switch (ne_tile){
 			case 0:
-				scr_place_tile(1,7,_mx+64,_my-64);
+				scr_place_tile(1,7,_mx+_sprite_size,_my-_sprite_size);
 				break;
 			case tiles[2]:
-				scr_place_tile(1,12,_mx+64,_my-64);
+				scr_place_tile(1,12,_mx+_sprite_size,_my-_sprite_size);
 				break;
 			default:
 				break;
 		}
 		switch (se_tile){
 			case 0:
-				scr_place_tile(0,11,_mx+64,_my+64);
+				scr_place_tile(0,11,_mx+_sprite_size,_my+_sprite_size);
 				break;
 			case tiles[2]:
-				scr_place_tile(0,15,_mx+64,_my+64);
+				scr_place_tile(0,15,_mx+_sprite_size,_my+_sprite_size);
+				break;
+			case tilesr[2]:
+				scr_place_tile(0,13,_mx+_sprite_size,_my+_sprite_size);
+				break;
+			default:
+				break;
+		}
+		switch (s_tile){
+			case tilesr[3]:
+				scr_place_tile(1,5,_mx,_my+_sprite_size);
 				break;
 			default:
 				break;
@@ -340,176 +431,285 @@ function draw_tunel(_mx, _my, _dig_data,_rotation_state){
 	if (_dig_data==tilesr[2] || _dig_data==tilesr[3] || _dig_data==tiles[15] || _dig_data==tiles[6] || _dig_data==tiles[12]){
 		switch(e_tile){
 			case tiles[3]:
-				scr_place_tile(0,5,_mx+64,_my);
+				scr_place_tile(0,5,_mx+_sprite_size,_my);
 				break;
 			case tilesr[14]:
-				scr_place_tile(1,17,_mx+64,_my);
+				scr_place_tile(1,17,_mx+_sprite_size,_my);
 				break;
 			case tilesr[11]:
-				scr_place_tile(0,14,_mx+64,_my);
+				scr_place_tile(0,14,_mx+_sprite_size,_my);
 				break;
 			case tilesr[6]:
-				scr_place_tile(0,8,_mx+64,_my);
+				scr_place_tile(0,8,_mx+_sprite_size,_my);
+				break;
+			case tiles[19]:
+				scr_place_tile(0,16,_mx+_sprite_size,_my);
+				break;
+			case tiles[20]:
+				scr_place_tile(1,13,_mx+_sprite_size,_my);
+				break;
+			case tilesr[21]:
+				scr_place_tile(1,25,_mx+_sprite_size,_my);
 				break;
 			default:
 				break;
 		}
 		if (ne_tile==0){
-			scr_place_tile(1,7,_mx+64,_my-64);
+			scr_place_tile(1,7,_mx+_sprite_size,_my-_sprite_size);
 		}
 	}
 	//E3	
 	if (_dig_data==tilesr[15] || _dig_data==tilesr[7] || _dig_data==tiles[8] || _dig_data==tilesr[10] || _dig_data==tilesr[12]){
 		switch(e_tile){
 			case tilesr[7]:
-				scr_place_tile(0,9,_mx+64,_my);
+				scr_place_tile(0,9,_mx+_sprite_size,_my);
 				break;
 			case tilesr[8]:
-				scr_place_tile(0,10,_mx+64,_my);
+				scr_place_tile(0,10,_mx+_sprite_size,_my);
 				break;
 			case tiles[10]:
-				scr_place_tile(0,8,_mx+64,_my);
+				scr_place_tile(0,8,_mx+_sprite_size,_my);
 				break;
 			case tiles[11]:
-				scr_place_tile(0,18,_mx+64,_my);
+				scr_place_tile(0,18,_mx+_sprite_size,_my);
 				break;
 			case tiles[14]:
-				scr_place_tile(0,14,_mx+64,_my);
+				scr_place_tile(0,14,_mx+_sprite_size,_my);
+				break;
+			case tiles[18]:
+				scr_place_tile(1,13,_mx+_sprite_size,_my);
+				break;
+			case tilesr[20]:
+				scr_place_tile(0,16,_mx+_sprite_size,_my);
+				break;
+			case tiles[21]:
+				scr_place_tile(1,25,_mx+_sprite_size,_my);
 				break;
 			default:
 				break;
 		}
 		if (se_tile==0){
-			scr_place_tile(0,11,_mx+64,_my+64)
+			scr_place_tile(0,11,_mx+_sprite_size,_my+_sprite_size)
 		}
 	}
 	//E4
-	if (_dig_data==tilesr[4] || _dig_data==tilesr[13] || _dig_data==tilesr[14] || _dig_data==tilesr[16] || _dig_data==tiles[17] || _dig_data==tiles[11]){
+	if (_dig_data==tilesr[4] || _dig_data==tiles[13] || _dig_data==tilesr[14] || _dig_data==tilesr[16] || _dig_data==tiles[17] || _dig_data==tiles[11]){
 		switch(e_tile){
 			case tilesr[13]:
-				scr_place_tile(1,5,_mx+64,_my);
+				scr_place_tile(1,5,_mx+_sprite_size,_my);
 				break;
 			case tilesr[15]:
-				scr_place_tile(0,9,_mx+64,_my);
+				scr_place_tile(0,9,_mx+_sprite_size,_my);
 				break;
 			case tilesr[9]:
-				scr_place_tile(0,6,_mx+64,_my);
+				scr_place_tile(0,6,_mx+_sprite_size,_my);
 				break;
 			case tiles[12]:
-				scr_place_tile(1,4,_mx+64,_my);
+				scr_place_tile(1,4,_mx+_sprite_size,_my);
 				break;
 			case tiles[16]:
-				scr_place_tile(0,5,_mx+64,_my);
+				scr_place_tile(0,5,_mx+_sprite_size,_my);
+				break;
+			case tilesr[19]:
+				scr_place_tile(0,8,_mx+_sprite_size,_my);
+				break;
+			case tiles[22]:
+				scr_place_tile(0,16,_mx+_sprite_size,_my);
+				break;
+			case tilesr[22]:
+				scr_place_tile(1,13,_mx+_sprite_size,_my);
+				break;
+			case tiles[23]:
+				scr_place_tile(1,25,_mx+_sprite_size,_my);
+				break;
+			case tiles[24]:
+				scr_place_tile(1,17,_mx+_sprite_size,_my);
+				break;
+			case tiles[25]:
+				scr_place_tile(0,18,_mx+_sprite_size,_my);
+				break;
+			case tilesr[25]:
+				scr_place_tile(0,14,_mx+_sprite_size,_my);
 				break;
 			default:
 				break;
 		}
 	}
 	//S1
-	if (_dig_data==tilesr[7] || _dig_data==tiles[10] || _dig_data==tilesr[10] || _dig_data==0){
+	if (_dig_data==tilesr[7] || _dig_data==tiles[10] || _dig_data==tilesr[10] || _dig_data==0 || _dig_data==tilesr[13]){
 		switch (s_tile){
 			case tilesr[2]:
-				scr_place_tile(1,14,_mx,_my+64);
+				scr_place_tile(1,14,_mx,_my+_sprite_size);
 				break;
 			case tiles[6]:
-				scr_place_tile(0,12,_mx,_my+64);
+				scr_place_tile(0,12,_mx,_my+_sprite_size);
 				break;
 			case tilesr[6]:
-				scr_place_tile(1,16,_mx,_my+64);
+				scr_place_tile(1,16,_mx,_my+_sprite_size);
 				break;
 			case 0:
-				scr_place_tile(1,8,_mx,_my+64);
+				scr_place_tile(1,8,_mx,_my+_sprite_size);
+				break;
+			case tiles[19]:
+				scr_place_tile(0,26,_mx,_my+_sprite_size);
 				break;
 			default:
 				break;
 		}
 		switch (w_tile){
 			case tilesr[10]:
-				scr_place_tile(0,3,_mx-64,_my);
+				scr_place_tile(0,3,_mx-_sprite_size,_my);
 				break;
 			case tilesr[7]:
-				scr_place_tile(1,9,_mx-64,_my);
+				scr_place_tile(1,9,_mx-_sprite_size,_my);
+				break;
+			case tiles[8]:
+				scr_place_tile(0,10,_mx-_sprite_size,_my);
+				break;
+			case tilesr[12]:
+				scr_place_tile(0,14,_mx-_sprite_size,_my);
+				break;
+			case tilesr[16]:
+				scr_place_tile(0,5,_mx-_sprite_size,_my);
 				break;
 			default:
 				break;
 		}
-		
-		if (sw_tile==0){
-			scr_place_tile(1,11,_mx-64,_my+64);
-		}
-		if (se_tile==0){
-			scr_place_tile(0,11,_mx+64,_my+64);
+		switch (sw_tile){
+			case 0:
+				scr_place_tile(1,11,_mx-_sprite_size,_my+_sprite_size);
+				break;
+			case tiles[7]:
+				scr_place_tile(1,13,_mx-_sprite_size,_my+_sprite_size);
+				break;
+			case tilesr[3]:
+				scr_place_tile(1,17,_mx-_sprite_size,_my+_sprite_size);
+				break;
+			case tilesr[2]:
+				scr_place_tile(1,15,_mx-_sprite_size,_my);
+				break;
+			default:
+				break;
+		}	
+		switch (se_tile){
+			case 0:
+				scr_place_tile(0,11,_mx+_sprite_size,_my+_sprite_size);
+				break;
+			case tilesr[2]:
+				scr_place_tile(0,13,_mx+_sprite_size,_my+_sprite_size);
+				break;
+			default:
+				break;
 		}
 	}
 	//S2
 	if (_dig_data==tiles[2] || _dig_data==tiles[6] || _dig_data==tilesr[8] || _dig_data==tiles[11] || _dig_data==tiles[14]){
 		switch(s_tile){
 			case tiles[3]:
-				scr_place_tile(1,10,_mx,_my+64);
+				scr_place_tile(1,10,_mx,_my+_sprite_size);
 				break;
 			case tilesr[14]:
-				scr_place_tile(1,14,_mx,_my+64);
+				scr_place_tile(1,14,_mx,_my+_sprite_size);
 				break;
 			case tilesr[10]:
-				scr_place_tile(1,8,_mx,_my+64);
+				scr_place_tile(1,8,_mx,_my+_sprite_size);
 				break;
 			case tilesr[11]:
-				scr_place_tile(1,18,_mx,_my+64);
+				scr_place_tile(1,18,_mx,_my+_sprite_size);
+				break;
+			case tilesr[18]:
+				scr_place_tile(0,12,_mx,_my+_sprite_size);
+				break;
+			case tiles[20]:
+				scr_place_tile(1,16,_mx,_my+_sprite_size);
+				break;
+			case tilesr[21]:
+				scr_place_tile(0,26,_mx,_my+_sprite_size);
 				break;
 			default:
 				break;
 		}
 		
 		if (sw_tile){
-			scr_place_tile(1,11,_mx-64,_my+64);
+			scr_place_tile(1,11,_mx-_sprite_size,_my+_sprite_size);
 		}
 	}
 	//S3
 	if (_dig_data==tilesr[15] || _dig_data==tilesr[6] || _dig_data==tiles[7] || _dig_data==tiles[8]){
 		switch(s_tile){
 			case tilesr[3]:
-				scr_place_tile(0,10,_mx,_my+64);
+				scr_place_tile(0,10,_mx,_my+_sprite_size);
 				break;
 			case tiles[15]:
-				scr_place_tile(0,18,_mx,_my+64);
+				scr_place_tile(0,18,_mx,_my+_sprite_size);
 				break;
 			case tiles[7]:
-				scr_place_tile(0,9,_mx,_my+64);
+				scr_place_tile(0,9,_mx,_my+_sprite_size);
 				break;
 			case tiles[10]:
-				scr_place_tile(1,8,_mx,_my+64);
+				scr_place_tile(1,8,_mx,_my+_sprite_size);
 				break;
 			case tiles[12]:
-				scr_place_tile(1,14,_mx,_my+64);
+				scr_place_tile(1,14,_mx,_my+_sprite_size);
+				break;
+			case tilesr[19]:
+				scr_place_tile(1,16,_mx,_my+_sprite_size);
+				break;
+			case tilesr[20]:
+				scr_place_tile(0,12,_mx,_my+_sprite_size);
+				break;
+			case tiles[22]:
+				scr_place_tile(0,26,_mx,_my+_sprite_size);
 				break;
 			default:
 				break;
 		}
 		
 		if(se_tile){
-			scr_place_tile(0,11,_mx+64,_my+64);
+			scr_place_tile(0,11,_mx+_sprite_size,_my+_sprite_size);
 		}
 	}
 	//S4
 	if (_dig_data==tiles[15] || _dig_data==tiles[9] || _dig_data==tiles[13] || _dig_data==tiles[17] || _dig_data==tilesr[11] || _dig_data==tilesr[17]){
 		switch(s_tile){
 			case tiles[4]:
-				scr_place_tile(0,6,_mx,_my+64);
+				scr_place_tile(0,6,_mx,_my+_sprite_size);
 				break;
 			case tiles[13]:
-				scr_place_tile(0,10,_mx,_my+64);
+				scr_place_tile(0,10,_mx,_my+_sprite_size);
 				break;
 			case tilesr[16]:
-				scr_place_tile(1,5,_mx,_my+64);
+				scr_place_tile(1,5,_mx,_my+_sprite_size);
 				break;
 			case tilesr[12]:
-				scr_place_tile(0,9,_mx,_my+64);
+				scr_place_tile(0,9,_mx,_my+_sprite_size);
 				break;
 			case tiles[14]:
-				scr_place_tile(1,9,_mx,_my+64);
+				scr_place_tile(1,9,_mx,_my+_sprite_size);
 				break;
 			case tiles[16]:
-				scr_place_tile(1,10,_mx,_my+64);
+				scr_place_tile(1,10,_mx,_my+_sprite_size);
+				break;
+			case tiles[18]:
+				scr_place_tile(1,8,_mx,_my+_sprite_size);
+				break;
+			case tiles[21]:
+				scr_place_tile(0,12,_mx,_my+_sprite_size);
+				break;
+			case tilesr[22]:
+				scr_place_tile(1,16,_mx,_my+_sprite_size);
+				break;
+			case tiles[23]:
+				scr_place_tile(0,26,_mx,_my+_sprite_size);
+				break;
+			case tiles[25]:
+				scr_place_tile(1,14,_mx,_my+_sprite_size);
+				break;
+			case tilesr[24]:
+				scr_place_tile(0,18,_mx,_my+_sprite_size);
+				break;
+			case tilesr[25]:
+				scr_place_tile(1,18,_mx,_my+_sprite_size);
 				break;
 			default:
 				break;
