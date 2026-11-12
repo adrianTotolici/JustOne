@@ -12,3 +12,6 @@ spr_side=noone;
 spr_up=noone;
 spr_down=noone;
 spr_atack=noone;
+
+// Enemy attack cooldown (in steps)
+attack_cooldown = 0;
