@@ -131,30 +131,24 @@ function scr_player_inventory(){
 	}
 }
 
-function eat_and_drink(_object){
-	var _obj = noone;
-	switch (_object){
-		case obj_coacaze_loot:
-			_obj = instance_find(obj_coacaze_loot, 0);
-			break;
-		case obj_water_loot:
-			_obj = instance_find(obj_water_loot, 0);
-			break;
-		default:
-			break;
-	}
-	if (_object != noone){
-		if (hunger+_object.food >= 100){
-			hunger = 100;
-		}else{ 
-			hunger+=_object.food;
-		}
-		if (thirst+_object.water >= 100) {
-			thirst = 100;
-		} else {
-			thirst+=_object.water;
-		}
-	}
+function eat_and_drink(_object) {
+    var _food_value = 0;
+    var _water_value = 0;
+
+    switch (_object) {
+        case obj_coacaze_loot:
+            _food_value = 5;
+            _water_value = 2;
+            break;
+
+        case obj_water_loot:
+            _food_value = 0;
+            _water_value = 5;
+            break;
+    }
+
+    hunger = min(100, hunger + _food_value);
+    thirst = min(100, thirst + _water_value);
 }
 
 function equip(_object){
