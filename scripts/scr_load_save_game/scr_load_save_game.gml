@@ -19,8 +19,9 @@ function scr_load_save_game(){
 			file_text_close(_file);
 
 			if (_save_data!=noone){
-				global.loaded_save=_save_data;
-				global.back_tiles=noone;
+				global.loaded_save = _save_data;
+				global.pending_world_seed = _save_data.world.seed;
+				global.back_tiles = noone;
 				room_goto(rm_world);
 			}
 		}
@@ -35,7 +36,10 @@ function scr_build_save_data(_player, _ui) {
     }
 
     return {
-        version: 2,
+        version: 3,
+		world: {
+			seed: global.world_seed
+		},
         player: {
             x: _player.x,
             y: _player.y,
@@ -75,7 +79,12 @@ function scr_parse_save_data(_json_string) {
     // Validate the save structure and version
     if (!is_struct(_data)) return noone;
     if (!variable_struct_exists(_data, "version")) return noone;
-    if (_data.version != 2) return noone;
+    if (_data.version != 3) return noone;
+	// Validate world data
+	if (!variable_struct_exists(_data, "world")) return noone;
+	if (!is_struct(_data.world)) return noone;
+	if (!variable_struct_exists(_data.world, "seed")) return noone;
+	if (!is_real(_data.world.seed)) return noone;
     if (!variable_struct_exists(_data, "player")) return noone;
     var _player = _data.player;
     if (!is_struct(_player)) return noone;

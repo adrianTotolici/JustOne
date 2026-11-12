@@ -1,4 +1,13 @@
 /// @description Map Tile
+// Restore the saved world seed, or generate a new one
+if (variable_global_exists("pending_world_seed") && is_real(global.pending_world_seed)) {
+    global.world_seed = global.pending_world_seed;
+    global.pending_world_seed = noone;
+} else {
+    global.world_seed = irandom(2147483646);
+}
+// Ensure terrain and resources generate consistently
+random_set_seed(global.world_seed);
 
 global.back_layer=layer_create(-1);
 if (global.back_tiles==noone){
@@ -64,3 +73,5 @@ for (i=0;i<213;i+=1) {
 
 
 scr_populate_map_resources(_sprite_size);
+// Prevent world generation from controlling subsequent gameplay randomness
+randomise();
