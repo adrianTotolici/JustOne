@@ -86,32 +86,19 @@ function scr_parse_save_data(_json_string) {
         var _field = _numeric_fields[_i];
 
         if (!variable_struct_exists(_player, _field)) return noone;
-        if (!is_string(variable_struct_get(_player, _field))) return noone;
+        if (!is_real(variable_struct_get(_player, _field))) return noone;
     }
 
     // Validate equipment fields
-    var _equipment_fields = [
-        "equipped",
-        "head_equipment",
-        "body_equipment",
-        "leg_equipment",
-        "left_foot_equipment",
-        "right_foot_equipment"
-    ];
-
+    var _equipment_fields = ["equipped", "head_equipment", "body_equipment", "leg_equipment", "left_foot_equipment", "right_foot_equipment"];
     for (var _i = 0; _i < array_length(_equipment_fields); _i++) {
         var _field = _equipment_fields[_i];
         if (!variable_struct_exists(_player, _field)) return noone;
-        if (!is_string(variable_struct_get(_player, _field))) return noone;
+        if (!is_real(variable_struct_get(_player, _field))) return noone;
     }
 
     // Validate inventory arrays
-    var _inventory_fields = [
-        "inventory_list",
-        "inventory_num",
-        "inventory_equiped"
-    ];
-
+    var _inventory_fields = ["inventory_list", "inventory_num", "inventory_equiped"];
     for (var _i = 0; _i < array_length(_inventory_fields); _i++) {
         var _field = _inventory_fields[_i];
         if (!variable_struct_exists(_player, _field)) return noone;
