@@ -157,16 +157,62 @@ function scr_crafting(){
 				}
 			}
 		}else{
-			//Build 
-			if (_ui.show_build && object_get_parent(_ui.inv_selected)==obj_par_buildings ){
-				instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inv_selected);
-				global.resource_matrix[mouse_x div 64][mouse_y div 64]=true;
-				_ui.inv_selected=noone;
+			// Build placement
+			if (_ui.show_build && object_get_parent(_ui.inv_selected) == obj_par_buildings) {
+			    var _grid_x = mouse_x div 64;
+			    var _grid_y = mouse_y div 64;
+			    var _matrix_width = array_length(global.resource_matrix);
+			    var _matrix_height = array_length(global.resource_matrix[_grid_x]);
+
+			    // Keep placement inside the generated world area
+			    var _inside_map = _grid_x >= 2 && _grid_x < _matrix_width - 2 && _grid_y >= 2 && _grid_y < _matrix_height - 2;
+			    if (_inside_map) {
+
+			        // Only allow placement on an unoccupied cell
+			        var _cell_free = !global.resource_matrix[_grid_x][_grid_y];
+			        var _build_x = _grid_x * 64 + 32;
+			        var _build_y = _grid_y * 64 + 32;
+
+			        // Do not place a building directly on the player
+			        if (_cell_free && !position_meeting(_build_x, _build_y, obj_you)) {
+
+			            // Create building at the center of the selected grid cell
+			            instance_create_layer(_build_x, _build_y, "Instances", _ui.inv_selected);
+			            global.resource_matrix[_grid_x][_grid_y] = true;
+
+			            // Consume the required resources only after successful placement
+			            var _remaining = _ui.build_resource_cost;
+
+			            for (var _i = 0; _i < array_length(_ui.inventory_list); _i++) {
+			                if (_ui.inventory_list[_i] == _ui.build_resource && _remaining > 0) {
+			                    var _take = min(_ui.inventory_num[_i], _remaining);
+			                    _ui.inventory_num[_i] -= _take;
+			                    _remaining -= _take;
+			                    if (_ui.inventory_num[_i] <= 0) {
+			                        _ui.inventory_num[_i] = 0;
+			                        _ui.inventory_list[_i] = noone;
+			                        _ui.inventory_equiped[_i] = false;
+			                    }
+			                }
+			            }
+
+			            // Clear pending placement
+			            _ui.inv_selected = noone;
+			            _ui.inv_selected_slot = -1;
+			            _ui.build_resource = noone;
+			            _ui.build_resource_cost = 0;
+			        } else {
+			            _ui.show_text_no_resources = true;
+			            _ui.text_no_resources = "Cannot build here";
+			        }
+			    } else {
+			        _ui.show_text_no_resources = true;
+			        _ui.text_no_resources = "Cannot build outside the map";
+			    }
 			}
 		}
 	}
 }
-
 
 function create_object(_obj_created, _obj_resources, _resource_need, _resource_own){
 	var _ui=obj_ui;
@@ -211,28 +257,19 @@ function create_object(_obj_created, _obj_resources, _resource_need, _resource_o
 	}
 }
 
-function build_object(_obj_created, _obj_resources, _resource_need, _resource_own){
-	var _ui=obj_ui;
-	if (_resource_need<=_resource_own){
-		_ui.inv_selected = _obj_created;
-		for (i=0; i<array_length(_ui.inventory_list); i++){
-			if (_ui.inventory_list[i]==_obj_resources){
-				if (_ui.inventory_num[i]>_resource_need){
-					_ui.inventory_num[i]-=_resource_need;
-					break;
-				}else{
-					_resource_need-=_ui.inventory_num[i];
-					_ui.inventory_list[i]=noone;
-					_ui.inventory_num[i]=0;
-					if (_resource_need==0){
-						break;
-					}
-				}
-			}
-		}
-	}else{
-		show_ui_text(_ui, _resource_need, _resource_own);
-	}
+function build_object(_obj_created, _obj_resources, _resource_need, _resource_own) {
+    var _ui = obj_ui;
+
+    if (_resource_need <= _resource_own) {
+        // Select the building, but do NOT consume resources yet
+        _ui.inv_selected = _obj_created;
+        _ui.inv_selected_slot = -1;
+
+        _ui.build_resource = _obj_resources;
+        _ui.build_resource_cost = _resource_need;
+    } else {
+        show_ui_text(_ui, _resource_need, _resource_own);
+    }
 }
 
 function show_ui_text(_ui,_resource_need, _resource_own){

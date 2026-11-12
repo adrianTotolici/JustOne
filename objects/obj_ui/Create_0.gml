@@ -19,6 +19,9 @@ inventory_num = array_create(16, 0);
 inventory_equiped = array_create(16, false);
 inv_selected=noone;
 inv_selected_slot = -1;
+// Pending building placement
+build_resource = noone;
+build_resource_cost = 0;
 
 // add test items
 inventory_list[0]=obj_rock;
@@ -29,6 +32,7 @@ inventory_list[4]=obj_branch_loot;
 inventory_list[5]=obj_axe;
 inventory_list[6]=obj_tree_bark_loot;
 inventory_list[7]=obj_stone_pickaxe;
+inventory_list[8]=obj_grass_loot;
 
 inventory_num[0]=1;
 inventory_num[1]=1;
@@ -38,6 +42,7 @@ inventory_num[4]=15;
 inventory_num[5]=1;
 inventory_num[6]=15;
 inventory_num[7]=1;
+inventory_num[8]=25;
 
 
 show_crafting=false;
