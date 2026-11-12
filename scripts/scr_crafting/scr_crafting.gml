@@ -15,23 +15,11 @@ function scr_crafting(){
 	
 	if (mouse_check_button_pressed(mb_left)){
 		if (_ui.inv_selected==noone){
-			for (i=0;i<array_length(_ui.inventory_list); i++){
-				if (_ui.inventory_list[i]=obj_grass_loot){
-					_straw_own+=_ui.inventory_num[i];
-				}
-				if (_ui.inventory_list[i]=obj_branch_loot){
-					_branch_own+=_ui.inventory_num[i];
-				}
-				if (_ui.inventory_list[i]=obj_stone_pebles_loot){
-					_rock_own+=_ui.inventory_num[i];
-				}
-				if (_ui.inventory_list[i]=obj_tree_bark_loot){
-					_tree_bark_own+=_ui.inventory_num[i];
-				}
-				if (_ui.inventory_list[i]=obj_wood_loot){
-					_wood_own+=_ui.inventory_num[i];
-				}
-			}
+			_straw_own=inventory_count_item(_ui.inventory_list,_ui.inventory_num,obj_grass_loot);
+			_branch_own=inventory_count_item(_ui.inventory_list,_ui.inventory_num,obj_branch_loot);
+			_rock_own=inventory_count_item(_ui.inventory_list,_ui.inventory_num,obj_stone_pebles_loot);
+			_tree_bark_own=inventory_count_item(_ui.inventory_list,_ui.inventory_num,obj_tree_bark_loot);
+			_wood_own=inventory_count_item(_ui.inventory_list,_ui.inventory_num,obj_wood_loot);
 		
 			if (_ui.show_equipment==true){
 				// craft straw armor
@@ -170,7 +158,7 @@ function scr_crafting(){
 			}
 		}else{
 			//Build 
-			if (_ui.show_build && object_get_parent(_ui.inv_selected)=obj_par_buildings ){
+			if (_ui.show_build && object_get_parent(_ui.inv_selected)==obj_par_buildings ){
 				instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inv_selected);
 				global.resource_matrix[mouse_x div 64][mouse_y div 64]=true;
 				_ui.inv_selected=noone;
@@ -182,14 +170,11 @@ function scr_crafting(){
 
 function create_object(_obj_created, _obj_resources, _resource_need, _resource_own){
 	var _ui=obj_ui;
-	var _craft=false;
-	for (i=0;i<array_length(_obj_resources); i++){
-		if (_obj_resources[i]!=noone){
-			if (_resource_need[i] <= _resource_own[i]){
-				_craft=true;
-			}else{
-				_craft=false;
-				show_ui_text(_ui, _resource_need[i], _resource_own[i]);
+	var _craft=inventory_has_resources(_obj_resources,_resource_need,_resource_own);
+	if (!_craft){
+		for (var _missing=0; _missing<array_length(_obj_resources); _missing++){
+			if (_obj_resources[_missing]!=noone && _resource_need[_missing]>_resource_own[_missing]){
+				show_ui_text(_ui,_resource_need[_missing],_resource_own[_missing]);
 				break;
 			}
 		}
@@ -203,7 +188,7 @@ function create_object(_obj_created, _obj_resources, _resource_need, _resource_o
 				for (k=0; k<array_length(_obj_resources); k++){
 					if (_obj_resources[k]!=noone){
 						for (i=0; i<array_length(_ui.inventory_list); i++){
-							if (_ui.inventory_list[i]=_obj_resources[k]){
+							if (_ui.inventory_list[i]==_obj_resources[k]){
 								if (_ui.inventory_num[i]>_resource_need[k]){
 									_ui.inventory_num[i]-=_resource_need[k];
 								}else{
@@ -231,7 +216,7 @@ function build_object(_obj_created, _obj_resources, _resource_need, _resource_ow
 	if (_resource_need<=_resource_own){
 		_ui.inv_selected = _obj_created;
 		for (i=0; i<array_length(_ui.inventory_list); i++){
-			if (_ui.inventory_list[i]=_obj_resources){
+			if (_ui.inventory_list[i]==_obj_resources){
 				if (_ui.inventory_num[i]>_resource_need){
 					_ui.inventory_num[i]-=_resource_need;
 					break;

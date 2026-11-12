@@ -16,7 +16,7 @@ function scr_player_attack(){
 				sprite_index=anim_harvest;
 				image_index=0;
 			}
-			_creature.hp-=_player.attack;
+			_creature.hp=remaining_health_after_damage(_creature.hp,_player.attack);
 			_creature.show_healthbar=true;
 		}else{
 			if (sprite_index!=anim_idle){
@@ -32,4 +32,8 @@ function scr_player_attack(){
 		}
 		state=PLAYER_STATE.CONTROLS;
 	}
+}
+
+function remaining_health_after_damage(_health,_damage){
+	return max(0,_health-_damage);
 }

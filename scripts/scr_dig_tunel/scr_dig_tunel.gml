@@ -37,13 +37,17 @@ function scr_dig_tunel(){
 					audio_stop_all();
 					room_goto(rm_world);
 				}
-				if ((_player.equipped==obj_stone_pickaxe) && (tile_data!=tile_set_index(ts_underground,2) || tile_data!=tile_set_index(ts_underground,1))){
+				if ((_player.equipped==obj_stone_pickaxe) && is_tunnel_tile_diggable(tile_data,tile_set_index(ts_underground,2),tile_set_index(ts_underground,1))){
 					
 					draw_tunel(mouse_x, mouse_y,tile_data,rotation_state);
 				}
 			}
 		}
 	}
+}
+
+function is_tunnel_tile_diggable(_tile_data,_blocked_tile,_surface_tile){
+	return _tile_data!=_blocked_tile && _tile_data!=_surface_tile;
 }
 
 function draw_tunel(_mx, _my, _dig_data,_rotation_state){

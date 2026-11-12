@@ -58,8 +58,10 @@ if (show_tools){
 		if (sprite_tools[_i]!=noone){
 			draw_sprite_ext(sprite_tools[_i],0, x_size_ui-craft_menu_width+button_width+32,button_height*(_i+2)+13,0.5,0.5,0,c_white,1);
 			for (var _j=0; _j<array_length(material_tools[_i]); _j++){
-				draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*(_i+2)+((_j*15)-15), text_tools[_i][_j]);
-				draw_sprite_ext(material_tools[_i][_j], 0, x_size_ui-craft_menu_width+button_width*4,button_height*(_i+2)+((_j*10)),0.25,0.25,0,c_white,1);
+				if (material_tools[_i][_j]!=noone){
+					draw_text(x_size_ui-craft_menu_width+button_width*3,button_height*(_i+2)+((_j*15)-15), text_tools[_i][_j]);
+					draw_sprite_ext(material_tools[_i][_j], 0, x_size_ui-craft_menu_width+button_width*4,button_height*(_i+2)+((_j*10)),0.25,0.25,0,c_white,1);
+				}
 			}
 		}
 	}
@@ -106,17 +108,6 @@ if (show_inv){
 			if (inventory_equiped[_i] == true){
 				draw_sprite_ext(spr_selected_equipment,0,_xpos,_ypos-10, 1.2, 1.2,0,c_white,1);
 				var _par=object_get_parent(inventory_list[_i]);
-				if (_par==obj_par_items || _par==obj_par_wepons){
-					obj_you.equipped=inventory_list[_i];
-					// equip weappon or item in hand
-					if (_par==obj_par_items){with (obj_par_items) {instance_destroy();}}
-					else{ if (_par==obj_par_wepons){with (obj_par_wepons) {instance_destroy();}}}
-					instance_create_layer(obj_you.x, obj_you.y, "Player", inventory_list[_i]);
-				}
-				if (_par==obj_par_armors){
-					// equip weappon or item in hand
-					instance_create_layer(obj_you.x, obj_you.y, "Player", inventory_list[_i]);
-				}
 			}
 		}
 		_a+=1;
@@ -259,7 +250,7 @@ if (show_player_equipment){
 				draw_sprite_ext(spr_pickaxe,0,_x_pos,_y_pos-7,_scale_equip,_scale_equip,0,c_white,1);
 				break;
 			case obj_wood_weapon_lvl0:
-				draw_sprite_ext(spr_wood_weapon,0,_x_pos+2,_y_pos-7,scale_equip,scale_equip,0,c_white,1);
+				draw_sprite_ext(spr_wood_weapon,0,_x_pos+2,_y_pos-7,_scale_equip,_scale_equip,0,c_white,1);
 				break;
 			default:
 				break;

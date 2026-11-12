@@ -114,6 +114,10 @@ tools_nr=8;
 sprite_tools=array_create(tools_nr, noone);
 material_tools=array_create(tools_nr, noone);
 text_tools=array_create(tools_nr, noone);
+for (var _tool=0; _tool<tools_nr; _tool++){
+	material_tools[_tool]=array_create(2,noone);
+	text_tools[_tool]=array_create(2,"");
+}
 //straw mug
 sprite_tools[0]=spr_straw_mug;
 material_tools[0][0]=spr_grass_loot;

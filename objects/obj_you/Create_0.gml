@@ -40,3 +40,25 @@ ware_armor=array_create(7,noone);
 ware_tools=array_create(1,noone);
 
 instance_create_layer(x,y,"Instances",obj_ui);
+
+if (variable_global_exists("loaded_save") && is_struct(global.loaded_save)){
+	var _saved_player=global.loaded_save.player;
+	x=_saved_player.x;
+	y=_saved_player.y;
+	hp=_saved_player.hp;
+	hunger=_saved_player.hunger;
+	thirst=_saved_player.thirst;
+	attack=_saved_player.attack;
+	equipped=_saved_player.equipped;
+	head_equipment=_saved_player.head_equipment;
+	body_equipment=_saved_player.body_equipment;
+	leg_equipment=_saved_player.leg_equipment;
+	left_foot_equipment=_saved_player.left_foot_equipment;
+	right_foot_equipment=_saved_player.right_foot_equipment;
+	obj_ui.inventory_list=_saved_player.inventory_list;
+	obj_ui.inventory_num=_saved_player.inventory_num;
+	obj_ui.inventory_equiped=_saved_player.inventory_equiped;
+	global.loaded_save=noone;
+}
+
+refresh_equipped_visuals();

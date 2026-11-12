@@ -51,7 +51,7 @@ function scr_player_inventory(){
 			if (_my <= _ui.y_size_ui-_ui.sprite_size+2 && _ui.inv_selected!=noone){
 				mx_min=_ui.x_size_ui/2+(_ui.inventory_sprite_size/_ui._inv_nr_columns);
 				mx_max=_ui.x_size_ui/2+((_ui.inventory_sprite_size/_ui._inv_nr_columns)*(_ui._inv_nr_columns-_ui._middle_box_inv));
-				if (_mx>=mx_min || _mx <=mx_max){
+				if (_mx>=mx_min && _mx <=mx_max){
 					var _item=instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inv_selected);
 					_item.on_floor=true;
 					for (i=0; i<array_length(_ui.inventory_list);i++){
@@ -80,7 +80,7 @@ function scr_player_inventory(){
 								b = _j*_ui._inv_nr_columns+_i;
 								// eat food and drink
 								if (_ui.inventory_list[b]!=noone){
-									if (object_get_parent(_ui.inventory_list[b])=obj_par_food){
+					if (object_get_parent(_ui.inventory_list[b])==obj_par_food){
 										eat_and_drink(_ui.inventory_list[b]);
 										_ui.inventory_num[b]-=1;
 										if (_ui.inventory_num[b]<1){
@@ -88,7 +88,7 @@ function scr_player_inventory(){
 										}
 										break;
 									}
-									if (object_get_parent(_ui.inventory_list[b])=obj_par_armors){
+					if (object_get_parent(_ui.inventory_list[b])==obj_par_armors){
 										if (_ui.inventory_equiped[b] == false){
 											remove_old_armor_item_selection(b);
 											equip(_ui.inventory_list[b]);
@@ -100,11 +100,12 @@ function scr_player_inventory(){
 										}
 										break;
 									}
-									if (object_get_parent(_ui.inventory_list[b])=obj_par_items ||  object_get_parent(_ui.inventory_list[b])=obj_par_wepons){
+					if (object_get_parent(_ui.inventory_list[b])==obj_par_items ||  object_get_parent(_ui.inventory_list[b])==obj_par_wepons){
 										if (_ui.inventory_equiped[b] == false){
 											remove_old_weapon_item_selection(b);
-											with (obj_par_wepons) {instance_destroy();}
-											with (obj_par_items){instance_destroy();}
+							if (obj_you.equipped != noone) unequip(obj_you.equipped);
+							with (obj_par_wepons) {path_delete(my_path); instance_destroy();}
+							with (obj_par_items){path_delete(my_path); instance_destroy();}
 											equip(_ui.inventory_list[b]);
 											_ui.inventory_equiped[b] = true;
 											//instance_create_layer(obj_you.x, obj_you.y, "Player", _ui.inventory_list[b]);
@@ -112,8 +113,8 @@ function scr_player_inventory(){
 											unequip(_ui.inventory_list[b]);
 											_ui.inventory_equiped[b] = false;
 											remove_old_weapon_item_selection(b);
-											with (obj_par_wepons) {instance_destroy();}
-											with (obj_par_items){instance_destroy();}
+							with (obj_par_wepons) {path_delete(my_path); instance_destroy();}
+							with (obj_par_items){path_delete(my_path); instance_destroy();}
 										}
 										break;
 									}
@@ -223,7 +224,7 @@ function equip(_object){
 			obj_you.attack += 3.0;
 			break;
 		case obj_straw_mug:
-			obj_you.equipped = obj_straw_mug;
+			obj_you.equipped = noone;
 			obj_you.attack += 0.1;
 			break;
 		case obj_axe:
@@ -231,13 +232,14 @@ function equip(_object){
 			obj_you.attack += 10.0;
 			break;
 		case obj_wood_weapon_lvl0:
-			obj_you.equipped = obj_wood_weapon_lvl0;
+			obj_you.equipped = noone;
 			obj_you.attack += 15.0;
 			break;
 		default:
 			break;
 	}
 	scr_select_draw_armor();
+	refresh_equipped_visuals();
 }
 
 function unequip(_object){
@@ -321,12 +323,35 @@ function unequip(_object){
 		default:
 			break;
 	}
+	refresh_equipped_visuals();
+}
+
+function refresh_equipped_visuals(){
+	with (obj_par_equipment){
+		if (!on_floor){
+			path_delete(my_path);
+			instance_destroy();
+		}
+	}
+
+	if (obj_you.equipped != noone)
+		instance_create_layer(obj_you.x,obj_you.y,"Player",obj_you.equipped);
+	if (obj_you.head_equipment != noone)
+		instance_create_layer(obj_you.x,obj_you.y,"Player",obj_you.head_equipment);
+	if (obj_you.body_equipment != noone)
+		instance_create_layer(obj_you.x,obj_you.y,"Player",obj_you.body_equipment);
+	if (obj_you.leg_equipment != noone)
+		instance_create_layer(obj_you.x,obj_you.y,"Player",obj_you.leg_equipment);
+	if (obj_you.left_foot_equipment != noone)
+		instance_create_layer(obj_you.x,obj_you.y,"Player",obj_you.left_foot_equipment);
+	if (obj_you.right_foot_equipment != noone)
+		instance_create_layer(obj_you.x,obj_you.y,"Player",obj_you.right_foot_equipment);
 }
 	
 function remove_old_weapon_item_selection(_new_pos_obj){
 	for (var _a=0; _a<array_length(obj_ui.inventory_list); ++_a){
 		if (obj_ui.inventory_list[_a] != noone){
-			if (object_get_parent(obj_ui.inventory_list[_a])=obj_par_wepons || object_get_parent(obj_ui.inventory_list[_a])=obj_par_items){
+			if (object_get_parent(obj_ui.inventory_list[_a])==obj_par_wepons || object_get_parent(obj_ui.inventory_list[_a])==obj_par_items){
 				obj_ui.inventory_equiped[_a] = false;
 			}
 		}
@@ -337,7 +362,7 @@ function remove_old_armor_item_selection(_new_pos_obj){
 	for (var _a=0; _a<array_length(obj_ui.inventory_list); ++_a){
 		if (obj_ui.inventory_list[_a] != noone){
 			//if (object_get_parent(obj_ui.inventory_list[_a])=obj_par_bodyware){
-			if (object_get_parent(obj_ui.inventory_list[_a])=object_get_parent(obj_ui.inventory_list[_new_pos_obj])){
+			if (object_get_parent(obj_ui.inventory_list[_a])==object_get_parent(obj_ui.inventory_list[_new_pos_obj])){
 				obj_ui.inventory_equiped[_a] = false;
 			}
 		}

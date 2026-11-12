@@ -24,3 +24,29 @@ function scr_inventory_add(){
 		}
 	}
 }
+
+function inventory_count_item(_inventory_list, _inventory_num, _item){
+	var _total=0;
+	for (var _i=0; _i<array_length(_inventory_list); _i++){
+		if (_inventory_list[_i]==_item) _total+=_inventory_num[_i];
+	}
+	return _total;
+}
+
+function inventory_has_resources(_resources, _required, _owned){
+	for (var _i=0; _i<array_length(_resources); _i++){
+		if (_resources[_i]!=noone && _required[_i]>_owned[_i]) return false;
+	}
+	return true;
+}
+
+function inventory_slot_can_stack(_slot_item,_slot_amount,_item,_max_stack){
+	return _slot_item==_item && _slot_amount<_max_stack;
+}
+
+function inventory_has_free_slot(_inventory_list){
+	for (var _i=0; _i<array_length(_inventory_list); _i++){
+		if (_inventory_list[_i]==noone) return true;
+	}
+	return false;
+}

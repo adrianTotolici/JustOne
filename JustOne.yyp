@@ -1,8 +1,8 @@
 {
-  "$GMProject":"",
+  "$GMProject":"v1",
   "%Name":"JustOne",
   "AudioGroups":[
-    {"$GMAudioGroup":"","%Name":"audiogroup_default","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
+    {"$GMAudioGroup":"v1","%Name":"audiogroup_default","exportDir":"","name":"audiogroup_default","resourceType":"GMAudioGroup","resourceVersion":"2.0","targets":-1,},
   ],
   "configs":{
     "children":[],
@@ -72,11 +72,12 @@
     {"$GMFolder":"","%Name":"Tile Sets","folderPath":"folders/Tile Sets.yy","name":"Tile Sets","resourceType":"GMFolder","resourceVersion":"2.0",},
     {"$GMFolder":"","%Name":"Timelines","folderPath":"folders/Timelines.yy","name":"Timelines","resourceType":"GMFolder","resourceVersion":"2.0",},
   ],
+  "ForcedPrefabProjectReferences":[],
   "IncludedFiles":[],
   "isEcma":false,
   "LibraryEmitters":[],
   "MetaData":{
-    "IDEVersion":"2024.8.1.171",
+    "IDEVersion":"2026.0.0.16",
   },
   "name":"JustOne",
   "resources":[
@@ -169,6 +170,7 @@
     {"id":{"name":"scr_player_inventory","path":"scripts/scr_player_inventory/scr_player_inventory.yy",},},
     {"id":{"name":"scr_player_sleep","path":"scripts/scr_player_sleep/scr_player_sleep.yy",},},
     {"id":{"name":"scr_populate_map_resources","path":"scripts/scr_populate_map_resources/scr_populate_map_resources.yy",},},
+    {"id":{"name":"scr_run_tests","path":"scripts/scr_run_tests/scr_run_tests.yy",},},
     {"id":{"name":"scr_select_draw_armor","path":"scripts/scr_select_draw_armor/scr_select_draw_armor.yy",},},
     {"id":{"name":"snd_background_birdsong","path":"sounds/snd_background_birdsong/snd_background_birdsong.yy",},},
     {"id":{"name":"snd_bug_squash","path":"sounds/snd_bug_squash/snd_bug_squash.yy",},},

@@ -24,7 +24,6 @@ if (hp>0){
 			break;
 		case PLAYER_STATE.INVENTORY: 
 			scr_player_inventory();
-			scr_player_control();
 			break; 
 		case PLAYER_STATE.ATTACK:
 			scr_player_control();

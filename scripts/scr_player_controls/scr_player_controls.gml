@@ -6,7 +6,7 @@ function scr_player_control(){
 	if (mouse_check_button(mb_left)){
 		if (instance_position(mouse_x, mouse_y, obj_par_resource)){
 			var _resources = instance_position(mouse_x, mouse_y, obj_par_resource);
-			if( _resources.tool_required== false || (equipped!=noone && equipped.type==_resources.required)){
+			if(can_use_resource_tool(_resources.tool_required,equipped,_resources.required)){
 				if (_resources.x >= x-10) {
 					image_xscale=-1;
 					state=PLAYER_STATE.HARVEST;
@@ -31,7 +31,8 @@ function scr_player_control(){
 			}
 		}
 		if (instance_position(mouse_x, mouse_y, obj_par_buildings)){
-			var _building = instance_position(mouse_x, mouse_y, obj_grass_house);
+			var _building = instance_position(mouse_x, mouse_y, obj_par_buildings);
+			if (_building == noone) exit;
 			player_instance=instance_find(obj_you,0);
 			if (_building.x >= x-10) {
 				image_xscale=-1;
@@ -89,4 +90,8 @@ function scr_player_control(){
 			break;
 	}
 
+}
+
+function can_use_resource_tool(_tool_required,_equipped,_required_tool){
+	return !_tool_required || (_equipped!=noone && _equipped.type==_required_tool);
 }
