@@ -124,6 +124,7 @@ if (keyboard_check_released(ord("I"))){
 		case true:
 			show_inv=false;
 			inv_selected=noone;
+			inv_selected_slot =-1;
 			obj_you.state=PLAYER_STATE.CONTROLS;
 			break;
 		default:
