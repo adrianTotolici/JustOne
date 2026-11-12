@@ -162,10 +162,14 @@ function scr_crafting(){
 			    var _grid_x = mouse_x div 64;
 			    var _grid_y = mouse_y div 64;
 			    var _matrix_width = array_length(global.resource_matrix);
-			    var _matrix_height = array_length(global.resource_matrix[_grid_x]);
+				var _inside_map = false;
 
-			    // Keep placement inside the generated world area
-			    var _inside_map = _grid_x >= 2 && _grid_x < _matrix_width - 2 && _grid_y >= 2 && _grid_y < _matrix_height - 2;
+				// Validate X before accessing the matrix
+				if (_grid_x >= 2 && _grid_x < _matrix_width - 2) {
+				    var _matrix_height = array_length(global.resource_matrix[_grid_x]);
+				    // Now validate Y
+				    _inside_map = _grid_y >= 2 && _grid_y < _matrix_height - 2;
+				}
 			    if (_inside_map) {
 
 			        // Only allow placement on an unoccupied cell
