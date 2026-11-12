@@ -89,13 +89,13 @@ function scr_parse_save_data(_json_string) {
         if (!is_real(variable_struct_get(_player, _field))) return noone;
     }
 
-    // Validate equipment fields
-    var _equipment_fields = ["equipped", "head_equipment", "body_equipment", "leg_equipment", "left_foot_equipment", "right_foot_equipment"];
-    for (var _i = 0; _i < array_length(_equipment_fields); _i++) {
-        var _field = _equipment_fields[_i];
-        if (!variable_struct_exists(_player, _field)) return noone;
-        if (!is_real(variable_struct_get(_player, _field))) return noone;
-    }
+	// Validate equipment fields
+	var _equipment_fields = ["equipped", "head_equipment", "body_equipment", "leg_equipment", "left_foot_equipment", "right_foot_equipment"];
+	for (var _i = 0; _i < array_length(_equipment_fields); _i++) {
+	    var _field = _equipment_fields[_i];
+	    if (!variable_struct_exists(_player, _field)) return noone;
+	    if (!is_string(variable_struct_get(_player, _field))) return noone;
+	}
 
     // Validate inventory arrays
     var _inventory_fields = ["inventory_list", "inventory_num", "inventory_equiped"];
@@ -109,7 +109,7 @@ function scr_parse_save_data(_json_string) {
     // Validate each inventory slot
     for (var _i = 0; _i < 16; _i++) {
         if (!is_string(_player.inventory_list[_i])) return noone;
-        if (!is_string(_player.inventory_num[_i])) return noone;
+        if (!is_real(_player.inventory_num[_i])) return noone;
         if (!is_bool(_player.inventory_equiped[_i])) return noone;
 
         if (_player.inventory_num[_i] < 0) return noone;
@@ -118,11 +118,6 @@ function scr_parse_save_data(_json_string) {
     // Convert saved object names back into object references
     for (var _i = 0; _i < 16; _i++) {
         var _item_name = _player.inventory_list[_i];
-
-        if (_item_name != "" && asset_get_type(_item_name) != asset_object) {
-            return noone;
-        }
-
         var _item = scr_load_object_name(_item_name);
 
         if (_item_name != "" && _item == noone) {
@@ -136,11 +131,6 @@ function scr_parse_save_data(_json_string) {
     for (var _i = 0; _i < array_length(_equipment_fields); _i++) {
         var _field = _equipment_fields[_i];
         var _name = variable_struct_get(_player, _field);
-
-        if (_name != "" && asset_get_type(_name) != asset_object) {
-            return noone;
-        }
-
         var _object = scr_load_object_name(_name);
 
         if (_name != "" && _object == noone) {
@@ -176,10 +166,6 @@ function scr_load_object_name(_name) {
     }
 
     if (_name == "") {
-        return noone;
-    }
-
-    if (asset_get_type(_name) != asset_object) {
         return noone;
     }
 
