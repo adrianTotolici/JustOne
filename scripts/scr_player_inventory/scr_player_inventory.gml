@@ -16,7 +16,8 @@ function scr_player_inventory(){
 						my_max=_ui.y_size_ui-(_ui._heigh_diff_inventory+(_ui.inventory_sprite_size/2))+((_ui.inventory_sprite_size/_ui._inv_nr_columns)*(_j+1));
 						if (_my>=my_min && _my<=my_max){
 							b = _j*_ui._inv_nr_columns+_i;
-							_ui.inv_selected=_ui.inventory_list[b];
+							_ui.inv_selected = _ui.inventory_list[b];
+							_ui.inv_selected_slot = b;
 							break;
 						}
 					}
@@ -31,39 +32,46 @@ function scr_player_inventory(){
 						my_min=_ui.y_size_ui-(_ui._heigh_diff_inventory+(_ui.inventory_sprite_size/2))+((_ui.inventory_sprite_size/_ui._inv_nr_columns)*(_j));
 						my_max=_ui.y_size_ui-(_ui._heigh_diff_inventory+(_ui.inventory_sprite_size/2))+((_ui.inventory_sprite_size/_ui._inv_nr_columns)*(_j+1));
 						if (_my>=my_min && _my<=my_max){
-							for (a=0;a<array_length(_ui.inventory_list);a++){
-								if (_ui.inv_selected==_ui.inventory_list[a]){
-									_ui.inventory_list[a]=_ui.inventory_list[_j*_ui._inv_nr_columns+_i];
-									var _num=_ui.inventory_num[a];
-									_ui.inventory_num[a]=_ui.inventory_num[_j*_ui._inv_nr_columns+_i];
-									_ui.inventory_num[_j*_ui._inv_nr_columns+_i]=_num;
-									break;
-								}
+							var _source_slot = _ui.inv_selected_slot;
+							var _target_slot = _j * _ui._inv_nr_columns + _i;
+							if (_source_slot >= 0 && _source_slot < array_length(_ui.inventory_list)) {
+							    if (_source_slot != _target_slot) {
+							        var _temp_item = _ui.inventory_list[_target_slot];
+							        var _temp_num = _ui.inventory_num[_target_slot];
+							        var _temp_equipped = _ui.inventory_equiped[_target_slot];
+							        _ui.inventory_list[_target_slot] = _ui.inventory_list[_source_slot];
+							        _ui.inventory_num[_target_slot] = _ui.inventory_num[_source_slot];
+							        _ui.inventory_equiped[_target_slot] = _ui.inventory_equiped[_source_slot];
+							        _ui.inventory_list[_source_slot] = _temp_item;
+							        _ui.inventory_num[_source_slot] = _temp_num;
+							        _ui.inventory_equiped[_source_slot] = _temp_equipped;
+							    }
 							}
-							_ui.inventory_list[_j*_ui._inv_nr_columns+_i]=_ui.inv_selected;
-							_ui.inv_selected=noone;
+							_ui.inv_selected = noone;
+							_ui.inv_selected_slot = -1;
 						}
 					}
 				}
 			}
 			
-			//Drop item
-			if (_my <= _ui.y_size_ui-_ui.sprite_size+2 && _ui.inv_selected!=noone){
-				mx_min=_ui.x_size_ui/2+(_ui.inventory_sprite_size/_ui._inv_nr_columns);
-				mx_max=_ui.x_size_ui/2+((_ui.inventory_sprite_size/_ui._inv_nr_columns)*(_ui._inv_nr_columns-_ui._middle_box_inv));
-				if (_mx>=mx_min && _mx <=mx_max){
-					var _item=instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inv_selected);
-					_item.on_floor=true;
-					for (i=0; i<array_length(_ui.inventory_list);i++){
-						if (_ui.inv_selected==_ui.inventory_list[i]){
-							_ui.inventory_list[i]=noone;
-							_item.my_stack=_ui.inventory_num[i];
-							_ui.inventory_num[i]=0;
-							break;
-						}
-					}
-					_ui.inv_selected=noone;
-				}
+			// Drop selected item
+			if (_my <= _ui.y_size_ui - _ui.sprite_size + 2 && _ui.inv_selected != noone && _ui.inv_selected_slot >= 0) {
+			    mx_min = _ui.x_size_ui/2 + (_ui.inventory_sprite_size/_ui._inv_nr_columns);
+			    mx_max = _ui.x_size_ui/2 + ((_ui.inventory_sprite_size/_ui._inv_nr_columns)*(_ui._inv_nr_columns-_ui._middle_box_inv));
+			    if (_mx >= mx_min && _mx <= mx_max) {
+			        var _slot = _ui.inv_selected_slot;
+			        var _item = instance_create_layer(mouse_x, mouse_y, "Instances", _ui.inventory_list[_slot]);
+
+			        _item.on_floor = true;
+			        _item.my_stack = _ui.inventory_num[_slot];
+
+			        _ui.inventory_list[_slot] = noone;
+			        _ui.inventory_num[_slot] = 0;
+			        _ui.inventory_equiped[_slot] = false;
+
+			        _ui.inv_selected = noone;
+			        _ui.inv_selected_slot = -1;
+			    }
 			}
 		}
 	}else{

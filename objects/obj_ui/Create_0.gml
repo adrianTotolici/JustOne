@@ -18,6 +18,7 @@ inventory_list = array_create(16, noone);
 inventory_num = array_create(16, 0);
 inventory_equiped = array_create(16, false);
 inv_selected=noone;
+inv_selected_slot = -1;
 
 // add test items
 inventory_list[0]=obj_rock;
