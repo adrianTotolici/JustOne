@@ -77,10 +77,16 @@ scr_populate_map_resources(_sprite_size);
 // Initialize or restore resource changes
 if (variable_global_exists("loaded_save") && is_struct(global.loaded_save)) {
     global.world_resource_changes = global.loaded_save.world.resource_changes;
+
     // Restore depleted resources after world generation
     scr_restore_resource_changes(global.world_resource_changes);
+
+    // Restore player-built structures
+    global.world_building_changes = global.loaded_save.world.building_changes;
+    scr_restore_building_changes(global.world_building_changes);
 } else {
     global.world_resource_changes = [];
+    global.world_building_changes = [];
 }
 
 // Prevent world generation from controlling subsequent gameplay randomness
