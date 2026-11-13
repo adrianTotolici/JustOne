@@ -34,11 +34,17 @@ function scr_build_save_data(_player, _ui) {
     for (var _i = 0; _i < 16; _i++) {
         _saved_inventory[_i] = scr_save_object_name(_ui.inventory_list[_i]);
     }
+	
+	var _saved_resource_changes = [];
+	if (variable_global_exists("world_resource_changes") && is_array(global.world_resource_changes)) {
+	    _saved_resource_changes = global.world_resource_changes;
+	}
 
     return {
-        version: 3,
+        version: 4,
 		world: {
-			seed: global.world_seed
+			seed: global.world_seed,
+			resource_changes: _saved_resource_changes
 		},
         player: {
             x: _player.x,
@@ -79,12 +85,40 @@ function scr_parse_save_data(_json_string) {
     // Validate the save structure and version
     if (!is_struct(_data)) return noone;
     if (!variable_struct_exists(_data, "version")) return noone;
-    if (_data.version != 3) return noone;
+    if (_data.version != 3 && _data.version != 4) return noone;
 	// Validate world data
 	if (!variable_struct_exists(_data, "world")) return noone;
 	if (!is_struct(_data.world)) return noone;
 	if (!variable_struct_exists(_data.world, "seed")) return noone;
 	if (!is_real(_data.world.seed)) return noone;
+	
+	// Validate saved resource changes
+	if (_data.version >= 4) {
+	    if (!variable_struct_exists(_data.world, "resource_changes")) return noone;
+	    if (!is_array(_data.world.resource_changes)) return noone;
+	    for (var _i = 0; _i < array_length(_data.world.resource_changes); _i++) {
+	        var _entry = _data.world.resource_changes[_i];
+	        if (!is_struct(_entry)) return noone;
+	        var _required_fields = ["object_name","x","y","sprite_name","image_index","alarm_0","alarm_1","shadow"];
+
+	        for (var _j = 0; _j < array_length(_required_fields); _j++) {
+	            if (!variable_struct_exists(_entry, _required_fields[_j])) return noone;
+	        }
+
+	        if (!is_string(_entry.object_name)) return noone;
+	        if (!is_real(_entry.x)) return noone;
+	        if (!is_real(_entry.y)) return noone;
+	        if (!is_string(_entry.sprite_name)) return noone;
+	        if (!is_real(_entry.image_index)) return noone;
+	        if (!is_real(_entry.alarm_0)) return noone;
+	        if (!is_real(_entry.alarm_1)) return noone;
+	        if (!is_bool(_entry.shadow)) return noone;
+	    }
+	} else {
+	    // Version 3 saves did not contain resource changes
+	    _data.world.resource_changes = [];
+	}
+	
     if (!variable_struct_exists(_data, "player")) return noone;
     var _player = _data.player;
     if (!is_struct(_player)) return noone;
