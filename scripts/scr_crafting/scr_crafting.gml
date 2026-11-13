@@ -181,8 +181,9 @@ function scr_crafting(){
 			        if (_cell_free && !position_meeting(_build_x, _build_y, obj_you)) {
 
 			            // Create building at the center of the selected grid cell
-			            instance_create_layer(_build_x, _build_y, "Instances", _ui.inv_selected);
-			            global.resource_matrix[_grid_x][_grid_y] = true;
+						var _new_building = instance_create_layer(_build_x, _build_y, "Instances", _ui.inv_selected);
+						scr_track_building_change(_new_building);
+						global.resource_matrix[_grid_x][_grid_y] = true;
 
 			            // Consume the required resources only after successful placement
 			            var _remaining = _ui.build_resource_cost;
