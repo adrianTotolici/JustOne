@@ -172,6 +172,7 @@
     {"id":{"name":"scr_populate_map_resources","path":"scripts/scr_populate_map_resources/scr_populate_map_resources.yy",},},
     {"id":{"name":"scr_run_tests","path":"scripts/scr_run_tests/scr_run_tests.yy",},},
     {"id":{"name":"scr_select_draw_armor","path":"scripts/scr_select_draw_armor/scr_select_draw_armor.yy",},},
+    {"id":{"name":"scr_track_resource_change","path":"scripts/scr_track_resource_change/scr_track_resource_change.yy",},},
     {"id":{"name":"snd_background_birdsong","path":"sounds/snd_background_birdsong/snd_background_birdsong.yy",},},
     {"id":{"name":"snd_bug_squash","path":"sounds/snd_bug_squash/snd_bug_squash.yy",},},
     {"id":{"name":"snd_bush_hit","path":"sounds/snd_bush_hit/snd_bush_hit.yy",},},
