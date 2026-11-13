@@ -18,6 +18,7 @@ if(hp<1 && no_resources == false){
 			break;
 	}
 	no_resources = true;
+	scr_track_resource_change(id);
 	hit=true;
 }
 

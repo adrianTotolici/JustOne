@@ -7,8 +7,9 @@ if(hp<1 && no_resources == false){
 	}
 	instance_create_layer(x,y,"Instances", obj_insect_buterffly);
 	sprite_index = spr_fruit_bush_empty;
-	no_resources = true;
 	alarm[0]=600*speed;
+	scr_track_resource_change(id);
+	no_resources = true;
 	hit=true;
 }
 

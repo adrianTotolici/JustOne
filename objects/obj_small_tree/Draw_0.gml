@@ -19,6 +19,7 @@ if(hp<1 && no_resources == false){
 	}
 	
 	sprite_index = spr_small_tree_empty;
+	scr_track_resource_change(id);
 	no_resources = true;
 	hit=true;
 	shadow=false;

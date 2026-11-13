@@ -6,6 +6,7 @@ if(hp<1 && no_resources == false){
 		_inst.on_floor=true;
 	}
 	sprite_index = spr_grass_cut;
+	scr_track_resource_change(id);
 	no_resources = true;
 	hit=true;
 }
