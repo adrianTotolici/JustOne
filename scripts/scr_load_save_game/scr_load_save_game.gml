@@ -39,12 +39,18 @@ function scr_build_save_data(_player, _ui) {
 	if (variable_global_exists("world_resource_changes") && is_array(global.world_resource_changes)) {
 	    _saved_resource_changes = global.world_resource_changes;
 	}
+	
+	var _saved_building_changes = [];
+	if (variable_global_exists("world_building_changes") && is_array(global.world_building_changes)) {
+	    _saved_building_changes = global.world_building_changes;
+	}
 
     return {
         version: 4,
 		world: {
 			seed: global.world_seed,
-			resource_changes: _saved_resource_changes
+			resource_changes: _saved_resource_changes,
+			building_changes: _saved_building_changes
 		},
         player: {
             x: _player.x,
@@ -117,6 +123,30 @@ function scr_parse_save_data(_json_string) {
 	} else {
 	    // Version 3 saves did not contain resource changes
 	    _data.world.resource_changes = [];
+	}
+	
+	// Validate saved building changes
+	if (_data.version >= 4) {
+	    if (variable_struct_exists(_data.world, "building_changes")) {
+	        if (!is_array(_data.world.building_changes)) return noone;
+
+	        for (var _i = 0; _i < array_length(_data.world.building_changes); _i++) {
+	            var _building = _data.world.building_changes[_i];
+
+	            if (!is_struct(_building)) return noone;
+	            if (!variable_struct_exists(_building, "object_name")) return noone;
+	            if (!variable_struct_exists(_building, "x")) return noone;
+	            if (!variable_struct_exists(_building, "y")) return noone;
+
+	            if (!is_string(_building.object_name)) return noone;
+	            if (!is_real(_building.x)) return noone;
+	            if (!is_real(_building.y)) return noone;
+	        }
+	    } else {
+	        _data.world.building_changes = [];
+	    }
+	} else {
+	    _data.world.building_changes = [];
 	}
 	
     if (!variable_struct_exists(_data, "player")) return noone;
