@@ -5,7 +5,7 @@ function scr_track_building_change(_building) {
     }
 
     array_push(global.world_building_changes, {
-        object_name: asset_get_name(_building.object_index),
+        object_name: object_get_name(_building.object_index),
         x: _building.x,
         y: _building.y
     });

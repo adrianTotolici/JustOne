@@ -4,7 +4,7 @@ function scr_clear_resource_change(_resource) {
         return;
     }
 
-    var _object_name = asset_get_name(_resource.object_index);
+    var _object_name = object_get_name(_resource.object_index);
 
     for (var _i = array_length(global.world_resource_changes) - 1; _i >= 0; _i--) {
         var _entry = global.world_resource_changes[_i];
