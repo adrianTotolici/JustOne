@@ -73,5 +73,15 @@ for (i=0;i<213;i+=1) {
 
 
 scr_populate_map_resources(_sprite_size);
+
+// Initialize or restore resource changes
+if (variable_global_exists("loaded_save") && is_struct(global.loaded_save)) {
+    global.world_resource_changes = global.loaded_save.world.resource_changes;
+    // Restore depleted resources after world generation
+    scr_restore_resource_changes(global.world_resource_changes);
+} else {
+    global.world_resource_changes = [];
+}
+
 // Prevent world generation from controlling subsequent gameplay randomness
 randomise();

@@ -20,6 +20,14 @@ function scr_restore_resource_changes(_resource_changes) {
         if (_resource == noone) {
             continue;
         }
+		
+		// Mud potholes are destroyed when harvested
+		if (_object == obj_mud_potehole) {
+		    with (_resource) {
+		        instance_destroy();
+		    }
+		    continue;
+		}
 
         // Resolve the depleted sprite
         var _sprite = asset_get_index(_entry.sprite_name);
