@@ -8,6 +8,9 @@ function scr_restore_resource_changes(_resource_changes) {
 
         // Resolve the original resource object
         var _object = asset_get_index(_entry.object_name);
+		show_debug_message("RESTORE RESOURCE: " + _entry.object_name);
+		show_debug_message("SAVED POSITION: " + string(_entry.x) + ", " + string(_entry.y));
+		show_debug_message("OBJECT ID: " + string(_object));
 
         if (_object == -1 || !object_exists(_object)) {
             continue;
@@ -23,9 +26,12 @@ function scr_restore_resource_changes(_resource_changes) {
 		    }
 		}
 
-		// Skip if the generated resource cannot be found
+		// Check whether the generated resource was found
 		if (_resource == noone) {
+		    show_debug_message("RESTORE FAILED: resource instance not found");
 		    continue;
+		} else {
+		    show_debug_message("RESTORE FOUND: resource instance matched");
 		}
 		
 		// Mud potholes are destroyed when harvested

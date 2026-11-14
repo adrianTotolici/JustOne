@@ -44,6 +44,8 @@ function scr_build_save_data(_player, _ui) {
 	if (variable_global_exists("world_building_changes") && is_array(global.world_building_changes)) {
 	    _saved_building_changes = global.world_building_changes;
 	}
+	
+	show_debug_message("SAVED RESOURCE CHANGES: " + string(array_length(_saved_resource_changes)));
 
     return {
         version: 4,

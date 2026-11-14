@@ -1,5 +1,6 @@
 /// @description Map Tile
 // Restore the saved world seed, or generate a new one
+show_debug_message("OBJ_LAND CREATE EVENT STARTED");
 if (variable_global_exists("pending_world_seed") && is_real(global.pending_world_seed)) {
     global.world_seed = global.pending_world_seed;
     global.pending_world_seed = noone;
@@ -76,10 +77,15 @@ scr_populate_map_resources(_sprite_size);
 
 // Initialize or restore resource changes
 if (variable_global_exists("loaded_save") && is_struct(global.loaded_save)) {
+	show_debug_message("LOADED SAVE BRANCH ENTERED");
     global.world_resource_changes = global.loaded_save.world.resource_changes;
 
     // Restore depleted resources after world generation
     scr_restore_resource_changes(global.world_resource_changes);
+	show_debug_message("LOADED SAVE EXISTS: " + string(variable_global_exists("loaded_save")));
+	show_debug_message("LOADED SAVE IS STRUCT: " + string(is_struct(global.loaded_save)));
+	show_debug_message("LOADED RESOURCE CHANGES: " + string(array_length(global.loaded_save.world.resource_changes)));
+	show_debug_message("CALLING RESOURCE RESTORE");
 
     // Restore player-built structures
     global.world_building_changes = global.loaded_save.world.building_changes;
