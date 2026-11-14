@@ -16,7 +16,7 @@ function scr_track_resource_change(_resource) {
         object_name: _object_name,
         x: _resource.x,
         y: _resource.y,
-        sprite_name: object_get_name(_resource.sprite_index),
+        sprite_name: sprite_get_name(_resource.sprite_index),
         image_index: _resource.image_index,
         alarm_0: _resource.alarm[0],
         alarm_1: _resource.alarm[1],
