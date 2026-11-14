@@ -11,6 +11,7 @@ max_brench_drop=irandom(3);
 no_resources = false;
 loot=false
 tool_required = true;
+required = noone;
 hp=100;
 max_hp=100;
 show_healthbar=false;

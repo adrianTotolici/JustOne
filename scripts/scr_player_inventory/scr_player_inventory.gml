@@ -226,15 +226,18 @@ function equip(_object){
 			obj_you.attack += 3.0;
 			break;
 		case obj_straw_mug:
-			obj_you.equipped = noone;
+			obj_you.equipped = obj_straw_mug;
 			obj_you.attack += 0.1;
 			break;
 		case obj_axe:
 			obj_you.equipped = obj_axe;
 			obj_you.attack += 10.0;
 			break;
+		case obj_stone_pickaxe:
+		    obj_you.equipped = obj_stone_pickaxe;
+		    break;
 		case obj_wood_weapon_lvl0:
-			obj_you.equipped = noone;
+			obj_you.equipped = obj_wood_weapon_lvl0;
 			obj_you.attack += 15.0;
 			break;
 		default:
@@ -311,15 +314,18 @@ function unequip(_object){
 			obj_you.attack -= 3;
 			break;
 		case obj_straw_mug:
-			obj_you.equipped = obj_straw_mug;
+			obj_you.equipped = noone;
 			obj_you.attack -= 0.1;
 			break;
 		case obj_axe:
 			obj_you.equipped = obj_axe;
 			obj_you.attack -= 10.0;
 			break;
+		case obj_stone_pickaxe:
+		    obj_you.equipped = noone;
+		    break;
 		case obj_wood_weapon_lvl0:
-			obj_you.equipped = obj_wood_weapon_lvl0;
+			obj_you.equipped = noone;
 			obj_you.attack -= 15.0;
 			break;
 		default:
