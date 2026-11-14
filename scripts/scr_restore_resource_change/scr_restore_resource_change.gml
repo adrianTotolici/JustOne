@@ -13,13 +13,20 @@ function scr_restore_resource_changes(_resource_changes) {
             continue;
         }
 
-        // Find the generated resource at its original position
-        var _resource = instance_position(_entry.x, _entry.y, _object);
+		// Find the generated resource by its exact saved coordinates
+		var _resource = noone;
+		for (var _j = 0; _j < instance_number(_object); _j++) {
+		    var _candidate = instance_find(_object, _j);
+		    if (_candidate.x == _entry.x && _candidate.y == _entry.y) {
+		        _resource = _candidate;
+		        break;
+		    }
+		}
 
-        // Some resources, such as mud potholes, are destroyed when harvested
-        if (_resource == noone) {
-            continue;
-        }
+		// Skip if the generated resource cannot be found
+		if (_resource == noone) {
+		    continue;
+		}
 		
 		// Mud potholes are destroyed when harvested
 		if (_object == obj_mud_potehole) {
