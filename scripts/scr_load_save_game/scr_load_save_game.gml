@@ -45,7 +45,6 @@ function scr_build_save_data(_player, _ui) {
 	    _saved_building_changes = global.world_building_changes;
 	}
 	
-	show_debug_message("SAVED RESOURCE CHANGES: " + string(array_length(_saved_resource_changes)));
 
     return {
         version: 4,
