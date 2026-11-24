@@ -58,7 +58,6 @@ if (variable_global_exists("loaded_save") && is_struct(global.loaded_save)){
 	obj_ui.inventory_list=_saved_player.inventory_list;
 	obj_ui.inventory_num=_saved_player.inventory_num;
 	obj_ui.inventory_equiped=_saved_player.inventory_equiped;
-	global.loaded_save=noone;
 }
 
 refresh_equipped_visuals();
